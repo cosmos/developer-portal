@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   theme: "cosmos",
   title: "Cosmos Developer Portal",
+  base: process.env.VUEPRESS_BASE || "/",
   head: [
     [
       "link",
