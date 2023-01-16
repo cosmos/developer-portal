@@ -24,3 +24,5 @@ dist/
 *.code-workspace 
 
 .vuepress/public/resized-images
+
+.env
