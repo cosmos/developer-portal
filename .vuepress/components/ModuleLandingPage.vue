@@ -5,7 +5,7 @@
 				.tm-overline.tm-rf-1.tm-lh-title.tm-medium.tm-muted(v-if="intro.overline") {{intro.overline}}
 				h2.home__content__intro__content__title {{intro.title}}
 				.home__content__intro__content__desc(v-html="intro.description" :class="intro.image ? 'tm-measure-narrower' : ''")
-				a.tm-button.tm-button-disclosure.mt-7(v-if="intro.action" :href="intro.action.url")
+				a.tm-button.tm-button-disclosure.mt-7(v-if="intro.action" :href="$withBase(intro.action.url)")
 					span {{intro.action.label}}
 			.home__content__intro__image(v-if="intro.image")
 				tm-image(:src="intro.image")
