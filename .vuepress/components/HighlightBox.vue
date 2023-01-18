@@ -2,7 +2,7 @@
     div.wrapper(v-bind:class="classType")
         div.content(v-bind:class="classType") 
             div.icon(v-bind:class="classType" v-if="image")
-                img.icon-image.no-zoom(v-bind:src="image")
+                img.icon-image.no-zoom(v-bind:src="$withBase(image)")
             .label.tm-overline.tm-rf-1.tm-lh-title.tm-medium(v-else) {{type}}
             slot
 </template>

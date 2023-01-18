@@ -19,7 +19,7 @@
                         h4.mt-7 Understanding the Authz Module
                         .mt-7.tm-lh-copy.tm-muted In this tutorial, you learn what the Authz module does, how to create and revoke authorizations, and how to execute authorized transactions on a local testnet.
                         .mt-7.info-label.tm-rf-1.tm-muted 20 minute read
-                a.tutorials__item__large(v-bind:style="{'background-image': `url(/tutorial-bg-image.png)`}" href="https://docs.ignite.com/" target="_blank")
+                a.tutorials__item__large(v-bind:style="{'background-image': `url(${$withBase('/tutorial-bg-image.png')})`}" href="https://docs.ignite.com/" target="_blank")
                     .tm-measure
                         .tm-overline.tm-rf-1.tm-lh-title.tm-medium.tm-muted Ignite CLI
                         h2.mt-5 Build a chain in minutes
@@ -34,7 +34,7 @@
             .articles.mt-8
                 .articles__item(v-for="article in $frontmatter.articles")
                     a.articles__item__container(:href="article.url" target="_blank")
-                        .articles__item__image(v-bind:style="{'background-image': `url(${article.image})`}")
+                        .articles__item__image(v-bind:style="{'background-image': `url(${$withBase(article.image)})`}")
                         .articles__item__content
                             .tm-overline.tm-rf-1.tm-lh-title.tm-medium.tm-muted.articles__item__content__date {{article.date}}
                             h4.articles__item__content__title.mx-5 {{article.title}}
@@ -46,7 +46,7 @@
                 .tools__item(v-for="tool in $frontmatter.tools")
                     .tools__item__container
                         .tools__item__icon
-                            img(:src="tool.image" :alt="tool.title")
+                            img(:src="$withBase(tool.image)" :alt="tool.title")
                         .tools__item__content
                             h5 {{tool.title}}
                             .mt-3 {{tool.description}}

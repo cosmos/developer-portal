@@ -1,7 +1,7 @@
 <template lang="pug">
     .panel-list-item
         .panel-list-item__number {{this.number !== 'check' ? this.number : ''}}
-            img.panel-list-item__number__icon.no-zoom(v-if="this.number == 'check'" src="/check-icon.svg")
+            img.panel-list-item__number__icon.no-zoom(v-if="this.number == 'check'" :src="$withBase('/check-icon.svg')")
         .panel-list-item__content(ref="content")
             slot
         .panel-list-item__last(v-if="this.last === true")
