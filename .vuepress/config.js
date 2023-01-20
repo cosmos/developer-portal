@@ -65,7 +65,6 @@ module.exports = {
       banner: true,
     },
     allowedIDAOrigins: [
-      "preview-5bxuue6kafu5ocp5", 
       "deploy-preview-995", 
       "deploy-preview-994", 
       "deploy-preview-991",
