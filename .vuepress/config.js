@@ -64,6 +64,7 @@ module.exports = {
     topbar: {
       banner: true,
     },
+    isIDAMode: false,
     allowedIDAOrigins: [
       "deploy-preview-995", 
       "deploy-preview-994", 
