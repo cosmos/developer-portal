@@ -694,6 +694,7 @@ module.exports = {
   ],
   patterns: [
     "README.md",
+    "versions.md",
     "feature-test/*.md",
     "academy/*/*.md",
     "tutorials/*/*.md",
