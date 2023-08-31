@@ -1,6 +1,5 @@
 [context.deploy-preview.environment]
   NPM_VERSION = "8"
 
-[build]
-  VERSIONS_BUILD_PATH = "/opt/build/versions-build"
+[build.environment]
   NPM_VERSION = "8"
