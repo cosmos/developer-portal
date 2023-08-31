@@ -2,7 +2,5 @@
   NPM_VERSION = "8"
 
 [build]
-  command = "git fetch && make build-website"
-  publish = ".vuepress/dist/versions-build/"
   VERSIONS_BUILD_PATH = "/opt/build/versions-build"
   NPM_VERSION = "8"
