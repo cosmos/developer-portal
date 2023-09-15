@@ -10,9 +10,12 @@ tags:
 <!--
 Include for Week 0 start, later back into comment, plus everything below needs to be included in a comment for Week 0.-->
 
-"Detailed information will be available during the week."
-
 <!--
+
+"Detailed information is available during the week before launch."
+
+-->
+
 The private channels for the Academy on the official Discord is where you will communicate and collaborate with your instructors, tutors, and fellow participants.
 
 There are three channels where you can post messages, ask questions, request support, and get important information regarding the program.
@@ -32,9 +35,10 @@ Within the Academy Discord, you will find the following topic-specific channels:
 
 ![IMAGE DESCRIPTION](/ida-course/images/discord-ida-c3-channels.jpg)
 
-* We will share regular program updates via the **c4-announcements-and-organization** channel. Make sure to check it regularly.
-* The **c4-lounge** channel is dedicated to off-topic discussions. Introduce yourself, and feel free to relax and chat about your favorite TV shows, films, and books, share pet photos, and anything else that comes to mind.
-* You should ask all content-related questions within the **c4-support forum** channel. There you will find tags corresponding to the main topics covered in the Academy content. These will allow you and the support team to keep track of your queries.
+* We will share regular program updates via the **c5-announcements-and-organization** channel. Make sure to check it regularly.
+* The **c5-lounge** channel is dedicated to off-topic discussions. Introduce yourself, and feel free to relax and chat about your favorite TV shows, films, and books, share pet photos, and anything else that comes to mind.
+* The **IDA-Voice** channel is a live chat resource for conducting real-time study groups or casual chat. It is open 24 hours per day and allows easy screen sharing to facilitate your discussions. Please use it inclusively, and give priority to study activities before casual use.
+* You should ask all content-related questions within the **c5-support forum** channel. There you will find tags corresponding to the main topics covered in the Academy content. These will allow you and the support team to keep track of your queries.
 
 ## How to ask a question
 
@@ -42,7 +46,7 @@ You can post a message with your question directly into any channel.
 
 ![IMAGE DESCRIPTION](/ida-course/images/discord-question.png)
 
-When posting a question in the **c4-support-forum**, you need to add a title and select the tag of the topic your question is related to.
+When posting a question in the **c5-support-forum**, you need to add a title and select the tag of the topic your question is related to.
 
 ![IMAGE DESCRIPTION](/ida-course/images/discord-howto-supportforum.jpg)
 
@@ -77,5 +81,3 @@ When you mark a message as a question, _Tricia_ might reply with one or more res
 ## Response time
 
 We aim to answer all questions within a few hours. Our maximum response time is 24 hours. **Main support hours are between 8 AM UTC and 6 PM UTC.** We do not provide support during weekends.
-
--->

@@ -8,7 +8,7 @@ tags:
 
 # Week 2 Exercise
 
-You are about to perform a small, simple exercise on our Academy Gitlab, to check you're paying attention! Before you [try](https://git.academy.b9lab.com/ida-p4-exercise-week-2/exercise-code), here is a summary of what you will be asked to do.
+You are about to perform a small, simple exercise on our Academy Gitlab, to check you're paying attention! Before you [try](https://git.academy.b9lab.com/ida-p5-exercise-week-2/exercise-code), here is a summary of what you will be asked to do.
 
 <HighlightBox type="note">
 
@@ -129,11 +129,11 @@ The score that appears on Gitlab's CI is the _correct_ one.
 
 ## When you are ready
 
-Please push your exercise solution to the [Week 2 Exercise repo](https://git.academy.b9lab.com/ida-p4-exercise-week-2/exercise-code).
+Please push your exercise solution to the [Week 2 Exercise repo](https://git.academy.b9lab.com/ida-p5-exercise-week-2/exercise-code).
 
 <HighlightBox type="note">
 
-**We recommend you attempt the exercise as soon as you finish the week's material, or by Thursday, June 1st, 11:59pm UTC.**
+**We recommend you attempt the exercise as soon as you finish the week's material, or ideally before Thursday, November 16th, 11:59pm UTC.**
 <br/><br/>
 Do not worry if you do not pass the exercise: it is simply meant to be an opportunity to practice and demonstrate your engagement with the program.
 
