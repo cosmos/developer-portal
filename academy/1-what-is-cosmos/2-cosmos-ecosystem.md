@@ -15,12 +15,12 @@ tags:
 
 <HighlightBox type="synopsis">
 
-**The Interchain** is a network of independent blockchains, which are:
+**The interchain** is a network of independent blockchains, which are:
 
 * All powered by consensus algorithms with Byzantine Fault-Tolerance (BFT).
 * All connected through the Inter-Blockchain Communication Protocol (IBC), which enables value transfers, token transfers, and other communication between chains, all without the need to involve exchanges or make compromises regarding the sovereignty of each chain.
 
-The Interchain is also **a blockchain ecosystem** complete with protocols, SDK, tokens, wallets, applications, repositories, services, and tools.
+The interchain is also **a blockchain ecosystem** complete with protocols, SDK, tokens, wallets, applications, repositories, services, and tools.
 
 </HighlightBox>
 
@@ -28,7 +28,7 @@ The Interchain is also **a blockchain ecosystem** complete with protocols, SDK, 
 
 In this section, you will get an introduction to:
 
-* The Interchain Ecosystem
+* The interchain ecosystem
 * The Cosmos SDK
 * The Inter-Blockchain Communication Protocol
 * The Cosmos Hub
@@ -39,49 +39,49 @@ In this section, you will get an introduction to:
 
 ## A whole universe to discover - tokens, wallets, apps, and services
 
-The Interchain is an ever-expanding ecosystem of tokens, wallets, and tools, as well as interconnected applications and services, all built for a decentralized future.
+The interchain is an ever-expanding ecosystem of tokens, wallets, and tools, as well as interconnected applications and services, all built for a decentralized future.
 
-In 2022, almost **$100 billion in digital assets** are under management and secured by the Interchain. Digital assets on the Interchain include fungible and non-fungible tokens (NFTs). You can issue in-application tokens to conduct settlements, bespoke issuance, handle inflation/deflation, and much more.
+In 2022, almost **$100 billion in digital assets** are under management and secured by the interchain. Digital assets on the interchain include fungible and non-fungible tokens (NFTs). You can issue in-application tokens to conduct settlements, bespoke issuance, handle inflation/deflation, and much more.
 
-Among the fungible tokens secured by the Interchain are the [Binance Coin](https://www.binance.com/en/bnb) and [ATOM](https://cosmos.network/learn/faq/what-is-the-atom). Remember that because the tokens are defined on application-specific blockchains their developers are free from the constraints of a hypothetical general-purpose blockchain.
+Among the fungible tokens secured by the interchain are the [Binance Coin](https://www.binance.com/en/bnb) and [ATOM](https://cosmos.network/learn/faq/what-is-the-atom). Remember that because the tokens are defined on application-specific blockchains their developers are free from the constraints of a hypothetical general-purpose blockchain.
 
 <HighlightBox type="tip">
 
-For an overview of the tokens the Interchain secures across applications and services, see the [Interchain market capitalization overview](https://cosmos.network/ecosystem/tokens/).
+For an overview of the tokens the interchain secures across applications and services, see the [interchain market capitalization overview](https://cosmos.network/ecosystem/tokens/).
 
 </HighlightBox>
 
-In addition to the vast number of tokens, a variety of applications, services, wallets, and explorers are Interchain-based.
+In addition to the vast number of tokens, a variety of applications, services, wallets, and explorers are interchain-based.
 
-**Hundreds of applications and services** build on the Interchain. Currently most applications and projects deal with finance, closely followed by infrastructure-related applications. Applications and projects in areas such as privacy, marketplace, and social impact are also emerging.
+**Hundreds of applications and services** build on the interchain. Currently most applications and projects deal with finance, closely followed by infrastructure-related applications. Applications and projects in areas such as privacy, marketplace, and social impact are also emerging.
 
 <HighlightBox type="tip">
 
-Do you want an up-to-date list of all the applications and services built on the Interchain? Go to the [Interchain Ecosystem overview](https://cosmos.network/ecosystem/apps/?ref=cosmonautsworld).
+Do you want an up-to-date list of all the applications and services built on the interchain? Go to the [interchain ecosystem overview](https://cosmos.network/ecosystem/apps/?ref=cosmonautsworld).
 
 </HighlightBox>
 
 While most applications and projects are deployed on the mainnet, some are currently either in proof of concept, still in development, or have been deployed to a testnet only.
 
-Moreover, [**33 wallets**](https://cosmos.network/ecosystem/wallets) and block explorers for the Interchain are part of the ecosystem. Most are for Android, such as the [Atomic Wallet](https://atomicwallet.io/) and [Coinex](https://www.coinex.com/), or for iOS, like [AirGap](https://airgap.it/) and [Wallet.io](https://walletio.io/), but you can also find a number of web wallets like [Exodus](https://www.exodus.com) and [Keplr](https://wallet.keplr.app/).
+Moreover, [**33 wallets**](https://cosmos.network/ecosystem/wallets) and block explorers for the interchain are part of the ecosystem. Most are for Android, such as the [Atomic Wallet](https://atomicwallet.io/) and [Coinex](https://www.coinex.com/), or for iOS, like [AirGap](https://airgap.it/) and [Wallet.io](https://walletio.io/), but you can also find a number of web wallets like [Exodus](https://www.exodus.com) and [Keplr](https://wallet.keplr.app/).
 
 <HighlightBox type="tip">
 
-Do you want to find out more about the wide variety of wallets in the Interchain Ecosystem? We recommend looking at the [wallets and block explorers for the Interchain](https://cosmos.network/ecosystem/wallets).
+Do you want to find out more about the wide variety of wallets in the interchain ecosystem? We recommend looking at the [wallets and block explorers for the interchain](https://cosmos.network/ecosystem/wallets).
 
 </HighlightBox>
 
 ## The Cosmos SDK - modular and customizable
 
-The Interchain network focuses on an ecosystem for easy blockchain development that provides customizability and interoperability. It establishes a stable universe determined by rules that apply to the whole ecosystem equally.
+The interchain network focuses on an ecosystem for easy blockchain development that provides customizability and interoperability. It establishes a stable universe determined by rules that apply to the whole ecosystem equally.
 
 ![Cosmos SDK constellation](/academy/1-what-is-cosmos/images/constellation.png)
 
-Before the Interchain came along, developing a whole new chain was much more difficult and expensive than building a smart contract. Now, with the Cosmos SDK, entirely flexible, secure, high performance, and sovereign **application-specific blockchains** can be developed. To allow this, building modular, adaptable, and interchangeable open-source development tools is at the center of the Interchain's mission.
+Before the interchain came along, developing a whole new chain was much more difficult and expensive than building a smart contract. Now, with the Cosmos SDK, entirely flexible, secure, high performance, and sovereign **application-specific blockchains** can be developed. To allow this, building modular, adaptable, and interchangeable open-source development tools is at the center of the interchain's mission.
 
-The main aim of the Interchain network is to provide an **ecosystem for easy blockchain development** based on CometBFT, the Tendermint BFT for the Interchain Stack, and the Inter-Blockchain Communication Protocol (IBC) with the so-called [Cosmos SDK](https://v1.cosmos.network/sdk).
+The main aim of the interchain network is to provide an **ecosystem for easy blockchain development** based on CometBFT, the Tendermint BFT for the interchain Stack, and the Inter-Blockchain Communication Protocol (IBC) with the so-called [Cosmos SDK](https://v1.cosmos.network/sdk).
 
-Each chain in the Interchain Ecosystem relies on the Tendermint **fast-finality BFT consensus algorithm**. This ensures a common consensus mechanism at work in all chains of the network. Next to its use in the Interchain, the Tendermint consensus mechanism is also utilized in the [Binance Chain](https://www.binance.org/en), [Kava](https://www.kava.io/), and more.
+Each chain in the interchain ecosystem relies on the Tendermint **fast-finality BFT consensus algorithm**. This ensures a common consensus mechanism at work in all chains of the network. Next to its use in the interchain, the Tendermint consensus mechanism is also utilized in the [Binance Chain](https://www.binance.org/en), [Kava](https://www.kava.io/), and more.
 
 <HighlightBox type="tip">
 
@@ -112,7 +112,7 @@ The default consensus mechanism available when developing with the SDK is CometB
 
 <HighlightBox type="info">
 
-If you are interested in hearing more from the Cosmos SDK team itself, in the following video Marko Baricevic, Cosmos SDK Project Lead at Interchain, delivers a comprehensive breakdown of the Cosmos SDK.
+If you are interested in hearing more from the Cosmos SDK team itself, in the following video Marko Baricevic, Cosmos SDK Project Lead at interchain, delivers a comprehensive breakdown of the Cosmos SDK.
 
 <YoutubePlayer videoId="1_ottIKPfI4"/>
 
@@ -120,11 +120,11 @@ If you are interested in hearing more from the Cosmos SDK team itself, in the fo
 
 ## The Inter-Blockchain Communication Protocol
 
-The [Inter-Blockchain Communication Protocol (IBC)](https://ibcprotocol.org/) is the basis for **interoperability** in the Interchain. It leverages the instant finality of Tendermint to allow for the transfer of value (token transfers) and communication between heterogeneous chains. Blockchains with different applications and architecture specifications become interoperable whether or not they share a validator set.
+The [Inter-Blockchain Communication Protocol (IBC)](https://ibcprotocol.org/) is the basis for **interoperability** in the interchain. It leverages the instant finality of Tendermint to allow for the transfer of value (token transfers) and communication between heterogeneous chains. Blockchains with different applications and architecture specifications become interoperable whether or not they share a validator set.
 
 Without IBC, the interoperability of heterogeneous chains is difficult to achieve because they may implement the consensus, networking, and application layers in different ways. As soon as a blockchain is compatible with IBC, it becomes interoperable with other blockchains.
 
-The Interchain implements a **modular architecture with two blockchain classes**: **hubs** and **zones**.
+The interchain implements a **modular architecture with two blockchain classes**: **hubs** and **zones**.
 
 ![Hub and zones](/academy/1-what-is-cosmos/images/hub-zones.png)
 
@@ -197,9 +197,9 @@ When you scaffold with Ignite CLI, things like key management, creating validato
 
 ## CosmWasm - multi-chain smart contracts
 
-[CosmWasm](https://cosmwasm.com/) is a multi-chain solution for smart contracts on the Interchain - that is the Cosm part. It is a way of using WebAssembly in the Interchain universe - that is the Wasm part.
+[CosmWasm](https://cosmwasm.com/) is a multi-chain solution for smart contracts on the interchain - that is the Cosm part. It is a way of using WebAssembly in the interchain universe - that is the Wasm part.
 
-With [CosmWasm](https://cosmwasm.com/) you can create robust decentralized applications (dApps) for the Interchain using smart contracts and building on Tendermint and the Cosmos SDK. Its key features are:
+With [CosmWasm](https://cosmwasm.com/) you can create robust decentralized applications (dApps) for the interchain using smart contracts and building on Tendermint and the Cosmos SDK. Its key features are:
 
 * Mature tools for the development and testing of smart contracts
 * Close integration with the Cosmos SDK and ecosystem
@@ -217,7 +217,7 @@ For a deeper dive, read the [CosmWasm documentation](https://docs.cosmwasm.com/d
 
 ## The possibility of using alternative blockchain frameworks and SDKs
 
-As the Cosmos SDK is modular, developers can port existing codebases in Go on top of the SDK. This allows developers to build on the Interchain without having to compromise too much on the toolset and environment used.
+As the Cosmos SDK is modular, developers can port existing codebases in Go on top of the SDK. This allows developers to build on the interchain without having to compromise too much on the toolset and environment used.
 
 For example, with [Ethermint](https://github.com/tharsis/ethermint) developers can use the Ethereum Virtual Machine (EVM) from the main Go Ethereum client as a Cosmos SDK module, which is compatible and combinable with existing modules.
 
@@ -235,19 +235,19 @@ For more on Ethermint, consult the [Ethermint documentation](https://github.com/
 
 </HighlightBox>
 
-All Ethereum tools (such as Truffle and Metamask) are compatible with Ethermint. Developers can even port their Solidity smart contracts to interact with the Interchain Ecosystem. Building a chain is not necessary to develop Interchain-compatible smart contracts, it can be all done with Ethermint. However, while Ethermint allows running vanilla Ethereum as a Cosmos application-specific blockchain, developers benefit from the CometBFT.
+All Ethereum tools (such as Truffle and Metamask) are compatible with Ethermint. Developers can even port their Solidity smart contracts to interact with the interchain ecosystem. Building a chain is not necessary to develop interchain-compatible smart contracts, it can be all done with Ethermint. However, while Ethermint allows running vanilla Ethereum as a Cosmos application-specific blockchain, developers benefit from the CometBFT.
 
 <HighlightBox type="synopsis">
 
 To summarize, this section has explored:
 
-* The range of applications, services, and projects utilizing the Interchain Ecosystem, and the wallets and block explorers servicing them.
+* The range of applications, services, and projects utilizing the interchain ecosystem, and the wallets and block explorers servicing them.
 * How the ready-built modular components provided by the Cosmos SDK make developing new projects fast, easy, and reliable.
 * How the addition of developer-authored modules and the growth of the ecosystem will support increasingly complex applications.
-* The Inter-Blockchain Communication Protocol (IBC), the basis for interoperability between chains on the Interchain, and the distinction between **zones** of heterogeneous blockchains and the **hubs** which provide interoperable communication between them.
+* The Inter-Blockchain Communication Protocol (IBC), the basis for interoperability between chains on the interchain, and the distinction between **zones** of heterogeneous blockchains and the **hubs** which provide interoperable communication between them.
 * Ignite CLI, a developer-friendly tool that shortcuts the complexities of creating application-specific blockchains.
 * The CosmWasm module, a multi-chain platform for developing and testing smart contracts.
-* The possibility of using alternative frameworks and SDKs within the Interchain Ecosystem, maintaining a breadth of options for developers to make use of.
+* The possibility of using alternative frameworks and SDKs within the interchain ecosystem, maintaining a breadth of options for developers to make use of.
 
 </HighlightBox>
 

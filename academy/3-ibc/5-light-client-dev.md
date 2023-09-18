@@ -30,7 +30,7 @@ In this section, you will learn:
 
 ## IBC ecosystem expansion
 
-IBC was envisioned in the original Cosmos whitepaper to be both a crucial component of the appchain thesis for the Interchain network and also a generic and universally applicable standard for blockchain interoperability.
+IBC was envisioned in the original Cosmos whitepaper to be both a crucial component of the appchain thesis for the interchain network and also a generic and universally applicable standard for blockchain interoperability.
 
 Whereas the protocol always envisioned the wider adoption of IBC, the ibc-go implementation initially was focused on its usage in Cosmos SDK chains connecting to similar chains. In order to expand IBC to other chain ecosystems, the [ibc-go v7 release](https://github.com/cosmos/ibc-go/releases/tag/v7.0.0) included a refactor to the `02-client` submodule, which should streamline the development of light clients to connect ibc-go to chains with another consensus than `07-tendermint`.
 
@@ -180,7 +180,7 @@ This section is meant as a short introduction to the topic of light client devel
 
 To summarize, this section has explored:
 
-* How the development of IBC light clients is crucial to the expansion of IBC into other ecosystems, to connect them to the Interchain.
+* How the development of IBC light clients is crucial to the expansion of IBC into other ecosystems, to connect them to the interchain.
 * Where to find the required documentation in the form of a _light client developer guide_ if you need to develop a light client.
 * What the most important interfaces are: client and consensus state and client messages.
 * How a client can get updates.

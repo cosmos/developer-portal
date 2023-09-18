@@ -8,7 +8,7 @@ intro:
     image: /graphics-sdk-course.png
     description: |
       Welcome to the Interchain Developer Academy!<br/><br/>
-      Over the next seven weeks, you will dive deep into the Interchain Ecosystem. Let's get started!
+      Over the next seven weeks, you will dive deep into the interchain ecosystem. Let's get started!
     action:
       label: Start learning!
       url: /ida-course/LPs/week-0/
@@ -23,7 +23,7 @@ overview:
         Results available: February 16th, 2024<br/><br/>
     - title: What you will learn
       description: |
-        Over the next seven weeks, you will dive deep into the Interchain Ecosystem, starting with a high-level introduction to familiarize yourself with the main concepts. Next, you will put theory into practice by learning how to initiate and build an application-specific blockchain using the Cosmos SDK; how to use Ignite CLI to scaffold modules for your blockchain; and how to connect a chain with other chains using the Inter-Blockchain Communication Protocol (IBC). You will learn how to build frontend and backend applications using CosmJS; operate nodes and validate on an Interchain blockchain; and run a relaying infrastructure between IBC-connected chains.
+        Over the next seven weeks, you will dive deep into the interchain ecosystem, starting with a high-level introduction to familiarize yourself with the main concepts. Next, you will put theory into practice by learning how to initiate and build an application-specific blockchain using the Cosmos SDK; how to use Ignite CLI to scaffold modules for your blockchain; and how to connect a chain with other chains using the Inter-Blockchain Communication Protocol (IBC). You will learn how to build frontend and backend applications using CosmJS; operate nodes and validate on an interchain blockchain; and run a relaying infrastructure between IBC-connected chains.
     - title: How to get the most out of the Academy
       description: |
           The Academy is self-paced and flexible, so you do not have to be online at particular times. You can follow the weekly plan or go through the learning material at your own pace. We recommend allocating about 10 to 15 hours a week to get through all the material.<br/><br/>
@@ -70,7 +70,7 @@ customModules:
         title: Week 0 - Getting Started
         href: /ida-course/LPs/week-0/
         description: |
-          This chapter is completely optional and a good introduction if you are new to blockchain technology or need a refresher on Golang and a short overview of dev terms you will encounter when working with Interchain Stack:
+          This chapter is completely optional and a good introduction if you are new to blockchain technology or need a refresher on Golang and a short overview of dev terms you will encounter when working with the Interchain Stack:
         links:
           - title: Blockchain basics
             path: /ida-course/0-blockchain-basics/1-blockchain.html
@@ -84,7 +84,7 @@ customModules:
         title: Week 1 - Introduction to the Interchain
         href: /ida-course/LPs/week-1/
         description: |
-          You will discover the Interchain Ecosystem and learn about the main concepts of the Cosmos SDK, from its CometBFT consensus to learning how keys, accounts, and transactions relate to each other. Dive into:
+          You will discover the interchain ecosystem and learn about the main concepts of the Cosmos SDK, from its Tendermint consensus to learning how keys, accounts, and transactions relate to each other. Dive into:
         links:
           - title: Blockchain technology and the Interchain
             path: /academy/1-what-is-cosmos/1-blockchain-and-cosmos.html
@@ -288,7 +288,7 @@ These tutorials guide you through actionable steps and walk-throughs to teach yo
 
 The code and docs for each tutorial are based on a specific version of the software. Be sure to follow the tutorial instructions to download and use the right version.
 
-Use the tutorials landing page as your entry point to articles on [Interchain blog](https://blog.cosmos.network/), videos on [Interchain YouTube](https://www.youtube.com/c/CosmosProject/videos), and ways to get help and support.
+Use the tutorials landing page as your entry point to articles on the [Interchain blog](https://blog.cosmos.network/), videos on [Interchain YouTube](https://www.youtube.com/c/CosmosProject/videos), and ways to get help and support.
 
 This repo manages and publishes the tutorials. For details, see [CONTRIBUTING](/sdk-tutorials/CONTRIBUTING.md) and [TECHNICAL-SETUP](/sdk-tutorials/TECHNICAL-SETUP.md).
 The tutorials are formatted using [markdownlint](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md).

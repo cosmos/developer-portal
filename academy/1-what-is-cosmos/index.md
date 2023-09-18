@@ -4,16 +4,16 @@ parent:
   description: From the vision to the ecosystem
   number: 1
 order: 0
-title: Chapter Overview - The Interchain, Its Ecosystem, and ATOM
+title: Chapter Overview - The interchain, its ecosystem, and ATOM
 tags:
 ---
 
 <div class="tm-overline tm-rf-1 tm-lh-title tm-medium tm-muted">From the vision to the ecosystem</div>
-<h1 class="mt-4 mb-6">What is the Interchain?</h1>
+<h1 class="mt-4 mb-6">What is the interchain?</h1>
 
-How does the Interchain network of interoperable blockchains fit into the overall development of blockchain technology?
+How does the interchain network of interoperable blockchains fit into the overall development of blockchain technology?
 
-Dive into the history of blockchain technology and discover the Interchain Ecosystem – it is a galaxy of wallets, services, tokens, and dApps. Then, get your first Cosmos Hub native token and find out how to stake your ATOM.
+Dive into the history of blockchain technology and discover the interchain ecosystem – it is a galaxy of wallets, services, tokens, and dApps with a multitude of potential implementations. Then, get your first Cosmos Hub native token and find out how to stake your ATOM.
 
 ![An atom surrounded by star constellations](/academy/1-what-is-cosmos/images/cosmos_dev_portal_module-02-lp.png)
 
@@ -23,8 +23,9 @@ Dive into the history of blockchain technology and discover the Interchain Ecosy
 
 In this chapter, you will:
 
-* Understand how the Interchain fits in the overall development of blockchain technology.
-* Discover the Interchain universe's ecosystem.
+* Understand how the interchain fits in the overall development of blockchain technology.
+* Discover the interchain universe's ecosystem.
+* Consider some potential interchain use cases.
 * Learn how to get your first ATOM and how to stake it.
 
 </HighlightBox>
@@ -33,7 +34,7 @@ In this chapter, you will:
 
 ## Next up
 
-Dive right into the Interchain with the first section _[Blockchain Technology and the Interchain](./1-blockchain-and-cosmos.md)_.
+Dive right into the interchain with the first section _[Blockchain Technology and the Interchain](./1-blockchain-and-cosmos.md)_.
 
 ## Developer Resources
 

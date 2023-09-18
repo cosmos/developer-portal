@@ -13,11 +13,11 @@ tags:
 
 Enjoy an introduction to the main components of the Cosmos SDK.
 
-From Tendermint to the modules, keepers, queries, and transactions in the Interchain, a whole universe is waiting to be discovered.
+From Tendermint to the modules, keepers, queries, and transactions in the interchain, a whole universe is waiting to be discovered.
 
 <HighlightBox type="info">
 
-As all blockchain ecosystems keep on growing and maturing, product stacks and terminologies evolve. Thus, please be aware that Cosmos is also known as **the Interchain**. The terms "Cosmos", "Interchain Ecosystem", and "Interchain" are synonymous with each other, and the various tools available to developers ("the stack") can be referred to collectively as the **Interchain Stack**.
+As all blockchain ecosystems keep on growing and maturing, product stacks and terminologies evolve. Thus, please be aware that Cosmos is now known as **the interchain**. The terms "Cosmos", "interchain ecosystem", and "interchain" are synonymous with each other, and the various tools available to developers ("the stack") can be referred to collectively as the **Interchain Stack**.
 
 </HighlightBox>
 
@@ -29,8 +29,8 @@ As all blockchain ecosystems keep on growing and maturing, product stacks and te
 
 In this chapter, you will:
 
-* Explore how the Interchain fits into the overall development of blockchain technology.
-* Begin to discover the Interchain Ecosystem.
+* Explore how the interchain fits into the overall development of blockchain technology.
+* Begin to discover the interchain ecosystem.
 * Get an introduction to Tendermint and consensus in the Cosmos SDK.
 * Develop an understanding of the different components of the Cosmos SDK.
 * Learn about relaying with the Inter-Blockchain Communication Protocol (IBC).
