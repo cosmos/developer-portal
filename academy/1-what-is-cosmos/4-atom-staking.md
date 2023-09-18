@@ -1,6 +1,6 @@
 ---
 title: "Getting ATOM and Staking It"
-order: 4
+order: 5
 description: Stake your first ATOM
 tags:
   - concepts

@@ -253,6 +253,6 @@ To summarize, this section has explored:
 
 <!--## Next up
 
-Are you ready to get some ATOM? Find out all about the native token of the Cosmos Hub and how to stake ATOM in the [next section](./3-atom-staking.md).-->
+What possibilities are there for putting the interchain to work? Examine some interesting use cases in the [next section](./3-interchain-use-cases.md).-->
 
 <!--In the [next chapter](../2-cosmos-concepts/index.md), you will continue to explore the Cosmos SDK and learn about the underlying blockchain application architecture-->
