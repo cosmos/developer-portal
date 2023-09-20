@@ -420,7 +420,11 @@ func NewGenesisState() *GenesisState {
 
 // Validate performs basic genesis state validation returning an error upon any
 func (gs *GenesisState) Validate() error {
-    return nil
+	if err := gs.Params.Validate(); err != nil {
+		return err
+	}
+
+return nil
 }
 ```
 
@@ -901,7 +905,7 @@ And that's about it. `depinject` and the rest take care of initialization and ru
 
 ## Run your checkers chain
 
-Just like you did in the [previous section](./1-preparation.md), you compile and re-initialize and start. You need to re-initialize because your genesis has changed.
+Just like you did in the [previous section](./1-preparation.md), you compile the minimal chain, re-initialize and start it. You need to re-initialize because your genesis has changed.
 
 ```sh
 $ make install
