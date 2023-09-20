@@ -31,52 +31,41 @@ If you have any problems, send us an [email](mailto:academy@interchain.io).
 
 ## Interchain Developer Academy channels on Discord
 
-Within the Academy Discord, you will find the following topic-specific channels:
+Within the Academy Discord, you will find the following topic-specific message channels:
 
-![IMAGE DESCRIPTION](/ida-course/images/discord-ida-c3-channels.jpg)
+![Three Academy message channels](/ida-course/images/discord-ida-c5-channels.jpg)
 
 * We will share regular program updates via the **c5-announcements-and-organization** channel. Make sure to check it regularly.
 * The **c5-lounge** channel is dedicated to off-topic discussions. Introduce yourself, and feel free to relax and chat about your favorite TV shows, films, and books, share pet photos, and anything else that comes to mind.
-* The **IDA-Voice** channel is a live chat resource for conducting real-time study groups or casual chat. It is open 24 hours per day and allows easy screen sharing to facilitate your discussions. Please use it inclusively, and give priority to study activities before casual use.
 * You should ask all content-related questions within the **c5-support forum** channel. There you will find tags corresponding to the main topics covered in the Academy content. These will allow you and the support team to keep track of your queries.
 
-## How to ask a question
+In addition to the three message channels, the **IDA-Voice** channel is a live audio resource for conducting real-time study groups or casual chat. It is open 24 hours per day and allows easy screen sharing to facilitate your discussions. Please use it inclusively, and give priority to study activities before casual use.
 
-You can post a message with your question directly into any channel.
+## Support Gem
 
-![IMAGE DESCRIPTION](/ida-course/images/discord-question.png)
+The **c5-support-forum** now features combination support from B9Lab's expert instructors and their **Support Gem** AI chatbot.
 
-When posting a question in the **c5-support-forum**, you need to add a title and select the tag of the topic your question is related to.
+Support Gem is a modern AI system, but it does not function with total independence. It is designed to facilitate the Academy's support service by generating coherent responses to queries; these responses are then reviewed (and if necessary are revised) by one of our expert instructors to ensure a high standard of quality.
 
-![IMAGE DESCRIPTION](/ida-course/images/discord-howto-supportforum.jpg)
+Support Gem is capable of responding to a wide variety of queries regarding the interchain and blockchain technology more generally. It can provide assistance with course curriculum and technical support, but it cannot respond regarding program-specific queries (for example, program scheduling or deadlines).
 
-After sending your message, make sure you mark it as a question by adding the question emoticon (?) to it **_as a react_**. This will create a new support ticket.
+However, please feel free to ask any question in the **c5-support-forum** you need to. The human support team will be there to respond to any queries that Support Gem cannot assist with.
 
-![IMAGE DESCRIPTION](/ida-course/images/discord-question-add.png)
+We hope you will find Support Gem's involvement interesting and informative!
 
-Once a ticket has been created, tutors and expert instructors are informed about the new question and can reply directly to your original post. You will also receive a DM from _Tricia_, our support bot, which confirms that a ticket has been opened.
+## How to post a query or request support
 
-![IMAGE DESCRIPTION](/ida-course/images/discord-tricia-pm.png)
+When posting a question in the **c5-support-forum**, you need to add a title and select the tag of the topic your question is related to:
 
-After your question has been answered, the ticket can be closed by you, the tutor, or the assigned expert instructor. On the original message, add the exclamation mark emoji (!) **_as a react_** to close the ticket.
+![Support-forum query example](/ida-course/images/discord-howto-supportforum2023.jpg)
 
-![IMAGE DESCRIPTION](/ida-course/images/discord-close.png)
+This creates a new thread for your query, so all responses and any continuation of the discussion can be easily located and identified.
 
-When the ticket is closed, you will receive a direct message from _Tricia_, confirming the ticket was closed.
+After you post your message, Support Gem will analyze the question and potentially request additional details. It will then compose a response, which is reviewed by a member of the support team and potentially revised for improved accuracy prior to publication. Support Gem's response will note which member of the support team provided human oversight.
 
-![IMAGE DESCRIPTION](/ida-course/images/discord-close-notification.png)
+Before and after a query has been answered, you and other participants are free to continue to post in-thread to discuss the subject. However, Support Gem will only respond to the original post of any given thread. Members of the support team may also respond directly in the event that additional information is required.
 
-If you still have a follow-up question after the ticket was closed, you can post a new message in the channel and open a new ticket using the same **_react_** process.
-
-## Replies by tutors and expert instructors
-
-Your tutors and expert instructors will be notified about your request and will get back to you to help answer your question or solve an issue.
-
-## Auto replies
-
-When you mark a message as a question, _Tricia_ might reply with one or more responses or 'Auto Replies'. When she asks you 'Does this answer your question?', please respond with _yes_ or _no_ to indicate whether you need more support.
-
-![Auto reply screenshot](/ida-course/images/discord-auto.png)
+Alternatively, you can post a new message in the channel that will initiate the same process from the beginning.
 
 ## Response time
 
