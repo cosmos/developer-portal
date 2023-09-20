@@ -33,7 +33,7 @@ If you have any problems, send us an [email](mailto:academy@interchain.io).
 
 Within the Academy Discord, you will find the following topic-specific message channels:
 
-![Three Academy message channels](/ida-course/images/discord-ida-c5-channels.jpg)
+![Three Academy message channels](/ida-course/images/discord-ida-c5-channels.png)
 
 * We will share regular program updates via the **c5-announcements-and-organization** channel. Make sure to check it regularly.
 * The **c5-lounge** channel is dedicated to off-topic discussions. Introduce yourself, and feel free to relax and chat about your favorite TV shows, films, and books, share pet photos, and anything else that comes to mind.
@@ -57,7 +57,7 @@ We hope you will find Support Gem's involvement interesting and informative!
 
 When posting a question in the **c5-support-forum**, you need to add a title and select the tag of the topic your question is related to:
 
-![Support-forum query example](/ida-course/images/discord-howto-supportforum2023.jpg)
+![Support-forum query example](/ida-course/images/discord-howto-supportforum2023.png)
 
 This creates a new thread for your query, so all responses and any continuation of the discussion can be easily located and identified.
 
