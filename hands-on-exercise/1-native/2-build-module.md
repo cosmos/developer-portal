@@ -383,7 +383,7 @@ func RegisterInterfaces(registry types.InterfaceRegistry) {
 
 You do not have message and query definitions, so you can keep it simple.
 
-<CodeGroupItem>
+</CodeGroupItem>
 <CodeGroupItem title="params.go">
 
 ```go [params.go]
@@ -405,7 +405,7 @@ func (p Params) Validate() error {
 
 There is nothing to define except the default functions.
 
-<CodeGroupItem>
+</CodeGroupItem>
 <CodeGroupItem title="genesis.go">
 
 ```go [genesis.go]
@@ -426,7 +426,7 @@ func (gs *GenesisState) Validate() error {
 
 You have not yet defined any storage, other than `Params`, so it is simple.
 
-<CodeGroupItem>
+</CodeGroupItem>
 <CodeGroupItem title="keys.go">
 
 ```go [keys.go]
@@ -448,8 +448,10 @@ func (p Params) Validate() error {
 
 For now, all you need is the module's name and the storage key at which you can find the params.
 
-<CodeGroupItem>
+</CodeGroupItem>
 </CodeGroup>
+
+---
 
 The files have a lot of missing dependencies, so go ahead and once more, run:
 
@@ -567,6 +569,8 @@ func (k *Keeper) ExportGenesis(ctx context.Context) (*checkers.GenesisState, err
 
 </CodeGroupItem>
 </CodeGroup>
+
+---
 
 At the moment, you have not defined any message or query types so you do not bother with defining the corresponding servers.
 
@@ -797,6 +801,8 @@ At the moment there are no commands to define, so it stays simple.
 </CodeGroupItem>
 </CodeGroup>
 
+---
+
 Once more, you need to run:
 
 ```sh
@@ -852,6 +858,8 @@ Because its genesis needs to be called too.
 </CodeGroupItem>
 </CodeGroup>
 
+---
+
 What remain is to update `app.go`, where you place your checkers keeper at the right locations:
 
 ```diff-go
@@ -904,14 +912,14 @@ $ minid start
 And there you have it, your minimal chain with a checkers module is running. After stopping it with <kbd>CTRL-C</kbd>, confirm that the checkers module was correctly integrated by calling up:
 
 <CodeGroup>
-<CodeGroupItem title="Straight>
+<CodeGroupItem title="Straight">
 
 ```sh
 $ minid export --height 1 --modules-to-export checkers
 ```
 
 </CodeGroupItem>
-<CodeGroupItem title="Clean>
+<CodeGroupItem title="Clean">
 
 ```sh
 $ minid export --height 1 --modules-to-export checkers | tail -n 1 | jq
