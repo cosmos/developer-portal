@@ -28,7 +28,7 @@ The main concepts are covered in more detail in the [next chapter](/academy/2-co
 
 There are two steps to successfully get ATOM:
 
-1. Install a wallet application and configure it safely. You will use [Keplr](https://keplr.app/).
+1. Install a wallet application and configure it safely. This example procedure will use [Keplr](https://keplr.app/).
 2. Buy some ATOM on an exchange and transfer them to your wallet.
 
 If you prefer to do the same but with test ATOMs, you can use an existing Cosmos Hub testnet. Head to this [later section](/tutorials/7-cosmjs/2-first-steps.md#get-a-balance) for guidance. Then come back here and adjust accordingly for the relevant testnet.
@@ -75,7 +75,7 @@ Read the warning, then click the appropriate button to proceed.
 
 ![Creating a new recovery phrase with Keplr](/academy/1-what-is-cosmos/images/keplr_new_step_05.png)
 
-A new page offers you a mnemonic (a secret list of words either 12 or 24 words in length). Because **you are in charge**, it is important to understand the following points:
+A new page offers you a mnemonic (a secret sequence of words either 12 or 24 words in length). Because **you are in charge**, it is important to understand the following points:
 
 * Whoever knows this **mnemonic seed** has access to **all** the assets in the wallet as easily as you do. This means that:
     * Nobody else should be looking at your screen right now. If that is not the case, click _Back_.
@@ -87,7 +87,7 @@ A new page offers you a mnemonic (a secret list of words either 12 or 24 words i
 
 When you have recorded the phrase securely, click "Next" to continue.
 
-On the next screen, you are prompted to provide two words from your mnemonic seed phrase.
+On the next screen, you are first prompted to provide two words from your mnemonic seed phrase.
 
 ![Keplr mnemonic verify your recovery page, part 1](/academy/1-what-is-cosmos/images/keplr_new_step_07.png)
 
@@ -101,7 +101,7 @@ You must then give your wallet a name, and assign it a strong password.
     * Keplr will ask you for it every time you open the wallet and for important actions.
 * If your computer or the encrypted mnemonic seed file is stolen, your wallet assets are only as protected as your password is strong.
 
-Then click "Next" to continue.
+Click "Next" to continue.
 
 On the next screen, select the chains you want to link to, then click "Save" to continue.
 
@@ -111,11 +111,11 @@ Your account is now created. Click "Keplr dashboard" to open the [Keplr dashboar
 
 ![Keplr all set](/academy/1-what-is-cosmos/images/keplr_new_step_10.png)
 
-It shows your first public address in the form `cosmos1...`, displays that you hold zero ATOM, and you can also see how many assets from other supported networks you have. Be aware that you may have a number of messages in your Inbox which request approval to complete registration.
+This is your Keplr dashboard. It shows your first public address in the form `cosmos1...`, displays that you hold zero ATOM, and you can also see how many assets from other supported networks you have. Be aware that initially you may have a number of messages in your Inbox which request approval to complete registration.
 
 ![Keplr dashboard](/academy/1-what-is-cosmos/images/keplr_new_step_11.png)
 
-At the top of the dashboard you can click to copy the address of your wallet. This will be useful when you move on to purchase some ATOM from your preferred exchange (in this example we will use the Kraken exchange).
+At the top of the dashboard you can click to copy the address of your wallet. This will be useful when you move on to purchase some ATOM from your preferred exchange (the following example will use the Kraken exchange).
 
 ![Keplr wallet address](/academy/1-what-is-cosmos/images/keplr_new_step_12.png)
 
