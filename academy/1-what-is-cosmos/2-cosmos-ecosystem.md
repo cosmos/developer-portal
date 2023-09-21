@@ -41,9 +41,11 @@ In this section, you will get an introduction to:
 
 The Interchain is an ever-expanding ecosystem of tokens, wallets, and tools, as well as interconnected applications and services, all built for a decentralized future.
 
-In 2022, almost **$100 billion in digital assets** are under management and secured by the Interchain. Digital assets on the Interchain include fungible and non-fungible tokens (NFTs). You can issue in-application tokens to conduct settlements, bespoke issuance, handle inflation/deflation, and much more.
+In 2023, [over seventy tokens](https://cosmos.network/ecosystem/tokens) representing almost **$42.5 billion USD in digital assets** are under management and secured by the interchain. Of these, 46 are based on interoperable IBC-enabled chains, collectively valued at $6.2 billion USD. There are [nearly 250 different apps and services](https://cosmos.network/ecosystem/apps) with statuses ranging from proofs of concept to testnets and mainnets, in fields as varied as financial services, marketplaces, infrastructural and privacy projects, enterprises, smart contracts, social networks, games, and others.
 
-Among the fungible tokens secured by the Interchain are the [Binance Coin](https://www.binance.com/en/bnb) and [ATOM](https://cosmos.network/learn/faq/what-is-the-atom). Remember that because the tokens are defined on application-specific blockchains their developers are free from the constraints of a hypothetical general-purpose blockchain.
+Digital assets on the Interchain include fungible and non-fungible tokens (NFTs). You can issue in-application tokens to conduct settlements, bespoke issuance, handle inflation/deflation, and much more. Among the fungible tokens secured by the Interchain are the [Binance Coin](https://www.binance.com/en/bnb) and [ATOM](https://cosmos.network/learn/faq/what-is-the-atom).
+
+Remember that because tokens are defined on application-specific blockchains, their developers are free from the constraints of a hypothetical general-purpose blockchain.
 
 <HighlightBox type="tip">
 
