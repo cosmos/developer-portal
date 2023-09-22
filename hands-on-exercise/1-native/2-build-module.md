@@ -9,7 +9,7 @@ tags:
 
 # Build your module
 
-You will integrate your module with the minimal chain that you [cloned previously](./1-preparation.md). To facilitate integration, you will direct Go package manager to look for this dependency on a local disk. The simplest way is to put the module folder into a folder next to the minimal chain's folder:
+You will integrate your module with the minimal chain that you [cloned previously](./1-preparation.md). To facilitate integration and speed up feedback, you will direct the Go package manager to look for this dependency on a local disk. The simplest way is to put the module folder into a folder next to the minimal chain's folder:
 
 ```sh
 $ mkdir checkers-minimal
@@ -270,7 +270,7 @@ Note how it uses the `ghcr.io/cosmos/proto-builder:0.13.2` Docker image here to 
 
 ### First Protobuf compilation
 
-Before you run the compilation, because you have not yet defined any Protobuf files for messages, you can comment out the `protocgen.sh` line:
+Before you run the compilation, because you have not yet defined any Protobuf files for messages, you can comment out this `protocgen.sh` line:
 
 ```diff-sh
 -   cp -r github.com/alice/checkers/* ./
@@ -901,7 +901,7 @@ What remain is to update `app.go`, where you place your checkers keeper at the r
     ...
 ```
 
-And that's about it. `depinject` and the rest take care of initialization and runtime.
+And that's about it. `depinject` and the rest take care of initialization and runtime. The _side-effects_ comments refer to the `init()` function of Go packages.
 
 ## Run your checkers chain
 
@@ -951,4 +951,4 @@ As expected.
 
 ## Up next
 
-Now that you have integrated your checkers module, it is time to make it interesting.
+Now that you have integrated your empty checkers module, it is time to make it interesting.

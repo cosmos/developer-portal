@@ -20,7 +20,7 @@ Version 0.50 of the Cosmos SDK was created, in part, with a view to facilitate m
 
 ## Install
 
-Before you can start building, you need to prepare your computer. The simplest way is to rely on [Docker](https://docs.docker.com/engine/install/) as the Cosmos team has prepared a [Docker image for developers](https://github.com/cosmos/cosmos-sdk/pkgs/container/proto-builder/119928846?tag=0.14.0) built via [this Dockerfile](https://github.com/cosmos/cosmos-sdk/blob/main/contrib/devtools/Dockerfile).
+Before you can start building, you need to prepare your computer. The simplest way is to rely on [Docker](https://docs.docker.com/engine/install/) as the Cosmos team has prepared a [Docker image for developers](https://github.com/cosmos/cosmos-sdk/pkgs/container/proto-builder/119928846?tag=0.14.0) built via [this Dockerfile](https://github.com/cosmos/cosmos-sdk/blob/main/contrib/devtools/Dockerfile). If you need a refresher on Docker, head [here](/tutorials/5-docker-intro/index.md).
 
 You will also need to have [`make`](https://www.gnu.org/software/make/) on your computer.
 
@@ -87,4 +87,4 @@ The updated files will come in handy when you want to copy-paste them.
 
 ## Up next
 
-With the minimal chain and a copy of the minimal module, it is time to create your own module.
+With the minimal chain and a copy of the minimal module, it is time to build your own module.
