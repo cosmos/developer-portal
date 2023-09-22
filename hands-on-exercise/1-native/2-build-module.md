@@ -289,12 +289,12 @@ You need a couple more Protobuf files.
 
 ### Minimum Protobuf objects
 
-You are not defining your messages and queries just yet. However, you already define the fact that your module:
+You are not defining your messages and queries just yet. However, you already define the facts that your module:
 
 * Has a genesis, which has a type.
 * Uses params, which also have a type.
 
-Go ahead an define them in a `types.proto`:
+Go ahead and define them in a `types.proto`:
 
 ```protobuf [proto/alice/checkers/v1/types.proto]
 syntax = "proto3";
@@ -348,7 +348,7 @@ $ go mod tidy
 
 The script has created two new files `api/v1/types.pulsar.go` and `types.pb.go`.
 
-You module is not viable yet. You need to define it and at least have it conform to the interface expected of an app, in this case `chain-minimal`.
+You module is not viable yet. You need to define it and at least have it conform to the interface expected by an app, in this case `chain-minimal`.
 
 ## Module interface
 
@@ -824,7 +824,7 @@ Direct it to the right dependency, so it does not look for it on `github.com`:
 ```diff [go.mod]
 ...
     replace (
-+       github.com/alice/checkers => ../checkers-minimal/
++      github.com/alice/checkers => ../checkers-minimal/
         // Fix upstream GHSA-h395-qcrw-5vmq vulnerability.
 ...
 ```
@@ -839,9 +839,9 @@ Now, you can define it in the `app.yaml` file:
     - name: tx
         config:
         "@type": cosmos.tx.config.v1.Config
-+   - name: checkers
-+       config:
-+       "@type": alice.checkers.module.v1.Module
++  - name: checkers
++      config:
++      "@type": alice.checkers.module.v1.Module
     ...
 ```
 
@@ -852,8 +852,8 @@ Where you recall the Protobuf `alice.checkers.module.v1.Module` defined earlier.
 
 ```diff-yaml
     ...
--   init_genesis: [auth, bank, distribution, staking, genutil]
-+   init_genesis: [auth, bank, distribution, staking, genutil, checkers]
+-  init_genesis: [auth, bank, distribution, staking, genutil]
++  init_genesis: [auth, bank, distribution, staking, genutil, checkers]
     ...
 ```
 
@@ -869,11 +869,11 @@ What remain is to update `app.go`, where you place your checkers keeper at the r
 ```diff-go
     import(
         ...
-+       checkerskeeper "github.com/alice/checkers/keeper"
++      checkerskeeper "github.com/alice/checkers/keeper"
         "github.com/cosmos/cosmos-sdk/baseapp"
         ...
         _ "cosmossdk.io/api/cosmos/tx/config/v1"          // import for side-effects
-+       _ "github.com/alice/checkers/module"              // import for side-effects
++      _ "github.com/alice/checkers/module"              // import for side-effects
         _ "github.com/cosmos/cosmos-sdk/x/auth"           // import for side-effects
         ...
     )
@@ -881,7 +881,7 @@ What remain is to update `app.go`, where you place your checkers keeper at the r
     type MiniApp struct {
         ...
         ConsensusParamsKeeper consensuskeeper.Keeper
-+       CheckersKeeper        checkerskeeper.Keeper
++      CheckersKeeper        checkerskeeper.Keeper
         ...
     }
     ...
@@ -892,7 +892,7 @@ What remain is to update `app.go`, where you place your checkers keeper at the r
         if err := depinject.Inject(
             ...
             &app.ConsensusParamsKeeper,
-+           &app.CheckersKeeper,
++          &app.CheckersKeeper,
         ); err != nil {
             return nil, err
         }
@@ -934,7 +934,7 @@ $ minid export --height 1 --modules-to-export checkers | tail -n 1 | jq
 
 In there, you can find:
 
-```diff-json
+```json
 {
     ...
     "app_state: {

@@ -56,18 +56,18 @@ As ever, taking inspiration from `minimal-module-example`, this can be described
         Params params = 1 [ (gogoproto.nullable) = false, (amino.dont_omitempty) = true ];
     }
 
-+   message StoredGame {
-+       option (amino.name) = "alice/checkers/StoredGame"; 
++  message StoredGame {
++      option (amino.name) = "alice/checkers/StoredGame"; 
 +
-+       string index = 1 ;
-+       string board = 2;
-+       string turn = 3;
-+       string black = 4 [(cosmos_proto.scalar) = "cosmos.AddressString"];
-+       string red = 5 [(cosmos_proto.scalar) = "cosmos.AddressString"];
-+   }
++      string index = 1 ;
++      string board = 2;
++      string turn = 3;
++      string black = 4 [(cosmos_proto.scalar) = "cosmos.AddressString"];
++      string red = 5 [(cosmos_proto.scalar) = "cosmos.AddressString"];
++  }
 ```
 
-Now you can compile it:
+Compile it:
 
 ```sh
 $ make proto-gen
@@ -172,11 +172,11 @@ With these additions, you can validate the games in `genesis.go`:
             return err
         }
 
-+       for _, game := range gs.StoredGameList {
-+           if err := game.Validate(); err != nil {
-+               return err
-+           }
-+       }
++      for _, game := range gs.StoredGameList {
++          if err := game.Validate(); err != nil {
++              return err
++          }
++      }
 
         return nil
     }
@@ -191,7 +191,7 @@ In order to declare the stored games as a map, you first need to define a map ke
 ```diff-go [keys.go]
     var (
         ParamsKey         = collections.NewPrefix(0)
-+       StoredGameListKey = collections.NewPrefix(1)
++      StoredGameListKey = collections.NewPrefix(1)
     )
 ```
 
@@ -202,9 +202,9 @@ And then initialize the storage access in `keeper/keeper.go`, taking inspiration
     k := Keeper{
         ...
         Params:       collections.NewItem(sb, checkers.ParamsKey, "params", codec.CollValue[checkers.Params](cdc)),
-+       StoredGameList: collections.NewMap(sb,
-+           checkers.StoredGameListKey, "storedGameList", collections.StringKey,
-+           codec.CollValue[checkers.StoredGame](cdc)),
++      StoredGameList: collections.NewMap(sb,
++          checkers.StoredGameListKey, "storedGameList", collections.StringKey,
++          codec.CollValue[checkers.StoredGame](cdc)),
     }
     ...
 ```
@@ -217,11 +217,11 @@ And do not forget the genesis manipulation to and from storage in `keeper/genesi
             return err
         }
 
-+       for _, storedGame := range data.StoredGameList {
-+           if err := k.StoredGameList.Set(ctx, storedGame.Index, storedGame); err != nil {
-+               return err
-+           }
-+       }
++      for _, storedGame := range data.StoredGameList {
++          if err := k.StoredGameList.Set(ctx, storedGame.Index, storedGame); err != nil {
++              return err
++          }
++      }
 +
         return nil
     }
@@ -233,22 +233,22 @@ And do not forget the genesis manipulation to and from storage in `keeper/genesi
             return nil, err
         }
 
-+       var storedGames []checkers.StoredGame
-+       if err := k.StoredGameList.Walk(ctx, nil, func(index string, storedGame checkers.StoredGame) (bool, error) {
-+           storedGames = append(storedGames, storedGame)
-+           return false, nil
-+       }); err != nil {
-+           return nil, err
-+       }
++      var storedGames []checkers.StoredGame
++      if err := k.StoredGameList.Walk(ctx, nil, func(index string, storedGame checkers.StoredGame) (bool, error) {
++          storedGames = append(storedGames, storedGame)
++          return false, nil
++      }); err != nil {
++          return nil, err
++      }
 +
         return &checkers.GenesisState{
             Params:         params,
-+           StoredGameList: storedGames,
++          StoredGameList: storedGames,
         }, nil
     }
 ```
 
-### Test again
+## Test again
 
 Just like you did in the [previous section](./1-preparation.md), you compile the minimal chain, re-initialize and start it. You need to re-initialize because your genesis has changed.
 
