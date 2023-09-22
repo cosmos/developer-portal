@@ -1,21 +1,19 @@
 ---
-title: "Add your objects"
+title: "Add your first object"
 order: 4
-description: Where you create you make the checkers module interesting
+description: Where you make the checkers module interesting
 tags:
   - guided-coding
   - cosmos-sdk
 ---
 
-# Add your objects
+# Add your first object
 
 After the [previous section](./2-build-module.md), you have a somewhat empty checkers module integrated in a minimal app. It is now time to:
 
 * Add a game storage type.
-* Add a message type to create a game.
-* Add a query type to fetch such games.
-* Add all the necessary keeper and message server functions.
-* Add CLI commands.
+* Compile Protobuf.
+* Add the necessary keeper functions.
 
 ## The game rules
 
@@ -30,13 +28,13 @@ $ curl https://raw.githubusercontent.com/batkinson/checkers-go/a09daeb1548dd4cc0
 
 ## A stored game object
 
-Begin with the minimum game information needed to be stored.
+With the rules in place, begin with the minimum game information needed to be stored.
 
 ### The game object type
 
 You need:
 
-* **Index.** A string, so it can be identified and retrieved.
+* **Index.** A string, so it can be identified and retrieved from storage.
 * **Black player.** A string, the serialized address.
 * **Red player.** A string, the serialized address.
 * **Board proper.** A string, the board as it is serialized by the _rules_ file.
@@ -73,9 +71,11 @@ Compile it:
 $ make proto-gen
 ```
 
+Now that you have the individual stored game structure, you can define how it is kept in storage.
+
 ### The storage structure
 
-Now that you have the individual stored game structure, you can define how it is kept in storage. The way that makes sense is to keep a map of games and rely on the SDK's basic structures to optimize saving and retrieving.
+The way that makes sense is to keep a map of games and rely on the SDK's basic structures to optimize saving and retrieving.
 
 Update your `GenesisState` in `types.proto`:
 
@@ -209,6 +209,12 @@ And then initialize the storage access in `keeper/keeper.go`, taking inspiration
     ...
 ```
 
+What this initialization does is explained [here](https://docs.cosmos.network/v0.50/packages/collections):
+
+> Collections is a library meant to simplify the experience with respect to module state handling.
+
+The `codec.CollValue` construct is covered [in the documentation](https://docs.cosmos.network/v0.50/packages/collections#key-and-value-codecs).
+
 And do not forget the genesis manipulation to and from storage in `keeper/genesis.go`, again taking inspiration from `minimal-module-example`:
 
 ```diff-go [keeper/genesis.go]
@@ -250,7 +256,7 @@ And do not forget the genesis manipulation to and from storage in `keeper/genesi
 
 ## Test again
 
-Just like you did in the [previous section](./1-preparation.md), you compile the minimal chain, re-initialize and start it. You need to re-initialize because your genesis has changed.
+Just like you did in the [previous section](./1-preparation.md), you compile the minimal chain, re-initialize and start it. You need to re-initialize because your genesis has changed once again.
 
 ```sh
 $ make install
@@ -293,131 +299,6 @@ In there, you can find:
 }
 ```
 
-## Add a game creation message
+## Conclusion
 
-With the storage ready to receive games, it is time to add a message to let players create games:
-
-* A game starts with an initial board and turn, as per the rules. The game creator does not choose how the pieces are placed.
-* A game needs an unused index to be created. For simplicity's sake, the index will be passed along with the message.
-
-You are going to:
-
-* Create the message type.
-* Compile Protobuf
-* Create a message server next to the keeper.
-* Handle the message.
-
-### The game creation object type and Protobuf service
-
-You define them together in a new file `proto/alice/checkers/v1/tx.proto`:
-
-```protobuf [proto/alice/checkers/v1/tx.proto]
-syntax = "proto3";
-package alice.checkers.v1;
-
-option go_package = "github.com/alice/checkers";
-
-import "cosmos/msg/v1/msg.proto";
-import "gogoproto/gogo.proto";
-import "amino/amino.proto";
-import "alice/checkers/v1/types.proto";
-import "cosmos_proto/cosmos.proto";
-
-// Msg defines the module Msg service.
-service Msg {
-  option (cosmos.msg.v1.service) = true;
-
-  // CreateGame create a game.
-  rpc CreateGame(MsgCreateGame)
-      returns (MsgCreateGameResponse);
-}
-
-// MsgCreateGame defines the Msg/CreateGame request type.
-message MsgCreateGame {
-  option (cosmos.msg.v1.signer) = "sender";
-  option (amino.name) = "alice/checkers/MsgCreateGame";
-
-  // sender is the message sender.
-  string sender = 1;
-  string index = 2 ;
-  string black = 3 [(cosmos_proto.scalar) = "cosmos.AddressString"];
-  string red = 4 [(cosmos_proto.scalar) = "cosmos.AddressString"];
-}
-
-// MsgCreateGameResponse defines the Msg/CreateGame response type.
-message MsgCreateGameResponse {}
-```
-
-Note how `MsgCreateGame` does not mention `Board` or `Turn` as this should not be under the control of the sender.
-
-### Compile Protobuf
-
-Since you have defined a new message type and an associated `service`, you should recompile the lot:
-
-```sh
-$ make proto-gen
-```
-
-In the new `tx.pg.go` you can find `type MsgCreateGame struct` and `type MsgServer interface`. Now you can use them closer to the keeper.
-
-### New message server
-
-Create a new file `keeper/msg_server.go` and take inspiration from `minimal-module-example`. It needs to:
-
-* Check that `sender` is valid.
-* Check that the `index` is not already taken.
-* Create a new board with the game rules.
-* Store the game, if valid, into storage.
-
-```go [keeper/msg_server.go]
-package keeper
-
-import (
-    "context"
-    "errors"
-    "fmt"
-
-    "cosmossdk.io/collections"
-    "github.com/alice/checkers"
-    "github.com/alice/checkers/rules"
-)
-
-type msgServer struct {
-    k Keeper
-}
-
-var _ checkers.MsgServer = msgServer{}
-
-// NewMsgServerImpl returns an implementation of the module MsgServer interface.
-func NewMsgServerImpl(keeper Keeper) checkers.MsgServer {
-    return &msgServer{k: keeper}
-}
-
-// CreateGame defines the handler for the MsgCreateGame message.
-func (ms msgServer) CreateGame(ctx context.Context, msg *checkers.MsgCreateGame) (*checkers.MsgCreateGameResponse, error) {
-    if _, err := ms.k.addressCodec.StringToBytes(msg.Sender); err != nil {
-        return nil, fmt.Errorf("invalid sender address: %w", err)
-    }
-
-    if _, err := ms.k.StoredGameList.Get(ctx, msg.Index); err == nil || errors.Is(err, collections.ErrEncoding) {
-        return nil, fmt.Errorf("game already exists at index: %s", msg.Index)
-    }
-
-    newBoard := rules.New()
-    storedGame := checkers.StoredGame{
-        Index: msg.Index,
-        Board: newBoard.String(),
-        Turn:  rules.PieceStrings[newBoard.Turn],
-        Black: msg.Black,
-        Red:   msg.Red,
-    }
-    if err := storedGame.Validate(); err != nil {
-        return nil, err
-    }
-    if err := ms.k.StoredGameList.Set(ctx, msg.Index, storedGame); err != nil {
-        return nil, err
-    }
-
-    return &checkers.MsgCreateGameResponse{}, nil
-}
-```
+You have an on-chain game storage area, but it is empty. In the next section, you start populating it with the use of a transaction message.
