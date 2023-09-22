@@ -263,6 +263,26 @@ module.exports = {
                   path: "/tutorials/3-run-node/",
                 },
                 {
+                  title: "SDK v0.50 Native Preparation",
+                  path: "/hands-on-exercise/1-native/1-preparation.html",
+                },
+                {
+                  title: "Build Your Module",
+                  path: "/hands-on-exercise/1-native/2-build-module.html",
+                },
+                {
+                  title: "Add Your First Object",
+                  path: "/hands-on-exercise/1-native/3-add-game.html",
+                },
+                {
+                  title: "Add Your First Message",
+                  path: "/hands-on-exercise/1-native/4-add-message.html",
+                },
+                {
+                  title: "Add Your First Query",
+                  path: "/hands-on-exercise/1-native/5-add-query.html",
+                },
+                {
                   title: "Ignite CLI",
                   path: "/hands-on-exercise/1-ignite-cli/1-ignitecli.html",
                 },

@@ -122,12 +122,22 @@ customModules:
         title: Week 2 - First Steps
         href: /ida-course/LPs/week-2/
         description: |
-          You will discover how to run a node and learn how to build your own chain by following the example implementation of a checkers blockchain:
+          You will discover how to run a node and learn how to build your own chain by following the example implementation of a checkers blockchain, first natively and then with Ignite CLI:
         links:
           - title: Set up your work environment
             path: /tutorials/2-setup/
           - title: Run a node, API, and CLI
             path: /tutorials/3-run-node/
+          - title: Preparation
+            path: /hands-on-exercise/1-native/1-preparation.html
+          - title: Build your module
+            path: /hands-on-exercise/1-native/2-build-module.html
+          - title: Add your first object
+            path: /hands-on-exercise/1-native/3-add-game.html
+          - title: Add your first message
+            path: /hands-on-exercise/1-native/4-add-message.html
+          - title: Add your first query
+            path: /hands-on-exercise/1-native/5-add-query.html
           - title: Introduction to Ignite CLI
             path: /hands-on-exercise/1-ignite-cli/1-ignitecli.html
           - title: Exercise - Make a Checkers Blockchain

@@ -147,7 +147,12 @@ module.exports = {
           order: 3,
           children: [
             {
-              title: "Run Your Cosmos Chain",
+              title: "SDK v0.50 Native",
+              path: "/hands-on-exercise/1-native/",
+              directory: true,
+            },
+            {
+              title: "Rebuild Your Cosmos Chain With Ignite",
               path: "/hands-on-exercise/1-ignite-cli/",
               directory: true,
             },
