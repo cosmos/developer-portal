@@ -34,7 +34,7 @@ This will start a local server on [localhost:8080](http://localhost:8080/).
 
 Your build may fail with the following:
 
-```
+```txt
 Error: error:0308010C:digital envelope routines::unsupported
     at new Hash (node:internal/crypto/hash:71:19)
 ```
@@ -43,6 +43,18 @@ If so, try:
 
 ```sh
 NODE_OPTIONS=--openssl-legacy-provider npm run serve
+```
+
+Or
+
+```sh
+npm run serve-legacy
+```
+
+If you want to use Docker, you can use:
+
+```sh
+docker run --rm -it -v $(pwd):/app -w /app -p 8080:8080 node:16-slim npm run serve
 ```
 
 ## Build
