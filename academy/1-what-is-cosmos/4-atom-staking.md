@@ -115,7 +115,7 @@ This is your Keplr dashboard. It shows your first public address in the form `co
 
 ![Keplr dashboard](/academy/1-what-is-cosmos/images/keplr-dashboard-empty.png)
 
-At the top of the dashboard you can click to copy the address of your wallet. This will be useful when you move on to purchase some ATOM from your preferred exchange (the following example will use the Kraken exchange).
+At the top of the dashboard you can click to copy the address of your wallet. This will be useful when you move on to purchase some ATOM from your preferred exchange.
 
 ![Keplr wallet address](/academy/1-what-is-cosmos/images/keplr-address-copiable.png)
 
