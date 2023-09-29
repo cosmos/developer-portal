@@ -111,7 +111,7 @@ Your account is now created. Click "Keplr dashboard" to open the [Keplr dashboar
 
 ![Keplr all set](/academy/1-what-is-cosmos/images/keplr-account-created.png)
 
-This is your Keplr dashboard. It shows your first public address in the form `cosmos1...`, displays that you hold zero ATOM, and you can also see how many assets from other supported networks you have. Be aware that initially you may have a number of messages in your Inbox which request approval to complete registration.
+This is your Keplr dashboard. It shows your first public address in the form `cosmos1...`, displays that you hold zero ATOM, and you can also see how many assets from other supported networks you have. Be aware that initially you may have a number of messages in your Inbox which request approval to complete optional registration.
 
 ![Keplr dashboard](/academy/1-what-is-cosmos/images/keplr-dashboard-empty.png)
 
