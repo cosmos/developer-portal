@@ -195,7 +195,7 @@ There, around the top right, you can see "Explorer" and a small link icon that l
 
 ![Keplr wallet link out to address page](/academy/1-what-is-cosmos/images/keplr-wallet-link-out.png)
 
-If you scroll down further enough, you can see the transaction that originated from the exchange's wallet:
+If you scroll down far enough, you can see the transaction that originated from the exchange's wallet:
 
 ![Mintscan crediting transaction](/academy/1-what-is-cosmos/images/mintscan-crediting-tx.png)
 
@@ -225,7 +225,7 @@ You are presented with the list of known chains:
 
 ![Keplr list of validators](/academy/1-what-is-cosmos/images/keplr-stake-chains.png)
 
-Choose Cosmos Hub, you are presented with a list of validators:
+Choose "Cosmos Hub". You are presented with a list of validators:
 
 ![Keplr: list of validators](/academy/1-what-is-cosmos/images/keplr-validator-list.png)
 
@@ -252,7 +252,7 @@ If you like the validator's information, click on it. This opens a tab that reca
 
 ![Keplr validator information](/academy/1-what-is-cosmos/images/keplr-validator-selected.png)
 
-There you click on _Stake_, it opens a window for you to enter an amount. Add the sum you want to delegate. Do not delegate all that you own, because you need a fraction of ATOM to send the transaction, plus further ATOM in the future to either un-delegate or claim your rewards.
+Click on _Stake_. This opens a window for you to enter an amount. Add the sum you want to delegate. Do not delegate all that you own, because you need a fraction of ATOM to send the transaction, plus further ATOM in the future to either un-delegate or claim your rewards.
 
 Pick 0.8 ATOM and click _Delegate_ again:
 
