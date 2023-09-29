@@ -45,11 +45,11 @@ It is always good practice to be careful with links to wallet software because o
 
 First, locate the Keplr extension in the Chrome extensions store and click "Add to Chrome".
 
-![Add Keplr in the Chrome extensions store](/academy/1-what-is-cosmos/images/keplr_new_step_01.png)
+![Add Keplr in the Chrome extensions store](/academy/1-what-is-cosmos/images/keplr-in-marketplace.png)
 
 Click "Add extension" to close the pop-up window and proceed.
 
-![Select Add extension from the pop-up window](/academy/1-what-is-cosmos/images/keplr_new_step_02.png)
+![Select Add extension from the pop-up window](/academy/1-what-is-cosmos/images/keplr-add-confirmation.png)
 
 When Keplr is installed it should be available in the list of extensions when you click on the icon that looks like a puzzle piece in the top-right corner of Chrome:
 
@@ -65,15 +65,15 @@ Keplr is a non-custodial wallet.
 
 With the Keplr extension installed, if you click your Keplr extension the following page should open. With the previous warning in mind, click "Create a new wallet":
 
-![Creating a new wallet or connecting to an existing wallet with Keplr](/academy/1-what-is-cosmos/images/keplr_new_step_03.png)
+![Creating a new wallet or connecting to an existing wallet with Keplr](/academy/1-what-is-cosmos/images/keplr-create-menu.png)
 
 You have several options for how to create your wallet. In this example, click "Create new recovery phrase".
 
-![Creating a new recovery phrase with Keplr](/academy/1-what-is-cosmos/images/keplr_new_step_04.png)
+![Creating a new recovery phrase with Keplr](/academy/1-what-is-cosmos/images/keplr-use-recovery-phrase.png)
 
 Read the warning, then click the appropriate button to proceed.
 
-![Creating a new recovery phrase with Keplr](/academy/1-what-is-cosmos/images/keplr_new_step_05.png)
+![Creating a new recovery phrase with Keplr](/academy/1-what-is-cosmos/images/keplr-undertand-warning.png)
 
 A new page offers you a mnemonic (a secret sequence of words either 12 or 24 words in length). Because **you are in charge**, it is important to understand the following points:
 
@@ -83,17 +83,17 @@ A new page offers you a mnemonic (a secret sequence of words either 12 or 24 wor
     * You should save the mnemonic seed in a safe place, so that you can import it back into this or another wallet at a later date. **Make sure** you write it down somewhere safe.
 * Keplr saves your seed on disk but in an encrypted form.
 
-![Keplr mnemonic seed page](/academy/1-what-is-cosmos/images/keplr_new_step_06.png)
+![Keplr mnemonic seed page](/academy/1-what-is-cosmos/images/keplr-mnemonic-step.png)
 
 When you have recorded the phrase securely, click "Next" to continue.
 
 On the next screen, you are first prompted to provide two words from your mnemonic seed phrase.
 
-![Keplr mnemonic verify your recovery page, part 1](/academy/1-what-is-cosmos/images/keplr_new_step_07.png)
+![Keplr mnemonic verify your recovery page, part 1](/academy/1-what-is-cosmos/images/keplr-recall-2-words.png)
 
 You must then give your wallet a name, and assign it a strong password. 
 
-![Keplr mnemonic verify your recovery page, part 2](/academy/1-what-is-cosmos/images/keplr_new_step_08.png)
+![Keplr mnemonic verify your recovery page, part 2](/academy/1-what-is-cosmos/images/keplr-name-wallet.png)
 
 * Keplr asks you for the **encryption password**, which is used to encrypt your mnemonic on your computer. For the password, keep in mind:
     * It should be a strong password.
@@ -105,19 +105,19 @@ Click "Next" to continue.
 
 On the next screen, select the chains you want to link to, then click "Save" to continue.
 
-![Keplr select chains page](/academy/1-what-is-cosmos/images/keplr_new_step_09.png)
+![Keplr select chains page](/academy/1-what-is-cosmos/images/keplr-link-chains.png)
 
 Your account is now created. Click "Keplr dashboard" to open the [Keplr dashboard page](https://wallet.keplr.app/#/dashboard) where you can review your wallet.
 
-![Keplr all set](/academy/1-what-is-cosmos/images/keplr_new_step_10.png)
+![Keplr all set](/academy/1-what-is-cosmos/images/keplr-account-created.png)
 
 This is your Keplr dashboard. It shows your first public address in the form `cosmos1...`, displays that you hold zero ATOM, and you can also see how many assets from other supported networks you have. Be aware that initially you may have a number of messages in your Inbox which request approval to complete registration.
 
-![Keplr dashboard](/academy/1-what-is-cosmos/images/keplr_new_step_11.png)
+![Keplr dashboard](/academy/1-what-is-cosmos/images/keplr-dashboard-empty.png)
 
 At the top of the dashboard you can click to copy the address of your wallet. This will be useful when you move on to purchase some ATOM from your preferred exchange (the following example will use the Kraken exchange).
 
-![Keplr wallet address](/academy/1-what-is-cosmos/images/keplr_new_step_12.png)
+![Keplr wallet address](/academy/1-what-is-cosmos/images/keplr-address-copiable.png)
 
 <HighlightBox type="info">
 
