@@ -89,7 +89,7 @@ When you have recorded the phrase securely, click "Next" to continue.
 
 On the next screen, you are first prompted to provide two words from your mnemonic seed phrase.
 
-![Keplr mnemonic verify your recovery page, part 1](/academy/1-what-is-cosmos/images/keplr-recall-2-words.png)
+![Keplr mnemonic verify your recovery page, part 1](/academy/1-what-is-cosmos/images/keplr-mnemonic-recall-prompt.png)
 
 You must then give your wallet a name, and assign it a strong password. 
 
@@ -155,9 +155,17 @@ However, you do not yet own it as you would if the token were in your Keplr wall
 
 Your exchange has a withdrawal function that allows you to send your ATOM anywhere, including to your Keplr wallet. You must set this up.
 
-You need your wallet address. Since it is very long, you should avoid typing it by hand and instead copy it to the clipboard by clicking it in Keplr:
+You need your wallet address. Since it is very long, you should avoid typing it by hand and instead copy it to the clipboard from within Keplr. Click the "Copy Address" field:
 
 ![View of the Keplr address zone](/academy/1-what-is-cosmos/images/keplr-address-zone.png)
+
+The list of known networks appears. Copy that for Cosmos Hub by clicking on the icon:
+
+![Keplr known networks - addresses](/academy/1-what-is-cosmos/images/keplr-chain-addresses.png)
+
+You should get a visual confirmation:
+
+![Keplr known networks - address copied](/academy/1-what-is-cosmos/images/keplr-cosmos-address-copied.png)
 
 Now go back to your exchange and paste this address where asked. **Confirm that it looks identical to the original you copied**, and proceed with the confirmation the exchange requires from you:
 
@@ -179,11 +187,15 @@ You can also look at your address using a public explorer, like [mintscan.io](ht
 
 </HighlightBox>
 
-You can see the same if you open the [wallet dashboard page](https://wallet.keplr.app/#/dashboard). On this wallet page you can see a small link icon that leads you to your address page:
+You can see the same if you open the [wallet dashboard page](https://wallet.keplr.app/#/dashboard). On this wallet page, select the Cosmos Hub from the list of chains on the left navigation:
+
+![Keplr left navigation - Cosmos Hub selected](/academy/1-what-is-cosmos/images/keplr-dashboard-chains.png)
+
+There, around the top right, you can see "Explorer" and a small link icon that leads you to your account page on Mintscan:
 
 ![Keplr wallet link out to address page](/academy/1-what-is-cosmos/images/keplr-wallet-link-out.png)
 
-There you can see the transaction that originated from the exchange's wallet:
+If you scroll down further enough, you can see the transaction that originated from the exchange's wallet:
 
 ![Mintscan crediting transaction](/academy/1-what-is-cosmos/images/mintscan-crediting-tx.png)
 
@@ -205,7 +217,15 @@ When considering staking, keep the following factors in mind:
 
 </HighlightBox>
 
-Now find a validator and delegate your ATOM to it. Click the _Stake_ button in Keplr. You are presented with a list of validators:
+Now find a validator and delegate your ATOM to it. Click the _Stake_ button in Keplr dashboard's navigation:
+
+![Keplr navigation Stake](/academy/1-what-is-cosmos/images/keplr-dashboard-stake.png )
+
+You are presented with the list of known chains:
+
+![Keplr list of validators](/academy/1-what-is-cosmos/images/keplr-stake-chains.png)
+
+Choose Cosmos Hub, you are presented with a list of validators:
 
 ![Keplr: list of validators](/academy/1-what-is-cosmos/images/keplr-validator-list.png)
 
@@ -228,7 +248,11 @@ A validator can have small or large voting power. The larger the voting power, t
 
 Over the long run, you should receive the same amount in rewards regardless of whether your chosen validator has large or small voting power. What matters more is the size of your stake.
 
-If you like the validator's information, click _Delegate_ and add the sum you want to delegate. Do not delegate all that you own, because you need a fraction of ATOM to send the transaction, plus further ATOM in the future to either un-delegate or claim your rewards.
+If you like the validator's information, click on it. This opens a tab that recaps the validator's information:
+
+![Keplr validator information](/academy/1-what-is-cosmos/images/keplr-validator-selected.png)
+
+There you click on _Stake_, it opens a window for you to enter an amount. Add the sum you want to delegate. Do not delegate all that you own, because you need a fraction of ATOM to send the transaction, plus further ATOM in the future to either un-delegate or claim your rewards.
 
 Pick 0.8 ATOM and click _Delegate_ again:
 
