@@ -777,4 +777,4 @@ To summarize, this section has explored:
 
 <!--## Next up
 
-Do you want to give players more flexibility about which tokens they can use for games? Let players wager any fungible token in the [next section](../2-ignite-cli-adv/10-wager-denom.md).-->
+Do you want to give players more flexibility about which tokens they can use for games? Let players wager any fungible token in the [next section](./10-wager-denom.md).-->
