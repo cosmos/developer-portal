@@ -143,7 +143,10 @@ func (ms msgServer) CreateGame(ctx context.Context, msg *checkers.MsgCreateGame)
 }
 ```
 
-Note how the sender is not saved in storage. This is a design decision and you may in fact decide to keep the sender.
+Note how:
+
+* The sender and its signature are not checked. This is not necessary as the app has validated the transaction before sending the message.
+* The sender is not saved in storage. This is a design decision and you may in fact decide to keep the sender.
 
 ### Register the types in the module
 

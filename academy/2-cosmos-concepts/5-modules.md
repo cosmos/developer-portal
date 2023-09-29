@@ -407,11 +407,12 @@ Note that:
 
 <HighlightBox type="tip">
 
-If you want to go beyond the code samples in the expandable above and instead see in more detail how to define all this, go to [Run Your Own Cosmos Chain](/hands-on-exercise/1-ignite-cli/index.md).
+If you would like to get started on building your own checkers game, you can go straight to the main exercise in Run Your Own Cosmos Chain [natively with SDK v0.50](/hands-on-exercise/1-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
 
 More specifically, you can jump to:
 
-* [Ignite CLI](/hands-on-exercise/1-ignite-cli/1-ignitecli.md) to create a new blockchain with your checkers module.
+* [Build your module from scratch](/hands-on-exercise/1-native/2-build-module.md) to see how you can do just that with Cosmos SDK v0.50.
+* [Ignite CLI](/hands-on-exercise/1-ignite-cli/1-ignitecli.md) to create a new blockchain with your checkers module with the help of Ignite CLI.
 * The advanced [Handle Wager Payments](/hands-on-exercise/2-ignite-cli-adv/6-payment-winning.md) to have your checkers module access and use the bank module.
 * [Add a leaderboard module](/hands-on-exercise/4-run-in-prod/3-add-leaderboard.md) and loosely couple it with another module with the use of the hooks pattern. It also leverages the module's `Params` construct.
 * The IBC-advanced [Extend the Checkers Game With a Leaderboard](/hands-on-exercise/5-ibc-adv/6-ibc-app-checkers.md) to add a second custom IBC module to your checkers blockchain.
