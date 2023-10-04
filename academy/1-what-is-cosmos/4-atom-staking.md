@@ -177,7 +177,11 @@ When this is set, you ask the exchange to withdraw properly. Take note of the tr
 
 If all went well, you should see your new asset in Keplr after a few minutes:
 
-![Keplr received ATOM](/academy/1-what-is-cosmos/images/keplr-with-atom.png)
+![Keplr received ATOM in dollar terms](/academy/1-what-is-cosmos/images/keplr-with-atom.png)
+
+Depending on your screen, you may have to scroll down a bit to see what this dollar amount is in ATOM tokens:
+
+![Keplr received ATOM](/academy/1-what-is-cosmos/images/keplr-with-atom-proper.png)
 
 Congratulations! You now own slightly less than one ATOM. Remember that **you** are really in charge, so check again that your mnemonic and password are saved properly.
 
@@ -258,17 +262,23 @@ Pick 0.8 ATOM and click _Delegate_ again:
 
 ![Keplr: delegate parameters](/academy/1-what-is-cosmos/images/keplr-delegate-params.png)
 
-This delegation is an important action. It is the first action you take with your private key. Every time an application asks Keplr to do an important action, Keplr will ask you to confirm it:
+Note the transaction cost, written in small next to the double arrow. This delegation is an important action. It is the first action you take with your private key. Every time an application asks Keplr to do an important action, Keplr will ask you to confirm it:
 
 ![Keplr: delegate confirm window](/academy/1-what-is-cosmos/images/keplr-delegate-confirm.png)
 
-You do not need this delegate transaction to be confirmed quickly, so choose the low end of transaction fees and click _Approve_. The transaction should not take longer than a couple of minutes to be confirmed.
+You do not need this delegate transaction to be confirmed quickly, so you may choose the low end of transaction fees. For this, click on "Transaction Fee" near the bottom. There, you have the choice to pick "Low" if you want.
 
-When it is confirmed, your **pending staking rewards** start to accrue. Their increase will not be fast because you delegated only 0.8 ATOM, and they only accrue when your chosen validator issues a block. After perhaps 20 minutes, you should see something similar to this:
+![Keplr: delegate confirm window - fee](/academy/1-what-is-cosmos/images/keplr-delegate-confirm-fee.png)
+
+Click _Close_ and then _Approve_. The transaction should not take longer than a couple of minutes to be confirmed.
+
+At this stage you can close Keplr's dashboard.
+
+When the transaction is confirmed, your **claimable staking rewards** start to accrue. Their increase will not be fast because you delegated only 0.8 ATOM, and they only accrue when your chosen validator issues a block. After perhaps 20 minutes, if you click on "Staked" at the top of the small Keplr window, you should see something similar to this:
 
 ![Keplr: accruing rewards](/academy/1-what-is-cosmos/images/keplr-accruing-rewards.png)
 
-Your rewards are said to be "pending" because you need to claim them before they are yours. The claim transaction incurs fees, so it is best to wait until your rewards exceed the transaction fees before submitting any claim transaction. With only 0.8 ATOM staked you will need to wait about 10 days to accrue something worth the claim transaction.
+Your rewards are said to be "claimable", or pending, because you need to claim them before they are yours. The claim transaction incurs fees, so it is best to wait until your rewards exceed the transaction fees before submitting any claim transaction. With only 0.8 ATOM staked you will need to wait about 10 days to accrue something worth the claim transaction.
 
 ## Claim your ATOM
 
@@ -276,7 +286,7 @@ You did it! You waited 10 days, and have accrued rewards:
 
 ![Keplr: accruing good rewards](/academy/1-what-is-cosmos/images/keplr-accruing-good-rewards.png)
 
-This is enough to cover the claim transaction. Go ahead and claim it. Again, choose the low fee option to reduce loses against this small reward sum:
+This is enough to cover the claim transaction. Go ahead and claim it. Again, you may choose the low fee option to reduce losses against this small reward sum:
 
 ![Keplr: claim rewards](/academy/1-what-is-cosmos/images/keplr-claim-rewards.png)
 
@@ -284,7 +294,7 @@ Your rewards are added straight to your wallet:
 
 ![Keplr: increased number of available ATOM tokens](/academy/1-what-is-cosmos/images/keplr-increased-available.png)
 
-If you want to re-stake this amount and benefit from the compound effect, go ahead, but make sure you do not lose too much in transaction costs.
+If you want to re-stake this claimed amount and benefit from the compound effect, go ahead, but make sure you do not lose too much in transaction costs.
 
 This completes the exercise: you are set up to participate in the Cosmos Hub network, and even contribute to its security. Your stake will work for you as you continue your Interchain training journey.
 
