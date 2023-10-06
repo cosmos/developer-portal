@@ -9,7 +9,7 @@ tags:
 
 # Add your first query
 
-In the [previous section](./4-add-message.md) you added a message that lets you create new games. However you cannot retrieve them yet as there is no query type defined. This section fixes that. You will:
+In the [previous section](./4-add-message.md) you added a message that lets you create new games. However, other than dumping the full storage, you cannot retrieve them yet as there is no query type defined. This section fixes that. You will:
 
 * Add a query type to retrieve a game by index.
 * Add all the necessary keeper and message server functions.
@@ -29,7 +29,7 @@ With the game storage indexed by game index, it is only natural to retrieve game
 
 ### The game retrieval object type and Protobuf service
 
-You define them together in a new file `proto/../query.proto`:
+You define them together in a new file `proto/alice/checkers/v1/query.proto`:
 
 ```protobuf [proto/alice/checkers/v1/query.proto]
 syntax = "proto3";
@@ -49,7 +49,7 @@ service Query {
   rpc GetGame(QueryGetGameRequest) returns (QueryGetGameResponse) {
     option (cosmos.query.v1.module_query_safe) = true;
     option (google.api.http).get =
-        "/alice/checkers/v1/GetGame/{index}";
+      "/alice/checkers/v1/GetGame/{index}";
   }
 }
 
@@ -84,6 +84,7 @@ In the new `query.pg.go` you can find `type QueryGetGameRequest struct` and `typ
 
 Create a new file `keeper/query_server.go` and take inspiration from `minimal-module-example`. It needs to:
 
+* Implement the `GetGame` function.
 * Return the game if it is found.
 * Return no games and no errors if it is not found.
 * Return an error otherwise.
@@ -135,7 +136,7 @@ With the query server defined, you now need to register it into the module.
 
 Now that you have message types and server, you should register the service in `module/module.go`. Inspire yourself from what you find in `minimal-module-example`. The lines were previously commented out:
 
-```diff-go
+```diff-go [module/module.go]
     ...
     func (AppModule) RegisterGRPCGatewayRoutes(clientCtx client.Context, mux *gwruntime.ServeMux) {
 -      // if err := checkers.RegisterQueryHandlerClient(context.Background(), mux, checkers.NewQueryClient(clientCtx)); err != nil {
@@ -167,7 +168,7 @@ $ minid query --help
 
 You can see that `checkers` is missing from the list of available commands. You fix that by entering your desired command in `module/autocli.go`. Taking inspiration from `minimal-module-example`:
 
-```diff-go
+```diff-go [module/autocli.go]
     ...
 -  Query: nil,
 +  Query: &autocliv1.ServiceCommandDescriptor{
@@ -230,7 +231,7 @@ Available Commands:
 ```
 
 </CodeGroupItem>
-<CodeGroupItem title="create">
+<CodeGroupItem title="get-game">
 
 ```sh
 $ minid query checkers get-game --help
@@ -253,7 +254,7 @@ Flags:
 
 ---
 
-This time, adding a query did not change your genesis or storage so you need no re-initialize. Start it:
+This time, adding a query did not change your genesis or storage so you do not need to re-initialize. Start it:
 
 ```sh
 $ minid start
@@ -297,7 +298,7 @@ Returns:
 
 ## Conclusion
 
-You have started creating the first elements of a simple checkers blockchain, one where it is possible to create games.
+You have started creating the first elements of a simple checkers blockchain, one where it is possible to create, and recall, games.
 
 Cosmos SDK v0.50, compared to earlier versions, allows you to created modules in a more modular and concise way.
 

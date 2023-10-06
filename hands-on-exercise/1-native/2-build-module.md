@@ -47,7 +47,7 @@ $ mkdir -p proto/alice/checkers/module/v1
 
 ### Module proto
 
-You define your module taking inspiration from `minimal-module-example`:
+You define your module in a new `proto/alice/checkers/module/v1/module.proto`, taking inspiration from `minimal-module-example`:
 
 ```protobuf [proto/alice/checkers/module/v1/module.proto]
 syntax = "proto3";
@@ -294,7 +294,7 @@ You are not defining your messages and queries just yet. However, you already de
 * Has a genesis, which has a type.
 * Uses params, which also have a type.
 
-Go ahead and define them in a `types.proto`:
+Go ahead and define them in a new `proto/alice/checkers/v1/types.proto`, taking inspiration from `minimal-module-example`:
 
 ```protobuf [proto/alice/checkers/v1/types.proto]
 syntax = "proto3";
@@ -348,7 +348,7 @@ $ go mod tidy
 
 The script has created two new files `api/v1/types.pulsar.go` and `types.pb.go`.
 
-You module is not viable yet. You need to define it and at least have it conform to the interface expected by an app, in this case `chain-minimal`.
+Your module is not viable yet. You need to define it and at least have it conform to the interface expected by an app, in this case `chain-minimal`.
 
 ## Module interface
 
@@ -381,7 +381,7 @@ func RegisterInterfaces(registry types.InterfaceRegistry) {
 }
 ```
 
-You do not have message and query definitions, so you can keep it simple.
+You do not have message and query definitions, so you can keep the function body empty.
 
 </CodeGroupItem>
 <CodeGroupItem title="params.go">
@@ -420,11 +420,11 @@ func NewGenesisState() *GenesisState {
 
 // Validate performs basic genesis state validation returning an error upon any
 func (gs *GenesisState) Validate() error {
-	if err := gs.Params.Validate(); err != nil {
-		return err
-	}
+    if err := gs.Params.Validate(); err != nil {
+        return err
+    }
 
-return nil
+    return nil
 }
 ```
 
@@ -436,18 +436,13 @@ You have not yet defined any storage, other than `Params`, so it is simple.
 ```go [keys.go]
 package checkers
 
-// DefaultParams returns default module parameters.
-func DefaultParams() Params {
-    return Params{
-        // Set default values here.
-    }
-}
+import "cosmossdk.io/collections"
 
-// Validate does the sanity check on the params.
-func (p Params) Validate() error {
-    // Sanity check goes here.
-    return nil
-}
+const ModuleName = "checkers"
+
+var (
+    ParamsKey  = collections.NewPrefix(0)
+)
 ```
 
 For now, all you need is the module's name and the storage key at which you can find the params.
@@ -834,7 +829,7 @@ Now, you can define it in the `app.yaml` file:
 <CodeGroup>
 <CodeGroupItem title="Name and type">
 
-```diff-yaml
+```diff-yaml [app/app.yaml]
     ...
     - name: tx
         config:
@@ -850,7 +845,7 @@ Where you recall the Protobuf `alice.checkers.module.v1.Module` defined earlier.
 </CodeGroupItem>
 <CodeGroupItem title="Genesis">
 
-```diff-yaml
+```diff-yaml [app/app.yaml]
     ...
 -  init_genesis: [auth, bank, distribution, staking, genutil]
 +  init_genesis: [auth, bank, distribution, staking, genutil, checkers]
@@ -866,7 +861,7 @@ Because its genesis needs to be called too.
 
 What remain is to update `app.go`, where you place your checkers keeper at the right locations:
 
-```diff-go
+```diff-go [app/app.go]
     import(
         ...
 +      checkerskeeper "github.com/alice/checkers/keeper"
@@ -919,14 +914,14 @@ And there you have it, your minimal chain with a checkers module is running. Aft
 <CodeGroupItem title="Straight">
 
 ```sh
-$ minid export --height 1 --modules-to-export checkers
+$ minid export --modules-to-export checkers
 ```
 
 </CodeGroupItem>
 <CodeGroupItem title="Clean">
 
 ```sh
-$ minid export --height 1 --modules-to-export checkers | tail -n 1 | jq
+$ minid export --modules-to-export checkers | tail -n 1 | jq
 ```
 
 </CodeGroupItem>
@@ -934,17 +929,17 @@ $ minid export --height 1 --modules-to-export checkers | tail -n 1 | jq
 
 In there, you can find:
 
-```json
-{
-    ...
-    "app_state: {
+```diff-json
+    {
         ...
-        "checkers": {
-            "params": {}
-        },
-        ...
+        "app_state: {
+            ...
++          "checkers": {
++              "params": {}
++          },
+            ...
+        }
     }
-}
 ```
 
 As expected.

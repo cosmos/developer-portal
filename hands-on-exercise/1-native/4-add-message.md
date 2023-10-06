@@ -25,14 +25,14 @@ With the storage ready to receive games, it is time to add a message to let play
 You are going to:
 
 * Create the message type.
-* Compile Protobuf
+* Compile Protobuf.
 * Create a message server next to the keeper.
 * Handle the message.
 * Register the necessary elements in the module.
 
 ### The game creation object type and Protobuf service
 
-You define them together in a new file `proto/../tx.proto`:
+You define them together in a new file `proto/alice/checkers/v1/tx.proto`:
 
 ```protobuf [proto/alice/checkers/v1/tx.proto]
 syntax = "proto3";
@@ -52,7 +52,7 @@ service Msg {
 
   // CreateGame create a game.
   rpc CreateGame(MsgCreateGame)
-      returns (MsgCreateGameResponse);
+    returns (MsgCreateGameResponse);
 }
 
 // MsgCreateGame defines the Msg/CreateGame request type.
@@ -73,7 +73,7 @@ message MsgCreateGameResponse {}
 
 Note:
 
-* How `MsgCreateGame` does not mention `Board` or `Turn` as this should not be under the control of the sender.
+* How `MsgCreateGame` does not mention `Board` or `Turn` as this, as mentioned, should not be under the control of the sender.
 * That the response is empty as there is no extra information to return. For instance, here the game index is known in advance.
 
 ### Compile Protobuf
@@ -304,14 +304,14 @@ Now your minimal chain not only has a checkers module, but also a games storage 
 <CodeGroupItem title="Straight">
 
 ```sh
-$ minid export --height 1 --modules-to-export checkers
+$ minid export --modules-to-export checkers
 ```
 
 </CodeGroupItem>
 <CodeGroupItem title="Clean">
 
 ```sh
-$ minid export --height 1 --modules-to-export checkers | tail -n 1 | jq
+$ minid export --modules-to-export checkers | tail -n 1 | jq
 ```
 
 </CodeGroupItem>

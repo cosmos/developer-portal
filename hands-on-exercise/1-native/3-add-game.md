@@ -50,18 +50,18 @@ As ever, taking inspiration from `minimal-module-example`, this can be described
 
 ```diff-protobuf [proto/alice/checkers/v1/types.proto]
     message GenesisState {
-        // params defines all the parameters of the module.
-        Params params = 1 [ (gogoproto.nullable) = false, (amino.dont_omitempty) = true ];
+      // params defines all the parameters of the module.
+      Params params = 1 [ (gogoproto.nullable) = false, (amino.dont_omitempty) = true ];
     }
 
 +  message StoredGame {
-+      option (amino.name) = "alice/checkers/StoredGame"; 
++    option (amino.name) = "alice/checkers/StoredGame"; 
 +
-+      string index = 1 ;
-+      string board = 2;
-+      string turn = 3;
-+      string black = 4 [(cosmos_proto.scalar) = "cosmos.AddressString"];
-+      string red = 5 [(cosmos_proto.scalar) = "cosmos.AddressString"];
++    string index = 1 ;
++    string board = 2;
++    string turn = 3;
++    string black = 4 [(cosmos_proto.scalar) = "cosmos.AddressString"];
++    string red = 5 [(cosmos_proto.scalar) = "cosmos.AddressString"];
 +  }
 ```
 
@@ -195,7 +195,17 @@ In order to declare the stored games as a map, you first need to define a map ke
     )
 ```
 
-And then initialize the storage access in `keeper/keeper.go`, taking inspiration from `minimal-module-example`:
+Then declare its type in the keeper struct in `keeper/keeper.go`:
+
+```diff-go [keeper/keeper.go]
+    type Keeper struct {
+        ...
+        Params         collections.Item[checkers.Params]
++      StoredGameList collections.Map[string, checkers.StoredGame]
+    }
+```
+
+And then initialize the storage access, taking inspiration from `minimal-module-example`:
 
 ```diff-go [keeper/keeper.go]
     ...
@@ -270,14 +280,14 @@ Now your minimal chain not only has a checkers module, but also a games storage 
 <CodeGroupItem title="Straight">
 
 ```sh
-$ minid export --height 1 --modules-to-export checkers
+$ minid export --modules-to-export checkers
 ```
 
 </CodeGroupItem>
 <CodeGroupItem title="Clean">
 
 ```sh
-$ minid export --height 1 --modules-to-export checkers | tail -n 1 | jq
+$ minid export --modules-to-export checkers | tail -n 1 | jq
 ```
 
 </CodeGroupItem>
@@ -286,17 +296,17 @@ $ minid export --height 1 --modules-to-export checkers | tail -n 1 | jq
 In there, you can find:
 
 ```diff-json
-{
-    ...
-    "app_state: {
+    {
         ...
-        "checkers": {
-            "params": {},
-            "storedGameList": []
-        },
-        ...
+        "app_state: {
+            ...
+            "checkers": {
+                "params": {},
++              "storedGameList": []
+            },
+            ...
+        }
     }
-}
 ```
 
 ## Conclusion
