@@ -263,25 +263,30 @@ $ minid start
 And query your previously created game:
 
 ```sh
-$ minid query checkers get-game abc
+$ minid query checkers get-game id1
 ```
 
 This returns:
 
 ```txt
-...
+Game:
+  black: mini16ajnus3hhpcsfqem55m5awf3mfwfvhpp36rc7d
+  board: '*b*b*b*b|b*b*b*b*|*b*b*b*b|********|********|r*r*r*r*|*r*r*r*r|r*r*r*r*'
+  index: id1
+  red: mini1hv85y6h5rkqxgshcyzpn2zralmmcgnqwsjn3qg
+  turn: b
 ```
 
 If you try to get a non-existent game:
 
 ```sh
-$ minid query checkers get-game not-existent
+$ minid query checkers get-game id2
 ```
 
 It should return:
 
 ```txt
-Game: null
+{}
 ```
 
 And that without any error:

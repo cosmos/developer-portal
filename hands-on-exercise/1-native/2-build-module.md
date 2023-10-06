@@ -162,18 +162,27 @@ deps:
     owner: cosmos
     repository: cosmos-proto
     commit: 1935555c206d4afb9e94615dfd0fad31
+    digest: shake256:c74d91a3ac7ae07d579e90eee33abf9b29664047ac8816500cf22c081fec0d72d62c89ce0bebafc1f6fec7aa5315be72606717740ca95007248425102c365377
   - remote: buf.build
     owner: cosmos
     repository: cosmos-sdk
-    commit: d5661b4f6ef64bb1b5beb6cb7bd705b7
+    commit: cf13c7d232dd405180c2af616fa8a075
+    digest: shake256:769a38e306a98339b549bc96991c97fae8bd3ceb1a7646c7bfe9a74e406ab068372970fbc5abda1891e2f3c36527cf2d3a25f631739d36900787226e564bb612
   - remote: buf.build
     owner: cosmos
     repository: gogo-proto
     commit: 5e5b9fdd01804356895f8f79a6f1ddc1
+    digest: shake256:0b85da49e2e5f9ebc4806eae058e2f56096ff3b1c59d1fb7c190413dd15f45dd456f0b69ced9059341c80795d2b6c943de15b120a9e0308b499e43e4b5fc2952
   - remote: buf.build
     owner: googleapis
     repository: googleapis
-    commit: cc916c31859748a68fd229a3c8d7a2e8
+    commit: 28151c0d0a1641bf938a7672c500e01d
+    digest: shake256:49215edf8ef57f7863004539deff8834cfb2195113f0b890dd1f67815d9353e28e668019165b9d872395871eeafcbab3ccfdb2b5f11734d3cca95be9e8d139de
+  - remote: buf.build
+    owner: protocolbuffers
+    repository: wellknowntypes
+    commit: 657250e6a39648cbb169d079a60bd9ba
+    digest: shake256:00de25001b8dd2e29d85fc4bcc3ede7aed886d76d67f5e0f7a9b320b90f871d3eb73507d50818d823a0512f3f8db77a11c043685528403e31ff3fef18323a9fb
 ```
 
 </CodeGroupItem>
@@ -209,9 +218,9 @@ To make your life easier, `minimal-module-example` also provides a `make` target
 
 DOCKER := $(shell which docker)
 
-##################
-###   Build   ####
-##################
+#################
+###   Build   ###
+#################
 
 test:
     @echo "--> Running tests"
@@ -223,11 +232,11 @@ test-integration:
 
 .PHONY: test test-integration
 
-###################
-###  Protobuf  ####
-###################
+##################
+###  Protobuf  ###
+##################
 
-protoVer=0.13.2
+protoVer=0.14.0
 protoImageName=ghcr.io/cosmos/proto-builder:$(protoVer)
 protoImage=$(DOCKER) run --rm -v $(CURDIR):/workspace --workdir /workspace $(protoImageName)
 
@@ -242,13 +251,13 @@ proto-format:
     @$(protoImage) find ./ -name "*.proto" -exec clang-format -i {} \;
 
 proto-lint:
-    @$(protoImage) buf lint
+    @$(protoImage) buf lint proto/ --error-format=json
 
 .PHONY: proto-all proto-gen proto-format proto-lint
 
-##################
-###  Linting  ####
-##################
+#################
+###  Linting  ###
+#################
 
 golangci_lint_cmd=golangci-lint
 golangci_version=v1.51.2
@@ -266,7 +275,7 @@ lint-fix:
 .PHONY: lint lint-fix
 ```
 
-Note how it uses the `ghcr.io/cosmos/proto-builder:0.13.2` Docker image here to run the `protocgen.sh` script. This helps with making sure all necessary software is available.
+Note how it uses the `ghcr.io/cosmos/proto-builder:0.14.0` Docker image here to run the `protocgen.sh` script. This helps with making sure all necessary software is available.
 
 ### First Protobuf compilation
 
@@ -335,7 +344,7 @@ If the process tells you that it downloads a Cosmos SDK version prior to 0.50, m
 
 ```diff [go.mod]
 -       github.com/cosmos/cosmos-sdk v0.47.5
-+       github.com/cosmos/cosmos-sdk v0.50.0-rc.0.0.20230913215410-e5781a9d028d
++       github.com/cosmos/cosmos-sdk v0.50.0-rc.1.0.20231005140444-10bd5a2cacdc
 ```
 
 And then to tidy up the dependencies:
@@ -365,16 +374,8 @@ You prepare the basics around codec, params, genesis and module name. You can ke
 package checkers
 
 import (
-    "github.com/cosmos/cosmos-sdk/codec"
     types "github.com/cosmos/cosmos-sdk/codec/types"
-    sdk "github.com/cosmos/cosmos-sdk/types"
-    "github.com/cosmos/cosmos-sdk/types/msgservice"
 )
-
-// RegisterLegacyAminoCodec registers the necessary interfaces and concrete types
-// on the provided LegacyAmino codec. These types are used for Amino JSON serialization.
-func RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {
-}
 
 // RegisterInterfaces registers the interfaces types with the interface registry.
 func RegisterInterfaces(registry types.InterfaceRegistry) {
@@ -636,13 +637,11 @@ func NewAppModuleBasic(m AppModule) module.AppModuleBasic {
 func (AppModule) Name() string { return checkers.ModuleName }
 
 // RegisterLegacyAminoCodec registers the checkers module's types on the LegacyAmino codec.
-func (AppModule) RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {
-    checkers.RegisterLegacyAminoCodec(cdc)
-}
+// New modules do not need to support Amino.
+func (AppModule) RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {}
 
 // RegisterGRPCGatewayRoutes registers the gRPC Gateway routes for the checkers module.
 func (AppModule) RegisterGRPCGatewayRoutes(clientCtx client.Context, mux *gwruntime.ServeMux) {
-    // Register client
     // if err := checkers.RegisterQueryHandlerClient(context.Background(), mux, checkers.NewQueryClient(clientCtx)); err != nil {
     //     panic(err)
     // }
@@ -658,7 +657,6 @@ func (AppModule) ConsensusVersion() uint64 { return ConsensusVersion }
 
 // RegisterServices registers a gRPC query service to respond to the module-specific gRPC queries.
 func (am AppModule) RegisterServices(cfg module.Configurator) {
-    // Register servers
     // checkers.RegisterMsgServer(cfg.MsgServer(), keeper.NewMsgServerImpl(am.keeper))
     // checkers.RegisterQueryServer(cfg.QueryServer(), keeper.NewQueryServerImpl(am.keeper))
 

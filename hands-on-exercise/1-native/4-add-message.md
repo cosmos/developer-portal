@@ -157,17 +157,10 @@ Now that you have message types and server, you should register the types them i
 
     import (
         "github.com/cosmos/cosmos-sdk/codec"
-+      "github.com/cosmos/cosmos-sdk/codec/legacy"
         types "github.com/cosmos/cosmos-sdk/codec/types"
 +      sdk "github.com/cosmos/cosmos-sdk/types"
 +      "github.com/cosmos/cosmos-sdk/types/msgservice"
     )
-
-    // RegisterLegacyAminoCodec registers the necessary interfaces and concrete types
-    // on the provided LegacyAmino codec. These types are used for Amino JSON serialization.
-    func RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {
-+      legacy.RegisterAminoMsg(cdc, &MsgCreateGame{}, "checkers/MsgCreateGame")
-    }
 
     // RegisterInterfaces registers the interfaces types with the interface registry.
     func RegisterInterfaces(registry types.InterfaceRegistry) {
@@ -298,7 +291,35 @@ $ make init
 $ minid start
 ```
 
-Now your minimal chain not only has a checkers module, but also a games storage area. After stopping it with <kbd>CTRL-C</kbd>, confirm that by calling up:
+Now you create a game from another shell. First list `alice` and `bob`'s addresses as created by `make init`:
+
+```sh
+$ minid keys list --keyring-backend test
+```
+
+This returns something like:
+
+```yaml
+- address: mini16ajnus3hhpcsfqem55m5awf3mfwfvhpp36rc7d
+  name: alice
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A0gUNtXpBqggTdnVICr04GHqIQOa3ZEpjAhn50889AQX"}'
+  type: local
+- address: mini1hv85y6h5rkqxgshcyzpn2zralmmcgnqwsjn3qg
+  name: bob
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"ArXLlxUs2gEw8+clqPp6YoVNmy36PrJ7aYbV+W8GrcnQ"}'
+  type: local
+```
+
+With this information, you can send your first _create game_ message:
+
+```sh
+$ minid tx checkers create id1 \
+    mini16ajnus3hhpcsfqem55m5awf3mfwfvhpp36rc7d \
+    mini1hv85y6h5rkqxgshcyzpn2zralmmcgnqwsjn3qg \
+    --from alice --yes
+```
+
+It returns you the transaction hash as expected. To find what was put in storage, wait a bit and then stop the chain with <kbd>CTRL-C</kbd>. Then call up:
 
 <CodeGroup>
 <CodeGroupItem title="Straight">
@@ -316,6 +337,26 @@ $ minid export --modules-to-export checkers | tail -n 1 | jq
 
 </CodeGroupItem>
 </CodeGroup>
+
+This should return something with:
+
+```diff-json
+    ...
+    "checkers": {
+      "params": {},
+-    "storedGameList": []
++    "storedGameList": [
++      {
++        "index": "id1",
++        "board": "*b*b*b*b|b*b*b*b*|*b*b*b*b|********|********|r*r*r*r*|*r*r*r*r|r*r*r*r*",
++        "turn": "b",
++        "black": "mini16ajnus3hhpcsfqem55m5awf3mfwfvhpp36rc7d",
++        "red": "mini1hv85y6h5rkqxgshcyzpn2zralmmcgnqwsjn3qg"
++      }
++    ]
+    },
+    ...
+```
 
 ## Conclusion
 
