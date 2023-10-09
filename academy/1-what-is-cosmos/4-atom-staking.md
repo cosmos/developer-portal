@@ -298,6 +298,8 @@ If you want to re-stake this claimed amount and benefit from the compound effect
 
 This completes the exercise: you are set up to participate in the Cosmos Hub network, and even contribute to its security. Your stake will work for you as you continue your Interchain training journey.
 
+If another interchain project interests you, you can do the same on it to give it material support.
+
 <HighlightBox type="synopsis">
 
 To summarize, this section has explored:
