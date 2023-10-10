@@ -137,6 +137,10 @@ With the query server defined, you now need to register it into the module.
 Now that you have message types and server, you should register the service in `module/module.go`. Inspire yourself from what you find in `minimal-module-example`. The lines were previously commented out:
 
 ```diff-go [module/module.go]
+    import (
++      "context"
+        "encoding/json"
+    )
     ...
     func (AppModule) RegisterGRPCGatewayRoutes(clientCtx client.Context, mux *gwruntime.ServeMux) {
 -      // if err := checkers.RegisterQueryHandlerClient(context.Background(), mux, checkers.NewQueryClient(clientCtx)); err != nil {
