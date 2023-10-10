@@ -156,7 +156,6 @@ Now that you have message types and server, you should register the types them i
     package checkers
 
     import (
-        "github.com/cosmos/cosmos-sdk/codec"
         types "github.com/cosmos/cosmos-sdk/codec/types"
 +      sdk "github.com/cosmos/cosmos-sdk/types"
 +      "github.com/cosmos/cosmos-sdk/types/msgservice"
@@ -197,24 +196,31 @@ $ minid tx --help
 You can see that `checkers` is missing from the list of available commands. You fix that by entering your desired command in `module/autocli.go`. Taking inspiration from `minimal-module-example`:
 
 ```diff-go
-    ...
--  Tx: nil,
-+  Tx: &autocliv1.ServiceCommandDescriptor{
-+      Service: checkersv1.Msg_ServiceDesc.ServiceName,
-+      RpcCommandOptions: []*autocliv1.RpcCommandOptions{
-+          {
-+              RpcMethod: "CreateGame",
-+              Use:       "create index black red",
-+              Short:     "Creates a new checkers game at the index for the black and red players",
-+              PositionalArgs: []*autocliv1.PositionalArgDescriptor{
-+                  {ProtoField: "index"},
-+                  {ProtoField: "black"},
-+                  {ProtoField: "red"},
+    import (
+        autocliv1 "cosmossdk.io/api/cosmos/autocli/v1"
++      checkersv1 "github.com/alice/checkers/api/v1"
+    )
+    func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
+        return &autocliv1.ModuleOptions{
+            Query: nil,    
+-          Tx: nil,
++          Tx: &autocliv1.ServiceCommandDescriptor{
++              Service: checkersv1.Msg_ServiceDesc.ServiceName,
++              RpcCommandOptions: []*autocliv1.RpcCommandOptions{
++                  {
++                      RpcMethod: "CreateGame",
++                      Use:       "create index black red",
++                      Short:     "Creates a new checkers game at the index for the black and red players",
++                      PositionalArgs: []*autocliv1.PositionalArgDescriptor{
++                          {ProtoField: "index"},
++                          {ProtoField: "black"},
++                          {ProtoField: "red"},
++                      },
++                  },
 +              },
 +          },
-+      },
-+  },
-    ...
+        }
+    }
 ```
 
 Note that the `create` in `"create index black red"` is parsed out and used as the command in the `minid tx checkers create` command-line.

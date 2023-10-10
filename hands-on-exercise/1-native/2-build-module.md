@@ -325,7 +325,7 @@ message GenesisState {
 }
 ```
 
-Because you added a new Protobuf file, you need to compile it too. Uncomment the `cp` line:
+Because you added a new Protobuf file, you need to compile it too. Uncomment the `cp` line in `protocgen.sh`:
 
 ```diff-sh
 -   # cp -r github.com/alice/checkers/* ./
@@ -912,14 +912,14 @@ And there you have it, your minimal chain with a checkers module is running. Aft
 <CodeGroupItem title="Straight">
 
 ```sh
-$ minid export --modules-to-export checkers
+$ minid export
 ```
 
 </CodeGroupItem>
 <CodeGroupItem title="Clean">
 
 ```sh
-$ minid export --modules-to-export checkers | tail -n 1 | jq
+$ minid export | tail -n 1 | jq
 ```
 
 </CodeGroupItem>
