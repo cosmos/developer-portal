@@ -75,6 +75,7 @@ Note:
 
 * How `MsgCreateGame` does not mention `Board` or `Turn` as this, as mentioned, should not be under the control of the sender.
 * That the response is empty as there is no extra information to return. For instance, here the game index is known in advance.
+* How `option (cosmos.msg.v1.signer)` identifies `sender` as the field that will serve as the signer. At compilation time, the SDK will automagically pick up the value of this annotation to have `MsgCreateGame` implement `sdk.Msg.GetSigners`.
 
 ### Compile Protobuf
 

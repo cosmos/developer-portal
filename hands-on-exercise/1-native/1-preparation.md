@@ -85,6 +85,18 @@ $ MODULE_NAME=alice/checkers ./scripts/rename.sh
 
 The updated files will come in handy when you want to copy-paste them.
 
+<ExpansionPanel title="Troubleshooting">
+
+The `rename.sh` files self removes when the process is complete. If an error happens, you may have to reset hard with Git before retrying:
+
+```sh
+$ git reset --hard
+```
+
+This assumes that you have no other uncommitted changes that are worth keeping.
+
+</ExpansionPanel>
+
 ## Up next
 
 With the minimal chain and a copy of the minimal module, it is time to build your own module.

@@ -79,6 +79,13 @@ alice.checkers.module.v1.Module
 
 The compilation of your Protobuf files will be done with the `scripts/protocgen.sh` script, which you can copy from `minimal-module-example`:
 
+```sh
+$ mkdir scripts
+$ cp ../minimal-module-example/scripts/protocgen.sh ./scripts
+```
+
+<ExpansionPanel title="Content of copied file">
+
 ```sh [scripts/protocgen.sh]
 #!/usr/bin/env bash
 
@@ -109,7 +116,15 @@ mv alice/checkers/* ./api
 rm -rf github.com alice
 ```
 
+</ExpansionPanel>
+
 Note how it mentions two files `buf.gen.gogo.yaml` and `buf.gen.pulsar.yaml`. So go ahead and copy them from `minimal-module-example`. In fact, also copy `buf.yaml` and the version lock file to avoid surprises:
+
+```sh
+$ cp ../minimal-module-example/proto/buf* ./proto
+```
+
+<ExpansionPanel title="Content of copied files">
 
 <CodeGroup>
 <CodeGroupItem title="buf.gen.gogo.yaml">
@@ -211,7 +226,15 @@ lint:
 </CodeGroupItem>
 </CodeGroup>
 
+</ExpansionPanel>
+
 To make your life easier, `minimal-module-example` also provides a `make` target to compile all the Protobuf files. Copy the whole `Makefile`:
+
+```sh
+$ cp ../minimal-module-example/Makefile .
+```
+
+<ExpansionPanel title="Content of copied file">
 
 ```lang-makefile [Makefile]
 #!/usr/bin/make -f
@@ -274,6 +297,8 @@ lint-fix:
 
 .PHONY: lint lint-fix
 ```
+
+</ExpansionPanel>
 
 Note how it uses the `ghcr.io/cosmos/proto-builder:0.14.0` Docker image here to run the `protocgen.sh` script. This helps with making sure all necessary software is available.
 
