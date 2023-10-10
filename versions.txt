@@ -1,2 +1,1 @@
-v1-content
-v2-content
+v1-content v2-content
