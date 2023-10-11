@@ -686,6 +686,7 @@ func (AppModule) ConsensusVersion() uint64 { return ConsensusVersion }
 
 // RegisterServices registers a gRPC query service to respond to the module-specific gRPC queries.
 func (am AppModule) RegisterServices(cfg module.Configurator) {
+    // Register servers
     // checkers.RegisterMsgServer(cfg.MsgServer(), keeper.NewMsgServerImpl(am.keeper))
     // checkers.RegisterQueryServer(cfg.QueryServer(), keeper.NewQueryServerImpl(am.keeper))
 
@@ -851,7 +852,7 @@ Direct it to the right dependency, so it does not look for it on `github.com`:
 ...
 ```
 
-Now, you can define it in the `app/app.yaml` file:
+Now, you can define it in the `app/app.yaml` file in two locations:
 
 <CodeGroup>
 <CodeGroupItem title="Name and type">
@@ -932,6 +933,7 @@ The _side-effects_ comments refer to the `init()` function of Go packages.
 Just like you did in the [previous section](./1-preparation.md), you compile the minimal chain, re-initialize and start it. You need to re-initialize because your genesis has changed.
 
 ```sh
+$ go mod tidy
 $ make install
 $ make init
 $ minid start

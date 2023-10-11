@@ -204,7 +204,7 @@ $ minid tx --help
 
 You can see that `checkers` is missing from the list of available commands. You fix that by entering your desired command in `module/autocli.go`. Taking inspiration from `minimal-module-example`:
 
-```diff-go
+```diff-go [module/autocli.go]
     import (
         autocliv1 "cosmossdk.io/api/cosmos/autocli/v1"
 +      checkersv1 "github.com/alice/checkers/api/v1"

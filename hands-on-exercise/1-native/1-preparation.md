@@ -63,7 +63,7 @@ You should see the familiar log:
 In another shell, you can confirm the list of modules that are included:
 
 ```sh
-$ minid query help
+$ minid query --help
 ```
 
 This confirms that your minimal chain is working as expected.
