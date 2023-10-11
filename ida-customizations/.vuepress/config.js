@@ -255,7 +255,7 @@ module.exports = {
                   path: "/ida-course/LPs/week-2/",
                 },
                 {
-                  title: "Setup Your Work Environment",
+                  title: "Set Up Your Work Environment",
                   path: "/tutorials/2-setup/",
                 },
                 {

@@ -172,7 +172,7 @@ If you want to go beyond out-of-context code samples like the above and see in m
 <br/><br/>
 More precisely, you can jump to:
 
-* [Keep an Up-To-Date Game Deadline](/hands-on-exercise/2-ignite-cli-adv/1-game-deadline.md), where you add the deadline feature to your chain
+* [Keep an Up-To-Date Game Deadline](/hands-on-exercise/2-ignite-cli-adv/1-game-deadline.md), where you add the deadline feature to your chain by using the **block's timestamp**
 * [Incentivize Players](/hands-on-exercise/2-ignite-cli-adv/8-gas-meter.md), to implement gas costs
 
 </HighlightBox>

@@ -223,7 +223,7 @@ In the following suggested exercise, you will create a minimal distributed state
 
 ## Test yourself - a pseudo-coding exercise
 
-With all you have learned about Tendermint and CometBFt, can you **design** a minimal distributed state machine, and think about relevant pseudo-code, for a blockchain that allows people to play the game of checkers? Open the following section, **Creating a checkers blockchain**, to start this reflection and reinforce your understanding of Tendermint.
+With all you have learned about Tendermint and CometBFt, can you **design** a minimal distributed state machine, and think about relevant pseudo-code, for a blockchain that allows people to play the game of checkers? Open the following expandable, **Creating a checkers blockchain**, to start this reflection and reinforce your understanding of Tendermint.
 
 You will continue to apply what you learn in later sections to your checkers game, and design a blockchain by using elements of the Cosmos SDK. Alternatively, you can continue directly to learn about [accounts in the Cosmos SDK](./2-accounts.md).
 
@@ -237,7 +237,7 @@ This **design project** is meant to get you thinking and will evolve in stages a
 
 <HighlightBox type="tip">
 
-This is meant as a design exercise. If you want to go from the design phase to the **implementation** phase, head to [Run Your Own Cosmos Chain](/hands-on-exercise/1-ignite-cli/index.md), which is a completely separate exercise.
+This is meant as a design exercise. If you want to go from the design phase to the **implementation** phase, head to [Rebuild Your Cosmos Chain With Ignite](/hands-on-exercise/1-ignite-cli/index.md), which is a completely separate exercise.
 
 You are free to think about design here and in the following concept pages, and then jump to a related section of the exercise.
 
@@ -424,7 +424,10 @@ You now have:
 
 <HighlightBox type="tip">
 
-The expandable above is meant as a design exercise. If you want to go from the design phase to the **implementation** phase, head to [Run Your Own Cosmos Chain](/hands-on-exercise/1-ignite-cli/index.md), which is a completely separate exercise from scratch.
+The expandable above is meant as a design exercise. If you want to go from the design phase to the **implementation** phase, head to one (or both) of the following hands-on exercises:
+
+1. [SDK v0.50 Native](/hands-on-exercise/1-native/index.md), which is a short exercise to partially build your own checkers chain without the help of external tools, using the SDK's v0.50.
+2. [Rebuild Your Cosmos Chain With Ignite](/hands-on-exercise/1-ignite-cli/index.md), which is a completely separate exercise from scratch, using Ignite CLI, and an older version of the Cosmos SDK.
 <br/><br/>
 Relevant to this section on ABCI is the [Auto-Expiring Games](/hands-on-exercise/2-ignite-cli-adv/4-game-forfeit.md) section, where you use the Cosmos SDK to implement expiration in `EndBlock`. Be warned that this is an advanced section of the hands-on-exercise.
 <br/><br/>

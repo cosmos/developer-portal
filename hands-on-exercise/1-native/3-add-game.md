@@ -190,8 +190,8 @@ In order to declare the stored games as a map, you first need to define a map ke
 
 ```diff-go [keys.go]
     var (
-        ParamsKey         = collections.NewPrefix(0)
-+      StoredGameListKey = collections.NewPrefix(1)
+        ParamsKey         = collections.NewPrefix("Params")
++      StoredGameListKey = collections.NewPrefix("StoredGame/value/")
     )
 ```
 
@@ -219,11 +219,15 @@ And then initialize the storage access, taking inspiration from `minimal-module-
     ...
 ```
 
+<HighlightBox type="tip">
+
 What this initialization does is explained [here](https://docs.cosmos.network/v0.50/packages/collections):
 
 > Collections is a library meant to simplify the experience with respect to module state handling.
 
 The `codec.CollValue` construct is covered [in the documentation](https://docs.cosmos.network/v0.50/packages/collections#key-and-value-codecs).
+
+</HighlightBox>
 
 And do not forget the genesis manipulation to and from storage in `keeper/genesis.go`, again taking inspiration from `minimal-module-example`:
 
@@ -309,6 +313,6 @@ In there, you can find:
     }
 ```
 
-## Conclusion
+## Up next
 
 You have an on-chain game storage area, but it is empty. In the next section, you start populating it with the use of a transaction message.

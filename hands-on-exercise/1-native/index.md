@@ -27,7 +27,8 @@ In this chapter, you will:
 
 * Prepare your computer to work with the Cosmos SDK v0.50.
 * Clone two minimal repositories that will get you started fast.
-* Begin implementing a Cosmos module for a checkers game using your own IDE.
+* Begin implementing a Cosmos module for a checkers game using your own IDE; starting from an empty folder.
+* Create one stored object type.
 * Create one custom message for your blockchain.
 * Work with the message handler to create and save games.
 * Create one custom query for your blockchain.
@@ -38,9 +39,9 @@ In this chapter, you will:
 
 ## Next up
 
-Before you [set up](./1-preparation.md) this exercise, prep everything by going through the section _[Setup Your Work Environment](/tutorials/2-setup/index.md)_.
+Before you set up this exercise, prep everything by going through the section _[Set Up Your Work Environment](/tutorials/2-setup/index.md)_.
 
-If your setup is ready to go, begin with the [next section](./1-ignitecli.md).
+If your setup is ready to go, begin with the [next section](./1-preparation.md).
 
 ## Developer Resources
 

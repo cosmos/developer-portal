@@ -33,7 +33,7 @@ $ git clone https://github.com/julienrbrt/chain-minimal.git
 $ cd chain-minimal
 ```
 
-You can already confirm that it compiles and runs correctly. To compile it, run:
+You can already confirm that it compiles and runs correctly. You need Go version 1.21. To compile it, run:
 
 ```sh
 $ make install

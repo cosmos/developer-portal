@@ -43,7 +43,7 @@ While there is much to explore as you journey through the stack, begin by unders
         },
         {
             title: 'Broadcast',
-            description: '**Broadcast** the signed transaction using one of the available interfaces.'
+            description: '**Broadcast** the signed transaction using one of the available interfaces so that it eventually reaches validators.'
         }
     ]
 "/>
@@ -120,7 +120,9 @@ Application developers create entrypoints to the application by creating a comma
 
 ### CLI
 
-For the command-line interface (CLI) module developers create subcommands to add as children to the application top-level transaction command [`TxCmd`](https://github.com/cosmos/cosmos-sdk/blob/v0.45.4/x/bank/client/cli/tx.go#L29-L60).
+The command-line interface (CLI) client is a versatile way for users to create transactions.
+
+For the CLI module developers create subcommands to add as children to the application top-level transaction command [`TxCmd`](https://github.com/cosmos/cosmos-sdk/blob/v0.45.4/x/bank/client/cli/tx.go#L29-L60).
 
 CLI commands bundle all the steps of transaction processing into one simple command:
 

@@ -69,11 +69,15 @@ message Module {
 }
 ```
 
+<HighlightBox type="note">
+
 Note how the package is `alice.checkers.module.v1` and the message name is `Module`. This means that later on, when you integrate the module in your chain, you will identify it with:
 
 ```txt
 alice.checkers.module.v1.Module
 ```
+
+</HighlightBox>
 
 ### Necessary Protobuf files
 
@@ -300,7 +304,7 @@ lint-fix:
 
 </ExpansionPanel>
 
-Note how it uses the `ghcr.io/cosmos/proto-builder:0.14.0` Docker image here to run the `protocgen.sh` script. This helps with making sure all necessary software is available.
+Note how it uses the [`ghcr.io/cosmos/proto-builder:0.14.0`](https://github.com/cosmos/cosmos-sdk/pkgs/container/proto-builder/119928846?tag=0.14.0) Docker image here to run the `protocgen.sh` script. This helps with making sure all necessary software is available.
 
 ### First Protobuf compilation
 
@@ -323,7 +327,7 @@ You need a couple more Protobuf files.
 
 ### Minimum Protobuf objects
 
-You are not defining your messages and queries just yet. However, you already define the facts that your module:
+You are not defining your games, messages and queries just yet. However, you already define the facts that your module:
 
 * Has a genesis, which has a type.
 * Uses params, which also have a type.
@@ -363,9 +367,9 @@ And run it:
 $ make proto-gen
 ```
 
-<HighlightBox type="alert" title="Troubleshooting">
+<HighlightBox type="note" title="Troubleshooting">
 
-If the process tells you that it downloads a Cosmos SDK version prior to 0.50, make sure to manually edit your `go.mod`.
+If the process tells you that it downloads a Cosmos SDK version different from 0.50, make sure to manually edit your `go.mod` after the fact.
 
 ```diff [go.mod]
 -       github.com/cosmos/cosmos-sdk v0.47.5
@@ -467,7 +471,7 @@ import "cosmossdk.io/collections"
 const ModuleName = "checkers"
 
 var (
-    ParamsKey  = collections.NewPrefix(0)
+    ParamsKey  = collections.NewPrefix("Params")
 )
 ```
 
@@ -847,7 +851,7 @@ Direct it to the right dependency, so it does not look for it on `github.com`:
 ...
 ```
 
-Now, you can define it in the `app.yaml` file:
+Now, you can define it in the `app/app.yaml` file:
 
 <CodeGroup>
 <CodeGroupItem title="Name and type">
@@ -882,7 +886,7 @@ Because its genesis needs to be called too.
 
 ---
 
-What remain is to update `app.go`, where you place your checkers keeper at the right locations:
+What remain is to update `app/app.go`, where you place your checkers keeper at the right locations:
 
 ```diff-go [app/app.go]
     import(
@@ -919,7 +923,9 @@ What remain is to update `app.go`, where you place your checkers keeper at the r
     ...
 ```
 
-And that's about it. `depinject` and the rest take care of initialization and runtime. The _side-effects_ comments refer to the `init()` function of Go packages.
+And that's about it. `depinject` and the rest take care of initialization and runtime.
+
+The _side-effects_ comments refer to the `init()` function of Go packages.
 
 ## Run your checkers chain
 

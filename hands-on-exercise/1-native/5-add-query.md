@@ -309,6 +309,6 @@ Returns:
 
 You have started creating the first elements of a simple checkers blockchain, one where it is possible to create, and recall, games.
 
-Cosmos SDK v0.50, compared to earlier versions, allows you to created modules in a more modular and concise way.
+Cosmos SDK v0.50, compared to earlier versions, allows you to create modules in a more modular and concise way.
 
-If you still want to reduce the amount of work to do, in a way reminiscent of _on Rails_ environments, you can use Ignite CLI. This is what you can learn in the next sections where Ignite CLI is used to quickly create a checkers blockchain at an earlier version of the Cosmos SDK.
+If you still want to reduce the amount of work to do, in a way reminiscent of _on Rails_ environments, you can use Ignite CLI. This is what you can learn in the next sections where Ignite CLI is used to quickly create a checkers blockchain at an earlier (0.45) version of the Cosmos SDK.

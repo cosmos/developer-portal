@@ -29,7 +29,7 @@ Understanding `Msg` will help you prepare for the next section, on [modules in t
 
 Messages are one of two primary objects handled by a module in the Cosmos SDK. The other primary object handled by modules is queries. While messages inform the state and have the potential to alter it, queries inspect the module state and are always read-only.
 
-In the Cosmos SDK, a **transaction** contains **one or more messages**. The module processes the messages after the transaction is included in a block by the consensus layer.
+In the Cosmos SDK, a **transaction** contains **one or more messages**. Modules process the messages after the transaction is included in a block by the consensus layer.
 
 <ExpansionPanel title="Signing a message">
 
@@ -131,7 +131,7 @@ Focus on the messages around the **game creation**. There is no single true way 
 
 With the messages defined, you need to declare how the message should be handled. This involves:
 
-1. Describing how the messages are serialized.
+1. Describing how the messages are deterministically serialized. For this, you use [Protobuf](/academy/2-cosmos-concepts/6-protobuf.md).
 2. Writing the code that handles the message and places the new game in the storage.
 3. Putting hooks and callbacks at the right places in the general message handling.
 
@@ -338,7 +338,7 @@ If you would like to get started on building your own checkers game, you can go 
 
 More specifically, you can jump to:
 
-* [Create one Custom Message](/hands-on-exercise/1-native/3-add-game.md) to see how to simply create and handle a `MsgCreateGame` message natively with SDK v0.50.
+* [Create one Custom Message](/hands-on-exercise/1-native/4-add-message.md) to see how to simply create and handle a `MsgCreateGame` message natively with SDK v0.50.
 * [Create Custom Messages](/hands-on-exercise/1-ignite-cli/4-create-message.md) to see how to simply create the `MsgCreateGame` with Ignite CLI,
 * [Create and Save a Game Properly](/hands-on-exercise/1-ignite-cli/5-create-handling.md) to see how to handle `MsgCreateGame` created with with Ignite CLI,
 * [Add a Way to Make a Move](/hands-on-exercise/1-ignite-cli/6-play-game.md) for the same but with `MsgPlayMove`, still with Ignite CLI.

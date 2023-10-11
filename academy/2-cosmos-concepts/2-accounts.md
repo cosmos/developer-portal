@@ -182,7 +182,7 @@ An address is public information normally used to reference an account. Addresse
 
 ## Keyring
 
-The keyring object stores and manages multiple accounts. The keyring object implements the [`Keyring`](https://github.com/cosmos/cosmos-sdk/blob/bf11b1bf1fa0c52fb2cd51e4f4ab0c90a4dd38a0/crypto/keyring/keyring.go#L55) interface in the Cosmos SDK.
+The keyring object stores and manages multiple accounts. The keyring object implements the [`Keyring`](https://github.com/cosmos/cosmos-sdk/blob/bf11b1bf1fa0c52fb2cd51e4f4ab0c90a4dd38a0/crypto/keyring/keyring.go#L55) interface in the Cosmos SDK. You will make use of them from the command-line in the exercises.
 
 ## Code example
 
@@ -212,7 +212,7 @@ import (
     sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
-creator, err := sdk.AccAddressFromBech32(storedGame.Creator)
+black, err := sdk.AccAddressFromBech32(storedGame.Black)
 if err != nil {
     // Handle the error.
 }
@@ -221,8 +221,8 @@ if err != nil {
 Handle the serialization as follows:
 
 ```go
-var creator sdk.AccAddress
-storedGame.Creator = creator.String()
+var black sdk.AccAddress
+storedGame.Black = black.String()
 ```
 
 With these snippets, you will be able to accept only the right players when it comes to transactions.
@@ -236,7 +236,7 @@ type StoredGame struct {
     Creator string
     Index string // The unique id that identifies this game.
     Board string // The serialized board.
-    Turn string // "black" or "red"
+    Turn string // "b" or "r"
     Black string
     Red string
 }

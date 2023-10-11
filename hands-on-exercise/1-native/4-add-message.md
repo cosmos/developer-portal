@@ -71,11 +71,15 @@ message MsgCreateGame {
 message MsgCreateGameResponse {}
 ```
 
+<HighlightBox type="note">
+
 Note:
 
 * How `MsgCreateGame` does not mention `Board` or `Turn` as this, as mentioned, should not be under the control of the message sender.
 * That the response is empty as there is no extra information to return. For instance, here the game index is known in advance.
 * How `option (cosmos.msg.v1.signer)` identifies `creator` as the field that will serve as the signer. At compilation time, the SDK will automagically pick up the value of this annotation to have `MsgCreateGame` implement `sdk.Msg.GetSigners`.
+
+</HighlightBox>
 
 ### Compile Protobuf
 
@@ -144,10 +148,14 @@ func (ms msgServer) CreateGame(ctx context.Context, msg *checkers.MsgCreateGame)
 }
 ```
 
+<HighlightBox type="note">
+
 Note how:
 
 * The creator and its signature are not checked. This is not necessary as the app has validated the transaction before sending the message.
 * The creator is not saved in storage. This is a design decision and you may in fact decide to keep the creator.
+
+</HighlightBox>
 
 ### Register the types in the module
 
@@ -224,7 +232,11 @@ You can see that `checkers` is missing from the list of available commands. You 
     }
 ```
 
+<HighlightBox type="note">
+
 Note that the `create` in `"create index black red"` is parsed out and used as the command in the `minid tx checkers create` command-line.
+
+</HighlightBox>
 
 ## Test again
 
@@ -332,14 +344,14 @@ It returns you the transaction hash as expected. To find what was put in storage
 <CodeGroupItem title="Straight">
 
 ```sh
-$ minid export --modules-to-export checkers
+$ minid export
 ```
 
 </CodeGroupItem>
 <CodeGroupItem title="Clean">
 
 ```sh
-$ minid export --modules-to-export checkers | tail -n 1 | jq
+$ minid export | tail -n 1 | jq
 ```
 
 </CodeGroupItem>
@@ -365,6 +377,8 @@ This should return something with:
     ...
 ```
 
-## Conclusion
+## Up next
 
-If you run `minid query --help`, you can see that there is no `checkers` in the list of commands. So although you can create games, you cannot retrieve them yet. This is the object of the next section.
+If you run `minid query --help`, you can see that there is no `checkers` in the list of commands. So although you can create games, you cannot retrieve them yet without dumping the whole storage.
+
+Fixing this is the object of the next section.
