@@ -57,11 +57,11 @@ service Msg {
 
 // MsgCreateGame defines the Msg/CreateGame request type.
 message MsgCreateGame {
-  option (cosmos.msg.v1.signer) = "sender";
+  option (cosmos.msg.v1.signer) = "creator";
   option (amino.name) = "alice/checkers/MsgCreateGame";
 
-  // sender is the message sender.
-  string sender = 1;
+  // creator is the message sender.
+  string creator = 1;
   string index = 2 ;
   string black = 3 [(cosmos_proto.scalar) = "cosmos.AddressString"];
   string red = 4 [(cosmos_proto.scalar) = "cosmos.AddressString"];
@@ -73,9 +73,9 @@ message MsgCreateGameResponse {}
 
 Note:
 
-* How `MsgCreateGame` does not mention `Board` or `Turn` as this, as mentioned, should not be under the control of the sender.
+* How `MsgCreateGame` does not mention `Board` or `Turn` as this, as mentioned, should not be under the control of the message sender.
 * That the response is empty as there is no extra information to return. For instance, here the game index is known in advance.
-* How `option (cosmos.msg.v1.signer)` identifies `sender` as the field that will serve as the signer. At compilation time, the SDK will automagically pick up the value of this annotation to have `MsgCreateGame` implement `sdk.Msg.GetSigners`.
+* How `option (cosmos.msg.v1.signer)` identifies `creator` as the field that will serve as the signer. At compilation time, the SDK will automagically pick up the value of this annotation to have `MsgCreateGame` implement `sdk.Msg.GetSigners`.
 
 ### Compile Protobuf
 
@@ -146,8 +146,8 @@ func (ms msgServer) CreateGame(ctx context.Context, msg *checkers.MsgCreateGame)
 
 Note how:
 
-* The sender and its signature are not checked. This is not necessary as the app has validated the transaction before sending the message.
-* The sender is not saved in storage. This is a design decision and you may in fact decide to keep the sender.
+* The creator and its signature are not checked. This is not necessary as the app has validated the transaction before sending the message.
+* The creator is not saved in storage. This is a design decision and you may in fact decide to keep the creator.
 
 ### Register the types in the module
 
