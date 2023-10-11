@@ -181,8 +181,10 @@ You need to decide under what structure you want to store a game in the storage.
 <br/><br/>
 The first idea is to attribute a unique ID to a game, and to store the game value at that ID. For the sake of clarity, and to differentiate between other stored elements in the future, you add a prefix to each ID. The storage structure looks like this:
 
+<CodeGroup>
+<CodeGroupItem title="Pseudo-code">
+
 ```go
-// Pseudo-code
 var globalStore sdk.KVStore
 checkersStore := globalStore.getAtPrefix("checkers-")
 gamesStore := checkersStore.getAtPrefix("games-")
@@ -190,6 +192,9 @@ storedGame := gamesStore.getAtPrefix(gameId)
 // Or again in a different way
 storedGame := globalStore.getAtPrefix("checkers-games-" + gameId)
 ```
+
+</CodeGroupItem>
+</CodeGroup>
 
 This is pseudo-code because:
 
@@ -207,15 +212,35 @@ type StoredGame struct {
 
 The Cosmos SDK provides much support; you only need to define the required prefixes in your corner of the storage:
 
+<CodeGroup>
+<CodeGroupItem title="v0.47 or before">
+
 ```go
 package types
 
 const (
-    StoredGameKeyPrefix = "StoredGame/value/"
+    StoredGameKeyPrefix = []byte("StoredGame/value/")
 )
 ```
 
+</CodeGroupItem>
+<CodeGroupItem title="v0.50 or after">
+
+```go
+package types
+
+const (
+    StoredGameListKey = collections.NewPrefix("StoredGame/value/")
+)
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
 This assists you with accessing a game:
+
+<CodeGroup>
+<CodeGroupItem title="v0.47 or before">
 
 ```go
 package keeper
@@ -228,7 +253,7 @@ import (
 
 func (k Keeper) GetStoredGame(ctx sdk.Context, gameId string) (storedGame types.StoredGame, found bool) {
     checkersStore := ctx.KVStore(k.storeKey)
-    gamesStore := prefix.NewStore(checkersStore, []byte(types.StoredGameKeyPrefix))
+    gamesStore := prefix.NewStore(checkersStore, types.StoredGameKeyPrefix)
     gameBytes := gamesStore.Get([]byte(gameId))
     if gameBytes == nil {
         return storedGame, false
@@ -238,7 +263,39 @@ func (k Keeper) GetStoredGame(ctx sdk.Context, gameId string) (storedGame types.
 }
 ```
 
+</CodeGroupItem>
+<CodeGroupItem title="v0.50 or after">
+
+```go
+package keeper
+
+type Keeper struct {
+    ...
+    StoredGameList collections.Map[string, checkers.StoredGame]
+}
+
+func NewKeeper(cdc codec.BinaryCodec, addressCodec address.Codec, storeService storetypes.KVStoreService, authority string) Keeper {
+    k := Keeper{
+        ...
+        StoredGameList: collections.NewMap(sb,
+            checkers.StoredGameListKey, "storedGameList", collections.StringKey,
+            codec.CollValue[checkers.StoredGame](cdc)),
+    }
+    ...
+}
+
+func (k Keeper) GetStoredGame(ctx sdk.Context, gameId string) (storedGame checkers.StoredGame, err error) {
+    return k.StoredGameList.Get(ctx, gameId)
+}
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
 If you want to save a game:
+
+<CodeGroup>
+<CodeGroupItem title="v0.47 or before">
 
 ```go
 func (k Keeper) SetStoredGame(ctx sdk.Context, storedGame types.StoredGame) {
@@ -249,9 +306,41 @@ func (k Keeper) SetStoredGame(ctx sdk.Context, storedGame types.StoredGame) {
 }
 ```
 
-If you want to delete a stored game, you call `gamesStore.Delete(byte[](storedGame.Index))`.
-<br/><br/>
+</CodeGroupItem>
+<CodeGroupItem title="v0.50 or after">
+
+```go
+func (k Keeper) SetStoredGame(ctx sdk.Context, gameId string, storedGame checkers.StoredGame) error {
+    return k.StoredGameList.Set(ctx, gameId, storedGame) 
+}
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
+In the same vein, if you want to delete a stored game, you call:
+
+<CodeGroup>
+<CodeGroupItem title="v0.47 or before">
+
+```go
+gamesStore.Delete(byte[](storedGame.Index))
+```
+
+</CodeGroupItem>
+<CodeGroupItem title="v0.50 or after">
+
+```go
+k.StoredGameList.Remove(ctx, storedGame.Index)
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
 The `KVStore` also allows you to obtain an iterator on a given prefix. You can list all stored games because they share the same prefix, which you do with:
+
+<CodeGroup>
+<CodeGroupItem title="v0.47 or before">
 
 ```go
 func (k Keeper) GetAllStoredGame(ctx sdk.Context) (list []types.StoredGame) {
@@ -271,7 +360,29 @@ func (k Keeper) GetAllStoredGame(ctx sdk.Context) (list []types.StoredGame) {
 }
 ```
 
+</CodeGroupItem>
+<CodeGroupItem title="v0.50 or after">
+
+```go
+func (k Keeper) GetAllStoredGame(ctx context.Context) ([]checkers.StoredGame, error) {
+    var storedGames []checkers.StoredGame
+    if err := k.StoredGameList.Walk(ctx, nil, func(index string, storedGame checkers.StoredGame) (bool, error) {
+        storedGames = append(storedGames, storedGame)
+        return false, nil
+    }); err != nil {
+        return nil, err
+    }
+
+    return storedGames, nil
+}
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
 Note the `MustMarshalBinaryBare` and `MustUnmarshalBinaryBare` functions in the previous `codec`. They need to be instructed on how to proceed with the marshaling. Protobuf handled this for you.
+
+<br/>
 
 <HighlightBox type="tip">
 
@@ -281,7 +392,7 @@ See the [previous section on Protobuf](./6-protobuf.md) to explore how Protobuf 
 
 **Boilerplate, boilerplate everywhere!**
 
-Note how the `Set`, `Get`, `Remove`, and `GetAll` functions shown previously look like boilerplate too. Do you have to redo these functions for every type? *No* - it was all created with this Ignite CLI command:
+Note how the v0.47 (or before) `Set`, `Get`, `Remove`, and `GetAll` functions shown previously look like boilerplate too. Do you have to redo these functions for every type? *No* - it was all created with this Ignite CLI command:
 
 ```sh
 $ ignite scaffold map storedGame \
@@ -292,11 +403,16 @@ $ ignite scaffold map storedGame \
 
 `map` is the command that tells Ignite CLI to add an `Index` and store all elements under a map-like structure.
 
+With v0.50 or later, the boilerplate is already hidden away in the `collections` library.
+
 **Other storage elements**
 
 If your users cannot choose a new game's index, how do you pick a value for the `Index` in `storedGame`? A viable idea is to keep a counter in storage for the next game. Unlike `StoredGame`, which is saved as a map, this `SystemInfo` object has to be at a unique location in the storage.
 <br/><br/>
 First define the object:
+
+<CodeGroup>
+<CodeGroupItem title="v0.47 or before">
 
 ```go
 package types
@@ -306,7 +422,13 @@ type SystemInfo struct {
 }
 ```
 
+</CodeGroupItem>
+</CodeGroup>
+
 Then define the key where it resides:
+
+<CodeGroup>
+<CodeGroupItem title="v0.47 or before">
 
 ```go
 const (
@@ -314,7 +436,13 @@ const (
 )
 ```
 
+</CodeGroupItem>
+</CodeGroup>
+
 Then define the functions to get and set:
+
+<CodeGroup>
+<CodeGroupItem title="v0.47 or before">
 
 ```go
 func (k Keeper) SetSystemInfo(ctx sdk.Context, systemInfo types.SystemInfo) {
@@ -324,7 +452,13 @@ func (k Keeper) SetSystemInfo(ctx sdk.Context, systemInfo types.SystemInfo) {
 }
 ```
 
+</CodeGroupItem>
+</CodeGroup>
+
 Remember that `SystemInfo` needs an initial value, which is the role of the genesis block definition:
+
+<CodeGroup>
+<CodeGroupItem title="v0.47 or before">
 
 ```go
 type GenesisState struct {
@@ -333,7 +467,13 @@ type GenesisState struct {
 }
 ```
 
+</CodeGroupItem>
+</CodeGroup>
+
 Now initialize:
+
+<CodeGroup>
+<CodeGroupItem title="v0.47 or before">
 
 ```go
 func DefaultGenesis() *GenesisState {
@@ -346,168 +486,26 @@ func DefaultGenesis() *GenesisState {
 }
 ```
 
+</CodeGroupItem>
+</CodeGroup>
+
 **What about message handling**
 
-You go from the message to the game in storage with `MsgCreateGame`, which was defined in an earlier [section on messages](./4-messages.md). That is also the role of the keeper.
-<br/><br/>
-Define a handling function such as:
+To see how messages are handled with the help of a message server and the keeper, head to one of the links at the bottom of the page.
 
-```go
-func (k Keeper) CreateGame(goCtx context.Context, msg *types.MsgCreateGame) (*types.MsgCreateGameResponse, error) {
-    ctx := sdk.UnwrapSDKContext(goCtx)
-
-    // TODO: Handle the message
-
-    return &types.MsgCreateGameResponse{}, nil
-}
-```
-
-You now have all the pieces necessary to replace the `TODO`.
-
-Get the next game ID:
-
-```go
-    systemInfo, found := k.GetSystemInfo(ctx)
-    if !found {
-        // Panic because this should never happen.
-        panic("SystemInfo not found")
-    }
-    newIndex := strconv.FormatUint(systemInfo.NextId, 10)
-```
-
-Extract and sanitize the message elements:
-
-```go
-    creator, err := sdk.AccAddressFromBech32(msg.Creator)
-    if err != nil {
-        return nil, errors.New("creator address invalid")
-    }
-    black, err := sdk.AccAddressFromBech32(msg.Black)
-    if err != nil {
-        // Standard error because users can make mistakes.
-        return nil, errors.New("black address invalid")
-    }
-    red, err := sdk.AccAddressFromBech32(msg.Red)
-    if err != nil {
-        return nil, errors.New("red address invalid")
-    }
-```
-
-Create the stored game object:
-
-```go
-    storedGame := types.StoredGame{
-        Creator: msg.Creator,
-        Index:   newIndex,
-        Board:   rules.New().String(),
-        Turn:    "b",
-        Black:   msg.Black,
-        Red:     msg.Red,
-        Wager:   msg.Wager,
-    }
-```
-
-Save the stored game object in storage:
-
-```go
-    k.SetStoredGame(ctx, storedGame)
-```
-
-Prepare for the next created game:
-
-```go
-    systemInfo.NextId++
-    k.SetSystemInfo(ctx, systemInfo)
-```
-
-Return the game ID for reference:
-
-```go
-    return &types.MsgCreateGameResponse{
-        GameIndex: newIndex,
-    }, nil
-```
-
-You would also do the same for `MsgPlayMoveResponse` and `MsgRejectGame`. Why not try it out as an exercise? See the bottom of the page for relevant links.
-<br/><br/>
 **More on game theory**
 
 Some players may drop out from games, especially if they know they are about to lose. As the blockchain designer, you need to protect your blockchain, and in particular to avoid bloat, or locked tokens.
 
-A good first point is to introduce a game deadline. This demonstrates how you would add a small feature to your existing blockchain:
-
-```go
-const (
-    MaxTurnDuration = time.Duration(24 * 3_600 * 1000_000_000) // 1 day
-    DeadlineLayout  = "2006-01-02 15:04:05.999999999 +0000 UTC"
-)
-type StoredGame struct {
-    ...
-    Deadline string
-}
-```
-
-Set its initial value on creation:
-
-```go
-storedGame := types.StoredGame{
-    ...
-    Deadline: ctx.BlockTime().Add(types.MaxTurnDuration).UTC().Format(types.DeadlineLayout),
-}
-```
-
-Update its value after a move:
-
-```go
-storedGame.Deadline = ctx.BlockTime().Add(types.MaxTurnDuration).UTC().Format(types.DeadlineLayout)
-```
-
-Extract and verify its value when necessary:
-
-```go
-deadline, err = time.Parse(DeadlineLayout, storedGame.Deadline)
-if err != nil {
-    panic(err)
-}
-if deadline.Before(ctx.BlockTime()) {
-    // TODO
-}
-```
+A good first point is to introduce a game deadline. For details, head to one of the links at the bottom of the page.
 
 **How to expire games**
 
 How can you know what games should be removed? Should you load _all_ games and filter for those that have expired? That would be extremely expensive, O(n) of the number of games in fact. This means the more successful your blockchain becomes, the slower it would run.
 
 Better is to use a First-In-First-Out (FIFO) strategy, where fresh games are pushed back to the tail so that the head contains the next games to expire.
-<br/><br/>
-In the context of the Cosmos SDK, you need to keep track of where the FIFO starts and stops by saving the corresponding game IDs:
 
-```go
-const (
-    NoFifoIndex = "-1"
-)
-type SystemInfo struct {
-    ...
-    FifoHeadIndex string
-    FifoTailIndex string
-}
-```
-
-Each game must know its relative position and the number of moves done, to assist the refunding logic on games with zero, one, or more than two moves:
-
-```go
-type StoredGame struct {
-    ...
-    MoveCount   uint64
-    BeforeIndex string
-    AfterIndex  string
-}
-```
-
-Next, you need to code a regular FIFO, whereby:
-
-* Games are sent to the back when created or played on.
-* Games are removed from the FIFO when they are finished or time out.
+To see how it can be implemented in the context of the Cosmos SDK, head to one of the links at the bottom of the page.
 
 **When to expire games**
 

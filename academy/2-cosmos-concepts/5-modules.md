@@ -62,7 +62,9 @@ Most of the work for developers involved in building a Cosmos SDK application co
 
 ## Module components
 
-It is best practice to define a module in the `x/moduleName` folder. For example, the module called `Checkers` would go in `x/checkers`. If you look at the Cosmos SDK's base code, it also [defines its modules](https://github.com/cosmos/cosmos-sdk/tree/main/x) in an `x/` folder.
+Starting with **Cosmos SDK v0.50**, it is best practice to keep modules in their own repositories. This increases overall modularization of the code, and simplifies the procedure for third-party reuse. For example, the module called `Checkers`, would be in the `github.com/alice/checkers` repository, and could be either used as such in the whole Go application, or you could use a `go.mod` redirect such as `replace (github.com/alice/checkers => ../checkers-module/)` to keep it local.
+
+Before v0.50, it used to be best practice to define a module in the `x/moduleName` folder. Using this method is still possible with v050. For example, the module called `Checkers` would go in `x/checkers`. If you look at the Cosmos SDK's base code, it also [defines its modules](https://github.com/cosmos/cosmos-sdk/tree/main/x) in an `x/` folder.
 
 Modules implement several elements:
 
@@ -142,6 +144,12 @@ See the [gRPC-Gateway documentation](https://grpc-ecosystem.github.io/grpc-gatew
 ### Command-line commands
 
 Each module defines commands for a command-line interface (CLI). Commands related to a module are defined in a folder called `client/cli`. The CLI divides commands into two categories: transactions and queries. These are the same as those which you defined in `tx.go` and `query.go` respectively.
+
+<HighlightBox type="note">
+
+Starting with Cosmos SDK v0.50, the `autocli.go` facility lets developers create CLI commands in a succinct descriptive way.
+
+</HighlightBox>
 
 ### Keeper
 
