@@ -243,11 +243,11 @@ This only works if you have prepared the `checkers_i` Docker image.
 
 <HighlightBox type="note">
 
-Your choice of `github.com/alice/checkers`, or another name, is not anodyne. You are going to create a Cosmos SDK module, Protobuf messages and CosmJS files that all reference this choice, in their own way. In particular:
+Your choice of module name (`github.com/alice/checkers`, or any other name) deserves careful consideration. You will create a Cosmos SDK module, Protobuf messages, and CosmJS files which all reference this choice in their own ways. In particular:
 
-* Your module name ought to be **unique**, as in unique in the world, to avoid confusion.
-* Your protobuf messages will be identified by their packages, such as `alice.checkers.checkers` and `alice.checkers.leaderboard`.
-* If you start your project with `alice/checkers` but later use the linked _solutions_, which use [`b9lab/checkers`](https://github.com/cosmos/b9-checkers-academy-draft/blob/ignite-start/go.mod#L1), you are in for unexpected, though fixable, surprises.
+* Your module name should be **unique**, meaning unique _in the world_, to avoid confusion.
+* Your Protobuf messages will be identified by their packages, such as `alice.checkers.checkers` and `alice.checkers.leaderboard`.
+* If you start your project with `alice/checkers` but later use the linked _solutions_, which use [`b9lab/checkers`](https://github.com/cosmos/b9-checkers-academy-draft/blob/ignite-start/go.mod#L1), you will encounter unexpected (though fixable) surprises.
 
 </HighlightBox>
 

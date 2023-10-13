@@ -980,9 +980,9 @@ If you are curious about how this `Dockerfile-standalone` was created, head to t
 
 <HighlightBox type="warn">
 
-Note that the standalone checkers Docker image uses the project name `b9lab/checkers`, including for its Protobuf package names. So make sure that your [`generated` Typescript objects do too](https://github.com/cosmos/academy-checkers-ui/blob/generated/src/types/generated/checkers/genesis.ts#L8).
+Note that the standalone checkers Docker image uses the project name `b9lab/checkers`, **including for its Protobuf package names**. Make sure that your [`generated` Typescript objects do too](https://github.com/cosmos/academy-checkers-ui/blob/generated/src/types/generated/checkers/genesis.ts#L8).
 
-If that is not the case, you may hit ambiguous errors such as:
+If that is not the case, you may encounter ambiguous errors such as:
 
 ```txt
 Query failed with (6): unknown query path: unknown request
