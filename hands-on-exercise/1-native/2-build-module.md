@@ -842,7 +842,7 @@ Your checkers module is not prepared as a standalone module. It is time to integ
 
 Back to `chain-minimal`, you have to direct it to integrate your checkers module. It is known with the `github.com/alice/checkers` package, and located in a parallel folder.
 
-Direct it to the right dependency, so it does not look for it on `github.com`:
+Direct it to the right dependency, so it does not look for it on `github.com`, go to your `go.mod` and add:
 
 ```diff [go.mod]
 ...

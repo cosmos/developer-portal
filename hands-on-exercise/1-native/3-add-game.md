@@ -92,7 +92,7 @@ And recompile.
 
 ### Add validation
 
-You can consider adding functions on the `StoredGame`, for instance a `Validate` one. Start with a new `errors.go` file.
+You can consider adding functions on the `StoredGame`, for instance a `Validate` one. Start with a new `errors.go` file in the root folder of your `checkers-minimal` module.
 
 <CodeGroup>
 <CodeGroupItem title="errors.go">
