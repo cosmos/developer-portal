@@ -33,7 +33,31 @@ You will have to create a `client` folder that will contain all these new elemen
 $ git submodule add git@github.com:cosmos/academy-checkers-ui.git client
 ```
 
-Replace the path with your own repository. In effect, this creates a new `client` folder. This `client` folder makes it possible for you to easily update another repository with content generated out of your Go code.
+Replace the path with your own repository.
+
+In effect, this creates a new `client` folder. This `client` folder makes it possible for you to easily update another repository with content generated out of your Go code.
+
+<HighlightBox type="note">
+
+As noted early on [when you created your project](/hands-on-exercise/1-ignite-cli/1-ignitecli.md) with Ignite, your project is known as `alice/checkers`, or the name you chose. 
+
+However, [`github.com:cosmos/academy-checkers-ui`](https://github.com/cosmos/academy-checkers-ui) is a repository that already exists and is using [`b9lab/checkers`](https://github.com/cosmos/academy-checkers-ui/blob/generated/src/types/generated/checkers/genesis.ts#L8) in order to maintain compatibility with the [checkers application](https://github.com/cosmos/b9-checkers-academy-draft/tree/cosmjs-elements) of which it is a submodule.
+
+So if you choose to reuse `github.com:cosmos/academy-checkers-ui`:
+
+* Either make sure to go and replace all occurrences of `b9lab/checkers` with `alice/checkers`, or whichever name you picked.
+* Or re-run the `protoc` step so that it does the replacement for you.
+
+If you do not, you may hit ambiguous errors such as:
+
+```txt
+Query failed with (6): unknown query path: unknown request
+    at QueryClient.queryUnverified (http://localhost:3000/static/js/bundle.js:21568:13)
+    at async Object.getAllStoredGames (http://localhost:3000/static/js/bundle.js:2975:26)
+    at async src_checkers_stargateclient__WEBPACK_IMPORTED_MODULE_0__.CheckersStargateClient.getGuiGames 
+```
+
+</HighlightBox>
 
 Create a folder named `scripts` in your project root. This is where you will launch the Protobuf compilation:
 
@@ -673,6 +697,21 @@ If you have another preferred method, make sure to keep track of the required `R
 <HighlightBox type="tip">
 
 If you are curious about how this `Dockerfile-standalone` was created, head to the [run in production](../4-run-in-prod/1-run-prod-docker.md) section.
+
+</HighlightBox>
+
+<HighlightBox type="warn">
+
+Note that the standalone checkers Docker image uses the project name `b9lab/checkers`, including for its Protobuf package names. So make sure that your [`generated` Typescript objects do too](https://github.com/cosmos/academy-checkers-ui/blob/generated/src/types/generated/checkers/genesis.ts#L8).
+
+If that is not the case, you may hit ambiguous errors such as:
+
+```txt
+Query failed with (6): unknown query path: unknown request
+    at QueryClient.queryUnverified (http://localhost:3000/static/js/bundle.js:21568:13)
+    at async Object.getAllStoredGames (http://localhost:3000/static/js/bundle.js:2975:26)
+    at async src_checkers_stargateclient__WEBPACK_IMPORTED_MODULE_0__.CheckersStargateClient.getGuiGames 
+```
 
 </HighlightBox>
 
