@@ -91,7 +91,7 @@ For the command-line interface (CLI), module developers create subcommands to ad
 
 <HighlightBox type="tip">
 
-With v0.50, Cosmos SDK introduces the [`autocli` facility](https://docs.cosmos.network/v0.50/learn/advanced/autocli#module-wiring--customization) that takes care of a lot of the boilerplate and lets you define the available CLI commands in a descriptive manner.
+With v0.50, the Cosmos SDK introduces the [`autocli` facility](https://docs.cosmos.network/v0.50/learn/advanced/autocli#module-wiring--customization). This takes care of a lot of the boilerplate and lets you define the available CLI commands in a descriptive manner.
 
 </HighlightBox>
 
@@ -170,9 +170,9 @@ service Msg {
 }
 ```
 
-Which after compilation, you register together with your interface registry so that the module knows to send any `MsgCreateGame` to the `CreateGame` function of the `MsgClient` interface.
+After compilation, you register this together with your interface registry so that the module knows to send any `MsgCreateGame` to the `CreateGame` function of the `MsgClient` interface.
 
-You also define a local `msgServer` that implements the `CreateGame` function with the required actions such as:
+You also define a local `msgServer` that implements the `CreateGame` function with the required actions, such as:
 
 * Extracting and verifying the players and other values from the message.
 * Creating a new game and saving it to storage.
@@ -199,7 +199,7 @@ _**A sample of things Ignite CLI does for you**_
 Ignite CLI significantly reduces the amount of work a developer has to do to build an application with the Cosmos SDK. Among others, it:
 
 * Assists with making sure that your message conforms to `sdk.Msg` by adding the boilerplate for `GetSigners` and `GetSignBytes`.
-* Adjusts the module's code so that this new message type is handled when received, and adds an empty function for you complete the meat of the action this message is supposed to trigger. It even places a helpful `// TODO: Handling the message` where you should place your code.
+* Adjusts the module's code so that this new message type is handled when received, and adds an empty function where you introduce the action this message is supposed to trigger. It even places a helpful `// TODO: Handling the message` where you should place your code.
 
 Ignite CLI is opinionated in terms of which files it creates to separate which concerns. If you are not using it, you are free to create the files you want.
 
@@ -256,13 +256,13 @@ There are no _open_ challenges, meaning a player cannot create a game where the 
 
 <HighlightBox type="tip">
 
-If you would like to get started on building your own checkers game, you can go straight to the main exercise in Run Your Own Cosmos Chain [natively with SDK v0.50](/hands-on-exercise/1-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
+If you would like to get started on building your own checkers game, you can go straight to the main exercise in Run Your Own Cosmos Chain, either [natively with SDK v0.50](/hands-on-exercise/1-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
 
 More specifically, you can jump to:
 
 * [Create one Custom Message](/hands-on-exercise/1-native/4-add-message.md) to see how to simply create and handle a `MsgCreateGame` message natively with SDK v0.50.
-* [Create Custom Messages](/hands-on-exercise/1-ignite-cli/4-create-message.md) to see how to simply create the `MsgCreateGame` with Ignite CLI,
-* [Create and Save a Game Properly](/hands-on-exercise/1-ignite-cli/5-create-handling.md) to see how to handle `MsgCreateGame` created with with Ignite CLI,
+* [Create Custom Messages](/hands-on-exercise/1-ignite-cli/4-create-message.md) to see how to simply create the `MsgCreateGame` with Ignite CLI.
+* [Create and Save a Game Properly](/hands-on-exercise/1-ignite-cli/5-create-handling.md) to see how to handle `MsgCreateGame` created with Ignite CLI.
 * [Add a Way to Make a Move](/hands-on-exercise/1-ignite-cli/6-play-game.md) for the same but with `MsgPlayMove`, still with Ignite CLI.
 
 </HighlightBox>

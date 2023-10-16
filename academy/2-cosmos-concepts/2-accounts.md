@@ -182,7 +182,7 @@ An address is public information normally used to reference an account. Addresse
 
 ## Keyring
 
-The keyring object stores and manages multiple accounts. The keyring object implements the [`Keyring`](https://github.com/cosmos/cosmos-sdk/blob/bf11b1bf1fa0c52fb2cd51e4f4ab0c90a4dd38a0/crypto/keyring/keyring.go#L55) interface in the Cosmos SDK. You will make use of them from the command-line in the exercises.
+The keyring object stores and manages multiple accounts. It implements the [`Keyring`](https://github.com/cosmos/cosmos-sdk/blob/bf11b1bf1fa0c52fb2cd51e4f4ab0c90a4dd38a0/crypto/keyring/keyring.go#L55) interface in the Cosmos SDK. You will make use of them from the command-line in the exercises.
 
 ## Code example
 
@@ -246,11 +246,11 @@ type StoredGame struct {
 
 <HighlightBox type="tip">
 
-If you want to go beyond the out-of-context code samples above and instead see more details on implementing this, you can go straight to the main exercise in Run Your Own Cosmos Chain [natively with SDK v0.50](/hands-on-exercise/1-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
+If you want to go beyond the previous out-of-context code samples and instead see more details on implementing this, you can go straight to the main exercise in Run Your Own Cosmos Chain, either [natively with SDK v0.50](/hands-on-exercise/1-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
 
 More specifically, you can jump to:
 
-* [Add your first object](/hands-on-exercise/1-native/3-add-game.md) and [Add your first message](/hands-on-exercise/1-native/4-add-message.md) to see how to save addresses in storage in v0.50 natively.
+* [Add your first object](/hands-on-exercise/1-native/3-add-game.md) and [Add your first message](/hands-on-exercise/1-native/4-add-message.md) to see how to save addresses in storage with v0.50 natively.
 * [Store Object](/hands-on-exercise/1-ignite-cli/3-stored-game.md), [Create Custom Messages](/hands-on-exercise/1-ignite-cli/4-create-message.md), and [Create and Save a Game Properly](/hands-on-exercise/1-ignite-cli/5-create-handling.md) to see how to save addresses in storage with the help of Ignite CLI.
 * [Add a Way to Make a Move](/hands-on-exercise/1-ignite-cli/6-play-game.md) to see how a message's _sender_ address is checked against a stored game.
 

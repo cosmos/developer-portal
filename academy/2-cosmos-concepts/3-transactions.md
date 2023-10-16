@@ -122,7 +122,7 @@ Application developers create entrypoints to the application by creating a comma
 
 The command-line interface (CLI) client is a versatile way for users to create transactions.
 
-For the CLI module developers create subcommands to add as children to the application top-level transaction command [`TxCmd`](https://github.com/cosmos/cosmos-sdk/blob/v0.45.4/x/bank/client/cli/tx.go#L29-L60).
+For the CLI, module developers create subcommands to add as children to the application top-level transaction command [`TxCmd`](https://github.com/cosmos/cosmos-sdk/blob/v0.45.4/x/bank/client/cli/tx.go#L29-L60).
 
 CLI commands bundle all the steps of transaction processing into one simple command:
 

@@ -505,7 +505,7 @@ How can you know what games should be removed? Should you load _all_ games and f
 
 Better is to use a First-In-First-Out (FIFO) strategy, where fresh games are pushed back to the tail so that the head contains the next games to expire.
 
-To see how it can be implemented in the context of the Cosmos SDK, head to one of the links at the bottom of the page.
+To see how this can be implemented in the context of the Cosmos SDK, head to one of the links at the bottom of the page.
 
 **When to expire games**
 
@@ -515,13 +515,13 @@ See the next section about the [BaseApp](/academy/2-cosmos-concepts/8-base-app.m
 
 <HighlightBox type="tip">
 
-If you would like to get started on building your own checkers game, you can go straight to the main exercise in Run Your Own Cosmos Chain [natively with SDK v0.50](/hands-on-exercise/1-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
+If you would like to get started on building your own checkers game, you can go straight to the main exercise in Run Your Own Cosmos Chain, either [natively with SDK v0.50](/hands-on-exercise/1-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
 <br/><br/>
 More precisely, you can jump to:
 
 * [Add a game in storage](/hands-on-exercise/1-native/3-add-game.md) to see how to define a map storage natively in Cosmos SDK v0.50, and its usage in the keeper.
-* [Store Object - Make a Checkers Blockchain](/hands-on-exercise/1-ignite-cli/3-stored-game.md) for general detail of how you handle your game in storage.
-* [Create and Save a Game Properly](/hands-on-exercise/1-ignite-cli/5-create-handling.md) for how you would handle the game when it is being created.
+* [Store Object - Make a Checkers Blockchain](/hands-on-exercise/1-ignite-cli/3-stored-game.md) for general detail of how to handle your game in storage.
+* [Create and Save a Game Properly](/hands-on-exercise/1-ignite-cli/5-create-handling.md) for how to handle the game when it is being created.
 * [Keep an Up-To-Date Game Deadline](/hands-on-exercise/2-ignite-cli-adv/1-game-deadline.md), where you add a small feature to your chain.
 * [Put Your Games in Order](/hands-on-exercise/2-ignite-cli-adv/3-game-fifo.md) to see the implementation of the FIFO within the constraints of the store.
 * [Store leaderboard candidates](/hands-on-exercise/4-run-in-prod/3-add-leaderboard.md) in the context's **transient store**.

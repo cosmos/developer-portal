@@ -295,7 +295,7 @@ customModules:
         title: SDK v0.50 Native
         href: /hands-on-exercise/1-native/
         description: |
-          Do the minimum natively with the Cosmos SDK v0.50 to develop a checkers blockchain:
+          Do the minimum to develop a checkers blockchain natively with Cosmos SDK v0.50:
         links:
           - title: Preparation
             path: /hands-on-exercise/1-native/1-preparation.html
