@@ -173,7 +173,7 @@ module.exports = {
                 },
                 {
                   title: "Getting ATOM and Staking It",
-                  path: "/academy/1-what-is-cosmos/3-atom-staking.html",
+                  path: "/academy/1-what-is-cosmos/4-atom-staking.html",
                 },
                 {
                   title: "A Blockchain App Architecture",

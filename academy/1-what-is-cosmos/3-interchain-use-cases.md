@@ -93,4 +93,4 @@ To summarize, this section has explored:
 
 <!--## Next up
 
-Are you ready to get some ATOM? Find out all about the native token of the Cosmos Hub and how to stake ATOM in the [next section](./3-atom-staking.md).-->
+Are you ready to get some ATOM? Find out all about the native token of the Cosmos Hub and how to stake ATOM in the [next section](./4-atom-staking.md).-->
