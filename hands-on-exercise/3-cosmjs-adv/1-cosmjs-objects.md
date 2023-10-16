@@ -38,76 +38,16 @@ Replace the path with your own repository. In effect, this creates a new `client
 Create a folder named `scripts` in your project root. This is where you will launch the Protobuf compilation:
 
 ```sh
-$ mkdir -p scripts/protoc
+$ mkdir scripts
 ```
 
-In the `scripts` folder, or in your Docker image, install a compiler:
-
-<CodeGroup>
-
-<CodeGroupItem title="Local" active>
+In the `scripts` folder, install telescope for Protobuf compilation:
 
 ```sh
-$ cd scripts/protoc
-$ curl -L https://github.com/protocolbuffers/protobuf/releases/download/v21.5/protoc-21.5-linux-x86_64.zip -o protoc.zip
-$ unzip protoc.zip
-$ rm protoc.zip
-# If /usr/local/bin is in your $PATH
-$ ln -s $(pwd)/bin/protoc /usr/local/bin/protoc
-$ cd ../..
+$ cd scripts
+$ npm install --save-dev --save-exact @cosmology/telescope@1.0.4
+$ cd ..
 ```
-
-Make sure that:
-
-* `/usr/local/bin` is the right folder to link to in the command above.
-* You are downloading the right executable for your computer; see your options [here](https://github.com/protocolbuffers/protobuf/releases/tag/v21.5).
-
-</CodeGroupItem>
-
-<CodeGroupItem title="Docker">
-
-```diff [https://github.com/cosmos/b9-checkers-academy-draft/blob/cosmjs-elements/Dockerfile-ubuntu#L1-L50]
--  FROM --platform=linux ubuntu:22.04
-+  FROM --platform=linux ubuntu:22.04 as base
-    ARG BUILDARCH
-    ...
-    ENV MOCKGEN_VERSION=1.6.0
-+  ENV PROTOC_VERSION=21.7
-+
-+  FROM base AS platform-amd64
-+  ENV PROTOC_PLATFORM=x86_64
-+
-+  FROM base AS platform-arm64
-+  ENV PROTOC_PLATFORM=aarch_64
-+
-+  FROM platform-${BUILDARCH}
-
-    ENV LOCAL=/usr/local
-    ...
--  ENV PACKAGES curl gcc jq make
-+  ENV PACKAGES curl gcc jq make unzip
-    ...
-    RUN go install github.com/golang/mock/mockgen@v${MOCKGEN_VERSION}
-
-+  # Install ProtoC
-+  RUN mkdir -p /usr/lib/protoc
-+  WORKDIR /usr/lib/protoc
-+  RUN curl -L https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-${PROTOC_PLATFORM}.zip -o protoc.zip
-+  RUN unzip -o protoc.zip
-+  RUN rm protoc.zip
-+  RUN ln -s /usr/lib/protoc/bin/protoc ${LOCAL}/bin/protoc
-    ...
-```
-
-Rebuild your Docker image.
-
-</CodeGroupItem>
-
-</CodeGroup>
-
----
-
-Now install your additional modules:
 
 <CodeGroup>
 
@@ -115,7 +55,7 @@ Now install your additional modules:
 
 ```sh
 $ cd scripts
-$ npm install ts-proto@1.121.6 --save-dev --save-exact
+$ npm install --save-dev --save-exact @cosmology/telescope@1.0.4
 $ cd ..
 ```
 
@@ -128,12 +68,14 @@ $ docker run --rm -it \
     -v $(pwd):/checkers \
     -w /checkers/scripts \
     checkers_i \
-    npm install ts-proto@1.121.6 --save-dev --save-exact
+    npm install --save-dev --save-exact @cosmology/telescope@1.0.4
 ```
 
 </CodeGroupItem>
 
 </CodeGroup>
+
+---
 
 Create the folder structure to receive the compiled files:
 
@@ -165,7 +107,76 @@ $ mkdir -p proto/gogoproto
 $ curl https://raw.githubusercontent.com/cosmos/cosmos-sdk/v0.45.4/third_party/proto/gogoproto/gogo.proto -o proto/gogoproto/gogo.proto
 ```
 
-Now compile:
+Now we're ready to compile:
+
+Create a telescope config `.telescope.json` with following content:
+
+```json
+{
+  "protoDirs": [
+    "../proto"
+  ],
+  "outPath": "../client/src/types/generated",
+  "options": {
+    "env": "v-next",
+    "useSDKTypes": false,
+    "tsDisable": {
+      "disableAll": false
+    },
+    "eslintDisable": {
+      "disableAll": true
+    },
+    "bundle": {
+      "enabled": false
+    },
+    "prototypes": {
+      "includePackageVar": true,
+      "strictNullCheckForPrototypeMethods": true,
+      "paginationDefaultFromPartial": true,
+      "methods": {
+        "fromJSON": true,
+        "toJSON": true,
+        "fromAmino": false,
+        "toAmino": false,
+        "fromProto": false,
+        "toProto": false
+      },
+      "typingsFormat": {
+        "customTypes": {
+          "useCosmosSDKDec": false
+        },
+        "num64": "long",
+        "useDeepPartial": true,
+        "useExact": true,
+        "timestamp": "timestamp",
+        "duration": "duration"
+      }
+    },
+    "lcdClients": {
+      "enabled": false
+    },
+    "rpcClients": {
+      "enabled": true,
+      "inline": true,
+      "extensions": false,
+      "camelCase": false,
+      "enabledServices": [
+        "Msg",
+        "Query",
+        "Service",
+        "ReflectionService",
+        "ABCIApplication"
+      ]
+    },
+    "aminoEncoding": {
+      "enabled": false,
+      "useLegacyInlineEncoding": true
+    }
+  }
+}
+```
+
+Then compile:
 
 <CodeGroup>
 
@@ -173,12 +184,7 @@ Now compile:
 
 ```sh
 $ cd scripts
-$ ls ../proto/checkers | xargs -I {} protoc \
-    --plugin="./node_modules/.bin/protoc-gen-ts_proto" \
-    --ts_proto_out="../client/src/types/generated" \
-    --proto_path="../proto" \
-    --ts_proto_opt="esModuleInterop=true,forceLong=long,useOptionals=messages" \
-    checkers/{}
+$ npx telescope transpile --config .telescope.json
 ```
 
 </CodeGroupItem>
@@ -190,12 +196,7 @@ $ ls proto/checkers | xargs -I {} docker run --rm \
     -v $(pwd):/checkers \
     -w /checkers/scripts \
     checkers_i \
-    protoc \
-    --plugin="./node_modules/.bin/protoc-gen-ts_proto" \
-    --ts_proto_out="../client/src/types/generated" \
-    --proto_path="../proto" \
-    --ts_proto_opt="esModuleInterop=true,forceLong=long,useOptionals=messages" \
-    checkers/{}
+    npx telescope transpile --config .telescope.json
 ```
 
 </CodeGroupItem>
@@ -207,13 +208,8 @@ You should now have your TypeScript files.
 In order to easily repeat these steps in the future, you can add them to your existing `Makefile` with slight modifications:
 
 ```lang-makefile [https://github.com/cosmos/b9-checkers-academy-draft/blob/cosmjs-elements/Makefile#L6-L31]
-install-protoc-gen-ts:
-    mkdir -p scripts/protoc
+install-gen-tool:
     cd scripts && npm install
-    curl -L https://github.com/protocolbuffers/protobuf/releases/download/v21.5/protoc-21.5-linux-x86_64.zip -o scripts/protoc/protoc.zip
-    cd scripts/protoc && unzip -o protoc.zip
-    rm scripts/protoc/protoc.zip
-    ln -s $(pwd)/scripts/protoc/bin/protoc /usr/local/bin/protoc
 
 cosmos-version = v0.45.4
 
@@ -226,14 +222,8 @@ download-cosmos-proto:
     mkdir -p proto/gogoproto
     curl https://raw.githubusercontent.com/cosmos/cosmos-sdk/${cosmos-version}/third_party/proto/gogoproto/gogo.proto -o proto/gogoproto/gogo.proto
 
-gen-protoc-ts: download-cosmos-proto install-protoc-gen-ts
-    mkdir -p ./client/src/types/generated/
-    ls proto/checkers | xargs -I {} protoc \
-        --plugin="./scripts/node_modules/.bin/protoc-gen-ts_proto" \
-        --ts_proto_out="./client/src/types/generated" \
-        --proto_path="./proto" \
-        --ts_proto_opt="esModuleInterop=true,forceLong=long,useOptionals=messages" \
-        checkers/{}
+gen-proto-ts: download-cosmos-proto install-gen-tool
+    npx telescope transpile --config .telescope.json
 ```
 
 Whenever you want to re-compile them, run:
@@ -243,7 +233,7 @@ Whenever you want to re-compile them, run:
 <CodeGroupItem title="Local" active>
 
 ```sh
-$ make gen-protoc-ts
+$ make gen-proto-ts
 ```
 
 </CodeGroupItem>
@@ -255,7 +245,7 @@ $ docker run --rm \
     -v $(pwd):/checkers \
     -w /checkers \
     checkers_i \
-    make gen-protoc-ts
+    make gen-proto-ts
 ```
 
 </CodeGroupItem>
