@@ -15,7 +15,7 @@ In the [previous section](./4-add-message.md) you added a message that lets you 
 * Add all the necessary keeper and message server functions.
 * Add CLI commands.
 
-Note that you will only create a query to retrive a single game, not a list of games, which is convenient too. This other query is more complex and requires pagination.
+Note that you will only create a query to retrieve a single game, not a list of games, which would also be convenient. This other query is more complex and requires pagination.
 
 ## Add a game retrieval query
 
@@ -29,7 +29,7 @@ With the game storage indexed by game index, it is only natural to retrieve game
 
 ### The game retrieval object type and Protobuf service
 
-You define them together in a new file `proto/alice/checkers/v1/query.proto`:
+These are defined together in a new file `proto/alice/checkers/v1/query.proto`:
 
 ```protobuf [proto/alice/checkers/v1/query.proto]
 syntax = "proto3";
@@ -68,17 +68,17 @@ message QueryGetGameResponse {
 }
 ```
 
-Note that the response reuses `StoredGame` for convenience and to keep this exercise small. In fact you are free to define a new type to return. For instance this new type could be like `StoredGame` minus the `Index` field as the index is implicit over the request's lifecycle.
+Note that the response reuses `StoredGame` for convenience and to keep this exercise small. In fact, you are free to define a new type to return. For instance, this new type could be like `StoredGame` minus the `Index` field (as the index is implicit over the request's lifecycle).
 
 ### Compile Protobuf
 
-Since you have defined a new query type and an associated `service`, you should recompile the lot:
+Since you have defined a new query type and an associated `service`, you should recompile everything:
 
 ```sh
 $ make proto-gen
 ```
 
-In the new `query.pg.go` you can find `type QueryGetGameRequest struct` and `type QueryServer interface`. Now you can use them closer to the keeper.
+In the new `query.pg.go`, you can find `type QueryGetGameRequest struct` and `type QueryServer interface`. Now you can use them closer to the keeper.
 
 ### New query server
 
@@ -128,9 +128,9 @@ func (qs queryServer) GetGame(ctx context.Context, req *checkers.QueryGetGameReq
 }
 ```
 
-Note how the response's `Game` is a pointer, this lets you define it as `nil` in the case there is no game at the requested index.
+Note how the response's `Game` is a pointer. This lets you define it as `nil` in the case there is no game at the requested index.
 
-With the query server defined, you now need to register it into the module.
+With the query server defined, you now need to register it in the module.
 
 ### Register the types in the module
 
@@ -163,14 +163,14 @@ Now that you have message types and server, you should register the service in `
 
 ### Add the CLI commands
 
-At this stage, your module is able to handle queries passed to it by the app. But you are not yet able to craft such query in the first place. When working from the command line, that crafting is handled by the CLI client. The CLI client usually tells you what queries it can create, when you run `minid query --help`. Go ahead and check:
+At this stage, your module is able to handle queries passed to it by the app. But you are not yet able to craft such a query in the first place. When working from the command line, that crafting is handled by the CLI client. The CLI client usually tells you what queries it can create when you run `minid query --help`. Go ahead and check:
 
 ```sh
 $ make install
 $ minid query --help
 ```
 
-You can see that `checkers` is missing from the list of available commands. You fix that by entering your desired command in `module/autocli.go`. Taking inspiration from `minimal-module-example`:
+You can see that `checkers` is missing from the list of available commands. Fix that by entering your desired command in `module/autocli.go`. Taking inspiration from `minimal-module-example`:
 
 ```diff-go [module/autocli.go]
     ...
@@ -225,7 +225,7 @@ checkers            Querying commands for the checkers module
 $ minid query checkers --help
 ```
 
-Returns:
+This returns:
 
 ```txt
 ...
@@ -241,7 +241,7 @@ Available Commands:
 $ minid query checkers get-game --help
 ```
 
-Returns:
+This returns:
 
 ```txt
 Get the current value of the game for an index
@@ -258,13 +258,13 @@ Flags:
 
 ---
 
-This time, adding a query did not change your genesis or storage so you do not need to re-initialize. Start it:
+This time, adding a query did not change your genesis or storage, so you do not need to re-initialize. Start it:
 
 ```sh
 $ minid start
 ```
 
-And query your previously created game:
+Now query your previously created game:
 
 ```sh
 $ minid query checkers get-game id1
@@ -281,25 +281,25 @@ Game:
   turn: b
 ```
 
-If you try to get a non-existent game:
+Try to get a non-existent game:
 
 ```sh
 $ minid query checkers get-game id2
 ```
 
-It should return:
+This should return:
 
 ```txt
 {}
 ```
 
-And that without any error:
+Confirm this is without any error:
 
 ```sh
 $ echo $?
 ```
 
-Returns:
+This returns:
 
 ```txt
 0
@@ -309,6 +309,6 @@ Returns:
 
 You have started creating the first elements of a simple checkers blockchain, one where it is possible to create, and recall, games.
 
-Cosmos SDK v0.50, compared to earlier versions, allows you to create modules in a more modular and concise way.
+Compared to earlier versions, Cosmos SDK v0.50 allows you to create modules in a more modular and concise way.
 
-If you still want to reduce the amount of work to do, in a way reminiscent of _on Rails_ environments, you can use Ignite CLI. This is what you can learn in the next sections where Ignite CLI is used to quickly create a checkers blockchain at an earlier (0.45) version of the Cosmos SDK.
+If you still want to reduce the amount of work to do, in a way reminiscent of _on Rails_ environments, you can use Ignite CLI. This is what you can learn in the next sections, where Ignite CLI is used to quickly create a checkers blockchain at an earlier (0.45) version of the Cosmos SDK.

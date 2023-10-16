@@ -102,7 +102,7 @@ for dir in $proto_dirs; do
   for file in $(find "${dir}" -maxdepth 1 -name '*.proto'); do
     # this regex checks if a proto file has its go_package set to github.com/alice/checkers/api/...
     # gogo proto files SHOULD ONLY be generated if this is false
-    # we don't want gogo proto to run for proto files which are natively built for google.golang.org/protobuf
+    # you don't want gogo proto to run for proto files which are natively built for google.golang.org/protobuf
     if grep -q "option go_package" "$file" && grep -H -o -c 'option go_package.*github.com/alice/checkers/api' "$file" | grep -q ':0$'; then
       buf generate --template buf.gen.gogo.yaml $file
     fi
@@ -122,7 +122,7 @@ rm -rf github.com alice
 
 </ExpansionPanel>
 
-Note how it mentions two files `buf.gen.gogo.yaml` and `buf.gen.pulsar.yaml`. So go ahead and copy them from `minimal-module-example`. In fact, also copy `buf.yaml` and the version lock file to avoid surprises:
+Note how it mentions two files: `buf.gen.gogo.yaml` and `buf.gen.pulsar.yaml`. Go ahead and copy them from `minimal-module-example`. In fact, also copy `buf.yaml` and the version lock file to avoid surprises:
 
 ```sh
 $ cp ../minimal-module-example/proto/buf* ./proto
@@ -315,19 +315,19 @@ Before you run the compilation, because you have not yet defined any Protobuf fi
 +   # cp -r github.com/alice/checkers/* ./
 ```
 
-Now you can run the compilation:
+Now run the compilation:
 
 ```sh
 $ make proto-gen
 ```
 
-This creates a new `api/module/v1/module.pulsar.go` file, and updates your `go.mod`. It also creates a new `go.sum`.
+This creates a new `api/module/v1/module.pulsar.go` file and updates your `go.mod`. It also creates a new `go.sum`.
 
-You need a couple more Protobuf files.
+Now you need a couple more Protobuf files.
 
 ### Minimum Protobuf objects
 
-You are not defining your games, messages and queries just yet. However, you already define the facts that your module:
+You are not defining your games, messages, and queries just yet. However, you already define the facts that your module:
 
 * Has a genesis, which has a type.
 * Uses params, which also have a type.
@@ -376,7 +376,7 @@ If the process tells you that it downloads a Cosmos SDK version different from 0
 +       github.com/cosmos/cosmos-sdk v0.50.0-rc.1.0.20231005140444-10bd5a2cacdc
 ```
 
-And then to tidy up the dependencies:
+Next, tidy up the dependencies:
 
 ```sh
 $ go mod tidy
@@ -384,7 +384,7 @@ $ go mod tidy
 
 </HighlightBox>
 
-The script has created two new files `api/v1/types.pulsar.go` and `types.pb.go`.
+The script has created two new files: `api/v1/types.pulsar.go` and `types.pb.go`.
 
 Your module is not viable yet. You need to define it and at least have it conform to the interface expected by an app, in this case `chain-minimal`.
 
@@ -394,7 +394,7 @@ Once again, you can take inspiration from `minimal-module-example`.
 
 ### General files
 
-You prepare the basics around codec, params, genesis and module name. You can keep them in the root folder:
+Prepare the basics around codec, params, genesis, and module name. You can keep them in the root folder:
 
 <CodeGroup>
 <CodeGroupItem title="codec.go">
@@ -458,7 +458,7 @@ func (gs *GenesisState) Validate() error {
 }
 ```
 
-You have not yet defined any storage, other than `Params`, so it is simple.
+You have not yet defined any storage, other than `Params`, so this is simple.
 
 </CodeGroupItem>
 <CodeGroupItem title="keys.go">
@@ -482,13 +482,13 @@ For now, all you need is the module's name and the storage key at which you can 
 
 ---
 
-The files have a lot of missing dependencies, so go ahead and once more, run:
+The files have a lot of missing dependencies, so go ahead and, once more, run:
 
 ```sh
 $ go mod tidy
 ```
 
-With these done, you can move to defining some necessary functions of the module's keeper.
+With this done, you can move to defining some necessary functions of the module's keeper.
 
 ### Keeper files
 
@@ -601,7 +601,7 @@ func (k *Keeper) ExportGenesis(ctx context.Context) (*checkers.GenesisState, err
 
 ---
 
-At the moment, you have not defined any message or query types so you do not bother with defining the corresponding servers.
+At the moment you have not defined any message or query types, so you do not bother with defining the corresponding servers.
 
 ### Module files
 
@@ -611,7 +611,7 @@ To be correctly called, the module needs to conform to the `chain-minimal` expec
 $ mkdir module
 ```
 
-Then, in it, again copying from `minimal-module-example`:
+In it, again copying from `minimal-module-example`:
 
 <CodeGroup>
 <CodeGroupItem title="module.go">
@@ -802,7 +802,7 @@ func ProvideModule(in ModuleInputs) ModuleOutputs {
 }
 ```
 
-Good thing that it is possible to copy it.
+Fortunately it is possible to copy it.
 
 </CodeGroupItem>
 <CodeGroupItem title="autocli.go">
@@ -868,7 +868,7 @@ Now, you can define it in the `app/app.yaml` file in two locations:
     ...
 ```
 
-Where you recall the Protobuf `alice.checkers.module.v1.Module` defined earlier.
+Where you recall the Protobuf `alice.checkers.module.v1.Module` defined earlier:
 
 </CodeGroupItem>
 <CodeGroupItem title="Genesis">
@@ -880,14 +880,14 @@ Where you recall the Protobuf `alice.checkers.module.v1.Module` defined earlier.
     ...
 ```
 
-Because its genesis needs to be called too.
+This is done because its genesis needs to be called too.
 
 </CodeGroupItem>
 </CodeGroup>
 
 ---
 
-What remain is to update `app/app.go`, where you place your checkers keeper at the right locations:
+What remains is to update `app/app.go`, where you place your checkers keeper at the right locations:
 
 ```diff-go [app/app.go]
     import(
@@ -930,7 +930,7 @@ The _side-effects_ comments refer to the `init()` function of Go packages.
 
 ## Run your checkers chain
 
-Just like you did in the [previous section](./1-preparation.md), you compile the minimal chain, re-initialize and start it. You need to re-initialize because your genesis has changed.
+Just like you did in the [previous section](./1-preparation.md), you compile the minimal chain, re-initialize, and start it. You need to re-initialize because your genesis has changed:
 
 ```sh
 $ go mod tidy
@@ -939,7 +939,7 @@ $ make init
 $ minid start
 ```
 
-And there you have it, your minimal chain with a checkers module is running. After stopping it with <kbd>CTRL-C</kbd>, confirm that the checkers module was correctly integrated by calling up:
+There you have it: your minimal chain with a checkers module is running. After stopping it with <kbd>CTRL-C</kbd>, confirm that the checkers module was correctly integrated by calling up:
 
 <CodeGroup>
 <CodeGroupItem title="Straight">
@@ -973,7 +973,7 @@ In there, you can find:
     }
 ```
 
-As expected.
+This is as expected.
 
 ## Up next
 

@@ -32,7 +32,7 @@ You are going to:
 
 ### The game creation object type and Protobuf service
 
-You define them together in a new file `proto/alice/checkers/v1/tx.proto`:
+These are defined together in a new file `proto/alice/checkers/v1/tx.proto`:
 
 ```protobuf [proto/alice/checkers/v1/tx.proto]
 syntax = "proto3";
@@ -73,23 +73,21 @@ message MsgCreateGameResponse {}
 
 <HighlightBox type="note">
 
-Note:
-
-* How `MsgCreateGame` does not mention `Board` or `Turn` as this, as mentioned, should not be under the control of the message sender.
-* That the response is empty as there is no extra information to return. For instance, here the game index is known in advance.
-* How `option (cosmos.msg.v1.signer)` identifies `creator` as the field that will serve as the signer. At compilation time, the SDK will automagically pick up the value of this annotation to have `MsgCreateGame` implement `sdk.Msg.GetSigners`.
+* `MsgCreateGame` does not mention `Board` or `Turn` as this (as mentioned) should not be under the control of the message sender.
+* The response is empty as there is no extra information to return. For instance, here the game index is known in advance.
+* `option (cosmos.msg.v1.signer)` identifies `creator` as the field that will serve as the signer. At compilation time, the SDK will automagically pick up the value of this annotation to have `MsgCreateGame` implement `sdk.Msg.GetSigners`.
 
 </HighlightBox>
 
 ### Compile Protobuf
 
-Since you have defined a new message type and an associated `service`, you should recompile the lot:
+Since you have defined a new message type and an associated `service`, you should recompile everything:
 
 ```sh
 $ make proto-gen
 ```
 
-In the new `tx.pg.go` you can find `type MsgCreateGame struct` and `type MsgServer interface`. Now you can use them closer to the keeper.
+In the new `tx.pg.go`, you can find `type MsgCreateGame struct` and `type MsgServer interface`. Now you can use them closer to the keeper.
 
 ### New message server
 
@@ -97,7 +95,7 @@ Create a new file `keeper/msg_server.go` and take inspiration from `minimal-modu
 
 * Check that the `index` is not already taken.
 * Create a new board with the game rules.
-* If valid, store the game into storage.
+* If valid, put the game into storage.
 
 ```go [keeper/msg_server.go]
 package keeper
@@ -150,16 +148,14 @@ func (ms msgServer) CreateGame(ctx context.Context, msg *checkers.MsgCreateGame)
 
 <HighlightBox type="note">
 
-Note how:
-
-* The creator and its signature are not checked. This is not necessary as the app has validated the transaction before sending the message.
-* The creator is not saved in storage. This is a design decision and you may in fact decide to keep the creator.
+* The creator and its signature are not checked. This is not necessary, as the app has validated the transaction before sending the message.
+* The creator is not saved in storage. This is a design decision; you may in fact decide to keep the creator.
 
 </HighlightBox>
 
 ### Register the types in the module
 
-Now that you have message types and server, you should register the types them in the currently empty `codec.go`. Inspire yourself from what you find in `minimal-module-example`:
+Now that you have message types and server, you should register the types in the currently empty `codec.go`. Inspire yourself from what you find in `minimal-module-example`:
 
 ```diff-go [codec.go]
     package checkers
@@ -179,7 +175,7 @@ Now that you have message types and server, you should register the types them i
     }
 ```
 
-And into `module/module.go`, you register the new service. The lines were previously commented out:
+In `module/module.go`, register the new service. The lines were previously commented out:
 
 ```diff-go [module/module.go]
     ...
@@ -195,14 +191,14 @@ And into `module/module.go`, you register the new service. The lines were previo
 
 ### Add the CLI commands
 
-At this stage, your module is able to handle messages passed to it by the app. But you are not yet able to craft such messages in the first place. When working from the command line, that crafting is handled by the CLI client. The CLI client usually tells you what messages and transactions it can create, when you run `minid tx --help`. Go ahead and check:
+At this stage, your module is able to handle messages passed to it by the app. However, you are not yet able to craft such messages in the first place. When working from the command line, this crafting is handled by the CLI client. The CLI client usually tells you what messages and transactions it can create when you run `minid tx --help`. Go ahead and check:
 
 ```sh
 $ make install
 $ minid tx --help
 ```
 
-You can see that `checkers` is missing from the list of available commands. You fix that by entering your desired command in `module/autocli.go`. Taking inspiration from `minimal-module-example`:
+You can see that `checkers` is missing from the list of available commands. Fix that by entering your desired command in `module/autocli.go`. Taking inspiration from `minimal-module-example`:
 
 ```diff-go [module/autocli.go]
     import (
@@ -246,7 +242,7 @@ Back in the minimal chain, compile to see the command that was added:
 $ make install
 ```
 
-Now, you should see the `create` command:
+Now you should see the `create` command:
 
 <CodeGroup>
 <CodeGroupItem title="tx">
@@ -270,7 +266,7 @@ checkers            Transactions commands for the checkers module
 $ minid tx checkers --help
 ```
 
-Returns:
+This returns:
 
 ```txt
 ...
@@ -286,7 +282,7 @@ Available Commands:
 $ minid tx checkers create --help
 ```
 
-Returns:
+This returns:
 
 ```txt
 Creates a new checkers game at the index for the black and red players
@@ -303,14 +299,14 @@ Flags:
 
 ---
 
-Just like you did in the [previous section](./1-preparation.md), you re-initialize and start it. You need to re-initialize because your genesis has changed once again.
+Just like you did in the [previous section](./1-preparation.md), re-initialize and start it. You need to re-initialize because your genesis has changed once again:
 
 ```sh
 $ make init
 $ minid start
 ```
 
-Now you create a game from another shell. First list `alice` and `bob`'s addresses as created by `make init`:
+Now create a game from another shell. First list `alice` and `bob`'s addresses as created by `make init`:
 
 ```sh
 $ minid keys list --keyring-backend test
@@ -338,7 +334,7 @@ $ minid tx checkers create id1 \
     --from alice --yes
 ```
 
-It returns you the transaction hash as expected. To find what was put in storage, wait a bit and then stop the chain with <kbd>CTRL-C</kbd>. Then call up:
+This returns you the transaction hash as expected. To find what was put in storage, wait a bit and then stop the chain with <kbd>CTRL-C</kbd>. Now call up:
 
 <CodeGroup>
 <CodeGroupItem title="Straight">

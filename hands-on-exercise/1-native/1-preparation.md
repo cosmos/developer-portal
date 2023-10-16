@@ -9,9 +9,9 @@ tags:
 
 # Preparation
 
-In this section, you will start building a blockchain to play the checkers game. You will build it natively with Cosmos SDK v0.50. At least you will build some initial elements.
+In this section, you will start building a blockchain to play the checkers game. You will build it natively with Cosmos SDK v0.50. At least, you will build some initial elements.
 
-This section builds on the following repositories:
+This section uses the following repositories:
 
 * A minimal Cosmos v0.50 app with no extra modules, found [here](https://github.com/julienrbrt/chain-minimal).
 * A minimal v0.50 module example, found [here](https://github.com/cosmosregistry/example).
@@ -20,7 +20,7 @@ Version 0.50 of the Cosmos SDK was created, in part, with a view to facilitate m
 
 ## Install
 
-Before you can start building, you need to prepare your computer. The simplest way is to rely on [Docker](https://docs.docker.com/engine/install/) as the Cosmos team has prepared a [Docker image for developers](https://github.com/cosmos/cosmos-sdk/pkgs/container/proto-builder/119928846?tag=0.14.0) built via [this Dockerfile](https://github.com/cosmos/cosmos-sdk/blob/main/contrib/devtools/Dockerfile). If you need a refresher on Docker, head [here](/tutorials/5-docker-intro/index.md).
+Before you can start building, you need to prepare your computer. The simplest way is to rely on [Docker](https://docs.docker.com/engine/install/), as the Cosmos team has prepared a [Docker image for developers](https://github.com/cosmos/cosmos-sdk/pkgs/container/proto-builder/119928846?tag=0.14.0) built via [this Dockerfile](https://github.com/cosmos/cosmos-sdk/blob/main/contrib/devtools/Dockerfile). If you need a refresher on Docker, head [here](/tutorials/5-docker-intro/index.md).
 
 You will also need to have [`make`](https://www.gnu.org/software/make/) on your computer.
 
@@ -76,7 +76,7 @@ Since you are going to copy a (small) number of files from the module example, i
 $ git clone https://github.com/cosmosregistry/example.git minimal-module-example
 ```
 
-Moreover, your checkers module is going to be named `github.com/alice/checkers`, so, to make your file copying even easier, you can use the provided renaming script:
+Moreover, your checkers module is going to be named `github.com/alice/checkers`, so to make your file copying even easier you can use the provided renaming script:
 
 ```sh
 $ cd minimal-module-example
@@ -87,7 +87,7 @@ The updated files will come in handy when you want to copy-paste them.
 
 <ExpansionPanel title="Troubleshooting">
 
-The `rename.sh` files self removes when the process is complete. If an error happens, you may have to reset hard with Git before retrying:
+The `rename.sh` files self-removes when the process is complete. If an error happens, you may have to reset hard with Git before retrying:
 
 ```sh
 $ git reset --hard

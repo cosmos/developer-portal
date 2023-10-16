@@ -34,15 +34,15 @@ With the rules in place, begin with the minimum game information needed to be st
 
 You need:
 
-* **Index.** A string, so it can be identified and retrieved from storage.
-* **Black player.** A string, the serialized address.
+* **Index:** A string, so it can be identified and retrieved from storage.
+* **Black player:** A string, the serialized address.
 * **Red player.** A string, the serialized address.
-* **Board proper.** A string, the board as it is serialized by the _rules_ file.
-* **Player to play next.** A string, specifying whose _turn_ it is.
+* **Board proper:** A string, the board as it is serialized by the _rules_ file.
+* **Player to play next:** A string, specifying whose _turn_ it is.
 
 <HighlightBox type="remember">
 
-When you save strings, it makes it easier to understand what comes straight out of storage, but at the expense of storage space. As an advanced consideration, you could store the same information in binary.
+When you save strings, it makes it easier to understand what comes straight out of storage but at the expense of storage space. As an advanced consideration, you could store the same information in binary.
 
 </HighlightBox>
 
@@ -88,11 +88,11 @@ Update your `GenesisState` in `types.proto`:
     }
 ```
 
-And recompile.
+Now recompile.
 
 ### Add validation
 
-You can consider adding functions on the `StoredGame`, for instance a `Validate` one. Start with a new `errors.go` file in the root folder of your `checkers-minimal` module.
+You can consider adding functions on the `StoredGame`, for instance a `Validate` one. Start with a new `errors.go` file in the root folder of your `checkers-minimal` module:
 
 <CodeGroup>
 <CodeGroupItem title="errors.go">
@@ -112,7 +112,7 @@ var (
 </CodeGroupItem>
 <CodeGroupItem title="stored-game.go">
 
-And in a new `stored-game.go` file:
+Next, in a new `stored-game.go` file:
 
 ```go [stored-game.go]
 package checkers
@@ -182,7 +182,7 @@ With these additions, you can validate the games in `genesis.go`:
     }
 ```
 
-With the basic of genesis and validation handled, you can move to the keeper to have it handle this storage too.
+With the basics of genesis and validation handled, shift focus to the keeper to have it handle this storage too.
 
 ### Adjust the keeper files
 
@@ -223,13 +223,13 @@ And then initialize the storage access, taking inspiration from `minimal-module-
 
 What this initialization does is explained [here](https://docs.cosmos.network/v0.50/packages/collections):
 
-> Collections is a library meant to simplify the experience with respect to module state handling.
+> Collections is a library meant to simplify your experience with respect to module state handling.
 
 The `codec.CollValue` construct is covered [in the documentation](https://docs.cosmos.network/v0.50/packages/collections#key-and-value-codecs).
 
 </HighlightBox>
 
-And do not forget the genesis manipulation to and from storage in `keeper/genesis.go`, again taking inspiration from `minimal-module-example`:
+Do not forget the genesis manipulation to and from storage in `keeper/genesis.go`, again taking inspiration from `minimal-module-example`:
 
 ```diff-go [keeper/genesis.go]
     func (k *Keeper) InitGenesis(ctx context.Context, data *checkers.GenesisState) error {
@@ -270,7 +270,7 @@ And do not forget the genesis manipulation to and from storage in `keeper/genesi
 
 ## Test again
 
-Just like you did in the [previous section](./1-preparation.md), you compile the minimal chain, re-initialize and start it. You need to re-initialize because your genesis has changed once again.
+Just like you did in the [previous section](./1-preparation.md), compile the minimal chain, re-initialize, and start it. You need to re-initialize because your genesis has changed once again:
 
 ```sh
 $ make install
@@ -278,7 +278,7 @@ $ make init
 $ minid start
 ```
 
-Now your minimal chain not only has a checkers module, but also a games storage area. After stopping it with <kbd>CTRL-C</kbd>, confirm that by calling up:
+Now your minimal chain not only has a checkers module, but also a games storage area. After stopping it with <kbd>CTRL-C</kbd>, confirm this by calling up:
 
 <CodeGroup>
 <CodeGroupItem title="Straight">
@@ -315,4 +315,4 @@ In there, you can find:
 
 ## Up next
 
-You have an on-chain game storage area, but it is empty. In the next section, you start populating it with the use of a transaction message.
+You have an on-chain game storage area, but it is empty. In the next section, you will start populating it with the use of a transaction message.

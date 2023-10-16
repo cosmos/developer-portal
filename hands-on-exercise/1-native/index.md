@@ -13,9 +13,9 @@ tags:
 
 Do you want to find out how to run Cosmos chains? Take it step-by-step.
 
-Begin with an introduction to the Cosmos SDK v0.50 with first steps to building an application-specific blockchain from scratch.
+Begin with an introduction to the Cosmos SDK v0.50 and the first steps to building an application-specific blockchain from scratch.
 
-In the next chapters, you will learn how to implement a checkers game blockchain with all the different aspects this can entail.
+In the following chapters, you will learn how to implement a checkers game blockchain with all the different aspects this can entail.
 
 ![A sphere going through a sort of portal](/hands-on-exercise/1-ignite-cli/images/cosmos_dev_portal_module-05-lp.png)
 
@@ -27,7 +27,7 @@ In this chapter, you will:
 
 * Prepare your computer to work with the Cosmos SDK v0.50.
 * Clone two minimal repositories that will get you started fast.
-* Begin implementing a Cosmos module for a checkers game using your own IDE; starting from an empty folder.
+* Begin implementing a Cosmos module for a checkers game using your own IDE, starting from an empty folder.
 * Create one stored object type.
 * Create one custom message for your blockchain.
 * Work with the message handler to create and save games.
