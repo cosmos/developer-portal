@@ -182,7 +182,7 @@ An address is public information normally used to reference an account. Addresse
 
 ## Keyring
 
-The keyring object stores and manages multiple accounts. It implements the [`Keyring`](https://github.com/cosmos/cosmos-sdk/blob/bf11b1bf1fa0c52fb2cd51e4f4ab0c90a4dd38a0/crypto/keyring/keyring.go#L55) interface in the Cosmos SDK. You will make use of them from the command-line in the exercises.
+The keyring object stores and manages multiple accounts. It implements the [`Keyring`](https://github.com/cosmos/cosmos-sdk/blob/bf11b1bf1fa0c52fb2cd51e4f4ab0c90a4dd38a0/crypto/keyring/keyring.go#L55) interface in the Cosmos SDK. You will make use of keyrings from the command-line in the exercises.
 
 ## Code example
 

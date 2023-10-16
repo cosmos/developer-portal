@@ -36,7 +36,7 @@ You need:
 
 * **Index:** A string, so it can be identified and retrieved from storage.
 * **Black player:** A string, the serialized address.
-* **Red player.** A string, the serialized address.
+* **Red player:** A string, the serialized address.
 * **Board proper:** A string, the board as it is serialized by the _rules_ file.
 * **Player to play next:** A string, specifying whose _turn_ it is.
 

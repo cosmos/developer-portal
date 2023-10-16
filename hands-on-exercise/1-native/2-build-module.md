@@ -840,9 +840,9 @@ Your checkers module is not prepared as a standalone module. It is time to integ
 
 ## Integrate checkers in `chain-minimal`
 
-Back to `chain-minimal`, you have to direct it to integrate your checkers module. It is known with the `github.com/alice/checkers` package, and located in a parallel folder.
+You now have to direct `chain-minimal` to integrate your checkers module. Your checkers module is known with the `github.com/alice/checkers` package, and located in a parallel folder.
 
-Direct it to the right dependency, so it does not look for it on `github.com`, go to your `go.mod` and add:
+Direct chain-minimal to the right dependency, so it does not look for the module on `github.com`. Go to your `go.mod` and add:
 
 ```diff [go.mod]
 ...
@@ -852,7 +852,7 @@ Direct it to the right dependency, so it does not look for it on `github.com`, g
 ...
 ```
 
-Now, you can define it in the `app/app.yaml` file in two locations:
+Now, you can define the module in the `app/app.yaml` file in two locations:
 
 <CodeGroup>
 <CodeGroupItem title="Name and type">
