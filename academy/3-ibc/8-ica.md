@@ -193,7 +193,7 @@ The host API methods run automatically as part of the flow and need not be expos
 
 #### Register an interchain account
 
-The `RegisterInterchainAccount` flow was discussed on the controller side already, where it triggered a handshake. On the host side is a complementary part of the flow, but here it's triggered in the `OnChanOpenTry` step of the handshake, which will create the Iinterchain account.
+The `RegisterInterchainAccount` flow was discussed on the controller side already, where it triggered a handshake. On the host side is a complementary part of the flow, but here it's triggered in the `OnChanOpenTry` step of the handshake, which will create the interchain account.
 
 <HighlightBox type="note">
 
