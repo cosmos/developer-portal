@@ -258,7 +258,7 @@ If you like the validator's information, click on it. This opens a tab that reca
 
 Click on _Stake_. This opens a window for you to enter an amount. Add the sum you want to delegate. Do not delegate all that you own, because you need a fraction of ATOM to send the transaction, plus further ATOM in the future to either un-delegate or claim your rewards.
 
-Pick 0.8 ATOM and click _Delegate_ again:
+Pick 0.8 ATOM and click _Stake_ again:
 
 ![Keplr: delegate parameters](/academy/1-what-is-cosmos/images/keplr-delegate-params.png)
 
