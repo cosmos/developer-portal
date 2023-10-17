@@ -291,7 +291,7 @@ customModules:
     description: |
       From zero to hero - work with the full Interchain Stack while developing a checkers game blockchain. Feel free to start with the first chapter, or select one or more tags to filter the available content.
     sections:
-      - image: /lp-images/cosmos_dev_portal_module-05-lp.png
+      - image: /lp-images/cosmos_dev_portal_module-04-lp.png
         title: SDK v0.50 Native
         href: /hands-on-exercise/1-native/
         description: |
