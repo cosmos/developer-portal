@@ -128,9 +128,9 @@ customModules:
             path: /tutorials/2-setup/
           - title: Run a node, API, and CLI
             path: /tutorials/3-run-node/
-          - title: Preparation
+          - title: SDK v0.50 native preparation
             path: /hands-on-exercise/1-native/1-preparation.html
-          - title: Build your module
+          - title: Build your v0.50 module
             path: /hands-on-exercise/1-native/2-build-module.html
           - title: Add your first object
             path: /hands-on-exercise/1-native/3-add-game.html

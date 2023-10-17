@@ -267,7 +267,7 @@ module.exports = {
                   path: "/hands-on-exercise/1-native/1-preparation.html",
                 },
                 {
-                  title: "Build Your Module",
+                  title: "Build Your v0.50 Module",
                   path: "/hands-on-exercise/1-native/2-build-module.html",
                 },
                 {
