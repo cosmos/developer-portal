@@ -5,6 +5,7 @@ description: Let players wager any fungible token
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
   - ibc
 ---
 

@@ -5,6 +5,7 @@ description: Token - Players set a wager
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Let Players Set a Wager

@@ -5,6 +5,7 @@ description: A new player info for your in-production blockchain via state migra
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
   - cosm-js
 ---
 

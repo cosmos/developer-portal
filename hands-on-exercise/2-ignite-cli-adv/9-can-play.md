@@ -5,6 +5,7 @@ description: Query - help players make good transactions
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Help Find a Correct Move

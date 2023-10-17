@@ -5,6 +5,7 @@ description: An easy way to build your application-specific blockchain
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Ignite CLI

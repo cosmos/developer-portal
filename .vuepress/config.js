@@ -331,6 +331,10 @@ module.exports = {
         color: '#00B067',
         label: 'CometBFT'
       },
+      'ignite-cli': {
+        color: '#BA3FD9',
+        label: 'Ignite-CLI'
+      },
       'cosmos-hub': {
         color: '#f7f199',
         label: 'Cosmos Hub',

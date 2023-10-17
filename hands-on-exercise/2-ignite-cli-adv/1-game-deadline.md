@@ -5,6 +5,7 @@ description: Store field - games can expire
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Keep an Up-To-Date Game Deadline

@@ -5,6 +5,7 @@ description: Create the object that stores a game
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Store Object

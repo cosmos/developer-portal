@@ -5,6 +5,7 @@ description: A leaderboard integrated with checkers for your blockchain
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
   - cosm-js
 ---
 

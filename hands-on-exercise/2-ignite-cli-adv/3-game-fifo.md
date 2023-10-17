@@ -5,6 +5,7 @@ description: Store FIFO - prepare to expire games
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Put Your Games in Order

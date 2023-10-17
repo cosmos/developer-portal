@@ -4,6 +4,7 @@ order: 5
 description:
 tags:
   - guided-coding
+  - ignite-cli
   - dev-ops
   - ibc
 ---
