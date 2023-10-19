@@ -43,12 +43,6 @@ $ mkdir scripts
 
 In the `scripts` folder, install telescope for Protobuf compilation:
 
-```sh
-$ cd scripts
-$ npm install --save-dev --save-exact @cosmology/telescope@1.0.4
-$ cd ..
-```
-
 <CodeGroup>
 
 <CodeGroupItem title="Local">
@@ -176,6 +170,18 @@ Create a telescope config `.telescope.json` with following content:
 }
 ```
 
+<HighlightBox type="note">
+
+There're three main sections in the config file:
+
+* protoDirs: root dirs that contains folders with proto files. e.g. If protoDirs're set with `proto` and `proto-common`, when importing from `cosmos/base/query/v1beta1/pagination.proto`, telescope will go checking whether there's `proto/cosmos/base/query/v1beta1/pagination.proto` or `proto-common/cosmos/base/query/v1beta1/pagination.proto`, and then generate dependency based on the file.
+
+* outPath: it contains ts files structured by the folder structure of proto files.
+
+* options: telescope options for users to decide which part of the code will be generated and the way of how code will be transpiled. For more details please see: [telescope options](https://github.com/cosmology-tech/telescope#options)
+
+</HighlightBox>
+
 Then compile:
 
 <CodeGroup>
@@ -223,7 +229,7 @@ download-cosmos-proto:
     curl https://raw.githubusercontent.com/cosmos/cosmos-sdk/${cosmos-version}/third_party/proto/gogoproto/gogo.proto -o proto/gogoproto/gogo.proto
 
 gen-proto-ts: download-cosmos-proto install-gen-tool
-    npx telescope transpile --config .telescope.json
+	cd scripts && npx telescope transpile --config .telescope.json
 ```
 
 Whenever you want to re-compile them, run:
