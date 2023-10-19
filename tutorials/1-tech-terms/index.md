@@ -1,7 +1,7 @@
 ---
 parent:
   title: Good-To-Know Dev Terms
-  description: Review some technical terms essential when developing in the Interchain
+  description: Review some technical terms essential when developing in the interchain
   number: 1
 order: 0
 title:
@@ -17,7 +17,7 @@ You can find an overview of several technical terms in this section, including a
 
 In this section, you will take a look at the following terms:
 
-* The Interchain, and the Interchain Stack
+* The interchain, and the Interchain Stack
 * LCD
 * RPC
 * Protobuf - Protocol Buffers
@@ -30,29 +30,29 @@ All these terms relate to how node interaction is conducted in Cosmos SDK blockc
 
 Let's dive right into it.
 
-## The Interchain
+## The interchain
 
-**The Interchain** refers to _the network of application-specific blockchains_ built with the Interchain Stack and inter-connected through the Inter-Blockchain Communication Protocol (IBC).
+**The interchain** refers to _the network of application-specific blockchains_ built with the Interchain Stack and inter-connected through the Inter-Blockchain Communication Protocol (IBC).
 
 <HighlightBox type="info">
 
-In case you stumble across the term Cosmos, please be aware that **the Interchain** used to be known as Cosmos. The terms "Cosmos", "Interchain Ecosystem", and "Interchain" can be understood as synonymous.
+In case you stumble across the term "Cosmos", please be aware that **the interchain** used to be known as Cosmos. The terms "Cosmos", "interchain ecosystem", and "interchain" can be understood as synonymous.
 
 </HighlightBox>
 
 ### The Interchain Stack
 
-The various tools available to Interchain developers can be referred to collectively as the **Interchain Stack**.
+The various tools available to interchain developers can be referred to collectively as the **Interchain Stack**.
 
 <HighlightBox type="info">
 
-Tools within the Interchain Stack, which contain "Cosmos" in their name will remain unchanged by current terminology changes, such as the **Cosmos SDK** and **CosmWasm**. Any chain built with the Cosmos SDK can typically be referred to as "a Cosmos chain" or "appchain".
+Tools within the Interchain Stack which contain "Cosmos" in their name will remain unchanged by current terminology changes, such as the **Cosmos SDK** and **CosmWasm**. Any chain built with the Cosmos SDK can typically be referred to as "a Cosmos chain" or "appchain".
 
 </HighlightBox>
 
 ### Cosmos Hub
 
-The Cosmos Hub is a chain that serves as an economic hub of the Interchain and service provider to other Cosmos chains. Built with the Interchain Stack, the Hub is home to the ATOM token, Interchain Security, and builders of the Cosmos SDK, CometBFT, and IBC.
+The Cosmos Hub is a chain that serves as an economic hub of the interchain and service provider to other Cosmos chains. Built with the Interchain Stack, the Hub is home to the ATOM token, Interchain Security, and builders of the Cosmos SDK, CometBFT, and IBC.
 
 ## Light client daemon (LCD)
 
@@ -66,7 +66,7 @@ Take a look at [Light Clients in Tendermint Consensus](https://blog.cosmos.netwo
 
 </HighlightBox>
 
-Therefore, light clients are also vital to how the Inter-Blockchain Communication Protocol (IBC) can track information such as timestamps, root hashes, and the next validator set hash. This saves space and increases efficiency for state update processing.
+Light clients are also vital to how the Inter-Blockchain Communication Protocol (IBC) can track information such as timestamps, root hashes, and the next validator set hash. This saves space and increases efficiency for state update processing.
 
 The **light client daemon (LCD)** is an HTTP1.1 server exposed by the Cosmos SDK, and its default port is `1317`. It exposes a REST API for the chain, meaning a _representational state transfer application programming interface_ - this API allows for interaction with a RESTful web service. Traditionally, every query was re-implemented for LCD and routed to RPC behind the scenes.
 
@@ -154,7 +154,7 @@ The application layer is tasked with ensuring effective communication between ap
 
 </HighlightBox>
 
-### RPC and the Interchain
+### RPC and the interchain
 
 In the Interchain Stack, RPCs are used by the command-line interface (CLI) among other things to access chains. A node exposes several endpoints - gRPC, REST, and CometBFT endpoint.
 
@@ -186,7 +186,7 @@ Also, take a look at the [section on this platform on Protobuf](/academy/2-cosmo
 
 </HighlightBox>
 
-In the Interchain Stack, Protobuf is a data serialization method that developers use to describe message formats. There is a lot of internal communication within an Interchain application, and Protobuf is central to how communication is done.
+In the Interchain Stack, Protobuf is a data serialization method that developers use to describe message formats. There is a lot of internal communication within an interchain application, and Protobuf is central to how communication is done.
 
 With Cosmos SDK v0.40, Protobuf began replacing Amino as the data encoding format of chain states and transactions, in part because encoding/decoding performance is better with Protobuf than Amino. In addition, the developer tooling is also better for Protobuf. Another benefit of switching is that the use of gRPC is fostered, as Protobuf automatically defines and generates gRPC functions. Thus developers no longer have to implement the same query for RPC, LCD, and CLI.
 
@@ -202,7 +202,7 @@ For more on gRPC and very helpful information on getting started, take a look at
 
 gRPC uses HTTP2 for transport and Protocol Buffers (Protobuf) to encode data. gRPCs have a single specification, which makes all gRPC implementations consistent.
 
-### gRPC and Interchain
+### gRPC and interchain
 
 In the Interchain Stack, gRPCs are transmission control protocol (TCP) servers with Protobuf and are used for data encoding. The default port is `9090`.
 
