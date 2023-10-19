@@ -8,7 +8,7 @@ tags:
 
 # Blockchain 101
 
-To understand the interchain, one must first understand blockchain technology. This first chapter demystifies the foundations of blockchain technology. This background information will be important as you progress through the course.
+To understand the interchain, you must first understand blockchain in general. This first chapter will help to demystify the foundations of this powerful technology. The background information contained will be important as you progress through the course.
 
 <HighlightBox type="info">
 

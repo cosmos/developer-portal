@@ -41,7 +41,7 @@ Many teams have experimented with distributed consensus using many algorithms de
 <HighlightBox type="info">
 
 Remember, in blockchain individual transactions are sent to the network from individual nodes. Each node must pass (or fail to pass) transactions to other nodes. Because of the time delay required for data to physically travel across the network (i.e. physical latencies), not all nodes will see the same transactions at the same time.
-
+<br/><br/>
 Each node must therefore build its own order of transactions. Since all nodes participate equally, there is **no authoritative order of transactions**. Nevertheless, the network must decide which node's version (or any version) of the truth will become the authoritative truth, also known as the canonical chain.
 
 </HighlightBox>
