@@ -179,6 +179,7 @@ Telescope 1.0.3
 
 Say `cosmos`'s selected and entered, there'll be cosmos folder and its dependencies(like gogoproto and google, etc) in `myLib/proto` folder.
 
+
 </CodeGroupItem>
 <CodeGroupItem title="NonInteractive">
 
