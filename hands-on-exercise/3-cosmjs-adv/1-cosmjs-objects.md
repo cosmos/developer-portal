@@ -172,13 +172,11 @@ Create a telescope config `.telescope.json` with following content:
 
 <HighlightBox type="note">
 
-There're three main sections in the config file:
+There are three main sections in the config file:
 
-* protoDirs: root dirs that contains folders with proto files. e.g. If protoDirs're set with `proto` and `proto-common`, when importing from `cosmos/base/query/v1beta1/pagination.proto`, telescope will go checking whether there's `proto/cosmos/base/query/v1beta1/pagination.proto` or `proto-common/cosmos/base/query/v1beta1/pagination.proto`, and then generate dependency based on the file.
-
-* outPath: it contains ts files structured by the folder structure of proto files.
-
-* options: telescope options for users to decide which part of the code will be generated and the way of how code will be transpiled. For more details please see: [telescope options](https://github.com/cosmology-tech/telescope#options)
+* `protoDirs`: root directory that contains folders with Protobuf files. e.g. If `protoDirs` is set with `proto` and `proto-common`, when importing from `cosmos/base/query/v1beta1/pagination.proto`, telescope will go checking whether there's `proto/cosmos/base/query/v1beta1/pagination.proto` or `proto-common/cosmos/base/query/v1beta1/pagination.proto`, and then generate a dependency based on the file.
+* `outPath`: it contains Typescript files structured by the folder structure of Protobuf files.
+* `options`: telescope options for users to decide which part of the code will be generated and the way of how code will be transpiled. For more details please see: [telescope options](https://github.com/cosmology-tech/telescope#options).
 
 </HighlightBox>
 
