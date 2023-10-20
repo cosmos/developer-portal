@@ -313,7 +313,13 @@ $ docker run --rm -it \
 </CodeGroupItem>
 </CodeGroup>
 
-When running above command, Telescope takes proto-common folder (from args) and proto folder (from config) as input, and generate files in 'gen/src' (defined in the config file, will override outPath in args) folder using a config file.
+<HighlightBox type="note">
+
+Note that:
+* `protoDirs` are taken both from the `proto-common` folder from `--protoDirs` arguments and the `proto` folder from the configuration file.
+* `outPath` is taken only from the configuration file, `gen/src` in this case. it means that even if the `--outPath` option's provided to the command, the value will be ignored.
+
+</HighlightBox>
 
 After it's been ran successfully, there'll be a message:
 
