@@ -65,7 +65,7 @@ $ docker run --rm -it \
 
 </CodeGroupItem>
 
-<CodeGroupItem title="DockerGlobal">
+<CodeGroupItem title="Docker Image">
 
 ```sh
 # Install Node
