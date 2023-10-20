@@ -48,7 +48,7 @@ Install `telescope`, in your package or in docker:
 <CodeGroupItem title="Local">
 
 ```sh
-$ npm install --save-dev --save-exact @cosmology/telescope@1.0.4
+$ npm install --save-dev --save-exact @cosmology/telescope@1.0.5
 ```
 
 </CodeGroupItem>
@@ -60,7 +60,7 @@ $ docker run --rm -it \
     -v $(pwd):/myLib \
     -w /myLib \
     checkers_i \
-    npm install --save-dev --save-exact @cosmology/telescope@1.0.4
+    npm install --save-dev --save-exact @cosmology/telescope@1.0.5
 ```
 
 </CodeGroupItem>
@@ -73,7 +73,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION} | bash -
 RUN apt-get install -y nodejs
 
 # Add this line after installing Node to install Telescope in your dockerfile
-RUN npm install --global @cosmology/telescope@1.0.4
+RUN npm install --global @cosmology/telescope@1.0.5
 ```
 
 </CodeGroupItem>
@@ -111,7 +111,7 @@ $ docker run --rm -it \
 This returns something like:
 
 ```txt
-1.0.4
+1.0.5
 ```
 
 The compiler tools are ready. Time to use them.

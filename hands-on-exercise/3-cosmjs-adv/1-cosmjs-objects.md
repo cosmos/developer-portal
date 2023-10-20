@@ -49,7 +49,7 @@ In the `scripts` folder, install Telescope for Protobuf compilation:
 
 ```sh
 $ cd scripts
-$ npm install --save-dev --save-exact @cosmology/telescope@1.0.4
+$ npm install --save-dev --save-exact @cosmology/telescope@1.0.5
 $ cd ..
 ```
 
@@ -62,7 +62,7 @@ $ docker run --rm -it \
     -v $(pwd):/checkers \
     -w /checkers/scripts \
     checkers_i \
-    npm install --save-dev --save-exact @cosmology/telescope@1.0.4
+    npm install --save-dev --save-exact @cosmology/telescope@1.0.5
 ```
 
 </CodeGroupItem>
