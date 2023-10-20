@@ -208,7 +208,7 @@ This will create `/myLib/proto` with cosmos and confio proto file folders in doc
 
 ### Compilation
 
-You can now compile the Protobuf files using telescope.
+You can now compile the Protobuf files using Telescope.
 
 <CodeGroup>
 <CodeGroupItem title="Local">
@@ -233,7 +233,7 @@ $ docker run --rm -it \
 
 You should now see some `.ts` files generated in `./src/codegen`. These are the real source files used in your application.
 
-By default, the command takes `./proto` as input folder and `./src/codegen` as output folder. You can config in and out folders and the way telescope generating code by using options like the examples:
+By default, the command takes `./proto` as input folder and `./src/codegen` as output folder. You can config in and out folders and the way Telescope generating code by using options like the examples:
 
 <CodeGroup>
 <CodeGroupItem title="Local">
@@ -256,7 +256,7 @@ $ docker run --rm -it \
 </CodeGroupItem>
 </CodeGroup>
 
-When running the command, telescope takes proto folder as input, and generate files in 'gen/src' folder.
+When running the command, Telescope takes proto folder as input, and generate files in 'gen/src' folder.
 
 Each time `telescope transpile` has been ran, a config file `.telescope.json` will be created in the folder where it's running:
 
@@ -283,7 +283,7 @@ Each time `telescope transpile` has been ran, a config file `.telescope.json` wi
 }
 ```
 
-You can modify the config file according to [telescope options](https://github.com/cosmology-tech/telescope#options), and then use the file by the option `--config`:
+You can modify the config file according to [Telescope options](https://github.com/cosmology-tech/telescope#options), and then use the file by the option `--config`:
 
 
 <CodeGroup>
@@ -307,7 +307,7 @@ $ docker run --rm -it \
 </CodeGroupItem>
 </CodeGroup>
 
-When running above command, telescope takes proto-common folder(from args) and proto folder(from config) as input, and generate files in 'gen/src'(defined in the config file, will override outPath in args) folder using a config file.
+When running above command, Telescope takes proto-common folder(from args) and proto folder(from config) as input, and generate files in 'gen/src'(defined in the config file, will override outPath in args) folder using a config file.
 
 After it's been ran successfully, there'll be a message:
 
@@ -337,7 +337,7 @@ service Msg {
 }
 ```
 
-If so, you find its service declaration in the compiled `tx.ts` file (with telescope option `rpcClients.inline: true`) or in `tx.rpc.msg.ts` file(with telescope option `rpcClients.inline: false`):
+If so, you find its service declaration in the compiled `tx.ts` file (with Telescope option `rpcClients.inline: true`) or in `tx.rpc.msg.ts` file(with Telescope option `rpcClients.inline: false`):
 
 ```typescript [https://github.com/confio/cosmjs-types/blob/v0.8.0/src/cosmos/bank/v1beta1/tx.ts#L473]
 export interface Msg {

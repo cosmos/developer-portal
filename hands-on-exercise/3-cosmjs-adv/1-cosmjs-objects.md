@@ -41,7 +41,7 @@ Create a folder named `scripts` in your project root. This is where you will lau
 $ mkdir scripts
 ```
 
-In the `scripts` folder, install telescope for Protobuf compilation:
+In the `scripts` folder, install Telescope for Protobuf compilation:
 
 <CodeGroup>
 
@@ -103,7 +103,7 @@ $ curl https://raw.githubusercontent.com/cosmos/cosmos-sdk/v0.45.4/third_party/p
 
 Now we're ready to compile:
 
-Create a telescope config `.telescope.json` with following content:
+Create a Telescope config `.telescope.json` with following content:
 
 ```json
 {
@@ -174,9 +174,9 @@ Create a telescope config `.telescope.json` with following content:
 
 There are three main sections in the config file:
 
-* `protoDirs`: root directory that contains folders with Protobuf files. e.g. If `protoDirs` is set with `proto` and `proto-common`, when importing from `cosmos/base/query/v1beta1/pagination.proto`, telescope will go checking whether there's `proto/cosmos/base/query/v1beta1/pagination.proto` or `proto-common/cosmos/base/query/v1beta1/pagination.proto`, and then generate a dependency based on the file.
+* `protoDirs`: root directory that contains folders with Protobuf files. e.g. If `protoDirs` is set with `proto` and `proto-common`, when importing from `cosmos/base/query/v1beta1/pagination.proto`, Telescope will go checking whether there's `proto/cosmos/base/query/v1beta1/pagination.proto` or `proto-common/cosmos/base/query/v1beta1/pagination.proto`, and then generate a dependency based on the file.
 * `outPath`: it contains Typescript files structured by the folder structure of Protobuf files.
-* `options`: telescope options for users to decide which part of the code will be generated and the way of how code will be transpiled. For more details please see: [telescope options](https://github.com/cosmology-tech/telescope#options).
+* `options`: Telescope options for users to decide which part of the code will be generated and the way of how code will be transpiled. For more details please see: [Telescope options](https://github.com/cosmology-tech/telescope#options).
 
 </HighlightBox>
 
