@@ -67,13 +67,22 @@ $ docker run --rm -it \
 
 <CodeGroupItem title="Docker Image">
 
-```sh
-# Install Node
-RUN curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION} | bash -
-RUN apt-get install -y nodejs
+```Dockerfile
+FROM --platform=linux node:lts-slim as base
 
-# Add this line after installing Node to install Telescope in your dockerfile
-RUN npm install --global @cosmology/telescope@1.0.5
+ENV TELESCOPE_VERSION=1.0.5
+
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
+RUN npm install --global @cosmology/telescope@${TELESCOPE_VERSION}
+
+ENTRYPOINT ["telescope"]
+```
+
+Then build the image:
+
+```sh
+$ docker build . -t ts-telescope
 ```
 
 </CodeGroupItem>
@@ -94,14 +103,11 @@ $ npx telescope --version
 
 </CodeGroupItem>
 
-<CodeGroupItem title="Local">
+<CodeGroupItem title="Docker">
 
 ```sh
 $ docker run --rm -it \
-    -v $(pwd):/myLib \
-    -w /myLib \
-    checkers_i \
-    npx telescope --version
+    ts-telescope --version
 ```
 
 </CodeGroupItem>
