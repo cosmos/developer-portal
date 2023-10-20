@@ -209,6 +209,13 @@ $ ls proto/checkers | xargs -I {} docker run --rm \
 
 </CodeGroup>
 
+After it's been ran successfully, there'll be a message:
+
+```txt
+✨ files transpiled in '/client/src/types/generated'
+✨ transpilation successful!
+```
+
 You should now have your TypeScript files.
 
 In order to easily repeat these steps in the future, you can add them to your existing `Makefile` with slight modifications:

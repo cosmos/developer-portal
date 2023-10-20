@@ -312,8 +312,15 @@ When running above command, telescope takes proto-common folder(from args) and p
 After it's been ran successfully, there'll be a message:
 
 ```txt
-transpilation successful!
+✨ files transpiled in '/gen/src'
+✨ transpilation successful!
 ```
+
+<HighlightBox type="note">
+
+Note: `outPath` will be automatically created after transpilation's successful
+
+</HighlightBox>
 
 ---
 
