@@ -13,7 +13,7 @@ tags:
 
 In the following pages, explore some of the Cosmos SDK modules in more detail. This gives you good practice when it comes to working with modules.
 
-![Two stars and a handful of planets](/lp-images/planets-large-2.svg)
+![Two stars and a handful of planets](/lp-images/ida_dev_portal_lp_hero-06.png)
 
 ## In this chapter
 

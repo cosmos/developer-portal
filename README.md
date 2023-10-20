@@ -106,7 +106,7 @@ customModules:
       The portal has three different sections, with content to take you through the fundamentals of the Interchain, dive deeper in the tutorials, and apply your conceptual knowledge in the hands-on exercise chapters.
     useNarrowCards: true
     hideFilter: true
-    image: /lp-images/planets-15-gradient.jpg
+    image: /lp-images/ida_dev_portal_lp_background-00.png
     imageLightMode: /lp-images/universe.svg
     sections:
       - image:

@@ -13,7 +13,7 @@ tags:
 
 With step-by-step examples you will learn how to work with CosmJS when building your application-specific blockchain. Explore how to use CosmJS and apply it to your checkers blockchain to create custom objects and messages.
 
-![Sphere over honeycomb](/planet-pod.svg)
+![Sphere over honeycomb](/ida_dev_portal_lp_hero-09.png)
 
 ## In this chapter
 
