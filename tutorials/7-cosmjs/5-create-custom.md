@@ -318,7 +318,7 @@ After it's been ran successfully, there'll be a message:
 
 <HighlightBox type="note">
 
-Note: `outPath` will be automatically created after transpilation's successful
+Note that `outPath` is created automatically during the transpilation. This means that you will get no "missing dir" error, for instance if your `outPath` is incorrect.
 
 </HighlightBox>
 
