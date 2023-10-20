@@ -177,8 +177,7 @@ Telescope 1.0.3
  ...
 ```
 
-Say `cosmos`'s selected and entered, there'll be cosmos folder and its dependencies(like gogoproto and google, etc) in `myLib/proto` folder.
-
+Say `cosmos`'s selected and entered, there'll be cosmos folder and its dependencies (like gogoproto and google, etc) in `myLib/proto` folder.
 
 </CodeGroupItem>
 <CodeGroupItem title="NonInteractive">
@@ -189,7 +188,7 @@ You can add wanted proto packages after `telescope install`, then you don't have
 $ npx telescope install @protobufs/cosmos@0.0.10  @protobufs/confio
 ```
 
-Then there'll be the packages and its dependencies(like gogoproto and google, etc) in myLib/proto folder.
+Then there'll be the packages and its dependencies (like gogoproto and google, etc) in myLib/proto folder.
 
 </CodeGroupItem>
 <CodeGroupItem title="Docker non-interactive">
@@ -308,7 +307,7 @@ $ docker run --rm -it \
 </CodeGroupItem>
 </CodeGroup>
 
-When running above command, Telescope takes proto-common folder(from args) and proto folder(from config) as input, and generate files in 'gen/src'(defined in the config file, will override outPath in args) folder using a config file.
+When running above command, Telescope takes proto-common folder (from args) and proto folder (from config) as input, and generate files in 'gen/src' (defined in the config file, will override outPath in args) folder using a config file.
 
 After it's been ran successfully, there'll be a message:
 
@@ -338,7 +337,7 @@ service Msg {
 }
 ```
 
-If so, you find its service declaration in the compiled `tx.ts` file (with Telescope option `rpcClients.inline: true`) or in `tx.rpc.msg.ts` file(with Telescope option `rpcClients.inline: false`):
+If so, you find its service declaration in the compiled `tx.ts` file (with Telescope option `rpcClients.inline: true`) or in `tx.rpc.msg.ts` file (with Telescope option `rpcClients.inline: false`):
 
 ```typescript [https://github.com/confio/cosmjs-types/blob/v0.8.0/src/cosmos/bank/v1beta1/tx.ts#L473]
 export interface Msg {
@@ -372,7 +371,7 @@ The important points to remember from this are:
 2. You can see `encode` and `decode` in action. Notice the `.finish()` that flushes the Protobuf writer buffer.
 3. The `rpc.request` makes calls that are correctly understood by the Protobuf compiled server on the other side.
 
-You can find the same structure in [`query.ts`](https://github.com/confio/cosmjs-types/blob/v0.8.0/src/cosmos/bank/v1beta1/query.ts#L1583).(or `query.rpc.Query.ts` with telescope option rpcClients.inline: false)
+You can find the same structure in [`query.ts`](https://github.com/confio/cosmjs-types/blob/v0.8.0/src/cosmos/bank/v1beta1/query.ts#L1583). (or `query.rpc.Query.ts` with telescope option rpcClients.inline: false)
 
 ### Proper saving
 
