@@ -191,7 +191,7 @@ $ npx telescope install @protobufs/cosmos@0.0.10  @protobufs/confio
 Then there'll be the packages and its dependencies(like gogoproto and google, etc) in myLib/proto folder.
 
 </CodeGroupItem>
-<CodeGroupItem title="DockerNonInteractive">
+<CodeGroupItem title="Docker non-interactive">
 
 ```sh
 $ docker run --rm -it \
