@@ -291,6 +291,9 @@ Each time `telescope transpile` has been ran, a config file `.telescope.json` wi
 }
 ```
 
+* `protoDirs`: root directory that contains folders with Protobuf files. e.g. If `protoDirs` is set with `proto` and `proto-common`, when importing from `cosmos/base/query/v1beta1/pagination.proto`, Telescope will go checking whether there's `proto/cosmos/base/query/v1beta1/pagination.proto` or `proto-common/cosmos/base/query/v1beta1/pagination.proto`, and then generate a dependency based on the file.
+* `outPath`: it contains Typescript files structured by the folder structure of Protobuf files.
+
 You can modify the config file according to [Telescope options](https://github.com/cosmology-tech/telescope#options), and then use the file by the option `--config`:
 
 
