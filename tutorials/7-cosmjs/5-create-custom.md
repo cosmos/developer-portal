@@ -59,7 +59,7 @@ $ npm install --save-dev --save-exact @cosmology/telescope@1.0.5
 $ docker run --rm -it \
     -v $(pwd):/myLib \
     -w /myLib \
-    checkers_i \
+    ts-telescope \
     npm install --save-dev --save-exact @cosmology/telescope@1.0.5
 ```
 
@@ -84,6 +84,12 @@ Then build the image:
 ```sh
 $ docker build . -t ts-telescope
 ```
+
+<HighlightBox type="note">
+
+You can replace `ts-telescope` with your preferred name.
+
+</HighlightBox>
 
 </CodeGroupItem>
 
@@ -203,7 +209,7 @@ Then there'll be the packages and its dependencies (like gogoproto and google, e
 $ docker run --rm -it \
     -v $(pwd):/myLib \
     -w /myLib \
-    checkers_i \
+    ts-telescope \
     npx telescope install @protobufs/cosmos@0.0.10  @protobufs/confio
 ```
 
@@ -230,7 +236,7 @@ $ npx telescope transpile
 $ docker run --rm -it \
     -v $(pwd):/myLib \
     -w /myLib \
-    checkers_i \
+    ts-telescope \
     npx telescope transpile
 ```
 
@@ -255,7 +261,7 @@ $ npx telescope transpile --protoDirs ./proto --outPath gen/src
 $ docker run --rm -it \
     -v $(pwd):/myLib \
     -w /myLib \
-    checkers_i \
+    ts-telescope \
     npx telescope transpile --protoDirs ./proto --outPath gen/src
 ```
 
@@ -306,7 +312,7 @@ $ npx telescope transpile --protoDirs ../../proto-common --config .telescope.jso
 $ docker run --rm -it \
     -v $(pwd):/myLib \
     -w /myLib \
-    checkers_i \
+    ts-telescope \
     npx telescope transpile --protoDirs ../../proto-common --config .telescope.json
 ```
 
