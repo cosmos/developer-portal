@@ -106,19 +106,6 @@ However, DPoS systems are less decentralized than PoW and PoS systems, because t
 
 ### Practical Byzantine Fault Tolerance (pBFT)
 
-<ExpansionPanel title="What is Byzantine Fault Tolerance?">
-
-When a distributed network reaches consensus even with nodes failing to respond or responding with wrong information (i.e. faulty nodes), it has Byzantine Fault Tolerance (BFT). BFT ensures that a distributed network can continue to work even with faulty nodes, as the consensus is a result of collective decision-making.
-
-Failures in a Byzantine sense are:
-
-* **Fail-stop failures:** the node fails and stops operating.
-* **Arbitrary node failures:** the node fails to return a result, responds with an incorrect result deliberately or not, or responds with a result different from other results in the network.
-
-The term BFT is derived from the Byzantine Generals Problem.
-
-</ExpansionPanel>
-
 Practical Byzantine Fault Tolerance (pBFT) was first introduced in 1999 and arose from academia.
 
 <HighlightBox type="tip">
@@ -127,7 +114,7 @@ You can access the 1999 paper by Miguel Castro and Barbara Liskov on pBFT [here]
 
 </HighlightBox>
 
-In pBFT, a **replica** is a network node that maintains a full copy of the ledger state. pBFT is a three-phase protocol, in which the client sends a request to a so-called primary. In the first phase, the primary broadcasts the request with a sequence number to the replicas. Then the replicas agree on the sequence number and create a message. When a threshold of agreement is reached by the replicas, the message is verified. The replicas agree on the overall order of transactions within a view. The broader network is informed about transaction blocks when they are finalized (signed by sufficient replicas).
+In pBFT, a **replica** is a network node that maintains a full copy of the ledger state. pBFT is a three-phase protocol. Periodically, a "primary" replica is selected to create a new block, and it broadcasts a message containing an order of transactions to the other replicas for approval. When a threshold of agreement is reached, the message is verified. The broader network is informed about transaction blocks when they are finalized (i.e. "signed by sufficient replicas").
 
 pBFT brings two main advantages to consensus on blockchains:
 
@@ -152,7 +139,7 @@ CometBFT will be explored in more detail in the [Main Concepts](/academy/2-cosmo
 
 <HighlightBox type="reading">
 
-**Further readings**
+**Further reading**
 
 * [Castro, M. & Liskov, B. (1999): Practical Byzantine Fault Tolerance](http://pmg.csail.mit.edu/papers/osdi99.pdf)
 * [Castro, M. & Liskov, B.: Practical Byzantine Fault Tolerance presentation](https://www.comp.nus.edu.sg/~rahul/allfiles/cs6234-16-pbft.pdf)

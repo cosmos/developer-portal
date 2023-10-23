@@ -110,7 +110,7 @@ Today two broad trends are identified in the development and adoption of blockch
 * [Swan Melanie: Blockchain (2015): Blueprint for a New Economy](https://www.melanieswan.com/publications.html#books)
 * [Antonopolous, Andreas (2017): Mastering Bitcoin](https://bitcoinbook.info/)
 
-**Further readings**
+**Further reading**
 
 * [Anderson, Ross J. (1996): The Eternity Service](https://www.cl.cam.ac.uk/~rja14/Papers/eternity.pdf)
 * [Buterin, Vitalik (2014): A Next-Generation Smart Contract and Decentralized Application Platform - The Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper)

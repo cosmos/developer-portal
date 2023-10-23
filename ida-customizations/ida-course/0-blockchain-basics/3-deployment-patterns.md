@@ -24,7 +24,7 @@ A public blockchain network has a few specific attributes:
 
 * **Accessibility:** All you need to connect to Bitcoin or Ethereum is the client software and an internet connection. No AML, KYC, identity checks, or subscription payment is required.
 * **No hierarchy:** All nodes are equal, meaning no individual node has more authority than another. All validators are also equal.
-* **Crypto-economic incentives:** The lack of a central authority means there is no absolute defense against malicious behavior. Instead, the network usually incentivizes benevolent behavior and disincentivizes behavior that endangers the network's functioning. It de facto implements prohibitive expenses to attack the network and others and thus, ensures security and proper function.
+* **Crypto-economic incentives:** The lack of a central authority means there is no absolute defense against malicious behavior. Instead, the network usually incentivizes benevolent behavior and disincentivizes behavior that endangers the network's functioning. It de facto implements prohibitive expenses to attack the network and others and thus ensures security and proper function.
 * **Full decentralization:** Many public networks are completely decentralized because they are non-hierarchical and fully accessible. The playing field for market participants is therefore relatively level, so traditional business models may not work as well.
 
 The two most popular examples of functioning public networks are Bitcoin and Ethereum.
@@ -121,7 +121,7 @@ The result is that the interchain can be applied to both public and private sett
 
 <HighlightBox type="reading">
 
-**Further readings**
+**Further reading**
 
 * [Buterin, Vitalik (2014): A Next-Generation Smart Contract and Decentralized Application Platform - The Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
 * [Vitalik Buterin on private chains](https://blog.ethereum.org/2015/08/07/on-public-and-private-blockchains)
