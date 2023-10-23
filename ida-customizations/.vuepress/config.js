@@ -98,7 +98,7 @@ module.exports = {
                 },
                 {
                   title: "Blockchain History",
-                  path: "/ida-course/0-blockchain-basics/2-public.html",
+                  path: "/ida-course/0-blockchain-basics/2-history.html",
                 },
                 {
                   title: "Public and Managed Blockchains",
