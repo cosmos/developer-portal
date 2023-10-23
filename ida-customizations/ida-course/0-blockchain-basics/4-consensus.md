@@ -12,11 +12,11 @@ A known challenge in distributed computing, which is provably unsolvable but can
 
 This problem is commonly known as the **Byzantine Generals Problem** and mitigation strategies for it are subsumed under the term **Byzantine Fault Tolerance (BFT)**.
 
-An overview of well-known blockchain solutions to this provides perspective and insight into the options the interchain offers, because it allows a network designer to choose the consensus algorithm that is best suited to the developer's purpose.
+An overview of well-known blockchain solutions to this provides perspective and insight into the options the interchain offers because it allows a network designer to choose the consensus algorithm that is best suited to the developer's purpose.
 
 ## The Byzantine Generals Problem
 
-In the traditional description of the problem, generals whose armies are spread around a target city need to reach consensus on a time to attack. The generals can only rely on **unsecured communication channels** to achieve this. A lack of acknowledgement can either be caused by a failure to deliver a message, or by a dead general, or by a failure to deliver the acknowledgement. While there are variations of the problem description to adapt to varying real-world fault-tolerance situations, most descriptions include an element of catastrophe if the generals fail to coordinate their actions.
+In the traditional description of the problem, generals whose armies are spread around a target city need to reach consensus on a time to attack. The generals can only rely on **unsecured communication channels** to achieve this. A lack of acknowledgement can either be caused by a failure to deliver a message, by a dead general, or by a failure to deliver the acknowledgement. While there are variations of the problem description to adapt to varying real-world fault-tolerance situations, most descriptions include an element of catastrophe if the generals fail to coordinate their actions.
 
 ![Byzantine Generals Problem](/ida-course/0-blockchain-basics/images/00_06_byzantine_generals_dark_notitle-01.png)
 
@@ -31,7 +31,7 @@ When a distributed network reaches consensus _even with nodes failing to respond
 
 ## Reaching consensus
 
-In addition to the chain of blocks, one of the innovations introduced by Bitcoin was to use **proof-of-work (PoW)** to reach consensus. Since then, many other consensus algorithms have been proposed and employed. One should note that there were consensus algorithms presented in the academic community _before_ Bitcoin.
+In addition to the chain of blocks, one of the innovations introduced by Bitcoin was to use **Proof-of-Work (PoW)** to reach consensus. Since then, many other consensus algorithms have been proposed and employed. One should note that there were consensus algorithms presented in the academic community _before_ Bitcoin.
 
 Many teams have experimented with distributed consensus using many algorithms deployed to different chains. The algorithms that exist can be compared in terms of the distribution of authority, expected performance, and transaction finality. Transaction finality can be categorized as:
 
@@ -66,7 +66,7 @@ The control mechanism for the amount of work required is called **difficulty**. 
 
 <HighlightBox type="info">
 
-In the following video, Jae Kwon, founder and CEO of Tendermint, discusses finding an alternative solution to the energy intensive Proof-of-Work consensus methodology that still maintains the provable security benefits of distributed networking: Tendermint.
+In the following video, Jae Kwon, founder and CEO of Tendermint, discusses finding an alternative solution to the energy-intensive Proof-of-Work consensus methodology that still maintains the provable security benefits of distributed networking: Tendermint.
 
 <YoutubePlayer videoId="T_FYBKJxlbk"/>
 
@@ -74,15 +74,15 @@ In the following video, Jae Kwon, founder and CEO of Tendermint, discusses findi
 
 ### Proof-of-Authority (PoA)
 
-**Proof-of-Authority (PoA)** is a simple mechanism that solves for faster block times by relying on validators that are pre-selected based on the belief that they are trustworthy. In other words, validators are allowed to produce blocks based solely on their pre-existing authority - they do not need to engage in the practice of competitively searching for a nonce, which underpins the high energy consumption of PoW networks. 
+**Proof-of-Authority (PoA)** is a simple mechanism that solves for faster block times by relying on validators that are pre-selected based on the belief that they are trustworthy. In other words, validators are allowed to produce blocks based solely on their pre-existing authority - they do not need to engage in the practice of competitively searching for a nonce, which underpins the high energy consumption of PoW networks.
 
-This benefit of PoA networks is counter-balanced by the frequently cited criticism that everyone needs to trust the PoA validators in order to trust the overall network and blockchain. Such centralization of authority might be considered antithetical to the motivations originally driving the creation of blockchain.
+This benefit of PoA networks is counter-balanced by the frequently cited criticism that everyone needs to trust the PoA validators in order to trust the overall network and blockchain. Such centralization of authority might be considered antithetical to the motivations originally driving the creation of a blockchain network.
 
 ### Proof-of-Stake (PoS)
 
-**Proof-of-stake (PoS)** is another method of selecting the authoritative node for a given block, based on the assumption that those with the most to lose are the most incentivized to safeguard network integrity. 
+**Proof-of-Stake (PoS)** is another method of selecting the authoritative node for a given block, based on the assumption that those with the most to lose are the most incentivized to safeguard network integrity.
 
-A successful PoS system must address the problem of "nothing at stake". That is, validators must face a disincentive for bad behavior as well as a high probability that bad behavior will be detected. The burden of detection usually falls on the rest of the network, which can either accept or reject the validator's opinion. Validators place funds (i.e. **the stake**) at risk, and face economic penalties for emitting opinions that are ultimately rejected by sizable numbers of other nodes. A validator is thus incentivized to generate blocks that are likely to be accepted by the network and faces economic punishment when it fails to do so. 
+A successful PoS system must address the problem of "nothing at stake". That is, validators must face a disincentive for bad behavior as well as a high probability that bad behavior will be detected. The burden of detection usually falls on the rest of the network, which can either accept or reject the validator's opinion. Validators place funds (i.e. **the stake**) at risk, and face economic penalties for emitting opinions that are ultimately rejected by sizable numbers of other nodes. A validator is thus incentivized to generate blocks that are likely to be accepted by the network and faces economic punishment when it fails to do so.
 
 PoS validators are selected in a pseudo-random fashion, with a larger stake producing a higher probability of being selected to generate a block. While PoS systems generally reward validators with new coins for honest behavior, so-called **block rewards**, validators also receive transaction fees in return for generating blocks that the rest of the network accepts. A criticism of PoS is that it tends to centralize economic rewards in a small number of already wealthy nodes, those validators with sufficiently high stakes to win selection.
 
@@ -106,6 +106,19 @@ However, DPoS systems are less decentralized than PoW and PoS systems, because t
 
 ### Practical Byzantine Fault Tolerance (pBFT)
 
+<ExpansionPanel title="What is Byzantine Fault Tolerance?">
+
+When a distributed network reaches consensus even with nodes failing to respond or responding with wrong information (i.e. faulty nodes), it has Byzantine Fault Tolerance (BFT). BFT ensures that a distributed network can continue to work even with faulty nodes, as the consensus is a result of collective decision-making.
+
+Failures in a Byzantine sense are:
+
+* **Fail-stop failures:** the node fails and stops operating.
+* **Arbitrary node failures:** the node fails to return a result, responds with an incorrect result deliberately or not, or responds with a result different from other results in the network.
+
+The term BFT is derived from the Byzantine Generals Problem.
+
+</ExpansionPanel>
+
 Practical Byzantine Fault Tolerance (pBFT) was first introduced in 1999 and arose from academia.
 
 <HighlightBox type="tip">
@@ -114,7 +127,7 @@ You can access the 1999 paper by Miguel Castro and Barbara Liskov on pBFT [here]
 
 </HighlightBox>
 
-In pBFT, a **replica** is a network node that maintains a full copy of the ledger state. Periodically, a "primary" replica is selected to create a new block, and it broadcasts a message containing an order of transactions to the other replicas for approval. When a threshold of agreement is reached, the message is verified. The broader network is informed about transaction blocks when they are finalized (signed by sufficient replicas).
+In pBFT, a **replica** is a network node that maintains a full copy of the ledger state. pBFT is a three-phase protocol, in which the client sends a request to a so-called primary. In the first phase, the primary broadcasts the request with a sequence number to the replicas. Then the replicas agree on the sequence number and create a message. When a threshold of agreement is reached by the replicas, the message is verified. The replicas agree on the overall order of transactions within a view. The broader network is informed about transaction blocks when they are finalized (signed by sufficient replicas).
 
 pBFT brings two main advantages to consensus on blockchains:
 
@@ -125,7 +138,7 @@ This of course is a very simplified presentation!
 
 ## CometBFT and consensus in the interchain
 
-While most consensus implementations are tightly coupled with a particular blockchain project, the interchain focuses on simplifying the process of creating blockchains (among others) by offering a decentralized consensus mechanism called **CometBFT**. 
+While most consensus implementations are tightly coupled with a particular blockchain project, the interchain focuses on simplifying the process of creating blockchains (among others) by offering a decentralized consensus mechanism called **CometBFT**.
 
 CometBFT's engine runs its own public blockchain. It differs from Ethereum on its consensus protocol, as it uses the concept of validators who need to bind funds to validate, and who then validate blocks over the course of a certain number of rounds.
 
@@ -133,7 +146,7 @@ CometBFT offers the most mature Byzantine Fault Tolerance, transaction finality,
 
 <HighlightBox type="info">
 
-CometBFT will be explored in detail in the [Main Concepts](/academy/2-cosmos-concepts/index.md) section.
+CometBFT will be explored in more detail in the [Main Concepts](/academy/2-cosmos-concepts/index.md) section.
 
 </HighlightBox>
 
@@ -157,9 +170,9 @@ To summarize, this section has explored:
 
 * How the challenge of reaching consensus in hierarchy-free, permissionless, and failure-prone distributed networks is conveniently revealed through the Byzantine Generals Problem, with **Byzantine Fault Tolerance (BFT)** being the blanket term for any mitigating strategies.
 * How **Proof-of-Work (PoW)** consensus assigns a difficult arbitrary task to block creation, with winning miners rewarded for the effort necessary to complete it. The volume of work done contributes to the security of the network, as any attempt to distort the historical record would demand potentially vast quantities of work which quickly become impractical as the valid chain continues to lengthen.
-* How **Proof-of-Authority (PoA)** provides a more energy efficient alternative to PoW at the cost of some centralization of power, by assigning block creation duties to "validator nodes" which are assumed to be trustworthy based on their preexisting authority.
+* How **Proof-of-Authority (PoA)** provides a more energy-efficient alternative to PoW at the cost of some centralization of power, by assigning block creation duties to "validator nodes" which are assumed to be trustworthy based on their preexisting authority.
 * How **Proof-of-Stake (PoS)** reduces the reliance on validator trust, as validators now undertake the duties of block creation in proportion to their stake of financial value in the network, earning rewards for beneficial behavior but having penalties levied on their stake for poor performance.
-* How PoS's extension, **Delegated Proof-of-Work (DPoS)**, restores some of the "democratic" aspect of PoW and reduces value centralization, as users are able to delegate their own stakes to those of the validators', sharing the rewards (and possibly penalties) associated with block creation through the network.
+* How PoS's extension, **Delegated Proof-of-Work (DPoS)**, restores some of the "democratic" aspect of PoW and reduces value centralization, as users are able to delegate their own stakes to those of the validators, sharing the rewards (and possibly penalties) associated with block creation through the network.
 * How **Practical Byzantine Fault Tolerance (pBFT)** represents the capacity for a distributed network to keep reaching consensus even if significant numbers of nodes are either failing to respond or are responding with wrong information. An example of pBFT in action is **CometBFT**, which underpins custom blockchains built with the Cosmos SDK.
 
 </HighlightBox>

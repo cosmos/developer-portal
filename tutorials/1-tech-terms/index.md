@@ -46,7 +46,7 @@ The various tools available to interchain developers can be referred to collecti
 
 <HighlightBox type="info">
 
-Tools within the Interchain Stack which contain "Cosmos" in their name will remain unchanged by current terminology changes, such as the **Cosmos SDK** and **CosmWasm**. Any chain built with the Cosmos SDK can typically be referred to as "a Cosmos chain" or "appchain".
+Tools within the Interchain Stack that contain "Cosmos" in their name will remain unchanged by current terminology changes, such as the **Cosmos SDK** and **CosmWasm**. Any chain built with the Cosmos SDK can typically be referred to as "a Cosmos chain" or "appchain".
 
 </HighlightBox>
 

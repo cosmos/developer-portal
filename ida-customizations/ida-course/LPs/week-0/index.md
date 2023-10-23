@@ -31,7 +31,7 @@ You can also find a short section at the end of the chapter with good-to-know de
 
 As all blockchain ecosystems keep on growing and maturing, product stacks and terminologies evolve. Thus, please be aware that Cosmos is also known as **the Interchain**. The terms "Cosmos", "Interchain Ecosystem", and "Interchain" are synonymous with each other, and the various tools available to developers ("the stack") can be referred to collectively as the **Interchain Stack**.
 
-However, blockchains created using the Cosmos SDK are typically referred to as "Cosmos chains"
+However, blockchains created using the Cosmos SDK are typically referred to as "Cosmos chains".
 
 </HighlightBox>
 
