@@ -85,11 +85,7 @@ Then build the image:
 $ docker build . -t ts-telescope
 ```
 
-<HighlightBox type="note">
-
 You can replace `ts-telescope` with your preferred name.
-
-</HighlightBox>
 
 </CodeGroupItem>
 
@@ -194,11 +190,11 @@ Say `cosmos`'s selected and entered, there'll be cosmos folder and its dependenc
 </CodeGroupItem>
 <CodeGroupItem title="NonInteractive">
 
-You can add wanted proto packages after `telescope install`, then you don't have to select them one by one.
-
 ```sh
 $ npx telescope install @protobufs/cosmos@0.0.10  @protobufs/confio
 ```
+
+You can add wanted proto packages after `telescope install`, then you don't have to select them one by one.
 
 Then there'll be the packages and its dependencies (like gogoproto and google, etc) in myLib/proto folder.
 
