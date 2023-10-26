@@ -190,4 +190,4 @@ To summarize, this section has explored:
 
 <!--## Next up
 
-Go to the [next section](./13-migrations.md) for an introduction to migrations in the Cosmos SDK.-->
+Go to the [next section](./16-migrations.md) for an introduction to migrations in the Cosmos SDK.-->
