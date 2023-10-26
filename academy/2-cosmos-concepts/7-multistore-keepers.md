@@ -292,6 +292,8 @@ func (k Keeper) GetStoredGame(ctx sdk.Context, gameId string) (storedGame checke
 </CodeGroupItem>
 </CodeGroup>
 
+Keep in mind that these are examples and not the only way you can implement the desired outcome.
+
 If you want to save a game:
 
 <CodeGroup>
