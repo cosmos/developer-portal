@@ -51,7 +51,7 @@ As ever, taking inspiration from `minimal-module-example`, this can be described
 ```diff-protobuf [proto/alice/checkers/v1/types.proto]
     message GenesisState {
       // params defines all the parameters of the module.
-      Params params = 1 [ (gogoproto.nullable) = false, (amino.dont_omitempty) = true ];
+      Params params = 1 [ (gogoproto.nullable) = false ];
     }
 
 +  message StoredGame {

@@ -230,7 +230,7 @@ const (
 package types
 
 const (
-    StoredGameListKey = collections.NewPrefix("StoredGame/value/")
+    StoredGamesKey = collections.NewPrefix("StoredGame/value/")
 )
 ```
 
@@ -271,21 +271,21 @@ package keeper
 
 type Keeper struct {
     ...
-    StoredGameList collections.Map[string, checkers.StoredGame]
+    StoredGames collections.Map[string, checkers.StoredGame]
 }
 
 func NewKeeper(cdc codec.BinaryCodec, addressCodec address.Codec, storeService storetypes.KVStoreService, authority string) Keeper {
     k := Keeper{
         ...
-        StoredGameList: collections.NewMap(sb,
-            checkers.StoredGameListKey, "storedGameList", collections.StringKey,
+        StoredGames: collections.NewMap(sb,
+            checkers.StoredGamesKey, "storedGames", collections.StringKey,
             codec.CollValue[checkers.StoredGame](cdc)),
     }
     ...
 }
 
 func (k Keeper) GetStoredGame(ctx sdk.Context, gameId string) (storedGame checkers.StoredGame, err error) {
-    return k.StoredGameList.Get(ctx, gameId)
+    return k.StoredGames.Get(ctx, gameId)
 }
 ```
 
@@ -311,7 +311,7 @@ func (k Keeper) SetStoredGame(ctx sdk.Context, storedGame types.StoredGame) {
 
 ```go
 func (k Keeper) SetStoredGame(ctx sdk.Context, gameId string, storedGame checkers.StoredGame) error {
-    return k.StoredGameList.Set(ctx, gameId, storedGame) 
+    return k.StoredGames.Set(ctx, gameId, storedGame) 
 }
 ```
 
@@ -331,7 +331,7 @@ gamesStore.Delete(byte[](storedGame.Index))
 <CodeGroupItem title="v0.50 or after">
 
 ```go
-k.StoredGameList.Remove(ctx, storedGame.Index)
+k.StoredGames.Remove(ctx, storedGame.Index)
 ```
 
 </CodeGroupItem>
@@ -366,7 +366,7 @@ func (k Keeper) GetAllStoredGame(ctx sdk.Context) (list []types.StoredGame) {
 ```go
 func (k Keeper) GetAllStoredGame(ctx context.Context) ([]checkers.StoredGame, error) {
     var storedGames []checkers.StoredGame
-    if err := k.StoredGameList.Walk(ctx, nil, func(index string, storedGame checkers.StoredGame) (bool, error) {
+    if err := k.StoredGames.Walk(ctx, nil, func(index string, storedGame checkers.StoredGame) (bool, error) {
         storedGames = append(storedGames, storedGame)
         return false, nil
     }); err != nil {

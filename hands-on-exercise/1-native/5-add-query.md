@@ -40,7 +40,6 @@ option go_package = "github.com/alice/checkers";
 import "alice/checkers/v1/types.proto";
 import "google/api/annotations.proto";
 import "cosmos/query/v1/query.proto";
-import "amino/amino.proto";
 import "gogoproto/gogo.proto";
 
 // Query defines the module Query service.
