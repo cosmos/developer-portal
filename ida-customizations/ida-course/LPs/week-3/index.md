@@ -54,6 +54,10 @@ The sections on [IBC/TAO connections, channels, and clients](/academy/3-ibc/2-co
 
 </HighlightBox>
 
+**This week, make sure to submit Coding Exercise 2 once you feel ready to test your knowledge.**
+
+The exercise will be available until the Final Exam period closes on February 1st, 2024, but it is recommended to attempt it immediately after completing the Week 3 content.
+
 ## Next up
 
 First, begin with an [introduction to IBC](/academy/3-ibc/1-what-is-ibc.md), then you can go ahead an head to the section on [fungible token transfers](/academy/3-ibc/7-token-transfer.md). After getting an [overview on helpful tools for IBC](/academy/3-ibc/12-ibc-tooling.md), you can start your ComsJS journey with an [introduction section](/tutorials/7-cosmjs/1-cosmjs-intro.md).

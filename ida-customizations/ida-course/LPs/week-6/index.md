@@ -29,6 +29,10 @@ In this chapter, you will:
 
 </HighlightBox>
 
+**This week, make sure to submit the IBC Process Exercise once you feel ready to test your knowledge.**
+
+The exercise will be available until the Final Exam period closes on February 1st, 2024, but it is recommended to attempt it immediately after completing the Week 6 content.
+
 ## Next up
 
 To start with custom IBC applications, begin with an [introduction to IBC application development](/hands-on-exercise/5-ibc-adv/3-ibc-app-intro.md) to then dive into [making an IBC-enabled module](/hands-on-exercise/5-ibc-adv/4-ibc-app-steps.md) and [adding packet and acknowledgement data](/hands-on-exercise/5-ibc-adv/5-ibc-app-packets.md).

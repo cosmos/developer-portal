@@ -29,10 +29,7 @@ overview:
           The Academy is self-paced and flexible, so you do not have to be online at particular times. You can follow the weekly plan or go through the learning material at your own pace. We recommend allocating about 10 to 15 hours a week to get through all the material.<br/><br/>
           The material is delivered in various formats, including text, images, videos, quizzes, and exercises. There is plenty of additional material embedded in the content to deepen your understanding of particular concepts. And if you want even more, ask your tutors and expert instructors, who will point you in the right direction!<br/><br/>
           <b>Hands-on exercises</b><br/><br/>
-          In each module, you will find quizzes, code exercises, and/or code examples. In the first two weeks, you can find a quiz (end of Week 1) and an exercise (end of Week 2). It does not matter if you pass the quiz or exercise - think of these as opportunities to practice and demonstrate your engagement with the program. Both will remain open until the launch of the final exam, but we recommend taking them as soon as you finish Week 1 and 2.<br/><br/>
-          Week 1: Quiz - recommended date: before Thursday, November 16th<br/><br/>
-          Week 2: Exercise - recommended date: before Thursday, November 16th<br/><br/>
-          Week 1 Quiz & Week 2 Exercise - <b>closing date</b>: Wednesday, January 3rd, 2024<br/><br/>
+          In each module, you will find quizzes, code exercises, and code examples. At the end of weeks 1 to 6, exercises will be unlocked that test your progress and also contribute to your score in the Final Exam. These will remain open until the end of the Final Exam period (February 1st, 2024), but we recommend taking them as soon as you finish the associated week of the program.<br/><br/>
           You will receive a confirmation of the results of any submitted exercises.<br/><br/>
           <b>Technical requirements</b><br/><br/>
           No special technical requirements of HW or SW are needed. You need a computer with at least 8 GB RAM and 4 GB free hard disk space.
@@ -55,9 +52,10 @@ overview:
         We have put together a <a href="/ida-course/discord-info.html">quick guide</a> explaining how to best communicate on Discord.
     - title: How do I get certified?
       description: |
-        After the seven-week program and the two-week end-of-year break, you will have four weeks to complete an Final Exam - a combination of quizzes and a code project. The exam will be open from <b>January 4th, 2024</b> and you have to complete it before <b>February 2nd, 2024</b>.<br/><br/>
+        After the seven-week program and the two-week end-of-year break, you will have four weeks to complete the Final Exam - a combination of quizzes and a code project. The exam will be open from <b>January 4th, 2024</b> and you have to complete it before <b>February 2nd, 2024</b>.<br/><br/>
         You will receive an email and notification via Discord closer to the date.<br/><br/>
-        If you complete the program earlier, you can take the exam sooner. The earliest you can take the exam is from the fourth week of the program.<br/><br/>
+        The elements of the Final Exam are progressively unlocked during the main program. Completing them successfully contributes to your score in the Final Exam.<br/><br/>
+        If you complete the program early, you can take the exam sooner. The earliest you can take the exam is from the fourth week of the program.<br/><br/>
         The exam is an individual exercise.<br/><br/>
         <div class="tm-bold">When do I get the results?</div>
         You will receive your exam results by <span class="tm-bold">February 16th, 2024</span>.
@@ -288,7 +286,7 @@ These tutorials guide you through actionable steps and walk-throughs to teach yo
 
 The code and docs for each tutorial are based on a specific version of the software. Be sure to follow the tutorial instructions to download and use the right version.
 
-Use the tutorials landing page as your entry point to articles on the [Interchain blog](https://blog.cosmos.network/), videos on [Interchain YouTube](https://www.youtube.com/c/CosmosProject/videos), and ways to get help and support.
+Use the tutorials landing page as your entry point to articles on the [Cosmos blog](https://blog.cosmos.network/), videos on the [Interchain YouTube channel](https://www.youtube.com/c/CosmosProject/videos), and ways to get help and support.
 
 This repo manages and publishes the tutorials. For details, see [CONTRIBUTING](/sdk-tutorials/CONTRIBUTING.md) and [TECHNICAL-SETUP](/sdk-tutorials/TECHNICAL-SETUP.md).
 The tutorials are formatted using [markdownlint](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md).
