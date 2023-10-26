@@ -8,7 +8,7 @@ tags:
 
 # Blockchain History
 
-To fully appreciate Cosmos, it is helpful to understand the origins of blockchain technology, the advances that have unfolded, and the intractable challenges of other blockchain protocols which Cosmos decisively solves.
+To fully appreciate the interchain, it is helpful to understand the origins of blockchain technology, the advances that have unfolded, and the intractable challenges of other blockchain protocols that the interchain decisively solves.
 
 Important groundwork was laid in the 1980s and 1990s for what would later be known as blockchain technology. Although the technology itself was not created until 2008, researchers from different fields in computer science and cryptography proposed solutions to many problems regarding security, transparency, and trust. All of them contributed to the development of the first large-scale, successful public blockchain network, Bitcoin.
 
@@ -26,7 +26,7 @@ To learn more about Schneier and Kelsey's proposed solution, see [Schneier, B. &
 
 </HighlightBox>
 
-Another significant work arose in 1994, when computer scientist Nick Szabo first described the concept of [smart contracts](http://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart.contracts.html). It is important to recognize that Szabo's intent was to minimize the need for trusted intermediaries. In 1998 he proposed BitGold, a conceptual predecessor to Bitcoin, as he argued for a decentralized digital currency. In both, Proof-of-Work (PoW) is used as a consensus algorithm to solve cryptographic puzzles in a peer-to-peer (P2P) network with Byzantine Fault Tolerance. The solutions are also linked by a "hash chain". Although BitGold was never implemented, many perceive it as being the direct ancestor of Bitcoin.
+Another significant work arose in 1994 when computer scientist Nick Szabo first described the concept of [smart contracts](http://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart.contracts.html). It is important to recognize that Szabo's intent was to minimize the need for trusted intermediaries. In 1998 he proposed BitGold, a conceptual predecessor to Bitcoin, as he argued for a decentralized digital currency. In both, Proof-of-Work (PoW) is used as a consensus algorithm to solve cryptographic puzzles in a peer-to-peer (P2P) network with Byzantine Fault Tolerance. The solutions are also linked by a "hash chain". Although BitGold was never implemented, many perceive it as being the direct ancestor of Bitcoin.
 
 <HighlightBox type="tip">
 
@@ -38,7 +38,9 @@ As we can see, these intellectual predecessors brought forward elements that are
 
 ## 2000s
 
-On October 31, 2008, Satoshi Nakamoto's Bitcoin whitepaper called for a P2P system for a digital currency that would allow online payments to be sent directly from one party to another without going through a financial institution or requiring any other third party involvement. This sounds familiar for a reason: Nick Szabo had already mentioned a currency that would depend minimally on third parties in the 1990s. However, Satoshi’s whitepaper differed significantly - not only because of the name difference between BitGold and Bitcoin. It also proposed a data structure for the blockchain and laid out the decentralized consensus mechanism. Bitcoin became the first large-scale, successful public blockchain network.
+On October 31, 2008, Satoshi Nakamoto's Bitcoin whitepaper called for a P2P system for a digital currency that would allow online payments to be sent directly from one party to another without going through a financial institution or requiring any other third-party involvement.
+
+This sounds familiar for a reason: Nick Szabo had already mentioned a currency that would depend minimally on third parties in the 1990s. However, Satoshi’s whitepaper differed significantly - not only because of the name difference between BitGold and Bitcoin. It also proposed a data structure for the blockchain and laid out the decentralized consensus mechanism. Bitcoin became the first large-scale, successful public blockchain network.
 
 <ExpansionPanel title="Who is Satoshi Nakamoto? The disruptive origins of blockchain">
 
@@ -56,7 +58,7 @@ Given its anti-establishment roots, blockchain technology has been seized upon b
 
 ## 2010s
 
-As soon as it became clear that the technology presented a very attractive base infrastructure for payments, other groups and organizations adapted the technology for their purposes, or developed new approaches using the same basic principles but adapting them to more traditional use cases.
+As soon as it became clear that the technology presented a very attractive base infrastructure for payments, other groups and organizations adapted the technology for their purposes or developed new approaches using the same basic principles but adapting them to more traditional use cases.
 
 In 2014, Vitalik Buterin started what is now known as the second wave of blockchain technology by publishing the paper underlying the Ethereum blockchain protocol, [A Next Generation Smart Contract & Decentralised Application Platform](https://github.com/ethereum/wiki/wiki/White-Paper). Beyond a distributed ledger, the Ethereum whitepaper proposed the development of a distributed computing platform.
 
@@ -64,7 +66,7 @@ Around the same time, Tendermint began research into alternative methods of achi
 
 <HighlightBox type="tip">
 
-Have a closer look at the [Ethereum whitepaper](https://github.com/ethereum/wiki/wiki/White-Paper) to discover more on the initial concept.
+Have a closer look at the [Ethereum whitepaper](https://github.com/ethereum/wiki/wiki/White-Paper) to discover more about the initial concept.
 
 </HighlightBox>
 
@@ -72,11 +74,34 @@ The Ethereum project raised roughly $20 million in one of the most successful cr
 
 Late 2015 saw the establishment of the [Hyperledger Foundation](https://www.hyperledger.org/), an industry consortium with a focus on enterprise blockchain technology for managed networks and business applications, and in 2017 the [Ethereum Enterprise Alliance](https://entethalliance.org/) was formed as an industry consortium to adapt Ethereum for enterprise use.
 
-This brief background introduces the vibrant community and fast-paced evolution of the space from which Cosmos would emerge.
+## Blockchain as a new computing paradigm
 
-Today we can see two broad trends in the development and adoption of blockchain technology: public blockchains, and managed/private blockchains. Understanding this distinction will be important to your understanding of Cosmos. Cosmos is applicable to both use-cases and, importantly, enables seamless interoperability that has challenged its predecessors.
+Imagine a computer. How do you describe its process? It takes commands and then executes them in an ordered and deterministic fashion. The sequence of execution determines the state the computer is in.
 
-Let us start by diving into public blockchains and their most known examples, Bitcoin and Ethereum, and later take a closer look at private/managed blockchains in the next section.
+Now apply this thought to blockchain technology.
+
+Ethereum was the first blockchain to implement [Turing-complete](https://csrc.nist.gov/glossary/term/turing_complete) smart contracts. Each transaction is in effect a command, and the "execution" of those commands results in a new state, the Ethereum computer's state. An Ethereum blockchain defines a **distributed state machine** with a state all nodes agree on.
+
+A **smart contract** is a program on "the world computer", as Ethereum has been called. A **distributed application (dApp)** is a program too, as is a coordinated collection of smart contracts.
+
+It is argued that the development of blockchain technology is initiating a new computational paradigm.
+
+![Blockchain as a computing paradigm](/ida-course/0-blockchain-basics/images/00_15_ethereum_virtual_machine.png)
+
+Major computing paradigms in the past were:
+
+* The **mainframe** in the 1970s.
+* The **personal computer** in the 1980s.
+* The **internet** in the 1990s.
+* **Mobile and social networking**, often referred to as "social media", in the 2000s.
+
+![Computing paradigms](/ida-course/0-blockchain-basics/images/00_09_computing_paradigms.png)
+
+In some opinions, mobile and social networking and the internet have been exploited regarding their commercial use. For some, the ideal of an interconnected community - in which information and knowledge are available and shared and where egalitarian values like equality, transparency, and freedom are encouraged - has led to disappointment over what could have been but never was.
+
+Blockchain technology is often seen as presenting the possibility of more private, transparent, and equal forms of interaction and community with the possibility of preventing imbalances of power that often exist when one group is in charge of a widely used platform and can exercise privileges that are not enjoyed by the rest of the participants.
+
+Today two broad trends are identified in the development and adoption of blockchain technology: public blockchains, and managed/private blockchains. Understanding this distinction will be important to your understanding of the interchain. The interchain is applicable to both use cases and, importantly, enables the seamless interoperability that has challenged its predecessors. You will look at this subject in the next section.
 
 <HighlightBox type="reading">
 
@@ -85,7 +110,7 @@ Let us start by diving into public blockchains and their most known examples, Bi
 * [Swan Melanie: Blockchain (2015): Blueprint for a New Economy](https://www.melanieswan.com/publications.html#books)
 * [Antonopolous, Andreas (2017): Mastering Bitcoin](https://bitcoinbook.info/)
 
-**Further readings**
+**Further reading**
 
 * [Anderson, Ross J. (1996): The Eternity Service](https://www.cl.cam.ac.uk/~rja14/Papers/eternity.pdf)
 * [Buterin, Vitalik (2014): A Next-Generation Smart Contract and Decentralized Application Platform - The Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
@@ -104,6 +129,6 @@ To summarize, this section has explored:
 * How, in the 1990s, key developments in computational research which occurred laid the groundwork for blockchain technology, including append-only, cryptographically secured logs; storage mediums using redundancy and scattering techniques to resist denial-of-service (DoS) attacks; the implementation of hashing, authentication keys, and encryption keys; and the work of Nick Szabo, who first conceptualized smart contracts and proposed creating a decentralized digital currency with many of the features that were later actualized in Bitcoin.
 * How, in the 2000s, the individual or group known as Satoshi Nakamoto published the Bitcoin whitepaper, which proposed a specific data structure for blockchain and laid out its decentralized consensus mechanism, with Bitcoin becoming the first large-scale, successful public blockchain network.
 * How, in the 2010s, blockchain's potential was recognized and adapted to a variety of purposes, leading to a second wave of the technology of which Ethereum was at the front, being specifically designed to provide a blockchain-based platform for the creation of independent smart contracts and distributed applications (dApps).
-* How two broad trends towards either public blockchains or private/managed blockchains can be not only satisfied but also seamlessly integrated via **Cosmos**, which opens up the potential for interoperability between blockchains which has largely eluded its predecessors.
+* How two broad trends towards either public blockchains or private/managed blockchains can be not only satisfied but also seamlessly integrated via **the interchain**, which opens up the potential for interoperability between blockchains which has largely eluded its predecessors.
 
 </HighlightBox>
