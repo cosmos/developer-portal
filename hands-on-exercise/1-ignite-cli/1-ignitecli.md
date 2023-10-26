@@ -241,6 +241,16 @@ This only works if you have prepared the `checkers_i` Docker image.
 
 `github.com/alice/checkers` is the name of the Golang module by which this project will be known. If you own the `github.com/alice` path, you can even eventually host it there and have other people use your project as a module.
 
+<HighlightBox type="note">
+
+Your choice of module name (`github.com/alice/checkers`, or any other name) deserves careful consideration. You will create a Cosmos SDK module, Protobuf messages, and CosmJS files which all reference this choice in their own ways. In particular:
+
+* Your module name should be **unique**, meaning unique _in the world_, to avoid confusion.
+* Your Protobuf messages will be identified by their packages, such as `alice.checkers.checkers` and `alice.checkers.leaderboard`.
+* If you start your project with `alice/checkers` but later use the linked _solutions_, which use [`b9lab/checkers`](https://github.com/cosmos/b9-checkers-academy-draft/blob/ignite-start/go.mod#L1), you will encounter unexpected (though fixable) surprises.
+
+</HighlightBox>
+
 <ExpansionPanel title="Troubleshooting">
 
 For the sake of good support, the versions of all software used are communicated as encountered throughout this course. It is natural that after the writing of the course material some version changes will appear, and it may occur that something breaks. Instead of using different versions of the software from the ones in the course, please look at the following list, which might fix problems you are running into. Otherwise, use Docker as explained on this page.

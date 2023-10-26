@@ -978,6 +978,21 @@ If you are curious about how this `Dockerfile-standalone` was created, head to t
 
 </HighlightBox>
 
+<HighlightBox type="warn">
+
+Note that the standalone checkers Docker image uses the project name `b9lab/checkers`, **including for its Protobuf package names**. Make sure that your [`generated` Typescript objects do too](https://github.com/cosmos/academy-checkers-ui/blob/generated/src/types/generated/checkers/genesis.ts#L8).
+
+If that is not the case, you may encounter ambiguous errors such as:
+
+```txt
+Query failed with (6): unknown query path: unknown request
+    at QueryClient.queryUnverified (http://localhost:3000/static/js/bundle.js:21568:13)
+    at async Object.getAllStoredGames (http://localhost:3000/static/js/bundle.js:2975:26)
+    at async src_checkers_stargateclient__WEBPACK_IMPORTED_MODULE_0__.CheckersStargateClient.getGuiGames 
+```
+
+</HighlightBox>
+
 ### Launch the tests
 
 Launch your checkers chain and the faucet. You can choose your preferred method, as long as they can be accessed at the `RPC_URL` and `FAUCET_URL` you defined earlier. For the purposes of this exercise, you have the choice between three methods:
