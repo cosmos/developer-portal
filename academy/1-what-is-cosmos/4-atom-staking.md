@@ -1,6 +1,6 @@
 ---
 title: "Getting ATOM and Staking It"
-order: 4
+order: 5
 description: Stake your first ATOM
 tags:
   - concepts
@@ -28,7 +28,7 @@ The main concepts are covered in more detail in the [next chapter](/academy/2-co
 
 There are two steps to successfully get ATOM:
 
-1. Install a wallet application and configure it safely. You will use [Keplr](https://keplr.app/).
+1. Install a wallet application and configure it safely. This example procedure will use [Keplr](https://keplr.app/).
 2. Buy some ATOM on an exchange and transfer them to your wallet.
 
 If you prefer to do the same but with test ATOMs, you can use an existing Cosmos Hub testnet. Head to this [later section](/tutorials/7-cosmjs/2-first-steps.md#get-a-balance) for guidance. Then come back here and adjust accordingly for the relevant testnet.
@@ -43,6 +43,14 @@ It is always good practice to be careful with links to wallet software because o
 
 </HighlightBox>
 
+First, locate the Keplr extension in the Chrome extensions store and click "Add to Chrome".
+
+![Add Keplr in the Chrome extensions store](/academy/1-what-is-cosmos/images/keplr-in-marketplace.png)
+
+Click "Add extension" to close the pop-up window and proceed.
+
+![Select Add extension from the pop-up window](/academy/1-what-is-cosmos/images/keplr-add-confirmation.png)
+
 When Keplr is installed it should be available in the list of extensions when you click on the icon that looks like a puzzle piece in the top-right corner of Chrome:
 
 ![Keplr seen as an extension in Google Chrome](/academy/1-what-is-cosmos/images/keplr-as-extension.png)
@@ -55,44 +63,61 @@ Keplr is a non-custodial wallet.
 
 </HighlightBox>
 
-With the Keplr extension installed and the previous warning in mind, create a new account. Click your Keplr extension and the following page should open:
+With the Keplr extension installed, if you click your Keplr extension the following page should open. With the previous warning in mind, click "Create a new wallet":
 
-![Creating a new account or connecting to an existing account with Keplr](/academy/1-what-is-cosmos/images/keplr-create-menu.png)
+![Creating a new wallet or connecting to an existing wallet with Keplr](/academy/1-what-is-cosmos/images/keplr-create-menu.png)
 
-Click _Create new account_. A new page offers you a mnemonic (a secret list of words) and asks you for a password. Because **you are in charge**, it is important to understand the following points:
+You have several options for how to create your wallet. In this example, click "Create new recovery phrase".
 
-* Whoever knows the **mnemonic seed** has access to **all** the assets in the wallet as easily as you do. This means that:
+![Creating a new recovery phrase with Keplr](/academy/1-what-is-cosmos/images/keplr-use-recovery-phrase.png)
+
+Read the warning, then click the appropriate button to proceed.
+
+![Creating a new recovery phrase with Keplr](/academy/1-what-is-cosmos/images/keplr-undertand-warning.png)
+
+A new page offers you a mnemonic (a secret sequence of words either 12 or 24 words in length). Because **you are in charge**, it is important to understand the following points:
+
+* Whoever knows this **mnemonic seed** has access to **all** the assets in the wallet as easily as you do. This means that:
     * Nobody else should be looking at your screen right now. If that is not the case, click _Back_.
     * You should only ever share your mnemonic seed with parties you would also give access to your bank account. **Do not** share it with an exchange, a proof-of-stake validator, another blockchain service, or "someone from the interchain" on the phone  - these are _not_ trusted partners.
-    * You should save the mnemonic seed in a safe place, so that you can import it back into this or another wallet at a later date. **Make sure** you write it down somewhere safe.
+    * You should save the mnemonic seed in a safe place so that you can import it back into this or another wallet at a later date. **Make sure** you write it down somewhere safe.
 * Keplr saves your seed on disk but in an encrypted form.
+
+![Keplr mnemonic seed page](/academy/1-what-is-cosmos/images/keplr-mnemonic-step.png)
+
+When you have recorded the phrase securely, click "Next" to continue.
+
+On the next screen, you are first prompted to provide two words from your mnemonic seed phrase.
+
+![Keplr mnemonic verify your recovery page, part 1](/academy/1-what-is-cosmos/images/keplr-mnemonic-recall-prompt.png)
+
+You must then give your wallet a name, and assign it a strong password. 
+
+![Keplr mnemonic verify your recovery page, part 2](/academy/1-what-is-cosmos/images/keplr-name-wallet.png)
+
 * Keplr asks you for the **encryption password**, which is used to encrypt your mnemonic on your computer. For the password, keep in mind:
     * It should be a strong password.
     * You should also save it securely.
     * Keplr will ask you for it every time you open the wallet and for important actions.
 * If your computer or the encrypted mnemonic seed file is stolen, your wallet assets are only as protected as your password is strong.
 
-![Keplr mnemonic seed and creating a password page](/academy/1-what-is-cosmos/images/keplr-mnemonic-step.png)
+Click "Next" to continue.
 
-When you are ready, click _Next_.
+On the next screen, select the chains you want to link to, then click "Save" to continue.
 
-If you saved your seed, you should be able to complete the next step: click on each word in the correct order.
+![Keplr select chains page](/academy/1-what-is-cosmos/images/keplr-link-chains.png)
 
-![Keplr mnemonic recall prompt: Selecting the correct words of your mnemonic](/academy/1-what-is-cosmos/images/keplr-mnemonic-recall-prompt.png)
+Your account is now created. Click "Keplr dashboard" to open the [Keplr dashboard page](https://wallet.keplr.app/#/dashboard) where you can review your wallet.
 
-When done, the _Register_ button should become active:
+![Keplr all set](/academy/1-what-is-cosmos/images/keplr-account-created.png)
 
-![Keplr mnemonic recall done](/academy/1-what-is-cosmos/images/keplr-mnemonic-recall-done.png)
+This is your Keplr dashboard. It shows your first public address in the form `cosmos1...`, displays that you hold zero ATOM, and you can also see how many assets from other supported networks you have. Be aware that you may have a number of messages in your Inbox initially that request approval to complete optional registration.
 
-Click _Register_. Your Keplr wallet is now fully created:
+![Keplr dashboard](/academy/1-what-is-cosmos/images/keplr-dashboard-empty.png)
 
-![Keplr all set](/academy/1-what-is-cosmos/images/keplr-all-set.png)
+At the top of the dashboard, you can click to copy the address of your wallet. This will be useful when you move on to purchase some ATOM from your preferred exchange.
 
-Click the extension icon again. It shows your first public address in the form `cosmos1...`, and that you hold zero ATOM.
-
-Click the drop-down menu labeled _Cosmos_ at the top of the screen to see how many assets from other supported networks you have:
-
-![Keplr empty assets](/academy/1-what-is-cosmos/images/keplr-empty-assets.png)
+![Keplr wallet address](/academy/1-what-is-cosmos/images/keplr-address-copiable.png)
 
 <HighlightBox type="info">
 
@@ -100,7 +125,7 @@ A note on your **address**: As with a street address, it is OK for others to kno
 
 </HighlightBox>
 
-You can also open the [Keplr dashboard page](https://wallet.keplr.app/#/dashboard), which interfaces with the extension. Note that the dashboard at this address is a web page loaded from a website and, as such, is **not** a trusted partner. It will never ask you for your mnemonic or your password.
+The Keplr dashboard page interfaces with the extension. Note that the dashboard at this address is a web page loaded from a website and, as such, is **not** a trusted partner. It will never ask you for your mnemonic or your password.
 
 <HighlightBox type="tip">
 
@@ -112,7 +137,7 @@ Be sure to save your mnemonic and password safely before you put any valuables i
 
 How you purchase ATOM depends on your preference, but you need to use your trusted exchange to purchase ATOM. You can buy any amount you wish, although it is recommended to get at least 0.3 ATOM so your funds are not consumed in transaction fees before the end of this exercise.
 
-For the purpose of this section we assume you buy one ATOM.
+For the purpose of this section, assume you buy one ATOM.
 
 <HighlightBox type="info">
 
@@ -130,9 +155,17 @@ However, you do not yet own it as you would if the token were in your Keplr wall
 
 Your exchange has a withdrawal function that allows you to send your ATOM anywhere, including to your Keplr wallet. You must set this up.
 
-You need your wallet address. Since it is very long, you should avoid typing it by hand and instead copy it to the clipboard by clicking it in Keplr:
+You need your wallet address. Since it is very long, you should avoid typing it by hand and instead copy it to the clipboard from within Keplr. Click the "Copy Address" field:
 
 ![View of the Keplr address zone](/academy/1-what-is-cosmos/images/keplr-address-zone.png)
+
+The list of known networks appears. Copy that for Cosmos Hub by clicking on the icon:
+
+![Keplr known networks - addresses](/academy/1-what-is-cosmos/images/keplr-chain-addresses.png)
+
+You should get a visual confirmation:
+
+![Keplr known networks - address copied](/academy/1-what-is-cosmos/images/keplr-cosmos-address-copied.png)
 
 Now go back to your exchange and paste this address where asked. **Confirm that it looks identical to the original you copied**, and proceed with the confirmation the exchange requires from you:
 
@@ -142,9 +175,13 @@ When this is set, you ask the exchange to withdraw properly. Take note of the tr
 
 ![Kraken exchange parameters](/academy/1-what-is-cosmos/images/kraken-exchange-params.png)
 
-If all went well, you should see your new asset in Keplr after a few minutes:
+If all goes well, you should see your new asset in Keplr after a few minutes:
 
-![Keplr received ATOM](/academy/1-what-is-cosmos/images/keplr-with-atom.png)
+![Keplr received ATOM in dollar terms](/academy/1-what-is-cosmos/images/keplr-with-atom.png)
+
+Depending on your screen, you may have to scroll down a bit to see what this dollar amount is in ATOM tokens:
+
+![Keplr received ATOM](/academy/1-what-is-cosmos/images/keplr-with-atom-proper.png)
 
 Congratulations! You now own slightly less than one ATOM. Remember that **you** are really in charge, so check again that your mnemonic and password are saved properly.
 
@@ -154,11 +191,15 @@ You can also look at your address using a public explorer, like [mintscan.io](ht
 
 </HighlightBox>
 
-You can see the same if you open the [wallet dashboard page](https://wallet.keplr.app/#/dashboard). On this wallet page you can see a small link icon that leads you to your address page:
+You can see the same if you open the [wallet dashboard page](https://wallet.keplr.app/#/dashboard). On this wallet page, select the Cosmos Hub from the list of chains on the left navigation:
+
+![Keplr left navigation - Cosmos Hub selected](/academy/1-what-is-cosmos/images/keplr-dashboard-chains.png)
+
+There, around the top right, you can see "Explorer" and a small link icon that leads you to your account page on Mintscan:
 
 ![Keplr wallet link out to address page](/academy/1-what-is-cosmos/images/keplr-wallet-link-out.png)
 
-There you can see the transaction that originated from the exchange's wallet:
+If you scroll down far enough, you can see the transaction that originated from the exchange's wallet:
 
 ![Mintscan crediting transaction](/academy/1-what-is-cosmos/images/mintscan-crediting-tx.png)
 
@@ -180,7 +221,15 @@ When considering staking, keep the following factors in mind:
 
 </HighlightBox>
 
-Now find a validator and delegate your ATOM to it. Click the _Stake_ button in Keplr. You are presented with a list of validators:
+Now find a validator and delegate your ATOM to it. Click the _Stake_ button in Keplr dashboard's navigation:
+
+![Keplr navigation Stake](/academy/1-what-is-cosmos/images/keplr-dashboard-stake.png )
+
+You are presented with the list of known chains:
+
+![Keplr list of validators](/academy/1-what-is-cosmos/images/keplr-stake-chains.png)
+
+Choose "Cosmos Hub". You are presented with a list of validators:
 
 ![Keplr: list of validators](/academy/1-what-is-cosmos/images/keplr-validator-list.png)
 
@@ -203,23 +252,39 @@ A validator can have small or large voting power. The larger the voting power, t
 
 Over the long run, you should receive the same amount in rewards regardless of whether your chosen validator has large or small voting power. What matters more is the size of your stake.
 
-If you like the validator's information, click _Delegate_ and add the sum you want to delegate. Do not delegate all that you own, because you need a fraction of ATOM to send the transaction, plus further ATOM in the future to either un-delegate or claim your rewards.
+If you like the validator's information, click on it. This opens a tab that recaps the validator's information:
 
-Pick 0.8 ATOM and click _Delegate_ again:
+![Keplr validator information](/academy/1-what-is-cosmos/images/keplr-validator-selected.png)
+
+Click on _Stake_. This opens a window for you to enter an amount. Add the sum you want to delegate. Do not delegate all that you own, because you need a fraction of ATOM to send the transaction, plus further ATOM in the future to either un-delegate or claim your rewards.
+
+Pick 0.8 ATOM and click _Stake_ again:
 
 ![Keplr: delegate parameters](/academy/1-what-is-cosmos/images/keplr-delegate-params.png)
+
+<HighlightBox type="note">
+
+Note the transaction cost, written in small next to the double arrow.
+
+</HighlightBox>
 
 This delegation is an important action. It is the first action you take with your private key. Every time an application asks Keplr to do an important action, Keplr will ask you to confirm it:
 
 ![Keplr: delegate confirm window](/academy/1-what-is-cosmos/images/keplr-delegate-confirm.png)
 
-You do not need this delegate transaction to be confirmed quickly, so choose the low end of transaction fees and click _Approve_. The transaction should not take longer than a couple of minutes to be confirmed.
+You do not need this delegate transaction to be confirmed quickly, so you may choose the low end of transaction fees. For this, click on "Transaction Fee" near the bottom. There, you have the choice to pick "Low" if you want.
 
-When it is confirmed, your **pending staking rewards** start to accrue. Their increase will not be fast because you delegated only 0.8 ATOM, and they only accrue when your chosen validator issues a block. After perhaps 20 minutes, you should see something similar to this:
+![Keplr: delegate confirm window - fee](/academy/1-what-is-cosmos/images/keplr-delegate-confirm-fee.png)
+
+Click _Close_ and then _Approve_. The transaction should not take longer than a couple of minutes to be confirmed.
+
+At this stage, you can close Keplr's dashboard.
+
+When the transaction is confirmed, your **claimable staking rewards** start to accrue. Their increase will not be fast because you delegated only 0.8 ATOM, and they only accrue when your chosen validator issues a block. After perhaps 20 minutes, if you click on "Staked" at the top of the small Keplr window, you should see something similar to this:
 
 ![Keplr: accruing rewards](/academy/1-what-is-cosmos/images/keplr-accruing-rewards.png)
 
-Your rewards are said to be "pending" because you need to claim them before they are yours. The claim transaction incurs fees, so it is best to wait until your rewards exceed the transaction fees before submitting any claim transaction. With only 0.8 ATOM staked you will need to wait about 10 days to accrue something worth the claim transaction.
+Your rewards are said to be "claimable", or pending, because you need to claim them before they are yours. The claim transaction incurs fees, so it is best to wait until your rewards exceed the transaction fees before submitting any claim transaction. With only 0.8 ATOM staked, you will need to wait about 10 days to accrue something worth the claim transaction.
 
 ## Claim your ATOM
 
@@ -227,7 +292,7 @@ You did it! You waited 10 days, and have accrued rewards:
 
 ![Keplr: accruing good rewards](/academy/1-what-is-cosmos/images/keplr-accruing-good-rewards.png)
 
-This is enough to cover the claim transaction. Go ahead and claim it. Again, choose the low fee option to reduce losses against this small reward sum:
+This is enough to cover the claim transaction. Go ahead and claim it. Again, you may choose the low-fee option to reduce losses against this small reward sum:
 
 ![Keplr: claim rewards](/academy/1-what-is-cosmos/images/keplr-claim-rewards.png)
 
@@ -235,9 +300,11 @@ Your rewards are added straight to your wallet:
 
 ![Keplr: increased number of available ATOM tokens](/academy/1-what-is-cosmos/images/keplr-increased-available.png)
 
-If you want to re-stake this amount and benefit from the compound effect, go ahead, but make sure you do not lose too much in transaction costs.
+If you want to re-stake this claimed amount and benefit from the compound effect, go ahead but make sure you do not lose too much in transaction costs.
 
 This completes the exercise: you are set up to participate in the Cosmos Hub network, and even contribute to its security. Your stake will work for you as you continue your interchain training journey.
+
+If another interchain project interests you, you can do the same on it to give it material support.
 
 <HighlightBox type="synopsis">
 
