@@ -39,7 +39,7 @@ Within the Academy Discord, you will find the following topic-specific message c
 * The **c5-lounge** channel is dedicated to off-topic discussions. Introduce yourself, and feel free to relax and chat about your favorite TV shows, films, and books, share pet photos, and anything else that comes to mind.
 * You should ask all content-related questions within the **c5-support forum** channel. There you will find tags corresponding to the main topics covered in the Academy content. These will allow you and the support team to keep track of your queries.
 
-In addition to the three message channels, the **IDA-Voice** channel is a live audio resource for conducting real-time study groups or casual chat. It is open 24 hours per day and allows easy screen sharing to facilitate your discussions. Please use it inclusively, and give priority to study activities before casual use.
+In addition to the three message channels, the **IDA-Voice** channel is a live audio resource for conducting real-time study groups or casual chats. It is open 24 hours per day and allows easy screen sharing to facilitate your discussions. Please use it inclusively, and give priority to study activities before casual use.
 
 ## Support Gem
 
@@ -49,7 +49,7 @@ Support Gem is a modern AI system, but it does not function with total independe
 
 Support Gem is capable of responding to a wide variety of queries regarding the interchain and blockchain technology more generally. It can provide assistance with course curriculum and technical support, but it cannot respond regarding program-specific queries (for example, program scheduling or deadlines).
 
-However, please feel free to ask any question in the **c5-support-forum** you need to. The human support team will be there to respond to any queries that Support Gem cannot assist with.
+However, please feel free to ask any question you need to in the **c5-support-forum**. The human support team will be there to respond to any queries that Support Gem cannot assist with.
 
 We hope you will find Support Gem's involvement interesting and informative!
 
