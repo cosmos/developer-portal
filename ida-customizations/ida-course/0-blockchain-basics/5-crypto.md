@@ -195,7 +195,7 @@ This provides a convenient example, but `MD5` is no longer considered a hard-to-
 
 <HighlightBox type="reading">
 
-**Further readings**
+**Further reading**
 
 * [The Mathematics of the RSA Public-Key Cryptosystem](https://www.nku.edu/~christensen/the%20mathematics%20of%20the%20RSA%20cryptosystem.pdf)
 * [OSCDaily (2012): Encrypt & Decrypt Files from the Command Line with OpenSSL](http://osxdaily.com/2012/01/30/encrypt-and-decrypt-files-with-openssl/)
