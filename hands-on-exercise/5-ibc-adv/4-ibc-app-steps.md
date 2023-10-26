@@ -703,4 +703,3 @@ To summarize, this section has explored:
 
 <!--#### Next up
 Until now how to define packet and acknowledgement data has not been explored. In the next section you will first scaffold the packet with Ignite CLI and again compare the additions with a `git diff`.-->
-````
