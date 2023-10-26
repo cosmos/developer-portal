@@ -112,7 +112,7 @@ The eventual development of more complex applications required a more flexible e
 
 ## How does the Interchain fit into the general development of blockchain technology?
 
-In 2016, Jae Kwon and Ethan Buchman founded the Interchain network with its consensus algorithm, [Tendermint](https://tendermint.com/).
+In 2016, Jae Kwon and Ethan Buchman founded the interchain network with its consensus algorithm, [Tendermint](https://tendermint.com/).
 
 <HighlightBox type="docs">
 
@@ -141,7 +141,7 @@ For more on Tendermint, see this helpful [introduction](https://docs.tendermint.
 
 </ExpansionPanel>
 
-Initially, the Interchain was an open-source community project built by the Tendermint team. Since then, the **Interchain Foundation (ICF)** has assisted with the development and launch of the network. The ICF is a Swiss non-profit that raised funds in 2017 to finance the development of open-source projects building on the the Interchain network.
+Initially, the Interchain was an open-source community project built by the Tendermint team. Since then, the **Interchain Foundation (ICF)** has assisted with the development and launch of the network. The ICF is a Swiss non-profit that raised funds in 2017 to finance the development of open-source projects building on the interchain network.
 
 The founding **vision** of the Interchain is that of an easy development environment for blockchain technology. The Interchain wants to address the main issues of previous blockchain projects and provide interoperability between chains to foster an **internet of blockchains**.
 
