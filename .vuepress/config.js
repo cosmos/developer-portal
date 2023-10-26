@@ -35,6 +35,7 @@ module.exports = {
     ["link", { rel: "manifest", href: "/site.webmanifest" }],
     ["meta", { name: "msapplication-TileColor", content: "#2e3148" }],
     ["meta", { name: "theme-color", content: "#ffffff" }],
+    ["meta", { name: "google-site-verification", content: "3EQW_zFsYeKs2w4iRvZbF47DVlLT3J0V2LL2dq1r5iY" }],
     ["link", { rel: "icon", type: "image/svg+xml", href: "/favicon-svg.svg" }],
     [
       "link",
