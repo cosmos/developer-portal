@@ -17,11 +17,11 @@ This chapter provides a general introduction to blockchain technology, Golang, D
 
 **This chapter is entirely optional and intended as a head start for those who might need it.**
 <br/><br/>
-If you do not need a blockchain refresher, feel free to start your journey with the Week 1 content, which will be available by May 18th at 4 pm UTC when the program officially starts.
+If you do not need a blockchain refresher, feel free to start your journey with the Week 1 content, which will be available on November 2nd at 4 pm UTC when the program officially starts.
 
 </HighlightBox>
 
-Working with Cosmos also means working with Golang. If you have not worked much with Go, do not worry. The introduction to Golang is meant as a useful overview of Go, and a starting point for your journey in the interchain ecosystem and developing with the Cosmos SDK.
+Working with the Cosmos SDK also means working with Golang. If you have not worked much with Go, do not worry. The introduction to Golang is meant as a useful overview of Go, and a starting point for your journey in the interchain ecosystem and developing with the Cosmos SDK.
 
 The Docker introduction will help you understand the concepts behind this tool, as you will be using Docker in the upcoming tutorials.
 
@@ -30,6 +30,8 @@ You can also find a short section at the end of the chapter with good-to-know de
 <HighlightBox type="info">
 
 As all blockchain ecosystems keep on growing and maturing, product stacks and terminologies evolve. Thus, please be aware that Cosmos is now known as **the interchain**. The terms "Cosmos", "interchain ecosystem", and "interchain" are synonymous with each other, and the various tools available to developers ("the stack") can be referred to collectively as the **Interchain Stack**.
+
+However, blockchains created using the Cosmos SDK are typically referred to as "Cosmos chains".
 
 </HighlightBox>
 
@@ -59,23 +61,19 @@ _**Introduction to Go**_
 * Learn more about arrays and slices, as well as standard packages Go offers.
 * Take a look at Go's built-in concurrency by exploring Goroutine and channels.
 
-_**Introduction to Docker**_
-
-* Get a high-level introduction to Docker.
-
 _**Technical terms**_
 
 * Review some technical terms essential when developing in Cosmos like LCD, RPC, Protobuf, gRPC, and Amino.
 
-_**Docker intro**_
+_**Docker introduction**_
 
-* Get an introduction to Docker and explore how to use it. The main tutorials to come will also rely on using Docker.
+* Get a high-level introduction to Docker and explore how to use it. The main tutorials to come will also rely on using Docker.
 
 </HighlightBox>
 
 <HighlightBox type="info">
 
-All other Academy chapters will be displayed on this page starting **May 18th**.
+All other Academy chapters will be displayed on this page starting **November 2nd**.
 
 </HighlightBox>
 
