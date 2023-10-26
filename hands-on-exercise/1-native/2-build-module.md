@@ -161,7 +161,7 @@ managed:
 plugins:
   - name: go-pulsar
     out: ..
-    opt: paths=source_relative,Mcosmos/app/v1alpha1/module.proto=cosmossdk.io/api/cosmos/app/v1alpha1,Mcosmos/base/v1beta1/coin.proto=cosmossdk.io/api/cosmos/base/v1beta1
+    opt: paths=source_relative,Mcosmos/app/v1alpha1/module.proto=cosmossdk.io/api/cosmos/app/v1alpha1,Mcosmos/base/v1beta1/coin.proto=cosmossdk.io/api/cosmos/base/v1beta1,Mcosmos/base/query/v1beta1/pagination.proto=cosmossdk.io/api/cosmos/base/query/v1beta1
   - name: go-grpc
     out: ..
     opt: paths=source_relative,Mcosmos/app/v1alpha1/module.proto=cosmossdk.io/api/cosmos/app/v1alpha1
@@ -342,15 +342,14 @@ option go_package = "github.com/alice/checkers";
 
 import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
-import "amino/amino.proto";
 
 // Params defines the parameters of the module.
-message Params { option (amino.name) = "alice/checkers/Params"; }
+message Params {}
 
 // GenesisState is the state that must be provided at genesis.
 message GenesisState {
   // params defines all the parameters of the module.
-  Params params = 1 [ (gogoproto.nullable) = false, (amino.dont_omitempty) = true ];
+  Params params = 1 [ (gogoproto.nullable) = false ];
 }
 ```
 
@@ -487,6 +486,8 @@ The files have a lot of missing dependencies, so go ahead and, once more, run:
 ```sh
 $ go mod tidy
 ```
+
+See the previous troubleshoot if it updates to a `cosmos-sdk` other than `v0.50`.
 
 With this done, you can move to defining some necessary functions of the module's keeper.
 
@@ -860,10 +861,10 @@ Now, you can define the module in the `app/app.yaml` file in two locations:
 ```diff-yaml [app/app.yaml]
     ...
     - name: tx
-        config:
+      config:
         "@type": cosmos.tx.config.v1.Config
 +  - name: checkers
-+      config:
++    config:
 +      "@type": alice.checkers.module.v1.Module
     ...
 ```

@@ -13,7 +13,7 @@ In this section, you will start building a blockchain to play the checkers game.
 
 This section uses the following repositories:
 
-* A minimal Cosmos v0.50 app with no extra modules, found [here](https://github.com/julienrbrt/chain-minimal).
+* A minimal Cosmos v0.50 app with no extra modules, found [here](https://github.com/cosmosregistry/chain-minimal).
 * A minimal v0.50 module example, found [here](https://github.com/cosmosregistry/example).
 
 Version 0.50 of the Cosmos SDK was created, in part, with a view to facilitate module integration. This section seeks to demonstrate that. In particular, you will keep your checkers module separate from the (minimal) app.
@@ -29,7 +29,7 @@ You will also need to have [`make`](https://www.gnu.org/software/make/) on your 
 Since you are building off the minimal app, clone it locally:
 
 ```sh
-$ git clone https://github.com/julienrbrt/chain-minimal.git
+$ git clone https://github.com/cosmosregistry/chain-minimal.git
 $ cd chain-minimal
 ```
 
@@ -66,7 +66,7 @@ In another shell, you can confirm the list of modules that are included:
 $ minid query --help
 ```
 
-This confirms that your minimal chain is working as expected.
+This confirms that your minimal chain is working as expected. You can stop it with <kbd>CTRL-C</kbd>.
 
 ## The module example
 

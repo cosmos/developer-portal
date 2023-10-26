@@ -68,7 +68,7 @@ message QueryGetGameResponse {
 }
 ```
 
-Note that the response reuses `StoredGame` for convenience and to keep this exercise small. In fact, you are free to define a new type to return. For instance, this new type could be like `StoredGame` minus the `Index` field (as the index is implicit over the request's lifecycle).
+Note that the `StoredGame` included in the response does not need to include the `Index` field as it is implicit over the request's lifecycle.
 
 ### Compile Protobuf
 
@@ -116,7 +116,7 @@ type queryServer struct {
 
 // GetGame defines the handler for the Query/GetGame RPC method.
 func (qs queryServer) GetGame(ctx context.Context, req *checkers.QueryGetGameRequest) (*checkers.QueryGetGameResponse, error) {
-    game, err := qs.k.StoredGameList.Get(ctx, req.Index)
+    game, err := qs.k.StoredGames.Get(ctx, req.Index)
     if err == nil {
         return &checkers.QueryGetGameResponse{Game: &game}, nil
     }
@@ -293,7 +293,7 @@ This should return:
 {}
 ```
 
-Confirm this is without any error:
+Confirm this returned without any error:
 
 ```sh
 $ echo $?

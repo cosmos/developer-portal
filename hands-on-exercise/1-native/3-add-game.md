@@ -55,15 +55,18 @@ As ever, taking inspiration from `minimal-module-example`, this can be described
     }
 
 +  message StoredGame {
-+    option (amino.name) = "alice/checkers/StoredGame"; 
-+
-+    string index = 1 ;
-+    string board = 2;
-+    string turn = 3;
-+    string black = 4 [(cosmos_proto.scalar) = "cosmos.AddressString"];
-+    string red = 5 [(cosmos_proto.scalar) = "cosmos.AddressString"];
++    string board = 1;
++    string turn = 2;
++    string black = 3 [(cosmos_proto.scalar) = "cosmos.AddressString"];
++    string red = 4 [(cosmos_proto.scalar) = "cosmos.AddressString"];
 +  }
 ```
+
+<HighlightBox type="note">
+
+Since **Index** is used to store and retrieve the stored game, it does not need to be saved to storage. This saves precious storage space.
+
+</HighlightBox>
 
 Compile it:
 
@@ -75,26 +78,55 @@ Now that you have the individual stored game structure, you can define how it is
 
 ### The storage structure
 
-The way that makes sense is to keep a map of games and rely on the SDK's basic structures to optimize saving and retrieving.
+The way that makes sense is to keep a **map** of games in storage (and controled by the keeper), and rely on the SDK's basic structures to optimize saving and retrieving.
+
+However, the genesis takes a **list**, and in this list, the games need to be identified by their index.
+
+To achieve that, you create a composed type that is used in the genesis state.
 
 Update your `GenesisState` in `types.proto`:
 
 ```diff-protobuf
     message GenesisState {
       // params defines all the parameters of the module.
-      Params params = 1 [ (gogoproto.nullable) = false, (amino.dont_omitempty) = true ];
+      Params params = 1 [ (gogoproto.nullable) = false];
 
-+     repeated StoredGame storedGameList = 2 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
++    repeated IndexedStoredGame indexedStoredGameList = 2 [(gogoproto.nullable) = false];
     }
+
+    message StoredGame {
+      ...
+    }
+
++  message IndexedStoredGame {
++    string index = 1;
++    StoredGame storedGame = 2 [(gogoproto.nullable) = false];
++  }
+
 ```
 
 Now recompile.
 
 ### Add validation
 
-You can consider adding functions on the `StoredGame`, for instance a `Validate` one. Start with a new `errors.go` file in the root folder of your `checkers-minimal` module:
+You can consider adding functions on the `StoredGame`, for instance a `Validate` one.
+
+Additionally, you need to:
+
+* Make sure that the `Index` byte count remains within reasonable bounds, for instance less than 256 bytes.
+* Make sure that the genesis does not pass games with conflicting indices.
+
+Start with a new `errors.go` file in the root folder of your `checkers-minimal` module and a new `stored-game.go` to contain relevant functions:
 
 <CodeGroup>
+<CodeGroupItem title="keys.go">
+
+```diff-go [keys.go]
+    const ModuleName = "checkers"
++  const MaxIndexLength = 256
+```
+
+</CodeGroupItem>
 <CodeGroupItem title="errors.go">
 
 ```go [errors.go]
@@ -103,9 +135,11 @@ package checkers
 import "cosmossdk.io/errors"
 
 var (
-    ErrInvalidBlack     = errors.Register(ModuleName, 2, "black address is invalid: %s")
-    ErrInvalidRed       = errors.Register(ModuleName, 3, "red address is invalid: %s")
-    ErrGameNotParseable = errors.Register(ModuleName, 4, "game cannot be parsed")
+    ErrIndexTooLong     = errors.Register(ModuleName, 2, "index too long")
+    ErrDuplicateAddress = errors.Register(ModuleName, 3, "duplicate address")
+    ErrInvalidBlack     = errors.Register(ModuleName, 4, "black address is invalid: %s")
+    ErrInvalidRed       = errors.Register(ModuleName, 5, "red address is invalid: %s")
+    ErrGameNotParseable = errors.Register(ModuleName, 6, "game cannot be parsed")
 )
 ```
 
@@ -172,8 +206,15 @@ With these additions, you can validate the games in `genesis.go`:
             return err
         }
 
-+      for _, game := range gs.StoredGameList {
-+          if err := game.Validate(); err != nil {
++      unique := make(map[string]bool)
++      for _, indexedStoredGame := range gs.IndexedStoredGameList {
++          if length := len([]byte(indexedStoredGame.Index)); MaxIndexLength < length || length < 1 {
++              return ErrIndexTooLong
++          }
++          if _, ok := unique[indexedStoredGame.Index]; ok {
++              return ErrDuplicateAddress
++          }
++          if err := indexedStoredGame.StoredGame.Validate(); err != nil {
 +              return err
 +          }
 +      }
@@ -190,8 +231,8 @@ In order to declare the stored games as a map, you first need to define a map ke
 
 ```diff-go [keys.go]
     var (
-        ParamsKey         = collections.NewPrefix("Params")
-+      StoredGameListKey = collections.NewPrefix("StoredGame/value/")
+        ParamsKey      = collections.NewPrefix("Params")
++      StoredGamesKey = collections.NewPrefix("StoredGames/value/")
     )
 ```
 
@@ -200,8 +241,8 @@ Then declare its type in the keeper struct in `keeper/keeper.go`:
 ```diff-go [keeper/keeper.go]
     type Keeper struct {
         ...
-        Params         collections.Item[checkers.Params]
-+      StoredGameList collections.Map[string, checkers.StoredGame]
+        Params      collections.Item[checkers.Params]
++      StoredGames collections.Map[string, checkers.StoredGame]
     }
 ```
 
@@ -211,9 +252,9 @@ And then initialize the storage access, taking inspiration from `minimal-module-
     ...
     k := Keeper{
         ...
-        Params:       collections.NewItem(sb, checkers.ParamsKey, "params", codec.CollValue[checkers.Params](cdc)),
-+      StoredGameList: collections.NewMap(sb,
-+          checkers.StoredGameListKey, "storedGameList", collections.StringKey,
+        Params:      collections.NewItem(sb, checkers.ParamsKey, "params", codec.CollValue[checkers.Params](cdc)),
++      StoredGames: collections.NewMap(sb,
++          checkers.StoredGamesKey, "storedGames", collections.StringKey,
 +          codec.CollValue[checkers.StoredGame](cdc)),
     }
     ...
@@ -237,8 +278,8 @@ Do not forget the genesis manipulation to and from storage in `keeper/genesis.go
             return err
         }
 
-+      for _, storedGame := range data.StoredGameList {
-+          if err := k.StoredGameList.Set(ctx, storedGame.Index, storedGame); err != nil {
++      for _, indexedStoredGame := range data.IndexedStoredGameList {
++          if err := k.StoredGames.Set(ctx, indexedStoredGame.Index, indexedStoredGame.StoredGame); err != nil {
 +              return err
 +          }
 +      }
@@ -253,17 +294,20 @@ Do not forget the genesis manipulation to and from storage in `keeper/genesis.go
             return nil, err
         }
 
-+      var storedGames []checkers.StoredGame
-+      if err := k.StoredGameList.Walk(ctx, nil, func(index string, storedGame checkers.StoredGame) (bool, error) {
-+          storedGames = append(storedGames, storedGame)
++      var indexedStoredGames []checkers.IndexedStoredGame
++      if err := k.StoredGames.Walk(ctx, nil, func(index string, storedGame checkers.StoredGame) (bool, error) {
++          indexedStoredGames = append(indexedStoredGames, checkers.IndexedStoredGame{
++              Index:      index,
++              StoredGame: storedGame,
++          })
 +          return false, nil
 +      }); err != nil {
 +          return nil, err
 +      }
 +
         return &checkers.GenesisState{
-            Params:         params,
-+          StoredGameList: storedGames,
+            Params:                params,
++          IndexedStoredGameList: indexedStoredGames,
         }, nil
     }
 ```
@@ -284,14 +328,14 @@ Now your minimal chain not only has a checkers module, but also a games storage 
 <CodeGroupItem title="Straight">
 
 ```sh
-$ minid export --modules-to-export checkers
+$ minid export
 ```
 
 </CodeGroupItem>
 <CodeGroupItem title="Clean">
 
 ```sh
-$ minid export --modules-to-export checkers | tail -n 1 | jq
+$ minid export | tail -n 1 | jq
 ```
 
 </CodeGroupItem>
@@ -306,7 +350,7 @@ In there, you can find:
             ...
             "checkers": {
                 "params": {},
-+              "storedGameList": []
++              "indexedStoredGameList": []
             },
             ...
         }

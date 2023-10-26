@@ -42,7 +42,6 @@ option go_package = "github.com/alice/checkers";
 
 import "cosmos/msg/v1/msg.proto";
 import "gogoproto/gogo.proto";
-import "amino/amino.proto";
 import "alice/checkers/v1/types.proto";
 import "cosmos_proto/cosmos.proto";
 
@@ -58,7 +57,6 @@ service Msg {
 // MsgCreateGame defines the Msg/CreateGame request type.
 message MsgCreateGame {
   option (cosmos.msg.v1.signer) = "creator";
-  option (amino.name) = "alice/checkers/MsgCreateGame";
 
   // creator is the message sender.
   string creator = 1;
@@ -93,7 +91,8 @@ In the new `tx.pg.go`, you can find `type MsgCreateGame struct` and `type MsgSer
 
 Create a new file `keeper/msg_server.go` and take inspiration from `minimal-module-example`. It needs to:
 
-* Check that the `index` is not already taken.
+* Check that the `Index` is not too short or too long.
+* Check that the `Index` is not already taken.
 * Create a new board with the game rules.
 * If valid, put the game into storage.
 
@@ -123,13 +122,15 @@ func NewMsgServerImpl(keeper Keeper) checkers.MsgServer {
 
 // CreateGame defines the handler for the MsgCreateGame message.
 func (ms msgServer) CreateGame(ctx context.Context, msg *checkers.MsgCreateGame) (*checkers.MsgCreateGameResponse, error) {
-    if _, err := ms.k.StoredGameList.Get(ctx, msg.Index); err == nil || errors.Is(err, collections.ErrEncoding) {
+    if length := len([]byte(msg.Index)); checkers.MaxIndexLength < length || length < 1 {
+        return nil, checkers.ErrIndexTooLong
+    }
+    if _, err := ms.k.StoredGames.Get(ctx, msg.Index); err == nil || errors.Is(err, collections.ErrEncoding) {
         return nil, fmt.Errorf("game already exists at index: %s", msg.Index)
     }
 
     newBoard := rules.New()
     storedGame := checkers.StoredGame{
-        Index: msg.Index,
         Board: newBoard.String(),
         Turn:  rules.PieceStrings[newBoard.Turn],
         Black: msg.Black,
@@ -138,7 +139,7 @@ func (ms msgServer) CreateGame(ctx context.Context, msg *checkers.MsgCreateGame)
     if err := storedGame.Validate(); err != nil {
         return nil, err
     }
-    if err := ms.k.StoredGameList.Set(ctx, msg.Index, storedGame); err != nil {
+    if err := ms.k.StoredGames.Set(ctx, msg.Index, storedGame); err != nil {
         return nil, err
     }
 
@@ -359,19 +360,23 @@ This should return something with:
     ...
     "checkers": {
       "params": {},
--    "storedGameList": []
-+    "storedGameList": [
+-    "indexedStoredGameList": []
++    "indexedStoredGameList": [
 +      {
 +        "index": "id1",
-+        "board": "*b*b*b*b|b*b*b*b*|*b*b*b*b|********|********|r*r*r*r*|*r*r*r*r|r*r*r*r*",
-+        "turn": "b",
-+        "black": "mini16ajnus3hhpcsfqem55m5awf3mfwfvhpp36rc7d",
-+        "red": "mini1hv85y6h5rkqxgshcyzpn2zralmmcgnqwsjn3qg"
++        "storedGame": {
++          "board": "*b*b*b*b|b*b*b*b*|*b*b*b*b|********|********|r*r*r*r*|*r*r*r*r|r*r*r*r*",
++          "turn": "b",
++          "black": "mini16ajnus3hhpcsfqem55m5awf3mfwfvhpp36rc7d",
++          "red": "mini1hv85y6h5rkqxgshcyzpn2zralmmcgnqwsjn3qg"
++        }
 +      }
 +    ]
     },
     ...
 ```
+
+This means you can get a full exported genesis.
 
 ## Up next
 
