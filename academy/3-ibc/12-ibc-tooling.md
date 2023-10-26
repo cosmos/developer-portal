@@ -87,97 +87,82 @@ You can also sort the list in either ascending or descending order with a click 
 
 ## Mintscan
 
-[Mintscan](https://hub.mintscan.io) is another Interchain network explorer.
+[Mintscan](https://www.mintscan.io/visualization/ibc-network) is another Interchain network explorer.
 
-It gives an overview of IBC networks, including a visualization (left side) and a list (right side). For the former, the default is set to give you a visualization based on IBC transactions within a 30-day period:
+It gives an overview of IBC networks, including an explorer menu (left panel), a network visualization (center), and a list of chains (right panel). The visualization is based on IBC transactions within a 30-day period. A selection of alternative visualizations is available from the left panel:
 
 ![Mintscan - IBC network overview](/academy/3-ibc/images/mintscanoverview.png)
 
-To select a specific chain, just click on it in the visualization. You will get a display of more detailed information for that chain:
+To select a specific chain, just click on it in the visualization or select it from the right panel. The overlay will now show summary data for the selected chain:
 
 ![Mintscan - Osmosis chain overview 1](/academy/3-ibc/images/mintscanosmosis1.png)
 
-Here you can see:
-
-* The total of send transactions measured in transactions and USD - Total Send Txs.
-* The total of receive transactions measured in transactions and USD - Total Receive Txs.
-* The send connection, with the number of chains and relayers.
-* The receive connection, with the number of chains and relayers.
-
-You can also click on `Show all Sends` and `Show all Receives` to get a complete list for both.
-
-Scroll down:
+In addition, a graph appears in the right panel displaying the chain's sent, received, and total transactions for the last 30 days. Current transaction values appear on the right, and those of previous days can be easily viewed by hovering your cursor over the desired point of the graph:
 
 ![Mintscan - Osmosis chain overview 2](/academy/3-ibc/images/mintscanosmosis2.png)
 
-Here you can see graphs for:
+To view more in-depth information about the chain, selecting the "Explorer" link will open its dedicated explorer dashboard. Here you will find:
 
-* The **transaction history**, with information on the total transactions, amount of send transactions, and amount of receive transactions.
-* The **volume history**, with information on the total transaction volume, send volume, and receive volume.
-
-You can also use the list on the right-hand side to select a specific blockchain and get a detailed information overview for that chain:
-
-![Cosmos connections](/academy/3-ibc/images/cosmosconnections.png)
-
-In the detailed overview you can select a specific connection, and Mintscan will show you the corresponding channels:
-
-![Mintscan - Cosmos Hub to Osmosis channels](/academy/3-ibc/images/cosmoschannels.png)
-
-If you click one of the connections you can see the connections, send and receive transactions, the relayer transaction history, and the relayer volume history:
-
-![Mintscan - channel overview](/academy/3-ibc/images/mintscanchanneloevrview.png)
-
-If you select a channel, you will be forwarded to a page with more in-depth information regarding that IBC relayer:
+* An array of useful links
+* Market Data, with another interactive graph
+* Onchain Metrics
+* Links to Major dApps associated with the chain:
 
 ![In-depth channel information - overview](/academy/3-ibc/images/onchannel1.png)
 
-Among other things you can find out:
+Below these you will find data regarding:
 
-* If a relayer is well known
-* The total transfer value for the relayer
-* The last time an update was done
-* The operating period for that IBC relayer
-
-Below that you will find an overview of the weekly transferred values of receive and send transactions:
+* Proposals
+* Validators
+* Dev Activities
 
 ![In-depth channel information - TX volumes](/academy/3-ibc/images/onchannel2.png)
 
-You can also look into the relayer operators - operator address, IBC received transactions, and the date and time of the last update are displayed:
+You will also notice a variety of tabs at the top of the screen, providing access to more detailed information on Validators, the Ecosystem, Proposals, Blocks, Transactions, Relayers, Contracts, Assets, and Accounts:
 
 ![In-depth channel information - relayer](/academy/3-ibc/images/onchannel3.png)
 
-At the end of the page, you can find a list of all transactions:
+For example, on selecting the Transactions tab you can review the Transactions summary screen:
 
 ![In-depth channel information - transactions](/academy/3-ibc/images/onchannel4.png)
 
-The list of transactions includes information on:
+The summary section details:
+
+* The chain's total number of transactions
+* The number of transactions in the last 30 days
+* The number of transactions yesterday
+* The number of transactions included in the last 20 blocks
+
+Below this is a table of Recent Transactions. For each transaction in the table, you find information on:
 
 * The transaction's hash
-* The type of transaction
 * The result - was it successful?
+* Its messages
 * The amount transferred
 * The fee of the transaction
 * The transaction's height
 * How long ago a transaction was conducted
 
-When you click on a specific transaction in the list, you are forwarded to a page with the transaction details.
+When you click on a specific transaction in the list, you are forwarded to a page with the transaction details:
 
-For example, click on a transaction marked as an **IBC transfer** (in the type column of the transaction list):
-
-![Transfer Tx details](/academy/3-ibc/images/ftstx1.png)
+![Transfer Tx details](/academy/3-ibc/images/onchannel5.png)
 
 This gives you an overview of the transaction, which includes:
 
+* Status of the transaction
+* Time of the transaction
 * Chain ID
 * Transaction hash
-* Status of the transaction
 * Height of the transaction
-* Time of the transaction
-* Fee for the transaction
 * Gas used and wanted
+* Fees for the transaction
 * Memo
 
-Further below, you can also look into information on the messages involved. Next to a lot of information on the message, you can also look into the IBC progress of IBC acknowledgements:
+Further below, you can also look into information on the Messages involved:
+
+![Transfer Tx details](/academy/3-ibc/images/ftstx1.png)
+
+And you can also view expandable Event Logs:
 
 ![Transfer Tx messages](/academy/3-ibc/images/ftstx2.png)
 
@@ -219,7 +204,7 @@ To summarize, this section has explored:
 
 * **MapOfZones**, a network explorer for the Interchain Ecosystem, which provides a variety of dynamic visualizations of network activity over time, allowing easy comprehension of transactions occurring between specific individual chains, access to detailed traffic data and in-depth information about chains, and useful information regarding the most active zones by IBC volume in USD.
 * **Mintscan**, another Interchain network explorer, which provides an overview of IBC network activity over time, and can focus in on specific chains to show their total transactions (measured in transactions and USD) and connections (with the number of chains and relayers), also providing graphs for transaction and volume history, and can provide highly detailed breakdowns of data at various levels of network detail.
-* **IOBScan**, another blockchain explorer, which provides a quick overview of networks, channels, IBC token transfers, and IBC tokens from its homepage; it allows for searching by transaction hash, and also offers the IOBSCAN Network State Visualizer for an alternative high level presentation of connection data between chains.
+* **IOBScan**, another blockchain explorer, which provides a quick overview of networks, channels, IBC token transfers, and IBC tokens from its homepage; it allows for searching by transaction hash, and also offers the IOBSCAN Network State Visualizer for an alternative high-level presentation of connection data between chains.
 
 </HighlightBox>
 

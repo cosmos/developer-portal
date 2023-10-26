@@ -98,11 +98,11 @@ module.exports = {
                 },
                 {
                   title: "Blockchain History",
-                  path: "/ida-course/0-blockchain-basics/2-public.html",
+                  path: "/ida-course/0-blockchain-basics/2-history.html",
                 },
                 {
                   title: "Public and Managed Blockchains",
-                  path: "/ida-course/0-blockchain-basics/3-managed.html",
+                  path: "/ida-course/0-blockchain-basics/3-deployment-patterns.html",
                 },
                 {
                   title: "Consensus in Distributed Networks",
