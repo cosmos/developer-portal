@@ -89,7 +89,7 @@ You can also sort the list in either ascending or descending order with a click 
 
 [Mintscan](https://www.mintscan.io/visualization/ibc-network) is another Interchain network explorer.
 
-It gives an overview of IBC networks, including an explorer menu (left panel), a network visualization (center) and a list of chains (right panel). The visualization is based on IBC transactions within a 30-day period. A selection of alternative visualisations are available from the left panel:
+It gives an overview of IBC networks, including an explorer menu (left panel), a network visualization (center), and a list of chains (right panel). The visualization is based on IBC transactions within a 30-day period. A selection of alternative visualizations is available from the left panel:
 
 ![Mintscan - IBC network overview](/academy/3-ibc/images/mintscanoverview.png)
 
@@ -133,7 +133,7 @@ The summary section details:
 * The number of transactions yesterday
 * The number of transactions included in the last 20 blocks
 
-Below this is a table of Recent Transactions. For each transaction in the table you find information on:
+Below this is a table of Recent Transactions. For each transaction in the table, you find information on:
 
 * The transaction's hash
 * The result - was it successful?
@@ -204,7 +204,7 @@ To summarize, this section has explored:
 
 * **MapOfZones**, a network explorer for the Interchain Ecosystem, which provides a variety of dynamic visualizations of network activity over time, allowing easy comprehension of transactions occurring between specific individual chains, access to detailed traffic data and in-depth information about chains, and useful information regarding the most active zones by IBC volume in USD.
 * **Mintscan**, another Interchain network explorer, which provides an overview of IBC network activity over time, and can focus in on specific chains to show their total transactions (measured in transactions and USD) and connections (with the number of chains and relayers), also providing graphs for transaction and volume history, and can provide highly detailed breakdowns of data at various levels of network detail.
-* **IOBScan**, another blockchain explorer, which provides a quick overview of networks, channels, IBC token transfers, and IBC tokens from its homepage; it allows for searching by transaction hash, and also offers the IOBSCAN Network State Visualizer for an alternative high level presentation of connection data between chains.
+* **IOBScan**, another blockchain explorer, which provides a quick overview of networks, channels, IBC token transfers, and IBC tokens from its homepage; it allows for searching by transaction hash, and also offers the IOBSCAN Network State Visualizer for an alternative high-level presentation of connection data between chains.
 
 </HighlightBox>
 
