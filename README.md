@@ -143,8 +143,10 @@ customModules:
             path: /academy/1-what-is-cosmos/1-blockchain-and-cosmos.html
           - title: The Interchain Ecosystem
             path: /academy/1-what-is-cosmos/2-cosmos-ecosystem.html
+          - title: Interchain use cases
+            path: /academy/1-what-is-cosmos/3-interchain-use-cases.html
           - title: Getting ATOM and staking it
-            path: /academy/1-what-is-cosmos/3-atom-staking.html
+            path: /academy/1-what-is-cosmos/4-atom-staking.html
       #- {} Example of section break
       - image: /lp-images/cosmos_dev_portal_module-03-lp-new.png
         title: Interchain Concepts
@@ -421,7 +423,7 @@ These tutorials guide you through actionable steps and walk-throughs to teach yo
 
 The Developer Portal contains three types of content:
 
-* **Concepts**, informational content explaining the how the Interchain Stack functions
+* **Concepts**, informational content explaining how the Interchain Stack functions
 * **Individual Tutorials**, short tutorials to get you up to speed with individual components
 * **Checkers Game**, a modular tutorial that covers the full stack and teaches you every element from set-up to launching in production with a front-end application attached.
 
