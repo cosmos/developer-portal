@@ -37,7 +37,7 @@ The question is, what can be achieved as a result?
 
 The potential use cases for interoperable dApps are incredibly wide-ranging, from establishing **resilient, autonomous organizations** that empower communities (allowing them to organize and allocate resources to members, vote on impactful governance decisions, etc.) to **Decentralized Finance** (DeFi) applications that can allow anyone around the world to buy, trade, invest, and lend – even those without a bank account.
 
-A key category of applications is **Fintech**, a term derived from "financial technology", and refers to software, mobile apps, and other technologies aimed at improving and automating traditional forms of finance for both businesses and consumers. The following examples illustrate the variety of possibilities that can be realised.
+A key category of applications is **Fintech**, a term derived from "financial technology", and refers to software, mobile apps, and other technologies aimed at improving and automating traditional forms of finance for both businesses and consumers. The following examples illustrate the variety of possibilities that can be realized.
 
 ### Decentralized exchanges (DEXs)
 
@@ -53,7 +53,7 @@ When independent blockchains are able to transact directly, the unmediated excha
 
 Similar in concept to DEXs, the decentralization of marketplaces allows investors focused on traditional market trading to deal with each other directly, instead of relying on centralized stock exchanges (be they in real-world locations, like the New York or Shanghai Stock Exchange, or entirely online, like the Nasdaq). 
 
-Exchanges may impose qualification criteria on companies before they can be listed, limiting opportunities both for those seeking investment and those looking for projects to support. In addition, the exclusivity and inaccessibility of market trading as an activity prohibits many ordinary people from even considering the possibility of investment as a way to grow their own wealth.
+Exchanges may impose qualification criteria on companies before they can be listed, limiting opportunities both for those seeking investment and those looking for projects to support. In addition, the exclusivity and inaccessibility of market trading as an activity prohibit many ordinary people from even considering the possibility of investment as a way to grow their own wealth.
 
 A decentralized marketplace could allow investors and businesses of all scales to find each other without hindrance from the established ways of doing things, enjoying very low fees and instant transaction confirmation.
 
@@ -89,7 +89,7 @@ There are hundreds of projects at various stages of development already taking a
 To summarize, this section has explored:
 
 * A brief refresher of the advantages the interchain offers to developers.
-* An overview of decentralized exchanges, open marketplaces, commercial token economies, and game economies as use case categories which are ripe for investigation.
+* An overview of decentralized exchanges, open marketplaces, commercial token economies, and game economies as use case categories that are ripe for investigation.
 
 </HighlightBox>
 
