@@ -102,7 +102,7 @@ _Building on modular components, many of which you did not write yourself_ - doe
 The Cosmos SDK is built on the [object-capability model](https://docs.cosmos.network/main/core/ocap.html). It not only favors modularity but also encapsulates code implementation. An object-capability model ensures that:
 
 * There is no way for objects in the memory to be discovered just by going through the composed objects of others.
-* The only way to have references to objects or to access services is to have been passed the relevant object references.
+* The only way to have references to objects or to access services is to have passed the relevant object references.
 
 </HighlightBox>
 
@@ -142,7 +142,7 @@ If you want more detailed information on hubs and zones on the mainnet and in th
 
 ## The Cosmos Hub
 
-The **[Cosmos Hub](https://hub.cosmos.network/main/hub-overview/overview.html)** was the first blockchain built with the Interchain Stack. It is a public Proof-of-Stake (PoS) blockchain with a native token, ATOM. ATOM is used to secure the network and pay for transaction fees, but is also the token that has funded the development of the Interchain Stack and other projects in the wider ecosystem.
+The **[Cosmos Hub](https://hub.cosmos.network/main/hub-overview/overview.html)** was the first blockchain built with the Interchain Stack. It is a public Proof-of-Stake (PoS) blockchain with a native token, ATOM. ATOM is used to secure the network and pay transaction fees but is also the token that has funded the development of the Interchain Stack and other projects in the wider ecosystem.
 
 The Cosmos Hub can be understood as a router facilitating transactions between the chains connected to it. For example, the Cosmos Hub allows for transaction fees to be paid in different tokens, as long as the zone trusts the Cosmos Hub and the other zones connected to it.
 
@@ -180,7 +180,7 @@ Read the [node explorer documentation](https://github.com/cosmos/atlas/blob/main
 
 ## Ignite CLI - building application-specific blockchains with one command
 
-[Ignite CLI](https://ignite.com/cli) is a developer-friendly, command-line interface (CLI) tool for application-specific blockchains which builds on Tendermint/CometBFT and the Cosmos SDK. The CLI tool offers everything developers need to build, test, and launch a chain. It accelerates blockchain development by scaffolding and assembling all components needed for a production-ready blockchain. Ignite CLI makes the process from initial idea to production 95% faster. This lets developers build a blockchain in minutes, and frees them to focus more strongly on the business logic of their application.
+[Ignite CLI](https://ignite.com/cli) is a developer-friendly, command-line interface (CLI) tool for application-specific blockchains that builds on Tendermint/CometBFT and the Cosmos SDK. The CLI tool offers everything developers need to build, test, and launch a chain. It accelerates blockchain development by scaffolding and assembling all components needed for a production-ready blockchain. Ignite CLI makes the process from initial idea to production 95% faster. This lets developers build a blockchain in minutes, and frees them to focus more strongly on the business logic of their application.
 
 With Ignite CLI, developers can:
 
@@ -246,7 +246,7 @@ To summarize, this section has explored:
 * The range of applications, services, and projects utilizing the Interchain Ecosystem, and the wallets and block explorers servicing them.
 * How the ready-built modular components provided by the Cosmos SDK make developing new projects fast, easy, and reliable.
 * How the addition of developer-authored modules and the growth of the ecosystem will support increasingly complex applications.
-* The Inter-Blockchain Communication Protocol (IBC), the basis for interoperability between chains on the Interchain, and the distinction between **zones** of heterogeneous blockchains and the **hubs** which provide interoperable communication between them.
+* The Inter-Blockchain Communication Protocol (IBC), the basis for interoperability between chains on the Interchain, and the distinction between **zones** of heterogeneous blockchains and the **hubs** that provide interoperable communication between them.
 * Ignite CLI, a developer-friendly tool that shortcuts the complexities of creating application-specific blockchains.
 * The CosmWasm module, a multi-chain platform for developing and testing smart contracts.
 * The possibility of using alternative frameworks and SDKs within the Interchain Ecosystem, maintaining a breadth of options for developers to make use of.
