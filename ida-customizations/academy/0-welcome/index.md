@@ -91,7 +91,7 @@ customModules:
         - title: The Interchain Ecosystem
           path: /academy/1-what-is-cosmos/2-cosmos-ecosystem.html
         - title: Getting ATOM and staking it
-          path: /academy/1-what-is-cosmos/3-atom-staking.html
+          path: /academy/1-what-is-cosmos/4-atom-staking.html
         - title: Blockchain app architecture
           path: /academy/2-cosmos-concepts/1-architecture.html
         - title: Accounts
