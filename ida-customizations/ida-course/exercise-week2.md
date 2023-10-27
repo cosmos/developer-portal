@@ -1,12 +1,26 @@
 ---
 title: "Week 2 Exercise"
 order:
-description: From simple creation to practice
+description: Introducing the Final Exam
 tags:
   - deep-dive
 ---
 
 # Week 2 Exercise
+
+**Coding Exercise 1**, to adjust one line of code, is now accessible in your personal repo. Click [here](link) to go to the Academy repository.
+
+<HighlightBox type="note">
+
+The four Coding Exercises are worth 80% of your Final Exam score collectively. 
+
+You are free to attempt this exercise now, or you can wait until the Final Exam period officially begins on January 4th, 2024.
+
+</HighlightBox>
+
+When you complete the exercise you will be able to see your score directly, and will receive emailed feedback. You can repeat this exercise as often as you like if you want to improve your score.
+
+<!--ANDREW SAYS: The following is the old exercise 2 page content for reference
 
 You are about to perform a small, simple exercise on our Academy Gitlab, to check you're paying attention! Before you [try](https://git.academy.b9lab.com/ida-p4-exercise-week-2/exercise-code), here is a summary of what you will be asked to do.
 
@@ -138,3 +152,4 @@ Please push your exercise solution to the [Week 2 Exercise repo](https://git.aca
 Do not worry if you do not pass the exercise: it is simply meant to be an opportunity to practice and demonstrate your engagement with the program.
 
 </HighlightBox>
+-->
