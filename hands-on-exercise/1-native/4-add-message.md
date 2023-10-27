@@ -1,5 +1,5 @@
 ---
-title: "Add your first message"
+title: "Add Your First Message"
 order: 5
 description: Where you make it possible to create a game
 tags:
@@ -7,7 +7,7 @@ tags:
   - cosmos-sdk
 ---
 
-# Add your first message
+# Add Your First Message
 
 In the [previous section](./3-add-game.md), you added a game storage space in the checkers module storage. It is now time to actually put games in storage:
 
