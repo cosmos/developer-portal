@@ -118,7 +118,7 @@ customModules:
             path: /academy/2-cosmos-concepts/15-bridges.html
           - title: Migrations
             path: /academy/2-cosmos-concepts/16-migrations.html
-          - title: Week 1 Quiz
+          - title: Exam Quiz
             path: /academy/quiz-week1.html
       - image: /cosmos_dev_portal_module-05-lp.png
         title: Week 2 - First Steps
@@ -176,6 +176,8 @@ customModules:
             path: /tutorials/7-cosmjs/4-with-keplr.html
           - title: Create custom CosmJS interfaces
             path: /tutorials/7-cosmjs/5-create-custom.html
+         # - title: Week 3 Exercise
+         #   path: /academy/exercise-week3.html
       - image: /planet-collection.svg
         title: Week 4 - Ignite CLI Advanced and IBC Advanced
         href: /ida-course/LPs/week-4/
@@ -208,6 +210,8 @@ customModules:
             path: /hands-on-exercise/5-ibc-adv/1-go-relayer.html
           - title: Hermes relayer
             path: /hands-on-exercise/5-ibc-adv/2-hermes-relayer.html
+         # - title: Week 4 Exercise
+         #   path: /academy/exercise-week4.html
       - image: /cosmos_dev_portal_module-04-lp.png
         title: Week 5 - CosmJS Advanced
         href: /ida-course/LPs/week-5/
@@ -224,6 +228,8 @@ customModules:
             path: /hands-on-exercise/3-cosmjs-adv/4-cosmjs-gui.html
           - title: Backend script for game indexing
             path: /hands-on-exercise/3-cosmjs-adv/5-server-side.html
+         # - title: Week 5 Exercise
+         #   path: /academy/exercise-week5.html
       - image: /moving-objects.svg
         title: Week 6 - IBC Deep Dive
         href: /ida-course/LPs/week-6/
@@ -240,6 +246,8 @@ customModules:
             path: /hands-on-exercise/5-ibc-adv/6-ibc-app-checkers.html
           - title: Create a leaderboard chain
             path: /hands-on-exercise/5-ibc-adv/79-ibc-app-leaderboard.html
+         # - title: Week 6 Exercise
+         #   path: /academy/exercise-week6.html
       - image: /universe.svg
         title: Week 7 - From Code to MVP to Production and Migrations
         href: /ida-course/LPs/week-7/
