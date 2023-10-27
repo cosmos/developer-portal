@@ -1,7 +1,7 @@
 ---
 title: "Coding Exercise 1"
 order:
-description: Introducing the Final Exam
+description: Introducing the coding part of the Final Exam
 tags:
   - cosmos-sdk
 ---
@@ -10,17 +10,17 @@ tags:
 
 **Coding Exercise 1** is now accessible in your personal repo, found [here](https://git.academy.b9lab.com/ida-p5-final-exam/student-projects), in our Academy Gitlab server.
 
-To complete this exercise, all you need is, in effect, to adjust one line of code. An experienced developer can tackle it in 5 minutes.
+To complete this exercise, in effect all you need is to adjust one line of code. An experienced developer can tackle it in 5 minutes.
 
 <HighlightBox type="note">
 
 The four Coding Exercises are worth 80% of your Final Exam score collectively. 
 
-You are free to attempt this exercise now, or you can wait until the Final Exam period officially begins on January 4th, 2024.
+You are free to attempt this exercise now, or you can wait until the Final Exam period officially begins on January 4th, 2024. The absolute deadline for attempting the exercise is February 1st.
 
 </HighlightBox>
 
-When you complete the exercise you will be able to see your score directly, and will receive emailed feedback. You can repeat this exercise as often as you like if you want to improve your score.
+When you complete the exercise you will be able to see your score directly. You can repeat this exercise as often as you like if you want to improve your score.
 
 <!--ANDREW SAYS: The following is the old exercise 2 page content for reference
 

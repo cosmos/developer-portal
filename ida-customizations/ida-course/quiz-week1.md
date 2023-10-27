@@ -16,7 +16,7 @@ Follow this link [Week 1 Quiz](https://hr.gs/ida-c5-week1-quiz) to attempt a pop
 
 The Exam Quiz is worth 10% of your Final Exam score. 
 
-You are free to attempt the quiz now, or you can wait until the Final Exam period officially begins on January 4th, 2024.
+You are free to attempt the quiz now, or you can wait until the Final Exam period officially begins on January 4th, 2024. The absolute deadline for attempting the quiz is February 1st.
 
 </HighlightBox>
 
