@@ -8,7 +8,7 @@ intro:
     image: /graphics-sdk-course.png
     description: |
       Welcome to the Interchain Developer Academy!<br/><br/>
-      Over the next seven weeks, you will dive deep into the Interchain Ecosystem. Let's get started!
+      Over the next seven weeks, you will dive deep into the interchain ecosystem. Let's get started!
     action:
       label: Start learning!
       url: /ida-course/LPs/week-0/
@@ -17,23 +17,20 @@ overview:
   items:
     - title: Timeline and deadlines
       description: |
-        Academy start: May 18th<br/><br/>
-        Program duration: May 18th, 2023 until July 6th, 2023 (seven weeks)<br/><br/>
-        Exam period: July 6th, 2023 to August 4th, 2023<br/><br/>
-        Results available: August 18th, 2023<br/><br/>
+        Academy start: November 2nd<br/><br/>
+        Program duration: November 2nd, 2023 until December 21st, 2023 (seven weeks)<br/><br/>
+        Exam period: January 4th, 2024 to February 1st, 2024<br/><br/>
+        Results available: February 16th, 2024<br/><br/>
     - title: What you will learn
       description: |
-        Over the next seven weeks, you will dive deep into the Interchain Ecosystem, starting with a high-level introduction to familiarize yourself with the main concepts. Next, you will put theory into practice by learning how to initiate and build an application-specific blockchain using the Cosmos SDK; how to use Ignite CLI to scaffold modules for your blockchain; and how to connect a chain with other chains using the Inter-Blockchain Communication Protocol (IBC). You will learn how to build frontend and backend applications using CosmJS; operate nodes and validate on an Interchain blockchain; and run a relaying infrastructure between IBC-connected chains.
+        Over the next seven weeks, you will dive deep into the interchain ecosystem, starting with a high-level introduction to familiarize yourself with the main concepts. Next, you will put theory into practice by learning how to initiate and build an application-specific blockchain using the Cosmos SDK; how to use Ignite CLI to scaffold modules for your blockchain; and how to connect a chain with other chains using the Inter-Blockchain Communication Protocol (IBC). You will learn how to build frontend and backend applications using CosmJS; operate nodes and validate on an interchain blockchain; and run a relaying infrastructure between IBC-connected chains.
     - title: How to get the most out of the Academy
       description: |
           The Academy is self-paced and flexible, so you do not have to be online at particular times. You can follow the weekly plan or go through the learning material at your own pace. We recommend allocating about 10 to 15 hours a week to get through all the material.<br/><br/>
           The material is delivered in various formats, including text, images, videos, quizzes, and exercises. There is plenty of additional material embedded in the content to deepen your understanding of particular concepts. And if you want even more, ask your tutors and expert instructors, who will point you in the right direction!<br/><br/>
           <b>Hands-on exercises</b><br/><br/>
-          In each module, you will find quizzes, code exercises, and/or code examples. In the first two weeks, you can find a quiz (end of Week 1) and an exercise (end of Week 2). It does not matter if you pass the quiz or exercise - think of these as opportunities to practice and demonstrate your engagement with the program. Both will remain open until the launch of the final exam, but we recommend taking them as soon as you finish Week 1 and 2.<br/><br/>
-          Week 1: Quiz - recommended date: Thursday, May 25th<br/><br/>
-          Week 2: Exercise - recommended date: Thursday, June 1st<br/><br/>
-          Week 1 Quiz & Week 2 Exercise - <b>closing date</b>: Thursday, July 6th<br/><br/>
-          You will get the results of submitted exercises.<br/><br/>
+          In each module, you will find quizzes, code exercises, and code examples. At the end of weeks 1 to 6, exercises will be unlocked that test your progress and also contribute to your score in the Final Exam. These will remain open until the end of the Final Exam period (February 1st, 2024), but we recommend taking them as soon as you finish the associated week of the program.<br/><br/>
+          You will receive a confirmation of the results of any submitted exercises.<br/><br/>
           <b>Technical requirements</b><br/><br/>
           No special technical requirements of HW or SW are needed. You need a computer with at least 8 GB RAM and 4 GB free hard disk space.
     - title: How much time do I need to dedicate to the Academy?
@@ -55,12 +52,13 @@ overview:
         We have put together a <a href="/ida-course/discord-info.html">quick guide</a> explaining how to best communicate on Discord.
     - title: How do I get certified?
       description: |
-        After the seven-week program, you will have four weeks to complete an Final Exam - a combination of quizzes and a code project. The exam will be open from <b>July 6th, 2023</b> and you have to complete it by <b>August 4th, 2023</b>.<br/><br/>
+        After the seven-week program and the two-week end-of-year break, you will have four weeks to complete the Final Exam - a combination of quizzes and a code project. The exam will be open from <b>January 4th, 2024</b> and you have to complete it before <b>February 2nd, 2024</b>.<br/><br/>
         You will receive an email and notification via Discord closer to the date.<br/><br/>
-        If you complete the program earlier you can take the exam sooner. The earliest you can take the exam is from the fourth week of the program.<br/><br/>
+        The elements of the Final Exam are progressively unlocked during the main program. Completing them successfully contributes to your score in the Final Exam.<br/><br/>
+        If you complete the program early, you can take the exam sooner. The earliest you can take the exam is from the fourth week of the program.<br/><br/>
         The exam is an individual exercise.<br/><br/>
         <div class="tm-bold">When do I get the results?</div>
-        You will receive your exam results by <span class="tm-bold">August 18th</span>.
+        You will receive your exam results by <span class="tm-bold">February 16th, 2024</span>.
 customModules:
   - title: Weekly Plan
     description: |
@@ -70,7 +68,7 @@ customModules:
         title: Week 0 - Getting Started
         href: /ida-course/LPs/week-0/
         description: |
-          This chapter is completely optional and a good introduction if you are new to blockchain technology or need a refresher on Golang and a short overview of dev terms you will encounter when working with Interchain Stack:
+          This chapter is completely optional and a good introduction if you are new to blockchain technology or need a refresher on Golang and a short overview of dev terms you will encounter when working with the Interchain Stack:
         links:
           - title: Blockchain basics
             path: /ida-course/0-blockchain-basics/1-blockchain.html
@@ -84,7 +82,7 @@ customModules:
         title: Week 1 - Introduction to the Interchain
         href: /ida-course/LPs/week-1/
         description: |
-          You will discover the Interchain Ecosystem and learn about the main concepts of the Cosmos SDK, from its Tendermint consensus to learning how keys, accounts, and transactions relate to each other. Dive into:
+          You will discover the interchain ecosystem and learn about the main concepts of the Cosmos SDK, from its Tendermint consensus to learning how keys, accounts, and transactions relate to each other. Dive into:
         links:
           - title: Blockchain technology and the Interchain
             path: /academy/1-what-is-cosmos/1-blockchain-and-cosmos.html
@@ -290,7 +288,7 @@ These tutorials guide you through actionable steps and walk-throughs to teach yo
 
 The code and docs for each tutorial are based on a specific version of the software. Be sure to follow the tutorial instructions to download and use the right version.
 
-Use the tutorials landing page as your entry point to articles on [Interchain blog](https://blog.cosmos.network/), videos on [Interchain YouTube](https://www.youtube.com/c/CosmosProject/videos), and ways to get help and support.
+Use the tutorials landing page as your entry point to articles on the [Cosmos blog](https://blog.cosmos.network/), videos on the [Interchain YouTube channel](https://www.youtube.com/c/CosmosProject/videos), and ways to get help and support.
 
 This repo manages and publishes the tutorials. For details, see [CONTRIBUTING](/developer-portal/CONTRIBUTING.md) and [TECHNICAL-SETUP](/developer-portal/TECHNICAL-SETUP.md).
 The tutorials are formatted using [markdownlint](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md).

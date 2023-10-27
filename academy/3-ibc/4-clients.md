@@ -22,7 +22,7 @@ In this section, you will learn:
 
 ![clients](/academy/3-ibc/images/lightclient.png)
 
-As previously shown, IBC is structured as several layers of abstraction. At the top, applications such as [Interchain Standard (ICS) 20 token transfers](https://github.com/cosmos/ibc/tree/master/spec/app/ics-020-fungible-token-transfer) implement the [ICS-26 IBC standard](https://github.com/cosmos/ibc/blob/master/spec/core/ics-026-routing-module/README.md), which describe the routing and callback functionality used to connect the application layer to the transport layer. Underneath the application are channels, which are unique for each application (for example, a channel that allows a transfer application on chain A to speak to a transfer application on chain B). [Connections](/academy/3-ibc/2-connections.md), which may have many channels, are used to connect two clients (for example, to allow the entire IBC stack of chain A to connect to the IBC stack of chain B). These clients, which may have many connections, comprise the foundational layer of IBC.
+As previously shown, IBC is structured as several layers of abstraction. At the top, applications such as [interchain standard (ICS) 20 token transfers](https://github.com/cosmos/ibc/tree/master/spec/app/ics-020-fungible-token-transfer) implement the [ICS-26 IBC standard](https://github.com/cosmos/ibc/blob/master/spec/core/ics-026-routing-module/README.md), which describe the routing and callback functionality used to connect the application layer to the transport layer. Underneath the application are channels, which are unique for each application (for example, a channel that allows a transfer application on chain A to speak to a transfer application on chain B). [Connections](/academy/3-ibc/2-connections.md), which may have many channels, are used to connect two clients (for example, to allow the entire IBC stack of chain A to connect to the IBC stack of chain B). These clients, which may have many connections, comprise the foundational layer of IBC.
 
 <HighlightBox type="info">
 
@@ -232,7 +232,7 @@ The `TrustedHeight` is the height of a stored `ConsensusState` on the client tha
 
 <HighlightBox type="info">
 
-If you want to see where `ConsensusState` is stored, see the [Interchain Standard (ICS) 24](https://github.com/cosmos/ibc/tree/master/spec/core/ics-024-host-requirements), which also describes the paths for other keys to be stored and used by IBC.
+If you want to see where `ConsensusState` is stored, see the [interchain standard (ICS) 24](https://github.com/cosmos/ibc/tree/master/spec/core/ics-024-host-requirements), which also describes the paths for other keys to be stored and used by IBC.
 
 </HighlightBox>
 

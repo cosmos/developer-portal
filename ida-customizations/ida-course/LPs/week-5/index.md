@@ -30,6 +30,10 @@ In this chapter, you will:
 
 </HighlightBox>
 
+**This week, make sure to submit Coding Exercise 4 once you feel ready to test your knowledge.**
+
+The exercise will be available until the Final Exam period closes on February 1st, 2024, but it is recommended to attempt it immediately after completing the Week 5 content.
+
 ## Next up
 
 Dive into creating [custom objects](/hands-on-exercise/3-cosmjs-adv/1-cosmjs-objects.md) and [custom messages](/hands-on-exercise/3-cosmjs-adv/2-cosmjs-messages.md) before [developing a GUI](/hands-on-exercise/3-cosmjs-adv/3-external-gui.md) and [integrating CosmJS and Keplr into the GUI](/hands-on-exercise/3-cosmjs-adv/4-cosmjs-gui.md).
