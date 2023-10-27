@@ -41,7 +41,7 @@ Within the Academy Discord, you will find the following topic-specific message c
 
 In addition to the three message channels, the **IDA-Voice** channel is a live audio resource for conducting real-time study groups or casual chats. It is open 24 hours per day and allows easy screen sharing to facilitate your discussions. Please use it inclusively, and give priority to study activities before casual use.
 
-## Support Gem
+<!--## Support Gem
 
 The **c5-support-forum** now features combination support from B9Lab's expert instructors and their **Support Gem** AI chatbot.
 
@@ -52,7 +52,7 @@ Support Gem is capable of responding to a wide variety of queries regarding the 
 However, please feel free to ask any question you need to in the **c5-support-forum**. The human support team will be there to respond to any queries that Support Gem cannot assist with.
 
 We hope you will find Support Gem's involvement interesting and informative!
-
+-->
 ## How to post a query or request support
 
 When posting a question in the **c5-support-forum**, you need to add a title and select the tag of the topic your question is related to:
@@ -61,11 +61,15 @@ When posting a question in the **c5-support-forum**, you need to add a title and
 
 This creates a new thread for your query, so all responses and any continuation of the discussion can be easily located and identified.
 
-After you post your message, Support Gem will analyze the question and potentially request additional details. It will then compose a response, which is reviewed by a member of the support team and potentially revised for improved accuracy prior to publication. Support Gem's response will note which member of the support team provided human oversight.
+<!--After you post your message, the Support Gem will analyze the question and potentially request additional details. It will then compose a response, which is reviewed by a member of the support team and potentially revised for improved accuracy prior to publication. Support Gem's response will note which member of the support team provided human oversight.
 
 Before and after a query has been answered, you and other participants are free to continue to post in-thread to discuss the subject. However, Support Gem will only respond to the original post of any given thread. Members of the support team may also respond directly in the event that additional information is required.
+-->
+After you post your message, the support team will be notified by our chatbot, **Support Gem**. They will analyze the question and potentially request additional details, then compose a response which Support Gem posts as a reply to the original query. The reply will note which member of the support team handled the query.
 
-Alternatively, you can post a new message in the channel that will initiate the same process from the beginning.
+Before and after a query has been answered, you and other participants are free to continue to post in-thread to discuss the subject. Members of the support team may also respond directly in the event that additional information is required - feel free to ask follow-up questions!
+
+Alternatively, you can always begin a new thread in the c5-support-forum channel that will initiate the query process from the beginning.
 
 ## Response time
 
