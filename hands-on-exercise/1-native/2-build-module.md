@@ -1,5 +1,5 @@
 ---
-title: "Build your module"
+title: "Build Your Module"
 order: 3
 description: Where you create your checkers module
 tags:
@@ -7,7 +7,7 @@ tags:
   - cosmos-sdk
 ---
 
-# Build your module
+# Build Your Module
 
 You will integrate your module with the minimal chain that you [cloned previously](./1-preparation.md). To facilitate integration and speed up feedback, you will direct the Go package manager to look for this dependency on a local disk. The simplest way is to put the module folder into a folder next to the minimal chain's folder:
 
