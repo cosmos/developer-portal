@@ -40,7 +40,7 @@ overview:
     - title: What support will I get in the Academy?
       description: |
         We have set up a private Discord for the Academy for all teaching and ongoing communication. You can reach out to your instructors anytime for support. We encourage you to proactively collaborate with other participants in your cohort and with your instructors. Ask questions, request feedback, and seek help if you are stuck! That way, you will get the most out of the Academy.<br/><br/>
-        We aim to answer your questions within a few hours. Our maximum response time is 24 hours. Main support hours are on weekdays between 6 AM UTC and 4 PM UTC. We do not provide support during the weekends.<br/><br/>
+        We aim to answer your questions within a few hours. Our maximum response time is 24 hours. Main support hours are on weekdays between 6 am UTC and 4 pm UTC. We do not provide support during the weekends.<br/><br/>
         Click <a href="/ida-course/discord-info.html">here</a> to learn how to join and use Discord.<br/><br/>
         You will get detailed information on how to join and use Discord via email.
     - title: How do I access Discord?
@@ -52,10 +52,9 @@ overview:
         We have put together a <a href="/ida-course/discord-info.html">quick guide</a> explaining how to best communicate on Discord.
     - title: How do I get certified?
       description: |
-        After the seven-week program and the two-week end-of-year break, you will have four weeks to complete the Final Exam - a combination of quizzes and a code project. The exam will be open from <b>January 4th, 2024</b> and you have to complete it before <b>February 2nd, 2024</b>.<br/><br/>
+        After the seven-week program and the two-week end-of-year break, you will have four weeks to complete the Final Exam if you did not during the program - a combination of quizzes and a code project. The Final Exam period starts <b>January 4th, 2024</b> and you have to complete the exam before <b>February 2nd, 2024</b>.<br/><br/>
         You will receive an email and notification via Discord closer to the date.<br/><br/>
         The elements of the Final Exam are progressively unlocked during the main program. Completing them successfully contributes to your score in the Final Exam.<br/><br/>
-        If you complete the program early, you can take the exam sooner. The earliest you can take the exam is from the fourth week of the program.<br/><br/>
         The exam is an individual exercise.<br/><br/>
         <div class="tm-bold">When do I get the results?</div>
         You will receive your exam results by <span class="tm-bold">February 16th, 2024</span>.
@@ -68,7 +67,7 @@ customModules:
         title: Week 0 - Getting Started
         href: /ida-course/LPs/week-0/
         description: |
-          This chapter is completely optional and a good introduction if you are new to blockchain technology or need a refresher on Golang and a short overview of dev terms you will encounter when working with the Interchain Stack:
+          This chapter is completely optional and a good introduction if you are new to blockchain technology or need a refresher on Golang and Docker or a short overview of dev terms you will encounter when working with the Interchain Stack:
         links:
           - title: Blockchain basics
             path: /ida-course/0-blockchain-basics/1-blockchain.html

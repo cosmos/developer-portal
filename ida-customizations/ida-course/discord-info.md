@@ -77,4 +77,4 @@ Alternatively, you can always begin a new thread in the [c5-support-forum](https
 
 ## Response time
 
-We aim to answer all questions within a few hours. Our maximum response time is 24 hours. **Main support hours are between 8 AM UTC and 6 PM UTC.** We do not provide support during weekends.
+We aim to answer all questions within a few hours. Our maximum response time is 24 hours. **Main support hours are between 8 am UTC and 6 pm UTC.** We do not provide support during weekends.

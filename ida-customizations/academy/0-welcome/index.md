@@ -43,7 +43,7 @@ overview:
     - title: What support will I get in the Academy?
       description: |
         We have set up a private Discord for the Academy for all teaching and ongoing communication. You can reach out to your instructors anytime for support. We encourage you to proactively collaborate with other participants in your cohort and with your instructors. Ask questions, request feedback, and seek help if you are stuck! That way, you will get the most out of the Academy.<br/><br/>
-        We aim to answer your questions within a few hours. Our maximum response time is 24 hours. Main support hours are on weekdays between 6 AM UTC and 4 PM UTC. We do not provide support during the weekends.<br/><br/>
+        We aim to answer your questions within a few hours. Our maximum response time is 24 hours. Main support hours are on weekdays between 6 am UTC and 4 pm UTC. We do not provide support during the weekends.<br/><br/>
         Click <a href="/ida-course/discord-info.html">here</a> to learn how to join and use Discord.<br/><br/>
         You will get detailed information on how to join and use Discord via email.
     - title: How do I access Discord?
