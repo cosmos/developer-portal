@@ -1,12 +1,12 @@
 ---
-title: "Week 5 Exercise"
+title: "Coding Exercise 4"
 order:
 description: Protobuf and CosmJS activities in the Final Exam
 tags:
   - deep-dive
 ---
 
-# Week 5 Exercise
+# Coding Exercise 4
 
 **Coding Exercise 4**, to compile Protobuf and complete the CosmJS Typescript file, is now accessible in your personal repo. Click [here](link) to go to the Academy repository.
 

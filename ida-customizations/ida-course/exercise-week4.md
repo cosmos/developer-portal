@@ -1,12 +1,12 @@
 ---
-title: "Week 4 Exercise"
+title: "Coding Exercise 3"
 order:
 description: Add a new stored type to the Final Exam
 tags:
   - deep-dive
 ---
 
-# Week 4 Exercise
+# Coding Exercise 3
 
 **Coding Exercise 3**, to add a new stored type, is now accessible in your personal repo. Click [here](link) to go to the Academy repository.
 

@@ -1,12 +1,12 @@
 ---
-title: "Week 3 Exercise"
+title: "Coding Exercise 2"
 order:
 description: CLoser code adjustment for the Final Exam
 tags:
   - deep-dive
 ---
 
-# Week 3 Exercise
+# Coding Exercise 2
 
 **Coding Exercise 2**, to adjust 20 lines of road operator, is now accessible in your personal repo. Click [here](link) to go to the Academy repository.
 

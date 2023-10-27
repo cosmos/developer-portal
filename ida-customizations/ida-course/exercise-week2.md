@@ -1,12 +1,12 @@
 ---
-title: "Week 2 Exercise"
+title: "Coding Exercise 1"
 order:
 description: Introducing the Final Exam
 tags:
   - deep-dive
 ---
 
-# Week 2 Exercise
+# Coding Exercise 1
 
 **Coding Exercise 1**, to adjust one line of code, is now accessible in your personal repo. Click [here](link) to go to the Academy repository.
 

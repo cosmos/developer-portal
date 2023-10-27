@@ -1,12 +1,12 @@
 ---
-title: "Week 6 Exercise"
+title: "IBC Operation Exercise"
 order:
 description: IBC Operations in the Final Exam
 tags:
   - deep-dive
 ---
 
-# Week 6 Exercise
+# IBC Operation Exercise
 
 The **IBC Operation Exercise** is now accessible in your personal repo. Click [here](link) to go to the Academy repository.
 

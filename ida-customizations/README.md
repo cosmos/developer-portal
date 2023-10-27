@@ -146,7 +146,7 @@ customModules:
             path: /hands-on-exercise/1-ignite-cli/7-events.html
           - title: Record the game winners
             path: /hands-on-exercise/1-ignite-cli/8-game-winner.html
-          - title: Week 2 Exercise
+          - title: Coding Exercise 1
             path: /academy/exercise-week2.html
       - image: /planet-pod.svg
         title: Week 3 - IBC and CosmJS
@@ -176,7 +176,7 @@ customModules:
             path: /tutorials/7-cosmjs/4-with-keplr.html
           - title: Create custom CosmJS interfaces
             path: /tutorials/7-cosmjs/5-create-custom.html
-         # - title: Week 3 Exercise
+         # - title: Coding Exercise 2
          #   path: /academy/exercise-week3.html
       - image: /planet-collection.svg
         title: Week 4 - Ignite CLI Advanced and IBC Advanced
@@ -210,7 +210,7 @@ customModules:
             path: /hands-on-exercise/5-ibc-adv/1-go-relayer.html
           - title: Hermes relayer
             path: /hands-on-exercise/5-ibc-adv/2-hermes-relayer.html
-         # - title: Week 4 Exercise
+         # - title: Coding Exercise 3
          #   path: /academy/exercise-week4.html
       - image: /cosmos_dev_portal_module-04-lp.png
         title: Week 5 - CosmJS Advanced
@@ -228,7 +228,7 @@ customModules:
             path: /hands-on-exercise/3-cosmjs-adv/4-cosmjs-gui.html
           - title: Backend script for game indexing
             path: /hands-on-exercise/3-cosmjs-adv/5-server-side.html
-         # - title: Week 5 Exercise
+         # - title: Coding Exercise 4
          #   path: /academy/exercise-week5.html
       - image: /moving-objects.svg
         title: Week 6 - IBC Deep Dive
@@ -246,7 +246,7 @@ customModules:
             path: /hands-on-exercise/5-ibc-adv/6-ibc-app-checkers.html
           - title: Create a leaderboard chain
             path: /hands-on-exercise/5-ibc-adv/79-ibc-app-leaderboard.html
-         # - title: Week 6 Exercise
+         # - title: IBC Operation Exercise
          #   path: /academy/exercise-week6.html
       - image: /universe.svg
         title: Week 7 - From Code to MVP to Production and Migrations
