@@ -295,7 +295,7 @@ module.exports = {
                   path: "/hands-on-exercise/1-ignite-cli/8-game-winner.html",
                 },
                 {
-                  title: "Week 2 Exercise",
+                  title: "Coding Exercise 1",
                   path: "/ida-course/exercise-week2.html",
                 },
               ],
@@ -369,6 +369,10 @@ module.exports = {
                   title: "Create Custom CosmJS Interfaces",
                   path: "/tutorials/7-cosmjs/5-create-custom.html",
                 },
+                // {
+                //   title: "Coding Exercise 2",
+                //   path: "/ida-course/exercise-week3.html",
+                // },
               ],
             },
             {
@@ -432,6 +436,10 @@ module.exports = {
                   title: "Hermes Relayer",
                   path: "/hands-on-exercise/5-ibc-adv/2-hermes-relayer.html",
                 },
+                // {
+                //   title: "Coding Exercise 3",
+                //   path: "/ida-course/exercise-week4.html",
+                // },
               ],
             },
             {
@@ -463,6 +471,10 @@ module.exports = {
                   title: "Backend Script for Game Indexing",
                   path: "/hands-on-exercise/3-cosmjs-adv/5-server-side.html",
                 },
+                // {
+                //   title: "Coding Exercise 4",
+                //   path: "/ida-course/exercise-week5.html",
+                // },
               ],
             },
             {
@@ -494,6 +506,10 @@ module.exports = {
                   title: "Create a Leaderboard Chain",
                   path: "/hands-on-exercise/5-ibc-adv/7-ibc-app-leaderboard.html"
                 },
+                // {
+                //   title: "IBC Operation Exercise",
+                //   path: "/ida-course/exercise-week6.html",
+                // },
               ],
             },
             {

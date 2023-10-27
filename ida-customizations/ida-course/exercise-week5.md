@@ -3,12 +3,14 @@ title: "Coding Exercise 4"
 order:
 description: Protobuf and CosmJS activities in the Final Exam
 tags:
-  - deep-dive
+  - cosm-js
 ---
 
 # Coding Exercise 4
 
-**Coding Exercise 4**, to compile Protobuf and complete the CosmJS Typescript file, is now accessible in your personal repo. Click [here](link) to go to the Academy repository.
+**Coding Exercise 4** is now accessible in your personal repo. Click [here](https://git.academy.b9lab.com/ida-p5-final-exam/student-projects) to go to the Academy Gitlab server and open your project's merge requests page.
+
+To complete this exercise, you need in effect to to compile Protobuf files and complete the CosmJS Typescript files. An experienced developer can tackle it in one hour and a half.
 
 <HighlightBox type="note">
 

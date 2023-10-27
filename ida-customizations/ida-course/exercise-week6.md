@@ -3,12 +3,13 @@ title: "IBC Operation Exercise"
 order:
 description: IBC Operations in the Final Exam
 tags:
-  - deep-dive
+  - ibc
+  - dev-ops
 ---
 
 # IBC Operation Exercise
 
-The **IBC Operation Exercise** is now accessible in your personal repo. Click [here](link) to go to the Academy repository.
+The **IBC Operation Exercise** is now accessible in your personal repo. Click [here](https://git.academy.b9lab.com/ida-p5-final-exam/exam-ibc-operation) on our Gitlab Academy server for instructions. 
 
 <HighlightBox type="note">
 

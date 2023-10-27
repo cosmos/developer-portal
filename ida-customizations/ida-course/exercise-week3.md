@@ -3,12 +3,14 @@ title: "Coding Exercise 2"
 order:
 description: CLoser code adjustment for the Final Exam
 tags:
-  - deep-dive
+  - cosmos-sdk
 ---
 
 # Coding Exercise 2
 
-**Coding Exercise 2**, to adjust 20 lines of road operator, is now accessible in your personal repo. Click [here](link) to go to the Academy repository.
+**Coding Exercise 2** is now accessible in your personal repo. Click [here](https://git.academy.b9lab.com/ida-p5-final-exam/student-projects) to go to the Academy Gitlab server and open your project's merge requests page.
+
+To complete this exercise, all you need is in effect to adjust about 20 lines of code. An experienced developer can tackle it in 20 minutes.
 
 <HighlightBox type="note">
 

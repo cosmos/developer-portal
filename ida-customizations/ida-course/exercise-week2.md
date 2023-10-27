@@ -3,12 +3,14 @@ title: "Coding Exercise 1"
 order:
 description: Introducing the Final Exam
 tags:
-  - deep-dive
+  - cosmos-sdk
 ---
 
 # Coding Exercise 1
 
-**Coding Exercise 1**, to adjust one line of code, is now accessible in your personal repo. Click [here](link) to go to the Academy repository.
+**Coding Exercise 1** is now accessible in your personal repo, found [here](https://git.academy.b9lab.com/ida-p5-final-exam/student-projects), in our Academy Gitlab server.
+
+To complete this exercise, all you need is, in effect, to adjust one line of code. An experienced developer can tackle it in 5 minutes.
 
 <HighlightBox type="note">
 

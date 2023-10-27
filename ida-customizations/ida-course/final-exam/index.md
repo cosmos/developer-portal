@@ -13,7 +13,7 @@ The Final Exam will be released on **Thursday, July 6th, 2023**.
 
 -->
 
-Congratulations on getting this far! You are now ready to take the exam. You can work on your exam until **August 4th** and can submit your exam whenever you feel ready. Importantly, August 4th is a hard cut-off, and we are not granting extensions.
+Congratulations on getting this far! You are now ready to take the exam if you have not started yet. You can work on your exam until **August 4th** and can submit your exam whenever you feel ready. Importantly, August 4th is a hard cut-off, and we are not granting extensions.
 
 The exam is composed of two parts:
 
