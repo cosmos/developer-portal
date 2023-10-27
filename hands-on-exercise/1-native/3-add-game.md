@@ -1,5 +1,5 @@
 ---
-title: "Add your first object"
+title: "Add Your First Object"
 order: 4
 description: Where you make the checkers module interesting
 tags:
@@ -7,7 +7,7 @@ tags:
   - cosmos-sdk
 ---
 
-# Add your first object
+# Add Your First Object
 
 After the [previous section](./2-build-module.md), you have a somewhat empty checkers module integrated in a minimal app. It is now time to:
 
