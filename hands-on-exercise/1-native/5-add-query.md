@@ -1,5 +1,5 @@
 ---
-title: "Add your first query"
+title: "Add Your First Query"
 order: 6
 description: Where you make it possible to retrieve a game
 tags:
@@ -7,7 +7,7 @@ tags:
   - cosmos-sdk
 ---
 
-# Add your first query
+# Add Your First Query
 
 In the [previous section](./4-add-message.md) you added a message that lets you create new games. However, other than dumping the full storage, you cannot retrieve them yet as there is no query type defined. This section fixes that. You will:
 
