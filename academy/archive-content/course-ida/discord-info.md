@@ -63,4 +63,4 @@ When you mark a message as a question, _Tricia_ might reply with one or more res
 
 ## Response time
 
-We will aim to answer your questions within a few hours. Our maximum response time is 24 hours. **Main support hours are between 8 AM UTC and 6 PM UTC.** We do not provide support during weekends.
+We will aim to answer your questions within a few hours. Our maximum response time is 24 hours. **Main support hours are between 8am UTC and 6pm UTC.** We do not provide support during weekends.

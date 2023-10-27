@@ -14,7 +14,7 @@ Follow this link: [Week 1 Quiz](https://hr.gs/ida-c4-week1-quiz), to submit a po
 
 <HighlightBox type="note">
 
-**We recommend you attempt the quiz as soon as you finish the week's material, or ideally before Thursday, November 16th, 11:59pm UTC.**
+**We recommend you attempt the quiz as soon as you finish the week's material, or ideally before Thursday, November 16th, 11:59 pm UTC.**
 <br/><br/>
 We highly recommend submitting the quiz as an opportunity to practice and demonstrate your engagement with the program.
 <br/><br/>

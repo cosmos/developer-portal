@@ -133,7 +133,7 @@ Please push your exercise solution to the [Week 2 Exercise repo](https://git.aca
 
 <HighlightBox type="note">
 
-**We recommend you attempt the exercise as soon as you finish the week's material, or ideally before Thursday, November 16th, 11:59pm UTC.**
+**We recommend you attempt the exercise as soon as you finish the week's material, or ideally before Thursday, November 16th, 11:59 pm UTC.**
 <br/><br/>
 Do not worry if you do not pass the exercise: it is simply meant to be an opportunity to practice and demonstrate your engagement with the program.
 
