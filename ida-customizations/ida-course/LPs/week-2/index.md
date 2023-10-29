@@ -34,11 +34,9 @@ In this chapter, you will:
 
 </HighlightBox>
 
-**This week, make sure to submit your exercise once you feel ready to test your knowledge.**
+**This week, make sure to submit Coding Exercise 1 once you feel ready to test your knowledge.**
 
-The exercise will be available until the Final Exam is launched on July 6th.
-
-Do not worry if you do not pass the exercise: it is simply meant to be an opportunity to practice and demonstrate your engagement with the program.
+The exercise will be available until the Final Exam period closes on February 1st, 2024, but it is recommended to attempt it immediately after completing the Week 2 content.
 
 <HighlightBox type="info">
 

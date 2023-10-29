@@ -50,9 +50,13 @@ This chapter covers quite a lot of content that goes very deep into the intricac
 * [IBC Token Transfer](/academy/3-ibc/7-token-transfer.md)
 * [IBC Tooling](/academy/3-ibc/12-ibc-tooling.md)
 
-The sections on [IBC/TAO connections, channels, and clients](/academy/3-ibc/2-connections.md), [Interchain accounts](/academy/3-ibc/8-ica.md), and [IBC middleware](/academy/3-ibc/9-ibc-mw-intro.md) are optional and **NOT** final exam relevant. They are made available only in case you want to dive deeper.
+The sections on [IBC/TAO connections, channels, and clients](/academy/3-ibc/2-connections.md), [interchain accounts](/academy/3-ibc/8-ica.md), and [IBC middleware](/academy/3-ibc/9-ibc-mw-intro.md) are optional and **NOT** final exam relevant. They are made available only in case you want to dive deeper.
 
 </HighlightBox>
+
+**This week, make sure to submit Coding Exercise 2 once you feel ready to test your knowledge.**
+
+The exercise will be available until the Final Exam period closes on February 1st, 2024, but it is recommended to attempt it immediately after completing the Week 3 content.
 
 ## Next up
 
