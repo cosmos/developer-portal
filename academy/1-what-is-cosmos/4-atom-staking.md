@@ -39,7 +39,7 @@ Open Google Chrome on your computer and go to the [Keplr extension page](https:/
 
 <HighlightBox type="warn">
 
-It is always good practice to be careful with links to wallet software because of the possibility of fraudulent software designed to steal from you. A link to the official Keplr extension can also be found on the [Interchain Ecosystem overview page](https://cosmos.network/ecosystem/wallets).
+It is always good practice to be careful with links to wallet software because of the possibility of fraudulent software designed to steal from you. A link to the official Keplr extension can also be found on the [interchain ecosystem overview page](https://cosmos.network/ecosystem/wallets).
 
 </HighlightBox>
 
@@ -79,7 +79,7 @@ A new page offers you a mnemonic (a secret sequence of words either 12 or 24 wor
 
 * Whoever knows this **mnemonic seed** has access to **all** the assets in the wallet as easily as you do. This means that:
     * Nobody else should be looking at your screen right now. If that is not the case, click _Back_.
-    * You should only ever share your mnemonic seed with parties you would also give access to your bank account. **Do not** share it with an exchange, a proof-of-stake validator, another blockchain service, or "someone from the Interchain" on the phone  - these are _not_ trusted partners.
+    * You should only ever share your mnemonic seed with parties you would also give access to your bank account. **Do not** share it with an exchange, a proof-of-stake validator, another blockchain service, or "someone from the interchain" on the phone  - these are _not_ trusted partners.
     * You should save the mnemonic seed in a safe place so that you can import it back into this or another wallet at a later date. **Make sure** you write it down somewhere safe.
 * Keplr saves your seed on disk but in an encrypted form.
 
@@ -141,7 +141,7 @@ For the purpose of this section, assume you buy one ATOM.
 
 <HighlightBox type="info">
 
-As you can see in the [Get ATOM and stake page](https://cosmos.network/learn/get-atom) from the Interchain, there is a [list of exchanges](https://messari.io/asset/cosmos/markets) that are known by the Interchain for offering ATOM tokens.
+As you can see in the [Get ATOM and stake page](https://cosmos.network/learn/get-atom) from the interchain, there is a [list of exchanges](https://messari.io/asset/cosmos/markets) that are known by the interchain for offering ATOM tokens.
 
 </HighlightBox>
 
@@ -233,7 +233,7 @@ Choose "Cosmos Hub". You are presented with a list of validators:
 
 ![Keplr: list of validators](/academy/1-what-is-cosmos/images/keplr-validator-list.png)
 
-You can immediately discard any validators that keep 100% of the rewards for themselves, as they work for custodial wallets kept on behalf of their customers. Pick a validator that you like, click _Manage_, and a link will direct you to more information on this validator. You can see more information on each validator on [Mintscan's validator list for the Interchain](https://www.mintscan.io/cosmos/validators). Pay attention to the uptime, as a missed block would cost you penalties.
+You can immediately discard any validators that keep 100% of the rewards for themselves, as they work for custodial wallets kept on behalf of their customers. Pick a validator that you like, click _Manage_, and a link will direct you to more information on this validator. You can see more information on each validator on [Mintscan's validator list for the interchain](https://www.mintscan.io/cosmos/validators). Pay attention to the uptime, as a missed block would cost you penalties.
 
 A validator can have small or large voting power. The larger the voting power, the more often the validator is tasked with issuing a block. Voting power is closely linked to the reward amount you can expect:
 
@@ -302,7 +302,7 @@ Your rewards are added straight to your wallet:
 
 If you want to re-stake this claimed amount and benefit from the compound effect, go ahead but make sure you do not lose too much in transaction costs.
 
-This completes the exercise: you are set up to participate in the Cosmos Hub network, and even contribute to its security. Your stake will work for you as you continue your Interchain training journey.
+This completes the exercise: you are set up to participate in the Cosmos Hub network, and even contribute to its security. Your stake will work for you as you continue your interchain training journey.
 
 If another interchain project interests you, you can do the same on it to give it material support.
 

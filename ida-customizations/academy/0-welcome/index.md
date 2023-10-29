@@ -8,7 +8,7 @@ intro:
     image: /graphics-sdk-course.png
     description: |
       Welcome to the Interchain Developer Academy!<br/><br/>
-      Over the next seven weeks, you will dive deep into the Interchain Ecosystem. Let's get started!
+      Over the next seven weeks, you will dive deep into the interchain ecosystem. Let's get started!
     action:
       label: Start learning!
       url: /ida-course/LPs/week-0/
@@ -23,7 +23,7 @@ overview:
         Results available: August 18th, 2023<br/><br/>
     - title: What you will learn
       description: |
-        Over the next seven weeks, you will dive deep into the Interchain Ecosystem, starting with a high-level introduction to familiarize yourself with the main concepts. Next, you will put theory into practice by learning how to initiate and build an application-specific blockchain using the Cosmos SDK; how to use the Ignite CLI to scaffold modules for your blockchain; and how to connect a chain with other chains using the Inter-Blockchain Communication Protocol. You will learn how to build frontend and backend applications using CosmJS, operate nodes and validate on a Cosmos blockchain, and run a relaying infrastructure between IBC-connected chains.
+        Over the next seven weeks, you will dive deep into the interchain ecosystem, starting with a high-level introduction to familiarize yourself with the main concepts. Next, you will put theory into practice by learning how to initiate and build an application-specific blockchain using the Cosmos SDK; how to use the Ignite CLI to scaffold modules for your blockchain; and how to connect a chain with other chains using the Inter-Blockchain Communication Protocol. You will learn how to build frontend and backend applications using CosmJS, operate nodes and validate on a Cosmos blockchain, and run a relaying infrastructure between IBC-connected chains.
     - title: How to get the most out of the Academy
       description: |
           The Academy is self-paced and flexible, so you do not have to be online at particular times. You can follow the weekly plan or go through the learning material at your own pace. We recommend allocating about 10 to 15 hours a week to get through all the material.<br/><br/>
@@ -43,7 +43,7 @@ overview:
     - title: What support will I get in the Academy?
       description: |
         We have set up a private Discord for the Academy for all teaching and ongoing communication. You can reach out to your instructors anytime for support. We encourage you to proactively collaborate with other participants in your cohort and with your instructors. Ask questions, request feedback, and seek help if you are stuck! That way, you will get the most out of the Academy.<br/><br/>
-        We aim to answer your questions within a few hours. Our maximum response time is 24 hours. Main support hours are on weekdays between 6 AM UTC and 4 PM UTC. We do not provide support during the weekends.<br/><br/>
+        We aim to answer your questions within a few hours. Our maximum response time is 24 hours. Main support hours are on weekdays between 6 am UTC and 4 pm UTC. We do not provide support during the weekends.<br/><br/>
         Click <a href="/ida-course/discord-info.html">here</a> to learn how to join and use Discord.<br/><br/>
         You will get detailed information on how to join and use Discord via email.
     - title: How do I access Discord?
@@ -70,7 +70,7 @@ customModules:
       title: Week 0 -   Getting Started
       href: /ida-course/LPs/week-0/
       description: |
-        This chapter is completely optional and a good introduction if you are new to blockchain technology or need a refresher on Golang and a short overview of dev terms you will encounter when working with the Interchain:
+        This chapter is completely optional and a good introduction if you are new to blockchain technology or need a refresher on Golang and a short overview of dev terms you will encounter when working with the interchain:
       links:
         - title: Blockchain basics
           path: /ida-course/0-blockchain-basics/1-blockchain.html
@@ -84,7 +84,7 @@ customModules:
       title: Week 1 - Introduction to the Interchain
       href: /ida-course/LPs/week-1/
       description: |
-        You will discover the Interchain ecosystem and learn about the main concepts of the Cosmos SDK, from its Tendermint consensus to learning how keys, accounts, and transactions relate to each other. Dive into:
+        You will discover the interchain ecosystem and learn about the main concepts of the Cosmos SDK, from its Tendermint consensus to learning how keys, accounts, and transactions relate to each other. Dive into:
       links:
         - title: Blockchain technology and the Interchain
           path: /academy/1-what-is-cosmos/1-blockchain-and-cosmos.html
