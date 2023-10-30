@@ -13,7 +13,7 @@ Are you ready to continue your journey with the interchain? What’s next? <br/>
 Do you want to develop your own application-specific blockchain? Or contribute to development of the Cosmos SDK? <br/><br/>
 Here you can find useful information to launch your journey into the interchain universe.
 
-![A green planet overlaid with an isohedron](/green-planet.svg)
+![A green planet overlaid with an isohedron](/lp-images/green-planet.svg)
 
 ## Community
 

@@ -69,7 +69,7 @@ After you post your message, the Support Gem will analyze the question and poten
 Before and after a query has been answered, you and other participants are free to continue to post in-thread to discuss the subject. However, Support Gem will only respond to the original post of any given thread. Members of the support team may also respond directly in the event that additional information is required.
 -->
 
-After you post your message, the support team will be notified by our chatbot, **Support Gem**. They will analyze the question and potentially request additional details, then compose a response which Support Gem posts as a reply to the original query. The reply will note which member of the support team handled the query.
+After you post your message, the support team will be notified by our chatbot, **Tricia**. They will analyze the question and potentially request additional details, then compose a response which Tricia posts as a reply to the original query. The reply will note which member of the support team handled the query.
 
 Before and after a query has been answered, you and other participants are free to continue to post in-thread to discuss the subject. Members of the support team may also respond directly in the event that additional information is required - feel free to ask follow-up questions!
 

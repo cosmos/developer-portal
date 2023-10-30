@@ -13,7 +13,7 @@ tags:
 
 After having developed your chain, now you will take the next step to move your chain into production.
 
-![Several planets around a star](/lp-images/go-lp.svg)
+![Sphere inside honeycomb](/ida_dev_portal_lp_hero-07.png)
 
 ## In this chapter
 

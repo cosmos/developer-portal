@@ -13,7 +13,7 @@ tags:
 
 After having developed your chain, now you will take the next step to move your chain to a proof-of-concept and into production.
 
-![Several planets around a star](/lp-images/universe.svg)
+![Sphere inside honeycomb](/universe.png)
 
 ## In this chapter
 

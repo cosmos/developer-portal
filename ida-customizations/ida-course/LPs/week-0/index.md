@@ -35,7 +35,7 @@ However, blockchains created using the Cosmos SDK are typically referred to as "
 
 </HighlightBox>
 
-![LP image - Week 0](/planets-large.svg)
+![Glowing honeycomb](/ida_dev_portal_lp_hero-05.png)
 
 ## In this chapter
 

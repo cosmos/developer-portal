@@ -46,7 +46,7 @@ overview:
     - title: How do I access Discord?
       description: |
         Follow these two steps to join the private Academy channels on Discord:<br/><br/>
-        1. Join the official Cosmos Discord by clicking <a href="https://discord.gg/cosmosnetwork">here</a>.Follow the verification process. It is straightforward but if you need guidance, read <a href="https://medium.com/@alicemeowuk/cosmos-developers-discord-access-7c15951cc839">this article</a>.<br/><br/>
+        1. Join the official Cosmos Discord by clicking <a href="https://discord.gg/cosmosnetwork">here</a>. Follow the verification process. It is straightforward but if you need guidance, read <a href="https://medium.com/@alicemeowuk/cosmos-developers-discord-access-7c15951cc839">this article</a>.<br/><br/>
         2. After joining the Discord server, go <a href="https://academy.interchain.io/onboarding/?token=%7B$b9_uuid%7D">here</a> and enter your Discord ID. You will automatically be added to the Discord area for participants called "Interchain Developer Academy".<br/><br/>
         If you have any problems, email us at <a href="mailto:academy@interchain.io">academy@interchain.io</a>.<br/><br/>
         We have put together a <a href="/ida-course/discord-info.html">quick guide</a> explaining how to best communicate on Discord.
@@ -63,7 +63,7 @@ customModules:
     description: |
       The Academy runs for seven weeks. You can follow the weekly structure or decide to go your individual path - just make sure to be ready for the Final Exam at the end of the program.
     sections:
-      - image: /cosmos_dev_portal_module-02-lp.png
+      - image: /lp-images/ida_dev_portal_lp_hero-05.png
         title: Week 0 - Getting Started
         href: /ida-course/LPs/week-0/
         description: |
@@ -117,7 +117,7 @@ customModules:
       #       path: /academy/2-cosmos-concepts/16-migrations.html
       #     - title: Exam Quiz
       #       path: /academy/quiz-week1.html
-      # - image: /cosmos_dev_portal_module-05-lp.png
+      # - image: /lp-images/ida_dev_portal_lp_hero-02.png
       #   title: Week 2 - First Steps
       #   href: /ida-course/LPs/week-2/
       #   description: |
@@ -145,7 +145,7 @@ customModules:
       #       path: /hands-on-exercise/1-ignite-cli/8-game-winner.html
       #     - title: Coding Exercise 1
       #       path: /academy/exercise-week2.html
-      # - image: /planet-pod.svg
+      # - image: /lp-images/ida_dev_portal_lp_hero-09.png
       #   title: Week 3 - IBC and CosmJS
       #   href: /ida-course/LPs/week-3/
       #   description: |
@@ -175,7 +175,7 @@ customModules:
       #       path: /tutorials/7-cosmjs/5-create-custom.html
       #     - title: Coding Exercise 2
       #       path: /academy/exercise-week3.html
-      # - image: /planet-collection.svg
+      # - image: /lp-images/ida_dev_portal_lp_hero-04-b.png
       #   title: Week 4 - Ignite CLI Advanced and IBC Advanced
       #   href: /ida-course/LPs/week-4/
       #   description: |
@@ -209,7 +209,7 @@ customModules:
       #       path: /hands-on-exercise/5-ibc-adv/2-hermes-relayer.html
       #     - title: Coding Exercise 3
       #       path: /academy/exercise-week4.html
-      # - image: /cosmos_dev_portal_module-04-lp.png
+      # - image: /lp-images/ida_dev_portal_lp_hero-03.png
       #   title: Week 5 - CosmJS Advanced
       #   href: /ida-course/LPs/week-5/
       #   description: |
@@ -227,7 +227,7 @@ customModules:
       #       path: /hands-on-exercise/3-cosmjs-adv/5-server-side.html
       #     - title: Coding Exercise 4
       #       path: /academy/exercise-week5.html
-      # - image: /moving-objects.svg
+      # - image: /lp-images/moving-objects.svg
       #   title: Week 6 - IBC Deep Dive
       #   href: /ida-course/LPs/week-6/
       #   description: |
@@ -245,7 +245,7 @@ customModules:
       #       path: /hands-on-exercise/5-ibc-adv/79-ibc-app-leaderboard.html
       #     - title: IBC Operation Exercise
       #       path: /academy/exercise-week6.html
-      # - image: /universe.svg
+      # - image: /lp-images/ida_dev_portal_lp_hero-07.png
       #   title: Week 7 - From Code to MVP to Production and Migrations
       #   href: /ida-course/LPs/week-7/
       #   description: |

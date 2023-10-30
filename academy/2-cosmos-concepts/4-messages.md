@@ -322,6 +322,7 @@ What would happen if a player stops taking turns? To ensure functionality for yo
 
 In general terms, you could add `timeout: Timestamp` to your `StoredGame` and update it every time something changes in the game. You can decide on a maximum delay, for example _one day_.
 <br/>
+
 <HighlightBox type="info">
 
 There are no _open_ challenges, meaning a player cannot create a game where the second player is unknown until someone steps in. Therefore, player matching is left outside of the blockchain. The enterprising student can incorporate it inside the blockchain by changing the necessary models.
