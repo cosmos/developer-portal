@@ -9,6 +9,7 @@
   },
   "scripts": {
     "serve": "vuepress dev --no-cache",
+    "serve-legacy": "NODE_OPTIONS=--openssl-legacy-provider npm run serve",
     "build": "vuepress build --no-cache",
     "switch-ida": "make fs-activate-ida-files",
     "switch-main": "make fs-restore-main-files",
@@ -79,6 +80,10 @@
     "npm": ">=7"
   },
   "check-md": {
-    "root": ["./", "./.vuepress/public", "./ida-customizations"]
+    "root": [
+      "./",
+      "./.vuepress/public",
+      "./ida-customizations"
+    ]
   }
 }
