@@ -254,11 +254,11 @@ There are no _open_ challenges, meaning a player cannot create a game where the 
 
 <HighlightBox type="tip">
 
-If you would like to get started on building your own checkers game, you can go straight to the main exercise in Run Your Own Cosmos Chain, either [natively with SDK v0.50](/hands-on-exercise/1-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
+If you would like to get started on building your own checkers game, you can go straight to the main exercise in Run Your Own Cosmos Chain, either [natively with SDK v0.50](/hands-on-exercise/0-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
 
 More specifically, you can jump to:
 
-* [Create one Custom Message](/hands-on-exercise/1-native/4-add-message.md) to see how to simply create and handle a `MsgCreateGame` message natively with SDK v0.50.
+* [Create one Custom Message](/hands-on-exercise/0-native/4-add-message.md) to see how to simply create and handle a `MsgCreateGame` message natively with SDK v0.50.
 * [Create Custom Messages](/hands-on-exercise/1-ignite-cli/4-create-message.md) to see how to simply create the `MsgCreateGame` with Ignite CLI.
 * [Create and Save a Game Properly](/hands-on-exercise/1-ignite-cli/5-create-handling.md) to see how to handle `MsgCreateGame` created with Ignite CLI.
 * [Add a Way to Make a Move](/hands-on-exercise/1-ignite-cli/6-play-game.md) for the same but with `MsgPlayMove`, still with Ignite CLI.

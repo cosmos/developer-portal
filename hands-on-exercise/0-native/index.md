@@ -17,7 +17,7 @@ Begin with an introduction to the Cosmos SDK v0.50 and the first steps to buildi
 
 In the following chapters, you will learn how to implement a checkers game blockchain with all the different aspects this can entail.
 
-![Ones and zeroes around an atom](/hands-on-exercise/1-native/images/cosmos_dev_portal_module-04-lp.png)
+![Ones and zeroes around an atom](/hands-on-exercise/0-native/images/cosmos_dev_portal_module-04-lp.png)
 
 ## In this chapter
 

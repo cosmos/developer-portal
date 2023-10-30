@@ -432,7 +432,7 @@ You now have:
 
 The previous expandable is meant as a design exercise. If you want to go from the design phase to the **implementation** phase, head to one (or both) of the following hands-on exercises:
 
-1. [SDK v0.50 Native](/hands-on-exercise/1-native/index.md), which is a short exercise to partially build your own checkers chain without the help of external tools, using SDK v0.50.
+1. [SDK v0.50 Native](/hands-on-exercise/0-native/index.md), which is a short exercise to partially build your own checkers chain without the help of external tools, using SDK v0.50.
 2. [Rebuild Your Cosmos Chain With Ignite](/hands-on-exercise/1-ignite-cli/index.md), which is a completely separate exercise, using Ignite CLI and an older version of the Cosmos SDK to start from scratch.
 <br/><br/>
 Relevant to this section on ABCI is the [Auto-Expiring Games](/hands-on-exercise/2-ignite-cli-adv/4-game-forfeit.md) section, where you use the Cosmos SDK to implement expiration in `EndBlock`. Be warned that this is an advanced section of the hands-on-exercise.

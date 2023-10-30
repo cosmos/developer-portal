@@ -170,11 +170,11 @@ This is not an exhaustive list of potential queries. Some examples of other poss
 
 <HighlightBox type="tip">
 
-If you would like to get started on building your own checkers game you can go straight to the main exercise in Run Your Own Cosmos Chain, either [natively with SDK v0.50](/hands-on-exercise/1-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
+If you would like to get started on building your own checkers game you can go straight to the main exercise in Run Your Own Cosmos Chain, either [natively with SDK v0.50](/hands-on-exercise/0-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
 <br/><br/>
 More precisely, you can jump to:
 
-* [Add a query from scratch](/hands-on-exercise/1-native/5-add-query.md) natively in Cosmos SDK v0.50.
+* [Add a query from scratch](/hands-on-exercise/0-native/5-add-query.md) natively in Cosmos SDK v0.50.
 * [Help Find a Correct Move](/hands-on-exercise/2-ignite-cli-adv/9-can-play.md) to see how to implement a query with the help of Ignite CLI.
 
 </HighlightBox>

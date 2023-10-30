@@ -170,13 +170,13 @@ $ ignite scaffold message createGame \
 
 <HighlightBox type="tip">
 
-If you would like to get started on building your own checkers game you can go straight to the main exercise in Run Your Own Cosmos Chain, either [natively with SDK v0.50](/hands-on-exercise/1-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
+If you would like to get started on building your own checkers game you can go straight to the main exercise in Run Your Own Cosmos Chain, either [natively with SDK v0.50](/hands-on-exercise/0-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
 <br/><br/>
 More specifically, you can jump to:
 
-* [Add your first object](/hands-on-exercise/1-native/3-add-game.md) to create the Protobuf of a store object natively in Cosmos SDK v0.50.
-* [Add your first message](/hands-on-exercise/1-native/4-add-message.md) to create the Protobuf of a transaction message natively in Cosmos SDK v0.50.
-* [Add your first query](/hands-on-exercise/1-native/5-add-query.md) to create the Protobuf of a query natively in Cosmos SDK v0.50.
+* [Add your first object](/hands-on-exercise/0-native/3-add-game.md) to create the Protobuf of a store object natively in Cosmos SDK v0.50.
+* [Add your first message](/hands-on-exercise/0-native/4-add-message.md) to create the Protobuf of a transaction message natively in Cosmos SDK v0.50.
+* [Add your first query](/hands-on-exercise/0-native/5-add-query.md) to create the Protobuf of a query natively in Cosmos SDK v0.50.
 * [Store Object - Make a Checkers Blockchain](/hands-on-exercise/1-ignite-cli/3-stored-game.md) to have Ignite CLI create your first Protobuf object.
 * [Create Custom Messages](/hands-on-exercise/1-ignite-cli/4-create-message.md) to have Ignite CLI create another Protobuf object, this time for messaging. You also get a walk-through of the services created.
 

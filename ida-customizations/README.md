@@ -128,15 +128,15 @@ customModules:
       #     - title: Run a node, API, and CLI
       #       path: /tutorials/3-run-node/
       #     - title: SDK v0.50 native preparation
-      #       path: /hands-on-exercise/1-native/1-preparation.html
+      #       path: /hands-on-exercise/0-native/1-preparation.html
       #     - title: Build your v0.50 module
-      #       path: /hands-on-exercise/1-native/2-build-module.html
+      #       path: /hands-on-exercise/0-native/2-build-module.html
       #     - title: Add your first object
-      #       path: /hands-on-exercise/1-native/3-add-game.html
+      #       path: /hands-on-exercise/0-native/3-add-game.html
       #     - title: Add your first message
-      #       path: /hands-on-exercise/1-native/4-add-message.html
+      #       path: /hands-on-exercise/0-native/4-add-message.html
       #     - title: Add your first query
-      #       path: /hands-on-exercise/1-native/5-add-query.html
+      #       path: /hands-on-exercise/0-native/5-add-query.html
       #     - title: Introduction to Ignite CLI
       #       path: /hands-on-exercise/1-ignite-cli/1-ignitecli.html
       #     - title: Exercise - Make a Checkers Blockchain

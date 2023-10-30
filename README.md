@@ -295,20 +295,20 @@ customModules:
     sections:
       - image: /lp-images/cosmos_dev_portal_module-04-lp.png
         title: SDK v0.50 Native
-        href: /hands-on-exercise/1-native/
+        href: /hands-on-exercise/0-native/
         description: |
           Do the minimum to develop a checkers blockchain natively with Cosmos SDK v0.50:
         links:
           - title: Preparation
-            path: /hands-on-exercise/1-native/1-preparation.html
+            path: /hands-on-exercise/0-native/1-preparation.html
           - title: Build your module
-            path: /hands-on-exercise/1-native/2-build-module.html
+            path: /hands-on-exercise/0-native/2-build-module.html
           - title: Add your first object
-            path: /hands-on-exercise/1-native/3-add-game.html
+            path: /hands-on-exercise/0-native/3-add-game.html
           - title: Add your first message
-            path: /hands-on-exercise/1-native/4-add-message.html
+            path: /hands-on-exercise/0-native/4-add-message.html
           - title: Add your first query
-            path: /hands-on-exercise/1-native/5-add-query.html
+            path: /hands-on-exercise/0-native/5-add-query.html
       - image: /lp-images/cosmos_dev_portal_module-05-lp.png
         title: Ignite CLI - Basics
         href: /hands-on-exercise/1-ignite-cli/

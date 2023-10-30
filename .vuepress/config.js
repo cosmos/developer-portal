@@ -149,7 +149,7 @@ module.exports = {
           children: [
             {
               title: "SDK v0.50 Native",
-              path: "/hands-on-exercise/1-native/",
+              path: "/hands-on-exercise/0-native/",
               directory: true,
             },
             {
