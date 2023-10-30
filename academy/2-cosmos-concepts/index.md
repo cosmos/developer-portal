@@ -22,7 +22,7 @@ Do you have a preferred **learning style**? For instance:
 * Do you like to throw some code at your IDE and some commands at your CLI immediately, and only afterward learn about what you did? If yes, for each concept of this chapter, jump to the bottom of the page where you will find links to the exercises, then come back and read about the concept.
 * _Another_ way of learning? You get the idea. All the material is ready and waiting, so there is probably a way for you to accommodate it to your needs.
 
-![shape with planets](/academy/2-cosmos-concepts/images/cosmos_dev_portal_module-03-lp.png)
+![shape with planets](/cosmos_dev_portal_module-03-lp.png)
 
 ## In this chapter
 

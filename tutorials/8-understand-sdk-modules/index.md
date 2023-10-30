@@ -13,7 +13,7 @@ tags:
 
 In the following pages, explore some of the Cosmos SDK modules in more detail. This gives you good practice when it comes to working with modules.
 
-![Sphere over honeycomb](/planet-pod.svg)
+![Glowing honeycomb](/ida_dev_portal_lp_hero-06.png)
 
 ## In this chapter
 

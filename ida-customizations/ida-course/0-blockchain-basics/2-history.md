@@ -54,7 +54,7 @@ Given its anti-establishment roots, blockchain technology has been seized upon b
 
 </ExpansionPanel>
 
-![Historic timeline of blockchain technology](/ida-course/0-blockchain-basics/images/timeline.png)
+![Historic timeline of blockchain technology](/academy/1-what-is-cosmos/images/timeline.png)
 
 ## 2010s
 

@@ -66,7 +66,7 @@ customModules:
   description: |
     The Academy runs for seven weeks. You can follow the weekly structure or decide to go your individual path - just make sure to be ready for the Final Exam at the end of the program.
   sections:
-    - image: /cosmos_dev_portal_module-02-lp.png
+    - image: /lp-images/ida_dev_portal_lp_hero-05.png
       title: Week 0 -   Getting Started
       href: /ida-course/LPs/week-0/
       description: |
@@ -110,7 +110,7 @@ customModules:
           path: /academy/2-cosmos-concepts/12-migrations.html
         - title: Bridges
           path: /academy/2-cosmos-concepts/13-bridges.html
-    - image: /cosmos_dev_portal_module-05-lp.png
+    - image: /lp-images/ida_dev_portal_lp_hero-02.png
       title: Week 2 - First Steps
       href: /ida-course/LPs/week-2/
       description: |
@@ -124,7 +124,7 @@ customModules:
           path: /hands-on-exercise/1-ignite-cli/1-ignitecli.html
         - title: First steps for your checkers blockchain
           path: /hands-on-exercise/1-ignite-cli/2-exercise-intro.html
-    - image: /planet-pod.svg
+    - image: /lp-images/ida_dev_portal_lp_hero-09.png
       title: Week 3 - IBC and CosmJS
       href: /ida-course/LPs/week-3/
       description: |
@@ -152,7 +152,7 @@ customModules:
           path: tutorials/6-comsjs/3-with-keplr.html
         - title: Create custom CosmJS interfaces
           path: tutorials/6-comsjs/4-create-custom.html
-    - image: /planet-collection.svg
+    - image: /lp-images/ida_dev_portal_lp_hero-04-b.png
       title: Week 4 - Ignite CLI and IBC
       href: /ida-course/LPs/week-4/
       description: |
@@ -182,7 +182,7 @@ customModules:
           path: /hands-on-exercise/2-ignite-cli-adv/8-wager-denom.html
         - title: Work with IBC relayers
           path: /hands-on-exercise/5-ibc-adv/2-relayer-intro.html
-    - image: /cosmos_dev_portal_module-04-lp.png
+    - image: /lp-images/ida_dev_portal_lp_hero-08.png
       title: Week 5 - CosmJS Advanced
       href: /ida-course/LPs/week-5/
       description: |
@@ -200,7 +200,7 @@ customModules:
           path: hands-on-exercise/3-cosmjs/5-server-side.html
         - title: Introducing a leaderboard after production
           path: hands-on-exercise/3-cosmjs/6-migration.html
-    - image: /moving-objects.svg
+    - image: /lp-images/moving-objects.svg
       title: Week 6 - IBC Deep Dive
       href: /ida-course/LPs/week-6/
       description: |
@@ -222,7 +222,7 @@ customModules:
           path: /hands-on-exercise/4-ibc-dev/11-ibc-mw-develop.html
         - title: Integrating IBC middleware into a chain - OPTIONAL
           path: /hands-on-exercise/4-ibc-dev/12-ibc-mw-integrate.html
-    - image: /universe.png
+    - image: /lp-images/universe.png
       title: Week 7 - Run in Production
       href: /ida-course/LPs/week-7/
       description: |
