@@ -35,6 +35,10 @@ Following the hands-on exercises, you will discover how IBC denoms work and get 
 
 </HighlightBox>
 
+**This week, make sure to submit Coding Exercise 3 once you feel ready to test your knowledge.**
+
+The exercise will be available until the Final Exam period closes on February 1st, 2024, but it is recommended to attempt it immediately after completing the Week 4 content.
+
 ## Next up
 
 In this chapter, continue working on your checkers blockchain by first [putting your games in order](/hands-on-exercise/2-ignite-cli-adv/3-game-fifo.md), then [introducing a game deadline](/hands-on-exercise/2-ignite-cli-adv/1-game-deadline.md), [recording a game winner](/hands-on-exercise/1-ignite-cli/8-game-winner.md), and some other important aspects to develop your checkers blockchain.

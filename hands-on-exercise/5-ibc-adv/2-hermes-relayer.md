@@ -67,7 +67,7 @@ SUBCOMMANDS:
     clear           Clear objects, such as outstanding packets on a channel
     config          Validate Hermes configuration file
     create          Create objects (client, connection, or channel) on chains
-    health-check    Performs a health check of all chains in the the config
+    health-check    Performs a health check of all chains in the config
     help            Print this message or the help of the given subcommand(s)
     keys            Manage keys in the relayer for each chain
     listen          Listen to and display IBC events emitted by a chain
@@ -434,4 +434,4 @@ To summarize, this section has explored:
 
 <!--## Next up
 
-With this introduction to the Hermes relayer, you are all set for relaying. In the [next section](/academy/3-ibc/7-ibc-tooling.md), you can find an overview of helpful tools for IBC.-->
+With this introduction to the Hermes relayer, you are all set for relaying. In the [next section](/academy/3-ibc/12-ibc-tooling.md), you can find an overview of helpful tools for IBC.-->

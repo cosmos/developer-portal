@@ -90,10 +90,8 @@ If you want to dive deeper when it comes to messages, the `Msg` service, and mod
 <ExpansionPanel title="Show me some code for my checkers blockchain - Including messages">
 
 In the [previous](./3-transactions.md) design exercise's code examples, the ABCI application was aware of a single transaction type: that of a checkers move with four `int` values. With multiple games, this is no longer sufficient. Additionally, you need to conform to the SDK's way of handling `Tx`, which means **creating messages that are then included in a transaction**.
-<br/>
 
 If you want the guided coding exercise instead of design and implementation considerations, see the links at the bottom of the page.
-
 <br/><br/>
 **What you need**
 
@@ -323,7 +321,7 @@ What would happen if a player stops taking turns? To ensure functionality for yo
 * Handling the cancelation in ABCI's `EndBlock` (or rather its equivalent in the Cosmos SDK) without any of the players having to trigger the cancelation. For the guided coding exercise on this part, head straight to [Auto-Expiring Games](/hands-on-exercise/2-ignite-cli-adv/4-game-forfeit.md).
 
 In general terms, you could add `timeout: Timestamp` to your `StoredGame` and update it every time something changes in the game. You can decide on a maximum delay, for example _one day_.
-
+<br/>
 <HighlightBox type="info">
 
 There are no _open_ challenges, meaning a player cannot create a game where the second player is unknown until someone steps in. Therefore, player matching is left outside of the blockchain. The enterprising student can incorporate it inside the blockchain by changing the necessary models.

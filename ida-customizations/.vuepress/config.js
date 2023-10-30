@@ -98,11 +98,11 @@ module.exports = {
                 },
                 {
                   title: "Blockchain History",
-                  path: "/ida-course/0-blockchain-basics/2-public.html",
+                  path: "/ida-course/0-blockchain-basics/2-history.html",
                 },
                 {
                   title: "Public and Managed Blockchains",
-                  path: "/ida-course/0-blockchain-basics/3-managed.html",
+                  path: "/ida-course/0-blockchain-basics/3-deployment-patterns.html",
                 },
                 {
                   title: "Consensus in Distributed Networks",
@@ -154,7 +154,7 @@ module.exports = {
                 },
               ],
             },
-            {
+/*            {
               title: "Week 1 - Introduction to the Interchain",
               directory: true,
               order: 2,
@@ -173,7 +173,7 @@ module.exports = {
                 },
                 {
                   title: "Getting ATOM and Staking It",
-                  path: "/academy/1-what-is-cosmos/3-atom-staking.html",
+                  path: "/academy/1-what-is-cosmos/4-atom-staking.html",
                 },
                 {
                   title: "A Blockchain App Architecture",
@@ -564,7 +564,7 @@ module.exports = {
               directory: true,
               order: 9,
               path: "/academy/whats-next/",
-            },
+            },*/
           ],
         },
       ],

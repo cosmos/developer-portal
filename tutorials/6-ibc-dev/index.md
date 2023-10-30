@@ -390,9 +390,7 @@ For example, you can verify the IBC client status using the query:
 $ gaiad query block 5901208 --node https://rpc.cosmos.network:443
 ```
 
-## 🎉Congratulations!🎉
-
-You have made it all the way through this tutorial and will now be unfazed when encountering an IBC denom in the wild!
+You should now be comfortable when working with IBC denoms in a practical context.
 
 <HighlightBox type="synopsis">
 

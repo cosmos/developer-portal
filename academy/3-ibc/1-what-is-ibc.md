@@ -11,7 +11,7 @@ tags:
 
 <HighlightBox type="learning">
 
-Inter-Blockchain Communication Protocol solves for communication between blockchains, which is particularly important in the Interchain universe.
+Inter-Blockchain Communication Protocol solves for communication between blockchains, which is particularly important in the interchain universe.
 <br/><br/>
 In this section, you will learn:
 
@@ -21,35 +21,35 @@ In this section, you will learn:
 
 </HighlightBox>
 
-The **[Inter-Blockchain Communication Protocol (IBC)](https://ibcprotocol.org/)** is _a protocol to handle authentication and transport of data between two blockchains_. IBC **requires a minimal set of functions**, specified in the [Interchain Standards (ICS)](https://github.com/cosmos/ibc/tree/master/spec/ics-001-ics-standard). Notice that those specifications do not limit the network topology or consensus algorithm, so IBC can be used with a wide range of blockchains or state machines. The IBC protocol provides a permissionless way for relaying data packets between blockchains, unlike most trusted bridging technologies. The security of IBC reduces to the security of the participating chains.
+The **[Inter-Blockchain Communication Protocol (IBC)](https://ibcprotocol.org/)** is _a protocol to handle authentication and transport of data between two blockchains_. IBC **requires a minimal set of functions**, specified in the [interchain standards (ICS)](https://github.com/cosmos/ibc/tree/master/spec/ics-001-ics-standard). Notice that those specifications do not limit the network topology or consensus algorithm, so IBC can be used with a wide range of blockchains or state machines. The IBC protocol provides a permissionless way for relaying data packets between blockchains, unlike most trusted bridging technologies. The security of IBC reduces to the security of the participating chains.
 
 IBC solves a widespread problem: cross-chain communication. This problem exists on public blockchains when exchanges wish to perform swaps. The problem arises early in the case of application-specific blockchains, where every asset is likely to emerge from its own purpose-built chain. Cross-chain communication is also a challenge in the world of private blockchains, in cases where communication with a public chain or other private chains is desirable. There are already IBC implementations for private blockchains [such as Hyperledger Fabric and Corda](https://www.hyperledger.org/blog/2021/06/09/meet-yui-one-the-new-hyperledger-labs-projects-taking-on-cross-chain-and-off-chain-operations).
 
-Cross-chain communication between application-specific blockchains in the Interchain creates the potential for high horizontal scaleability with transaction finality. These design features provide convincing solutions to well-known problems that plague other platforms, such as transaction costs, network capacity, and transaction confirmation finality.
+Cross-chain communication between application-specific blockchains in the interchain creates the potential for high horizontal scaleability with transaction finality. These design features provide convincing solutions to well-known problems that plague other platforms, such as transaction costs, network capacity, and transaction confirmation finality.
 
 ## Internet of blockchains
 
-IBC is essential for application-specific blockchains like the ones in the Interchain network. It offers a standard communication channel for applications on two different chains that need to communicate with each other.
+IBC is essential for application-specific blockchains like the ones in the interchain network. It offers a standard communication channel for applications on two different chains that need to communicate with each other.
 
 <!-- @Cit: include relative link to Interchain Security content -->
 
-Most Interchain applications execute on their own purpose-built blockchain running their own validator set (at least before the introduction of [Interchain Security](https://informal.systems/2022/05/09/building-with-interchain-security)). These are the application-specific blockchains built with the Cosmos SDK. Applications on one chain may need to communicate with applications on another blockchain, for example, an application could accept tokens from another blockchain as a form of payment. Interoperability at this level calls for a method of exchanging data about the state or the transactions on another blockchain.
+Most interchain applications execute on their own purpose-built blockchain running their own validator set (at least before the introduction of [Interchain Security](https://informal.systems/2022/05/09/building-with-interchain-security)). These are the application-specific blockchains built with the Cosmos SDK. Applications on one chain may need to communicate with applications on another blockchain, for example, an application could accept tokens from another blockchain as a form of payment. Interoperability at this level calls for a method of exchanging data about the state or the transactions on another blockchain.
 
 While such bridges between blockchains can be built and do exist, they are generally constructed ad-hoc. IBC provides chains with a common protocol and framework for implementing standardized inter-blockchain communication. For chains built with the Cosmos SDK, this comes out of the box, but the IBC protocol is not limited to chains built with the Interchain Stack.
 
 <HighlightBox type="info">
 
-More details on the specifications will follow in the next section, but notice that IBC is not limited to Cosmos blockchains. Solutions can even be found for cases where some requirements are not initially met. For example, IBC was already providing connectivity between the Interchain and the Ethereum blockchain before "the Merge", which saw Ethereum migrate from a Proof-of-Work (PoW) model to Proof-of-Stake (PoS).
+More details on the specifications will follow in the next section, but notice that IBC is not limited to Cosmos blockchains. Solutions can even be found for cases where some requirements are not initially met. For example, IBC was already providing connectivity between the interchain and the Ethereum blockchain before "the Merge", which saw Ethereum migrate from a Proof-of-Work (PoW) model to Proof-of-Stake (PoS).
 <br/><br/>
 As a PoW consensus algorithm does not ensure finality, one of the main requirements to use IBC is not met. Therefore, compatibility with Ethereum was enabled by creating a peg-zone where probabilistic finality is considered deterministic (irreversible) after a given threshold of block confirmations. This solution can serve any IBC connection to a PoW blockchain.
 
 </HighlightBox>
 
-Although application-specific blockchains offer superior (horizontal) scalability compared to general-purpose blockchain platforms, smart contract development for general-purpose chains and generic virtual machines (VMs) like in Ethereum offer their own benefits. IBC provides a method of incorporating the strengths of general-purpose and application-specific blockchains into unified overall designs. For example, it allows a Cosmos chain tailored towards performance and scalability to use funds that originate on Ethereum and possibly record events in a Corda distributed ledger; or, in the reverse, a Corda ledger initiating the transfer of underlying assets defined in the Interchain or Ethereum.
+Although application-specific blockchains offer superior (horizontal) scalability compared to general-purpose blockchain platforms, smart contract development for general-purpose chains and generic virtual machines (VMs) like in Ethereum offer their own benefits. IBC provides a method of incorporating the strengths of general-purpose and application-specific blockchains into unified overall designs. For example, it allows a Cosmos chain tailored towards performance and scalability to use funds that originate on Ethereum and possibly record events in a Corda distributed ledger; or, in the reverse, a Corda ledger initiating the transfer of underlying assets defined in the interchain or Ethereum.
 
 ![Internet of blockchains](/academy/3-ibc/images/internetofchains.png)
 
-With cross-chain communication via IBC, a decentralized network of independent and interoperable chains exchanging information and assets is possible. This "internet of blockchains" brings the promise of increased and seamless scalability. In the Interchain, the vision being implemented is to have a universe of independent chains that are all connected using peg-zones as bridges between the Interchain network and chains outside of it, and connecting all chains via hubs. All of these make up the internet of blockchains.
+With cross-chain communication via IBC, a decentralized network of independent and interoperable chains exchanging information and assets is possible. This "internet of blockchains" brings the promise of increased and seamless scalability. In the interchain, the vision being implemented is to have a universe of independent chains that are all connected using peg-zones as bridges between the interchain network and chains outside of it, and connecting all chains via hubs. All of these make up the internet of blockchains.
 
 ## High-level overview of IBC
 
@@ -106,7 +106,7 @@ While this background information is useful, IBC has been designed in such a way
 
 <HighlightBox type="info">
 
-In the following video Colin Axnér of Interchain, a core contributor to ibc-go in the Cosmos SDK, explains how different blockchains can be connected with the Inter-Blockchain Communication (IBC) protocol, with a particular focus on light clients, connections, channels, and packet commitments.
+In the following video Colin Axnér of the Interchain Foundation, a core contributor to ibc-go in the Cosmos SDK, explains how different blockchains can be connected with the Inter-Blockchain Communication (IBC) protocol, with a particular focus on light clients, connections, channels, and packet commitments.
 
 <YoutubePlayer videoId="zUVPkEzGJzA"/>
 
@@ -126,7 +126,7 @@ The ICS also offer definitions for IBC applications:
 
 <HighlightBox type="info">
 
-This list can be and will be extended with time. New concepts such as interchain accounts will continue to increase adoption and provide application diversity in the Interchain ecosystem.
+This list can be and will be extended with time. New concepts such as interchain accounts will continue to increase adoption and provide application diversity in the interchain ecosystem.
 <br/><br/>
 Find a list of ecosystem efforts on IBC applications and light clients in the ibc-go repo's [readme](https://github.com/cosmos/ibc-go#ecosystem) or the [ibc-apps repo](https://github.com/cosmos/ibc-apps).
 
@@ -163,13 +163,13 @@ The paths that all IBC implementations must support for committing IBC messages 
 
 </HighlightBox>
 
-This is important because it ensures the IBC protocol remains secure even in Byzantine environments where relayers could act in a malicious or faulty manner. You do not need to trust the relayers; instead, you trust the proof verification provided by the light client. **In the worst case situation where all relayers are acting in a Byzantine fashion, the packets sent would get rejected because they do not have the correct proof. This would affect only the liveness, not the security, of the particular part of the Interchain network where the relayers are malicious.**
+This is important because it ensures the IBC protocol remains secure even in Byzantine environments where relayers could act in a malicious or faulty manner. You do not need to trust the relayers; instead, you trust the proof verification provided by the light client. **In the worst case situation where all relayers are acting in a Byzantine fashion, the packets sent would get rejected because they do not have the correct proof. This would affect only the liveness, not the security, of the particular part of the interchain network where the relayers are malicious.**
 
-Note that this effect would only affect the network if all relayers were Byzantine. As relaying is permissionless, a simple fix would be to spin up a non-malicious relayer to relay packets with the correct proof. This fits the _security over liveness_ philosophy that IBC and the wider Interchain ecosystem adopts.
+Note that this effect would only affect the network if all relayers were Byzantine. As relaying is permissionless, a simple fix would be to spin up a non-malicious relayer to relay packets with the correct proof. This fits the _security over liveness_ philosophy that IBC and the wider interchain ecosystem adopts.
 
 <HighlightBox type="info">
 
-In the following video Colin Axnér of Interchain, a core contributor to ibc-go in the Cosmos SDK, looks at the IBC packet lifecycle and the security properties of a light client.
+In the following video Colin Axnér of the Interchain Foundation, a core contributor to ibc-go in the Cosmos SDK, looks at the IBC packet lifecycle and the security properties of a light client.
 
 <YoutubePlayer videoId="X5mPQrCLLWE"/>
 
@@ -177,7 +177,7 @@ In the following video Colin Axnér of Interchain, a core contributor to ibc-go 
 
 ### Trust the chains, not the bridge
 
-IBC clients and transactions assume the trust model of the chains they are connected to. In order to represent this accurately in assets which have been passed through the Interchain, the information of the path that an asset has traveled (the security guarantee of the asset) is stored in the denomination of the asset itself. In the case that the end user or an application does not trust a specific origin chain, they would be able to verify that their asset has not come from the untrusted chain simply by looking at the denomination of the asset, rather than referring to the validator set of a bridge or some other trusted third party verifier.
+IBC clients and transactions assume the trust model of the chains they are connected to. In order to represent this accurately in assets which have been passed through the interchain, the information of the path that an asset has traveled (the security guarantee of the asset) is stored in the denomination of the asset itself. In the case that the end user or an application does not trust a specific origin chain, they would be able to verify that their asset has not come from the untrusted chain simply by looking at the denomination of the asset, rather than referring to the validator set of a bridge or some other trusted third party verifier.
 
 <HighlightBox type="info">
 
@@ -265,12 +265,12 @@ If you're interested in a detailed introduction to Inter-Blockchain Communicatio
 
 To summarize, this section has explored:
 
-* How the Inter-Blockchain Communication Protocol (IBC) solves the problem of cross-chain communication by handling the authentication and transport of data between two blockchains through a minimal set of functions specified in the Interchain Standards (ICS).
+* How the Inter-Blockchain Communication Protocol (IBC) solves the problem of cross-chain communication by handling the authentication and transport of data between two blockchains through a minimal set of functions specified in the interchain standards (ICS).
 * How the IBC functions permissionlessly and can be used with a wide range of blockchains or state machines regardless of their network topologies or consensus algorithms, with IBC security reduced to that of the participating chains.
-* How IBC is the foundation of interoperability in the Interchain Ecosystem, with relayers such as light clients verifying the validity of cross-chain transactions, while also offering solutions to the issue of communicating with non-Cosmos blockchains including those which do not meet the criteria of Proof-of-Stake (PoS)finality.
+* How IBC is the foundation of interoperability in the interchain ecosystem, with relayers such as light clients verifying the validity of cross-chain transactions, while also offering solutions to the issue of communicating with non-Cosmos blockchains including those which do not meet the criteria of Proof-of-Stake (PoS)finality.
 * How a Cosmos blockchain's transport layer (TAO) provides the infrastructure for establishing secure connections to other chains, while the application layer built on top defines how authenticated data packets should be packaged and interpreted.
 * How relayer algorithms provide the essential off-chain processes that share data between chains running the IBC protocol by scanning the state of each chain, constructing appropriate datagrams, and executing them on the opposite chain as permitted by the protocol.
-* How the Byzantine behavior that leads to forking is prevented within the fast finality Interchain Ecosystem, and how the IBC protocol can achieve fork prevention outside the ecosystem by submitting proof of validator misbehavior and freezing affected light clients until an issue or attack has been neutralized.
+* How the Byzantine behavior that leads to forking is prevented within the fast finality interchain ecosystem, and how the IBC protocol can achieve fork prevention outside the ecosystem by submitting proof of validator misbehavior and freezing affected light clients until an issue or attack has been neutralized.
 
 </HighlightBox>
 

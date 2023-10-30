@@ -127,11 +127,11 @@ customModules:
         title: Tutorials
         href: /tutorials/1-tech-terms/
         description: |
-          Dive into these tutorials to help get you started and to take a more detailed look at IBC, CosmJS, and some of the other SDK modules. The tutorials walk you through code examples to translate Interchain concepts into practice.
+          Dive into these tutorials to help get you started and to take a more detailed look at IBC, CosmJS, and some of the other SDK modules. The tutorials walk you through code examples to translate interchain concepts into practice.
 
   - title: Introduction to the Interchain
     description: |
-      Discover the Interchain Ecosystem, Cosmos SDK, and IBC. Feel free to start with the first chapter, or select one or more tags to filter the available content.
+      Discover the interchain ecosystem, Cosmos SDK, and IBC. Feel free to start with the first chapter, or select one or more tags to filter the available content.
     sections:
       - image: /lp-images/ida_dev_portal_lp_hero-05.png
         title: What is the Interchain?
@@ -143,8 +143,10 @@ customModules:
             path: /academy/1-what-is-cosmos/1-blockchain-and-cosmos.html
           - title: The Interchain Ecosystem
             path: /academy/1-what-is-cosmos/2-cosmos-ecosystem.html
+          - title: Interchain use cases
+            path: /academy/1-what-is-cosmos/3-interchain-use-cases.html
           - title: Getting ATOM and staking it
-            path: /academy/1-what-is-cosmos/3-atom-staking.html
+            path: /academy/1-what-is-cosmos/4-atom-staking.html
       #- {} Example of section break
       - image: /lp-images/cosmos_dev_portal_module-03-lp-new.png
         title: Interchain Concepts
@@ -210,7 +212,7 @@ customModules:
         title: Good-to-know dev terms
         href: /tutorials/1-tech-terms/
         description: |
-          From gRPC to Protobuf - a brief overview of dev terms you encounter in the Interchain Ecosystem.
+          From gRPC to Protobuf - a brief overview of dev terms you encounter in the interchain ecosystem.
         links:
       - image:
         title: Set up your work environment
@@ -405,7 +407,7 @@ These tutorials guide you through actionable steps and walk-throughs to teach yo
 
 The Developer Portal contains three types of content:
 
-* **Concepts**, informational content explaining the how the Interchain Stack functions
+* **Concepts**, informational content explaining how the Interchain Stack functions
 * **Individual Tutorials**, short tutorials to get you up to speed with individual components
 * **Checkers Game**, a modular tutorial that covers the full stack and teaches you every element from set-up to launching in production with a front-end application attached.
 
@@ -417,10 +419,10 @@ Going through the entire content will teach you about:
 * The Inter-Blockchain Communication Protocol
 * Building front- and backends with CosmJS
 * Integrating wallets such as Keplr
-* Relaying in the Interchain network
+* Relaying in the interchain network
 
 The code and docs for each tutorial are based on a specific version of the software. Be sure to follow the tutorial instructions to download and use the right version.
 
-Use the tutorials landing page as your entry point to articles on [Interchain blog](https://blog.cosmos.network/), videos on [Interchain YouTube](https://www.youtube.com/c/CosmosProject/videos), and ways to get help and support.
+Use the tutorials landing page as your entry point to articles on the [Interchain blog](https://blog.cosmos.network/), videos on [Interchain YouTube](https://www.youtube.com/c/CosmosProject/videos), and ways to get help and support.
 
-This repo manages and publishes the developer platform. **If you would like to contribute**, please take a look at our [CONTRIBUTION GUIDELINES](CONTRIBUTING.md) and [/sdk-tutorials/TECHNICAL-SETUP](TECHNICAL-SETUP.md) documents.
+This repo manages and publishes the developer platform. **If you would like to contribute**, please take a look at our [CONTRIBUTION GUIDELINES](CONTRIBUTING.md) and [/developer-portal/TECHNICAL-SETUP](TECHNICAL-SETUP.md) documents.
