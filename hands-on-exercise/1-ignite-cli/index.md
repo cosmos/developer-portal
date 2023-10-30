@@ -17,7 +17,7 @@ Begin with an introduction to Ignite CLI. Then discover the first steps to build
 
 In the next chapters, you will learn how to implement a checkers game blockchain with all the different aspects this can entail.
 
-![Atom transmitting to Large disc](/ida_dev_portal_lp_hero-02.png)
+![Atom transmitting to Large disc](/cosmos_dev_portal_module-05-lp.png)
 
 ## In this chapter
 

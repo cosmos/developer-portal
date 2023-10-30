@@ -293,7 +293,7 @@ customModules:
     description: |
       From zero to hero - work with the full Interchain Stack while developing a checkers game blockchain. Feel free to start with the first chapter, or select one or more tags to filter the available content.
     sections:
-      - image: /lp-images/ida_dev_portal_lp_hero-02.png
+      - image: /lp-images/cosmos_dev_portal_module-05-lp.png
         title: Ignite CLI - Basics
         href: /hands-on-exercise/1-ignite-cli/
         description: |
@@ -315,7 +315,7 @@ customModules:
             path: /hands-on-exercise/1-ignite-cli/7-events.html
           - title: Record the winners
             path: /hands-on-exercise/1-ignite-cli/8-game-winner.html
-      - image: /lp-images/moving-objects.svg
+      - image: /lp-images/ida_dev_portal_lp_hero-02.png
         title: Ignite CLI - Advanced
         href: /hands-on-exercise/2-ignite-cli-adv/
         description: |
@@ -340,7 +340,7 @@ customModules:
           - title: Help find a correct move
             path: /hands-on-exercise/2-ignite-cli-adv/9-can-play.html
           - title: Play with cross-chain tokens
-            path: hands-on-exercise/2-ignite-cli-adv/10-wager-denom.html
+            path: /hands-on-exercise/2-ignite-cli-adv/10-wager-denom.html
       - image: /lp-images/ida_dev_portal_lp_hero-08.png
         title: CosmJS - Advanced
         href: /hands-on-exercise/3-cosmjs-adv/

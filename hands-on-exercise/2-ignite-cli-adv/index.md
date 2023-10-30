@@ -17,7 +17,7 @@ But have you thought about everything? Is your blockchain safe from bad behavior
 
 Continue your journey with Ignite CLI: learn how to introduce a wager, manage gas, and query for players' moves.
 
-![Moving planets](/lp-images/moving-objects.svg)
+![Moving planets](/lp-images/ida_dev_portal_lp_hero-02.png)
 
 ## In this chapter
 
