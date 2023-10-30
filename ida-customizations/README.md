@@ -46,7 +46,7 @@ overview:
     - title: How do I access Discord?
       description: |
         Follow these two steps to join the private Academy channels on Discord:<br/><br/>
-        1. Join the official Cosmos Discord by clicking <a href="https://discord.gg/cosmosnetwork">here</a>.Follow the verification process. It is straightforward but if you need guidance, read <a href="https://medium.com/@alicemeowuk/cosmos-developers-discord-access-7c15951cc839">this article</a>.<br/><br/>
+        1. Join the official Cosmos Discord by clicking <a href="https://discord.gg/cosmosnetwork">here</a>. Follow the verification process. It is straightforward but if you need guidance, read <a href="https://medium.com/@alicemeowuk/cosmos-developers-discord-access-7c15951cc839">this article</a>.<br/><br/>
         2. After joining the Discord server, go <a href="https://academy.interchain.io/onboarding/?token=%7B$b9_uuid%7D">here</a> and enter your Discord ID. You will automatically be added to the Discord area for participants called "Interchain Developer Academy".<br/><br/>
         If you have any problems, email us at <a href="mailto:academy@interchain.io">academy@interchain.io</a>.<br/><br/>
         We have put together a <a href="/ida-course/discord-info.html">quick guide</a> explaining how to best communicate on Discord.
