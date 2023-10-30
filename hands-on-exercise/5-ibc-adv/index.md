@@ -15,7 +15,7 @@ It is time to dive deeper into IBC!
 
 As you probably already can imagine, relayers are an important concept when dealing with inter-blockchain communication. Thus, you can have a more detailed look at relaying with IBC in the following sections. Then an introduction into IBC custom applications follows, including hands-on exercises on how to extend your checkers blockchain. At the end of the chapter, you can find some sections on IBC middleware elaborating on how you can create a custom IBC middleware and integrate it into your chains.
 
-![Ones and zeroes around an atom](/hands-on-exercise/5-ibc-adv/images/ida_dev_portal_lp_hero-03.png)
+![Two portals radiating to each other](/ida_dev_portal_lp_hero-03.png)
 
 ## In this chapter
 

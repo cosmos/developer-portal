@@ -25,4 +25,4 @@ In this chapter, you will:
 
 </HighlightBox>
 
-![Creating a chain image](/cosmos_dev_portal_module-05-lp.png)
+![Atom transmitting to Large disc](/lp-images/ida_dev_portal_lp_hero-02.png)

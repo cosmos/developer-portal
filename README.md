@@ -107,7 +107,7 @@ customModules:
     useNarrowCards: true
     hideFilter: true
     image: /lp-images/ida_dev_portal_lp_background-00.png
-    imageLightMode: /lp-images/universe.svg
+    imageLightMode: /lp-images/ida_dev_portal_lp_background-00.png
     sections:
       - image:
         title: Introduction to the Interchain
@@ -357,7 +357,7 @@ customModules:
             path: /hands-on-exercise/3-cosmjs-adv/4-cosmjs-gui.html
           - title: Use CosmJS for game indexing
             path: /hands-on-exercise/3-cosmjs-adv/5-server-side.html
-      - image: /lp-images/universe.svg
+      - image: /lp-images/universe.png
         title: From Code to MVP to Production
         href: /hands-on-exercise/4-run-in-prod/
         description: |

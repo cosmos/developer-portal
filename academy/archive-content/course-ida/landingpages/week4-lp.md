@@ -25,4 +25,4 @@ In this chapter, you will:
 
 </HighlightBox>
 
-![Star between planets image](/planet-collection.svg)
+![Star between planets image](/lp-images/planet-collection.svg)

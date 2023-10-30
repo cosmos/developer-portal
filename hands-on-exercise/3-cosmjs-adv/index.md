@@ -15,7 +15,7 @@ You will continue your work on CosmJS and explore how to use CosmJS and apply it
 
 The end of this chapter will deal with backend scripts and demonstrate how to use them for game indexing so that you are all set to continue developing using CosmJS.
 
-![A green planet overlaid with an isohedron](/lp-images/ida_dev_portal_lp_hero-08.png)
+![A sun between two planets overlaid with an isohedron](/ida_dev_portal_lp_hero-08.png)
 
 ## In this chapter
 
