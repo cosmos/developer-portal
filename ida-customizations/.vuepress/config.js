@@ -172,6 +172,10 @@ module.exports = {
                   path: "/academy/1-what-is-cosmos/2-cosmos-ecosystem.html",
                 },
                 {
+                  title: "Interchain use cases",
+                  path: "/academy/1-what-is-cosmos/3-interchain-use-cases.html",
+                },
+                {
                   title: "Getting ATOM and Staking It",
                   path: "/academy/1-what-is-cosmos/4-atom-staking.html",
                 },

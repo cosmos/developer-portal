@@ -1506,8 +1506,6 @@ Here you would replace `192.168.0.2` with the actual IP address of your host com
 
 </CodeGroup>
 
----
-
 From this point on everything you already know how to do, such as connecting to your local node, applies.
 
 Whenever you submit a transaction to `node-carol`, it will be propagated to the sentries and onward to the validators.

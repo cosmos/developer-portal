@@ -913,8 +913,6 @@ Note that you need to force the node to listen on all IP addresses, not just `12
 
 </CodeGroup>
 
----
-
 ### Add games
 
 From another shell, create a few un-played games with:
@@ -1049,8 +1047,6 @@ $ docker run --rm -it \
 </CodeGroupItem>
 
 </CodeGroup>
-
----
 
 You can confirm that you have computed player info:
 

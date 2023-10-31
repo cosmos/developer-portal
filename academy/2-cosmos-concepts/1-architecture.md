@@ -238,7 +238,7 @@ This **design project** is meant to get you thinking and will evolve in stages a
 <HighlightBox type="tip">
 
 This is meant as a design exercise. If you want to go from the design phase to the **implementation** phase, head to [Run Your Own Cosmos Chain](/hands-on-exercise/1-ignite-cli/index.md), which is a completely separate exercise.
-
+<br/><br/>
 You are free to think about design here and in the following concept pages, and then jump to a related section of the exercise.
 
 </HighlightBox>
@@ -348,7 +348,7 @@ Resolve any error if necessary.
 You need to see whether it makes sense to send the transaction back through ABCI. If the transaction succeeded, you keep the new board state in memory ready for the next delivered transaction. You do not save to the storage at this point.
 <br/><br/>
 You can also choose to define which information should be indexed via `events: repeated Event` in the response. The returned values are intended to return information that could be tedious to collect otherwise. This allows fast searches across blocks for values of relevance if indexed.
-
+<br/><br/>
 <HighlightBox type="docs">
 
 See [Tendermint's ABCI event spec documentation](https://github.com/tendermint/tendermint/blob/master/spec/abci/abci.md#events) for what goes into an `Event`.

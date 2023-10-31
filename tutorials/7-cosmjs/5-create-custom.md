@@ -106,8 +106,6 @@ $ docker build . -t ts-protoc
 
 </CodeGroup>
 
----
-
 You can confirm the version you received. The executable is located in `./node_modules/protoc/protoc/bin/protoc`:
 
 <CodeGroup>
@@ -231,8 +229,6 @@ This shows where `ts-proto` was installed globally.
 </CodeGroupItem>
 
 </CodeGroup>
-
----
 
 `--proto_path` is only `./proto` so that your imports (such as `import "cosmos/base...`) can be found.
 

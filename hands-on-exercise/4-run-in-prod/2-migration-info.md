@@ -1596,8 +1596,6 @@ $ docker run --rm -it \
 
 </CodeGroup>
 
----
-
 You can confirm that you have a mix of complete and incomplete games:
 
 <CodeGroup>

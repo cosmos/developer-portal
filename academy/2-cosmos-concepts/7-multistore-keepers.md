@@ -477,7 +477,7 @@ if deadline.Before(ctx.BlockTime()) {
 **How to expire games**
 
 How can you know what games should be removed? Should you load _all_ games and filter for those that have expired? That would be extremely expensive, O(n) of the number of games in fact. This means the more successful your blockchain becomes, the slower it would run.
-
+<br/><br/>
 Better is to use a First-In-First-Out (FIFO) strategy, where fresh games are pushed back to the tail so that the head contains the next games to expire.
 <br/><br/>
 In the context of the Cosmos SDK, you need to keep track of where the FIFO starts and stops by saving the corresponding game IDs:

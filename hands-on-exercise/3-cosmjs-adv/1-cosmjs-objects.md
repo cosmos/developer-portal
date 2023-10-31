@@ -40,9 +40,9 @@ In effect, this creates a new `client` folder. This `client` folder makes it pos
 <HighlightBox type="note">
 
 As noted previously [when you created your project](/hands-on-exercise/1-ignite-cli/1-ignitecli.md) with Ignite, your project is known as `alice/checkers` (or the alternative name you chose). 
-
+<br/><br/>
 However, [`github.com/cosmos/academy-checkers-ui`](https://github.com/cosmos/academy-checkers-ui) is a repository that already exists and uses [`b9lab/checkers`](https://github.com/cosmos/academy-checkers-ui/blob/generated/src/types/generated/checkers/genesis.ts#L8) in order to maintain compatibility with the [checkers application](https://github.com/cosmos/b9-checkers-academy-draft/tree/cosmjs-elements), of which it is a submodule.
-
+<br/><br/>
 Therefore, if you choose to reuse `github.com/cosmos/academy-checkers-ui`, you must do one of the following:
 
 * Make sure to replace all occurrences of `b9lab/checkers` with `alice/checkers`, or whichever name you picked.
@@ -128,8 +128,6 @@ Rebuild your Docker image.
 </CodeGroupItem>
 
 </CodeGroup>
-
----
 
 Now install your additional modules:
 
@@ -545,8 +543,6 @@ This will run the checkers chain in a container named `checkers`.
 
 </CodeGroup>
 
----
-
 Alternatively, use whichever address connects to the RPC port of the checkers blockchain.
 
 This information will be picked up by the `dotenv` package. Now let TypeScript know about this in an `environment.d.ts` file:
@@ -703,7 +699,7 @@ If you are curious about how this `Dockerfile-standalone` was created, head to t
 <HighlightBox type="warn">
 
 Note that the standalone checkers Docker image uses the project name `b9lab/checkers`, **including for its Protobuf package names**. Make sure that your [`generated` Typescript objects do too](https://github.com/cosmos/academy-checkers-ui/blob/generated/src/types/generated/checkers/genesis.ts#L8).
-
+<br/><br/>
 If that is not the case, you may encounter ambiguous errors such as:
 
 ```txt
@@ -776,8 +772,6 @@ But that is okay.
 
 </CodeGroup>
 
----
-
 When using Docker, note:
 
 * `--name checkers` either matches the name you wrote in `RPC_URL`, or can be passed as an environment variable to another container to override the value found in `.env`.
@@ -815,8 +809,6 @@ This starts the container on the same network as the blockchain container, where
 </CodeGroupItem>
 
 </CodeGroup>
-
----
 
 This should return:
 
