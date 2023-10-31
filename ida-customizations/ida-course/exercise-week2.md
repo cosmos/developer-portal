@@ -8,6 +8,9 @@ tags:
 
 # Coding Exercise 1
 
+This exercise will be unlocked on November 9th. Successfully completing the four coding exercises will contribute to 80% of your score in the Final Exam.
+
+<!--
 **Coding Exercise 1** is now accessible in your personal repo, found [here](https://git.academy.b9lab.com/ida-p5-final-exam/student-projects), in our Academy Gitlab server.
 
 To complete this exercise, in effect all you need is to adjust one line of code. An experienced developer can tackle it in 5 minutes.
@@ -21,6 +24,7 @@ You are free to attempt this exercise now, or you can wait until the Final Exam 
 </HighlightBox>
 
 When you complete the exercise you will be able to see your score directly. You can repeat this exercise as often as you like if you want to improve your score.
+-->
 
 <!--
 ANDREW SAYS: The following is the old exercise 2 page content for reference
