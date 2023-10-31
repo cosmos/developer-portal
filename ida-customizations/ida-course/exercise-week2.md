@@ -22,7 +22,8 @@ You are free to attempt this exercise now, or you can wait until the Final Exam 
 
 When you complete the exercise you will be able to see your score directly. You can repeat this exercise as often as you like if you want to improve your score.
 
-<!--ANDREW SAYS: The following is the old exercise 2 page content for reference
+<!--
+ANDREW SAYS: The following is the old exercise 2 page content for reference
 
 You are about to perform a small, simple exercise on our Academy Gitlab, to check you're paying attention! Before you [try](https://git.academy.b9lab.com/ida-p5-exercise-week-2/exercise-code), here is a summary of what you will be asked to do.
 
