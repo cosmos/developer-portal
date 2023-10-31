@@ -154,7 +154,7 @@ module.exports = {
                 },
               ],
             },
-/*            {
+            {
               title: "Week 1 - Introduction to the Interchain",
               directory: true,
               order: 2,
@@ -580,7 +580,7 @@ module.exports = {
               directory: true,
               order: 9,
               path: "/academy/whats-next/",
-            },*/
+            },
           ],
         },
       ],
