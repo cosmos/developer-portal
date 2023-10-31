@@ -870,6 +870,8 @@ Because performing moves from the command line is laborious, using the GUI is ad
 
 </CodeGroup>
 
+---
+
 What remains is handling the games that get removed or forfeited in `EndBlock`.
 
 ## Prepare for `EndBlock`

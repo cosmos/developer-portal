@@ -349,6 +349,7 @@ You need to see whether it makes sense to send the transaction back through ABCI
 <br/><br/>
 You can also choose to define which information should be indexed via `events: repeated Event` in the response. The returned values are intended to return information that could be tedious to collect otherwise. This allows fast searches across blocks for values of relevance if indexed.
 <br/><br/>
+
 <HighlightBox type="docs">
 
 See [Tendermint's ABCI event spec documentation](https://github.com/tendermint/tendermint/blob/master/spec/abci/abci.md#events) for what goes into an `Event`.
@@ -386,7 +387,7 @@ Ignoring the issue of validators for now, [this is used](https://github.com/tend
 <br/><br/>
 Assume that you want to tally what happened in the block. You return this aggregate event:
 
-```
+```json
 [
     { key: "name", value: "aggregateAction", index: true },
     { key: "black-captured-count", value: uint32, index: false },

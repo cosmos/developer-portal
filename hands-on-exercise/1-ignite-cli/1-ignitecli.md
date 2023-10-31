@@ -549,6 +549,8 @@ $ docker exec -it checkers bash -c "cd vue && npm run dev -- --host"
 
 </CodeGroup>
 
+---
+
 <HighlightBox type="tip">
 
 Note the `--host` flag, which is forwarded to the underlying `vite` command thanks to the `--` separator. This is necessary if you run the frontend within Docker.

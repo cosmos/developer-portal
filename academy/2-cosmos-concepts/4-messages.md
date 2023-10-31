@@ -207,7 +207,8 @@ Ignite CLI significantly reduces the amount of work a developer has to do to bui
 Your work is mostly done. You want to create the specific game creation code to replace `// TODO: Handling the message`. For this, you need to:
 
 1. Decide how to create a new and unique game ID: `newIndex`.
-<br/><br/>
+    <br/><br/>
+
     <HighlightBox type="info">
 
     For more details, and to avoid diving too deep in this section, see:

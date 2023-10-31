@@ -129,6 +129,8 @@ Rebuild your Docker image.
 
 </CodeGroup>
 
+---
+
 Now install your additional modules:
 
 <CodeGroup>
@@ -543,6 +545,8 @@ This will run the checkers chain in a container named `checkers`.
 
 </CodeGroup>
 
+---
+
 Alternatively, use whichever address connects to the RPC port of the checkers blockchain.
 
 This information will be picked up by the `dotenv` package. Now let TypeScript know about this in an `environment.d.ts` file:
@@ -772,6 +776,8 @@ But that is okay.
 
 </CodeGroup>
 
+---
+
 When using Docker, note:
 
 * `--name checkers` either matches the name you wrote in `RPC_URL`, or can be passed as an environment variable to another container to override the value found in `.env`.
@@ -809,6 +815,8 @@ This starts the container on the same network as the blockchain container, where
 </CodeGroupItem>
 
 </CodeGroup>
+
+---
 
 This should return:
 

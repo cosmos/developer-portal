@@ -369,6 +369,7 @@ Have `alice` start a game with `bob`.
 
 Instead of having to copy and paste the addresses each time you need them, you can store these as variables:
 <br/><br/>
+
 <CodeGroup>
 
 <CodeGroupItem title="Local" active>
@@ -506,6 +507,7 @@ txhash: 576C303E3C43B409B0DEA1CBFF18B7F34F1E69492EE8A562751668117E42834B
 
 If you are curious, the `.events.attributes` are encoded in Base64:
 <br/><br/>
+
 <CodeGroup>
 
 <CodeGroupItem title="Local" active>
