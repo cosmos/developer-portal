@@ -16,7 +16,7 @@ You are advised to attempt the coding exercises in numerical order. If you have 
 <!--
 **Coding Exercise 3** is now accessible in your personal repo. Click [here](https://git.academy.b9lab.com/ida-p5-final-exam/student-projects) to go to the Academy Gitlab server and open your project's merge requests page.
 
-To complete this exercise, in effect you need to create a new stored type with Ignite CLI. An experienced developer can tackle it in 2 hours.
+To complete this exercise, in effect, you need to create a new stored type with Ignite CLI. An experienced developer can tackle it in 2 hours.
 
 <HighlightBox type="note">
 
