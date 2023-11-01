@@ -17,7 +17,7 @@ Begin by interacting with a chain using simapp first. In the end, you will know 
 
 Then discover the first steps to build an application-specific blockchain from scratch using the Ignite CLI to implement a checkers game.
 
-![](/cosmos_dev_portal_module-05-lp.png)
+![Atom transmitting to Large disc](/lp-images/ida_dev_portal_lp_hero-02.png)
 
 ## In this chapter
 

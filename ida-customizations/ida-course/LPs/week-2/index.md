@@ -19,7 +19,7 @@ Begin by interacting with a chain using simapp. By the end, you will know how to
 
 Then discover the first steps to building an application-specific blockchain from scratch, using Ignite to implement a checkers game and to interact with a running local blockchain from the command line.
 
-![LP image - Week 2](/hands-on-exercise/1-ignite-cli/images/cosmos_dev_portal_module-05-lp.png)
+![Atom transmitting to Large disc](/ida_dev_portal_lp_hero-02.png)
 
 ## In this chapter
 

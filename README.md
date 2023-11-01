@@ -106,8 +106,8 @@ customModules:
       The portal has three different sections, with content to take you through the fundamentals of the Interchain, dive deeper in the tutorials, and apply your conceptual knowledge in the hands-on exercise chapters.
     useNarrowCards: true
     hideFilter: true
-    image: /lp-images/planets-15-gradient.jpg
-    imageLightMode: /lp-images/universe.svg
+    image: /lp-images/ida_dev_portal_lp_background-00.png
+    imageLightMode: /lp-images/ida_dev_portal_lp_background-00.png
     sections:
       - image:
         title: Introduction to the Interchain
@@ -133,7 +133,7 @@ customModules:
     description: |
       Discover the interchain ecosystem, Cosmos SDK, and IBC. Feel free to start with the first chapter, or select one or more tags to filter the available content.
     sections:
-      - image: /lp-images/cosmos_dev_portal_module-02-lp.png
+      - image: /lp-images/ida_dev_portal_lp_hero-05.png
         title: What is the Interchain?
         href: /academy/1-what-is-cosmos/
         description: |
@@ -182,7 +182,7 @@ customModules:
             path: /academy/2-cosmos-concepts/15-bridges.html
           - title: Migrations
             path: /academy/2-cosmos-concepts/16-migrations.html
-      - image: /lp-images/planet-collection.svg
+      - image: /lp-images/ida_dev_portal_lp_hero-04-b.png
         title: Introduction to IBC
         href: /academy/3-ibc/
         description: |
@@ -239,7 +239,7 @@ customModules:
         href: /tutorials/6-ibc-dev/
         description: |
           Want to become an IBC developer? Take a closer look at IBC denoms.
-      - image: /lp-images/planet-pod.svg
+      - image: /lp-images/ida_dev_portal_lp_hero-09.png
         title: Introduction to CosmJS
         href: /tutorials/7-cosmjs/
         description: |
@@ -255,7 +255,7 @@ customModules:
             path: /tutorials/7-cosmjs/4-with-keplr.html
           - title: Create custom CosmJS interfaces
             path: /tutorials/7-cosmjs/5-create-custom.html
-      - image: /lp-images/planets-large.svg
+      - image: /lp-images/ida_dev_portal_lp_hero-06.png
         title: Understand SDK modules
         href: /tutorials/8-understand-sdk-modules/
         description: |
@@ -269,7 +269,7 @@ customModules:
             path: /tutorials/8-understand-sdk-modules/3-group.html
           - title: The gov module
             path: /tutorials/8-understand-sdk-modules/4-gov.html
-      - image: /universe.svg
+      - image: /lp-images/ida_dev_portal_lp_hero-07.png
         title: The Path to Production
         href: /tutorials/9-path-to-prod
         description: |
@@ -331,7 +331,7 @@ customModules:
             path: /hands-on-exercise/1-ignite-cli/7-events.html
           - title: Record the winners
             path: /hands-on-exercise/1-ignite-cli/8-game-winner.html
-      - image: /lp-images/moving-objects.svg
+      - image: /lp-images/ida_dev_portal_lp_hero-02.png
         title: Ignite CLI - Advanced
         href: /hands-on-exercise/2-ignite-cli-adv/
         description: |
@@ -356,8 +356,8 @@ customModules:
           - title: Help find a correct move
             path: /hands-on-exercise/2-ignite-cli-adv/9-can-play.html
           - title: Play with cross-chain tokens
-            path: hands-on-exercise/2-ignite-cli-adv/10-wager-denom.html
-      - image: /lp-images/green-planet.svg
+            path: /hands-on-exercise/2-ignite-cli-adv/10-wager-denom.html
+      - image: /lp-images/ida_dev_portal_lp_hero-08.png
         title: CosmJS - Advanced
         href: /hands-on-exercise/3-cosmjs-adv/
         description: |
@@ -373,7 +373,7 @@ customModules:
             path: /hands-on-exercise/3-cosmjs-adv/4-cosmjs-gui.html
           - title: Use CosmJS for game indexing
             path: /hands-on-exercise/3-cosmjs-adv/5-server-side.html
-      - image: /lp-images/universe.svg
+      - image: /lp-images/universe.png
         title: From Code to MVP to Production
         href: /hands-on-exercise/4-run-in-prod/
         description: |
@@ -389,7 +389,7 @@ customModules:
             path: /hands-on-exercise/4-run-in-prod/4-migration-leaderboard.html
           - title: Simulate a migration in production with Docker Compose
             path: /hands-on-exercise/4-run-in-prod/5-migration-prod.html
-      - image: /lp-images/cosmos_dev_portal_module-04-lp.png
+      - image: /lp-images/ida_dev_portal_lp_hero-03.png
         title: IBC - Advanced
         href: /hands-on-exercise/5-ibc-adv/
         description: |
