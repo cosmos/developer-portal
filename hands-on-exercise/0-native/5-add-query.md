@@ -31,7 +31,7 @@ With the game storage indexed by game index, it is only natural to retrieve game
 
 These are defined together in a new file `proto/alice/checkers/v1/query.proto`:
 
-```protobuf [proto/alice/checkers/v1/query.proto]
+```protobuf [https://github.com/b9lab/checkers-minimal/blob/ba610f589b51e5ad754a70e09dae0e03f111aac4/proto/alice/checkers/v1/query.proto]
 syntax = "proto3";
 package alice.checkers.v1;
 
@@ -77,7 +77,7 @@ Since you have defined a new query type and an associated `service`, you should 
 $ make proto-gen
 ```
 
-In the new `query.pg.go`, you can find `type QueryGetGameRequest struct` and `type QueryServer interface`. Now you can use them closer to the keeper.
+In the new [`query.pg.go`](https://github.com/b9lab/checkers-minimal/blob/ba610f589b51e5ad754a70e09dae0e03f111aac4/query.pb.go), you can find [`type QueryGetGameRequest struct`](https://github.com/b9lab/checkers-minimal/blob/ba610f589b51e5ad754a70e09dae0e03f111aac4/query.pb.go#L36-L39) and [`type QueryServer interface`](https://github.com/b9lab/checkers-minimal/blob/ba610f589b51e5ad754a70e09dae0e03f111aac4/query.pb.go#L193-L196). Now you can use them closer to the keeper.
 
 ### New query server
 
@@ -88,7 +88,7 @@ Create a new file `keeper/query_server.go` and take inspiration from `minimal-mo
 * Return no games and no errors if it is not found.
 * Return an error otherwise.
 
-```go [keeper/query_server.go]
+```go [https://github.com/b9lab/checkers-minimal/blob/ba610f589b51e5ad754a70e09dae0e03f111aac4/keeper/query_server.go]
 package keeper
 
 import (
@@ -135,7 +135,7 @@ With the query server defined, you now need to register it in the module.
 
 Now that you have message types and server, you should register the service in `module/module.go`. Inspire yourself from what you find in `minimal-module-example`. The lines were previously commented out:
 
-```diff-go [module/module.go]
+```diff-go [https://github.com/b9lab/checkers-minimal/blob/ba610f589b51e5ad754a70e09dae0e03f111aac4/module/module.go]
     import (
 +      "context"
         "encoding/json"
@@ -171,7 +171,7 @@ $ minid query --help
 
 You can see that `checkers` is missing from the list of available commands. Fix that by entering your desired command in `module/autocli.go`. Taking inspiration from `minimal-module-example`:
 
-```diff-go [module/autocli.go]
+```diff-go [https://github.com/b9lab/checkers-minimal/blob/ba610f589b51e5ad754a70e09dae0e03f111aac4/module/autocli.go#L11-L23]
     ...
 -  Query: nil,
 +  Query: &autocliv1.ServiceCommandDescriptor{

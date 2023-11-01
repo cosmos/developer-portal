@@ -34,7 +34,7 @@ You are going to:
 
 These are defined together in a new file `proto/alice/checkers/v1/tx.proto`:
 
-```protobuf [proto/alice/checkers/v1/tx.proto]
+```protobuf [https://github.com/b9lab/checkers-minimal/blob/2ec8edde37a6582ced19d805640fde75641caeac/proto/alice/checkers/v1/tx.proto]
 syntax = "proto3";
 package alice.checkers.v1;
 
@@ -85,7 +85,7 @@ Since you have defined a new message type and an associated `service`, you shoul
 $ make proto-gen
 ```
 
-In the new `tx.pg.go`, you can find `type MsgCreateGame struct` and `type MsgServer interface`. Now you can use them closer to the keeper.
+In the new [`tx.pg.go`](https://github.com/b9lab/checkers-minimal/blob/2ec8edde37a6582ced19d805640fde75641caeac/tx.pb.go), you can find [`type MsgCreateGame struct`](https://github.com/b9lab/checkers-minimal/blob/2ec8edde37a6582ced19d805640fde75641caeac/tx.pb.go#L34-L40) and [`type MsgServer interface`](https://github.com/b9lab/checkers-minimal/blob/2ec8edde37a6582ced19d805640fde75641caeac/tx.pb.go#L205-L208). Now you can use them closer to the keeper.
 
 ### New message server
 
@@ -96,7 +96,7 @@ Create a new file `keeper/msg_server.go` and take inspiration from `minimal-modu
 * Create a new board with the game rules.
 * If valid, put the game into storage.
 
-```go [keeper/msg_server.go]
+```go [https://github.com/b9lab/checkers-minimal/blob/2ec8edde37a6582ced19d805640fde75641caeac/keeper/msg_server.go]
 package keeper
 
 import (
@@ -158,7 +158,7 @@ func (ms msgServer) CreateGame(ctx context.Context, msg *checkers.MsgCreateGame)
 
 Now that you have message types and server, you should register the types in the currently empty `codec.go`. Inspire yourself from what you find in `minimal-module-example`:
 
-```diff-go [codec.go]
+```diff-go [https://github.com/b9lab/checkers-minimal/blob/2ec8edde37a6582ced19d805640fde75641caeac/codec.go#L5-L14]
     package checkers
 
     import (
@@ -178,7 +178,7 @@ Now that you have message types and server, you should register the types in the
 
 In `module/module.go`, register the new service. The lines were previously commented out:
 
-```diff-go [module/module.go]
+```diff-go [https://github.com/b9lab/checkers-minimal/blob/2ec8edde37a6582ced19d805640fde75641caeac/module/module.go#L71]
     ...
     func (am AppModule) RegisterServices(cfg module.Configurator) {
         // Register servers
@@ -201,7 +201,7 @@ $ minid tx --help
 
 You can see that `checkers` is missing from the list of available commands. Fix that by entering your desired command in `module/autocli.go`. Taking inspiration from `minimal-module-example`:
 
-```diff-go [module/autocli.go]
+```diff-go [https://github.com/b9lab/checkers-minimal/blob/2ec8edde37a6582ced19d805640fde75641caeac/module/autocli.go#L12-L26]
     import (
         autocliv1 "cosmossdk.io/api/cosmos/autocli/v1"
 +      checkersv1 "github.com/alice/checkers/api/v1"
