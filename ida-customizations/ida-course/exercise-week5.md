@@ -16,7 +16,7 @@ You are advised to attempt the coding exercises in numerical order. If you have 
 <!--
 **Coding Exercise 4** is now accessible in your personal repo. Click [here](https://git.academy.b9lab.com/ida-p5-final-exam/student-projects) to go to the Academy Gitlab server and open your project's merge requests page.
 
-To complete this exercise, in effect you need to compile the Protobuf files and complete the CosmJS Typescript files. An experienced developer can tackle it in one hour and a half.
+To complete this exercise, in effect, you need to compile the Protobuf files and complete the CosmJS Typescript files. An experienced developer can tackle it in one hour and a half.
 
 <HighlightBox type="note">
 
