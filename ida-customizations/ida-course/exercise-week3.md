@@ -1,12 +1,12 @@
 ---
-title: "Coding Exercise 2"
+title: "Exam Coding Exercise 2"
 order:
-description: CLoser code adjustment for the Final Exam
+description: Closer code adjustment for the Final Exam
 tags:
   - cosmos-sdk
 ---
 
-# Coding Exercise 2
+# Exam Coding Exercise 2
 
 This exercise will be unlocked on November 16th. Successfully completing the four coding exercises will contribute to 80% of your score in the Final Exam.
 

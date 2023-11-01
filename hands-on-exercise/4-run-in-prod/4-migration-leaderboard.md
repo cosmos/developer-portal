@@ -913,6 +913,8 @@ Note that you need to force the node to listen on all IP addresses, not just `12
 
 </CodeGroup>
 
+---
+
 ### Add games
 
 From another shell, create a few un-played games with:

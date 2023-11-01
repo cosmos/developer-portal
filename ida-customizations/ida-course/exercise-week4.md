@@ -1,5 +1,5 @@
 ---
-title: "Coding Exercise 3"
+title: "Exam Coding Exercise 3"
 order:
 description: Add a new stored type to the Final Exam
 tags:
@@ -7,7 +7,7 @@ tags:
   - ignite-cli
 ---
 
-# Coding Exercise 3
+# Exam Coding Exercise 3
 
 This exercise will be unlocked on November 23rd. Successfully completing the four coding exercises will contribute to 80% of your score in the Final Exam.
 

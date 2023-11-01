@@ -172,7 +172,7 @@ module.exports = {
                   path: "/academy/1-what-is-cosmos/2-cosmos-ecosystem.html",
                 },
                 {
-                  title: "Interchain use cases",
+                  title: "Interchain Use Cases",
                   path: "/academy/1-what-is-cosmos/3-interchain-use-cases.html",
                 },
                 {
@@ -244,7 +244,7 @@ module.exports = {
                   path: "/academy/2-cosmos-concepts/16-migrations.html",
                 },
                 {
-                  title: "Week 1 Quiz",
+                  title: "Exam Quiz",
                   path: "/ida-course/quiz-week1.html",
                 },
               ],
@@ -299,7 +299,7 @@ module.exports = {
                   path: "/hands-on-exercise/1-ignite-cli/8-game-winner.html",
                 },
                 {
-                  title: "Coding Exercise 1",
+                  title: "Exam Coding Exercise 1",
                   path: "/ida-course/exercise-week2.html",
                 },
               ],
@@ -374,7 +374,7 @@ module.exports = {
                   path: "/tutorials/7-cosmjs/5-create-custom.html",
                 },
                  {
-                   title: "Coding Exercise 2",
+                   title: "Exam Coding Exercise 2",
                    path: "/ida-course/exercise-week3.html",
                  },
               ],
@@ -441,7 +441,7 @@ module.exports = {
                   path: "/hands-on-exercise/5-ibc-adv/2-hermes-relayer.html",
                 },
                  {
-                   title: "Coding Exercise 3",
+                   title: "Exam Coding Exercise 3",
                    path: "/ida-course/exercise-week4.html",
                  },
               ],
@@ -476,7 +476,7 @@ module.exports = {
                   path: "/hands-on-exercise/3-cosmjs-adv/5-server-side.html",
                 },
                  {
-                   title: "Coding Exercise 4",
+                   title: "Exam Coding Exercise 4",
                    path: "/ida-course/exercise-week5.html",
                  },
               ],
@@ -511,7 +511,7 @@ module.exports = {
                   path: "/hands-on-exercise/5-ibc-adv/7-ibc-app-leaderboard.html"
                 },
                  {
-                   title: "IBC Operation Exercise",
+                   title: "Exam IBC Operation Exercise",
                    path: "/ida-course/exercise-week6.html",
                  },
               ],

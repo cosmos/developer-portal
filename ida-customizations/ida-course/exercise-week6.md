@@ -1,5 +1,5 @@
 ---
-title: "IBC Operation Exercise"
+title: "Exam IBC Operation Exercise"
 order:
 description: IBC Operations in the Final Exam
 tags:
@@ -7,7 +7,7 @@ tags:
   - dev-ops
 ---
 
-# IBC Operation Exercise
+# Exam IBC Operation Exercise
 
 This exercise will be unlocked on December 7th. Successfully completing the IBC Operation exercise will contribute 10% of your score in the Final Exam.
 

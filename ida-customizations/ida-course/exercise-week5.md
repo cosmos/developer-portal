@@ -1,12 +1,13 @@
 ---
-title: "Coding Exercise 4"
+title: "Exam Coding Exercise 4"
 order:
 description: Protobuf and CosmJS activities in the Final Exam
 tags:
+  - cosmos-sdk
   - cosm-js
 ---
 
-# Coding Exercise 4
+# Exam Coding Exercise 4
 
 This exercise will be unlocked on November 30th. Successfully completing the four coding exercises will contribute to 80% of your score in the Final Exam.
 
