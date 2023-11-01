@@ -24,7 +24,7 @@ You are free to attempt the quiz now, or you can wait until the Final Exam perio
 
 **Be aware: You can only attempt the Exam Quiz once.**
 
-It is recommended to do the quiz in a quiet environment without distractions, and ensure that you have time to complete it without being interrupted.
+It is recommended to do the quiz in a quiet environment without distractions and ensure that you have time to complete it without being interrupted.
 
 </HighlightBox>
 
