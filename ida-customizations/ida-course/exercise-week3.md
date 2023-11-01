@@ -15,7 +15,7 @@ You are advised to attempt the coding exercises in numerical order. If you have 
 <!--
 **Coding Exercise 2** is now accessible in your personal repo. Click [here](https://git.academy.b9lab.com/ida-p5-final-exam/student-projects) to go to the Academy Gitlab server and open your project's merge requests page.
 
-To complete this exercise, in effect all you need is to adjust about 20 lines of code. An experienced developer can tackle it in 20 minutes.
+To complete this exercise, in effect, all you need is to adjust about 20 lines of code. An experienced developer can tackle it in 20 minutes.
 
 <HighlightBox type="note">
 
