@@ -10,7 +10,7 @@ tags:
 
 **Coding Exercise 1** is now accessible in your personal repo, found [here](https://git.academy.b9lab.com/ida-p5-final-exam/student-projects), in our Academy Gitlab server.
 
-To complete this exercise, in effect all you need is to adjust one line of code. An experienced developer can tackle it in 5 minutes.
+To complete this exercise, in effect, all you need is to adjust one line of code. An experienced developer can tackle it in 5 minutes.
 
 <HighlightBox type="note">
 
