@@ -126,6 +126,12 @@ A **purpose-built or application-specific blockchain** is different. There is no
 
 Developers who have worked with blockchains based on the Ethereum Virtual Machine (EVM) will recognize a shift in the way concerns are addressed. Authorization and access control, the layout of storage and the state, and application governance are not implemented as contracts on a state machine. They instead become properties of a unique blockchain that is built for a singular purpose.
 
+<HighlightBox type="tip">
+
+There is an evolution of ABCI, named ABCI++ (or ABCI 2.0). You can learn more about it [here](https://docs.cometbft.com/v0.37/spec/abci/).
+
+</HighlightBox>
+
 ## The Cosmos SDK
 
 Developers create the application layer using the **Cosmos SDK**. The Cosmos SDK provides:
@@ -223,7 +229,7 @@ In the following suggested exercise, you will create a minimal distributed state
 
 ## Test yourself - a pseudo-coding exercise
 
-With all you have learned about Tendermint and CometBFt, can you **design** a minimal distributed state machine, and think about relevant pseudo-code, for a blockchain that allows people to play the game of checkers? Open the following section, **Creating a checkers blockchain**, to start this reflection and reinforce your understanding of Tendermint.
+With all you have learned about Tendermint and CometBFt, can you **design** a minimal distributed state machine, and think about relevant pseudo-code, for a blockchain that allows people to play the game of checkers? Open the following expandable, **Creating a checkers blockchain**, to start this reflection and reinforce your understanding of Tendermint.
 
 You will continue to apply what you learn in later sections to your checkers game, and design a blockchain by using elements of the Cosmos SDK. Alternatively, you can continue directly to learn about [accounts in the Cosmos SDK](./2-accounts.md).
 
@@ -425,7 +431,10 @@ You now have:
 
 <HighlightBox type="tip">
 
-The expandable above is meant as a design exercise. If you want to go from the design phase to the **implementation** phase, head to [Run Your Own Cosmos Chain](/hands-on-exercise/1-ignite-cli/index.md), which is a completely separate exercise from scratch.
+The previous expandable is meant as a design exercise. If you want to go from the design phase to the **implementation** phase, head to one (or both) of the following hands-on exercises:
+
+1. [SDK v0.50 Native](/hands-on-exercise/0-native/index.md), which is a short exercise to partially build your own checkers chain without the help of external tools, using SDK v0.50.
+2. [Rebuild Your Cosmos Chain With Ignite](/hands-on-exercise/1-ignite-cli/index.md), which is a completely separate exercise, using Ignite CLI and an older version of the Cosmos SDK to start from scratch.
 <br/><br/>
 Relevant to this section on ABCI is the [Auto-Expiring Games](/hands-on-exercise/2-ignite-cli-adv/4-game-forfeit.md) section, where you use the Cosmos SDK to implement expiration in `EndBlock`. Be warned that this is an advanced section of the hands-on-exercise.
 <br/><br/>

@@ -5,6 +5,7 @@ description: Introduce the message to create a game
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Create Custom Messages

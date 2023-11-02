@@ -5,6 +5,7 @@ description: Gas - reward validators proportional to their effort
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Incentivize Players

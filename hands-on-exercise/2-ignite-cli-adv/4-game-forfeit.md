@@ -5,6 +5,7 @@ description: EndBlock - enforce the expiration of games
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Auto-Expiring Games

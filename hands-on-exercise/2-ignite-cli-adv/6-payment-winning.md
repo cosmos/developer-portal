@@ -5,6 +5,7 @@ description: Token - Wagers go around
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Handle Wager Payments

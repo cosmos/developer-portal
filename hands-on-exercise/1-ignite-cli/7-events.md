@@ -5,6 +5,7 @@ description: Use events to emit game information
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Emit Game Information

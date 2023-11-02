@@ -48,7 +48,7 @@ This is a **recording** of the live session _Introduction to app.go_ with Julien
 
 ## Next up
 
-Before you begin [running a node](/tutorials/3-run-node/index.md) and exploring [Ignite CLI](/hands-on-exercise/1-ignite-cli/1-ignitecli.md), prep everything for the running exercise - _creating a checkers blockchain_ - by going through the section [Setup Your Work Environment](/tutorials/2-setup/index.md).
+Before you begin [running a node](/tutorials/3-run-node/index.md) and exploring [Ignite CLI](/hands-on-exercise/1-ignite-cli/1-ignitecli.md), prep everything for the running exercise - _creating a checkers blockchain_ - by going through the section [Set Up Your Work Environment](/tutorials/2-setup/index.md).
 
 <HighlightBox type="tip">
 

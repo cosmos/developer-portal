@@ -5,6 +5,7 @@ description: Play a game
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Add a Way to Make a Move

@@ -5,6 +5,7 @@ description: Store field - store the move count
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Keep Track Of How Many Moves Have Been Played

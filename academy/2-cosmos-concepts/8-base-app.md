@@ -230,6 +230,7 @@ If you want to go beyond out-of-context code samples like the above and see in m
 More precisely, you can jump to:
 
 * [Auto-Expiring Games](/hands-on-exercise/2-ignite-cli-adv/4-game-forfeit.md) to see how to implement the expiration of games in `EndBlock`.
+* [Add a Leaderboard Module](/hands-on-exercise/4-run-in-prod/3-add-leaderboard.md) to see how to implement the tallying of an updated leaderboard in `EndBlock`.
 
 </HighlightBox>
 

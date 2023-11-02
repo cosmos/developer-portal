@@ -5,6 +5,7 @@ description: Store field - store the winner of a game
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Record the Game Winner

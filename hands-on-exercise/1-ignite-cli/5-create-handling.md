@@ -5,6 +5,7 @@ description: Create a proper game
 tags:
   - guided-coding
   - cosmos-sdk
+  - ignite-cli
 ---
 
 # Create and Save a Game Properly

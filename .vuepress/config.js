@@ -148,7 +148,12 @@ module.exports = {
           order: 3,
           children: [
             {
-              title: "Run Your Cosmos Chain",
+              title: "SDK v0.50 Native",
+              path: "/hands-on-exercise/0-native/",
+              directory: true,
+            },
+            {
+              title: "Rebuild Your Cosmos Chain With Ignite",
               path: "/hands-on-exercise/1-ignite-cli/",
               directory: true,
             },
@@ -326,6 +331,10 @@ module.exports = {
       'cometbft': {
         color: '#00B067',
         label: 'CometBFT'
+      },
+      'ignite-cli': {
+        color: '#BA3FD9',
+        label: 'Ignite-CLI'
       },
       'cosmos-hub': {
         color: '#f7f199',

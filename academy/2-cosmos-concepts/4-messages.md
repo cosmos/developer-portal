@@ -29,7 +29,7 @@ Understanding `Msg` will help you prepare for the next section, on [modules in t
 
 Messages are one of two primary objects handled by a module in the Cosmos SDK. The other primary object handled by modules is queries. While messages inform the state and have the potential to alter it, queries inspect the module state and are always read-only.
 
-In the Cosmos SDK, a **transaction** contains **one or more messages**. The module processes the messages after the transaction is included in a block by the consensus layer.
+In the Cosmos SDK, a **transaction** contains **one or more messages**. Modules process the messages after the transaction is included in a block by the consensus layer.
 
 <ExpansionPanel title="Signing a message">
 
@@ -85,6 +85,16 @@ If you want to dive deeper when it comes to messages, the `Msg` service, and mod
 
 </HighlightBox>
 
+## CLI
+
+For the command-line interface (CLI), module developers create subcommands to add as children to the module-level message commands. These commands describe how to craft a message for inclusion in a transaction.
+
+<HighlightBox type="tip">
+
+With v0.50, the Cosmos SDK introduces the [`autocli` facility](https://docs.cosmos.network/v0.50/learn/advanced/autocli#module-wiring--customization). This takes care of a lot of the boilerplate and lets you define the available CLI commands in a descriptive manner.
+
+</HighlightBox>
+
 ## Code example
 
 <ExpansionPanel title="Show me some code for my checkers blockchain - Including messages">
@@ -129,9 +139,44 @@ Focus on the messages around the **game creation**. There is no single true way 
 
 With the messages defined, you need to declare how the message should be handled. This involves:
 
-1. Describing how the messages are serialized.
+1. Describing how the messages are deterministically serialized. For this, you use [Protobuf](/academy/2-cosmos-concepts/6-protobuf.md).
 2. Writing the code that handles the message and places the new game in the storage.
 3. Putting hooks and callbacks at the right places in the general message handling.
+
+**How to proceed with v0.50 or after**
+
+The SDK takes care of a lot of things. In particular, by annotating your Protobuf message, you can have it implement `sdk.Msg` after compilation. For instance:
+
+```protobuf
+message MsgCreateGame {
+  option (cosmos.msg.v1.signer) = "creator";
+
+  string creator = 1;
+  string black = 2;
+  string red = 3;
+}
+```
+
+Then, you declare a Protobuf message server:
+
+```protobuf
+service Msg {
+  option (cosmos.msg.v1.service) = true;
+
+  rpc CreateGame(MsgCreateGame)
+    returns (MsgCreateGameResponse);
+}
+```
+
+After compilation, you register this together with your interface registry so that the module knows to send any `MsgCreateGame` to the `CreateGame` function of the `MsgClient` interface.
+
+You also define a local `msgServer` that implements the `CreateGame` function with the required actions, such as:
+
+* Extracting and verifying the players and other values from the message.
+* Creating a new game and saving it to storage.
+* Returning the expected message.
+
+**How to proceed with v0.47 or earlier and Ignite**
 
 Thinking from design to implementation, Ignite CLI can help you create these elements, plus the `MsgCreateGame` and `MsgCreateGameResponse` objects, with this command:
 
@@ -147,62 +192,16 @@ Ignite CLI creates a variety of other files. See [Run Your Own Cosmos Chain](/ha
 
 </HighlightBox>
 
-_**A sample of things Ignite CLI did for you**_
+_**A sample of things Ignite CLI does for you**_
 
-Ignite CLI significantly reduces the amount of work a developer has to do to build an application with the Cosmos SDK. Among others, it assists with:
+Ignite CLI significantly reduces the amount of work a developer has to do to build an application with the Cosmos SDK. Among others, it:
 
-1. Getting the signer, the `Creator`, of your message:
+* Assists with making sure that your message conforms to `sdk.Msg` by adding the boilerplate for `GetSigners` and `GetSignBytes`.
+* Adjusts the module's code so that this new message type is handled when received, and adds an empty function where you introduce the action this message is supposed to trigger. It even places a helpful `// TODO: Handling the message` where you should place your code.
 
-    ```go
-    func (msg *MsgCreateGame) GetSigners() []sdk.AccAddress {
-        creator, err := sdk.AccAddressFromBech32(msg.Creator)
-        if err != nil {
-           panic(err)
-       }
-       return []sdk.AccAddress{creator}
-    }
-    ```
+Ignite CLI is opinionated in terms of which files it creates to separate which concerns. If you are not using it, you are free to create the files you want.
 
-    Where `GetSigners` is [a requirement of `sdk.Msg`](https://github.com/cosmos/cosmos-sdk/blob/1dba673/types/tx_msg.go#L21).
-
-2. Making sure the message's bytes to sign are deterministic:
-
-    ```go
-    func (msg *MsgCreateGame) GetSignBytes() []byte {
-        bz := ModuleCdc.MustMarshalJSON(msg)
-        return sdk.MustSortJSON(bz)
-    }
-    ```
-
-3. Adding a callback for your new message type in your module's message handler `x/checkers/handler.go`:
-
-    ```go
-    ...
-    switch msg := msg.(type) {
-        ...
-        case *types.MsgCreateGame:
-            res, err := msgServer.CreateGame(sdk.WrapSDKContext(ctx), msg)
-            return sdk.WrapServiceResult(ctx, res, err)
-        ...
-    }
-    ```
-
-4. Creating an empty shell of a file (`x/checkers/keeper/msg_server_create_game.go`) for you to include your code, and the response message:
-
-    ```go
-    func (k msgServer) CreateGame(goCtx context.Context, msg *types.MsgCreateGame) (*types.MsgCreateGameResponse, error) {
-        ctx := sdk.UnwrapSDKContext(goCtx)
-
-        // TODO: Handling the message
-        _ = ctx
-
-        return &types.MsgCreateGameResponse{}, nil
-    }
-    ```
-
-    Ignite CLI is opinionated in terms of which files it creates to separate which concerns. If you are not using it, you are free to create the files you want.
-
-**What is left to do?**
+_**What is left to do?**_
 
 Your work is mostly done. You want to create the specific game creation code to replace `// TODO: Handling the message`. For this, you need to:
 
@@ -218,40 +217,9 @@ Your work is mostly done. You want to create the specific game creation code to 
 
     </HighlightBox>
 
-2. Extract and verify addresses, such as:
-
-    ```go
-    black, err := sdk.AccAddressFromBech32(msg.Black)
-    if err != nil {
-        return nil, errors.New("invalid address for black")
-    }
-    ```
-
-3. Create a game object with all required parameters - see the [modules section](./5-modules.md) for the declaration of this object:
-
-    ```go
-    storedGame := {
-        Creator:   creator,
-        Index:     newIndex,
-        Game:      rules.New().String(),
-        Black:     black,
-        Red:       red,
-    }
-    ```
-
-4. Send the game object to storage - see the [modules section](./5-modules.md) for the declaration of this function:
-
-    ```go
-    k.Keeper.SetStoredGame(ctx, storedGame)
-    ```
-
-5. And finally, return the expected message:
-
-    ```go
-    return &types.MsgCreateGameResponse{
-        GameIndex: newIndex,
-    }, nil
-    ```
+2. Extract and verify addresses from the message.
+3. Create a game object with all required parameters and save it to storage
+4. And finally, return the expected message.
 
 <HighlightBox type="remember">
 
@@ -261,52 +229,6 @@ Remember, as a part of good design practice:
 * If you encounter a user or _regular_ error (like a user not having enough funds), you should return a regular `error`.
 
 </HighlightBox>
-
-**The other messages**
-
-You can also implement other messages:
-
-1. The **play message**, which means implicitly accepting the challenge when playing for the first time. If you create it with Ignite CLI, use:
-
-    ```sh
-    $ ignite scaffold message playMove gameIndex fromX:uint fromY:uint toX:uint toY:uint --module checkers --response capturedX:int,capturedY:int,winner
-    ```
-
-    This generates, among others, the object files, callbacks, and a new file for you to write your code:
-
-    ```go
-    func (k msgServer) PlayMove(goCtx context.Context, msg *types.MsgPlayMove) (*types.MsgPlayMoveResponse, error) {
-        ctx := sdk.UnwrapSDKContext(goCtx)
-
-        // TODO: Handling the message
-        _ = ctx
-
-        return &types.MsgPlayMoveResponse{}, nil
-    }
-    ```
-
-    To jump straight to the corresponding part of the coding exercise, head to [Add a Way to Make a Move](/hands-on-exercise/1-ignite-cli/6-play-game.md).
-
-2. The **reject message**, which should be valid only if the player never played any moves in this game.
-
-    ```sh
-    $ ignite scaffold message rejectGame gameIndex --module checkers
-    ```
-
-    This generates, among others:
-
-    ```go
-    func (k msgServer) RejectGame(goCtx context.Context, msg *types.MsgRejectGame) (*types.MsgRejectGameResponse, error) {
-        ctx := sdk.UnwrapSDKContext(goCtx)
-
-        // TODO: Handling the message
-        _ = ctx
-
-        return &types.MsgRejectGameResponse{}, nil
-    }
-    ```
-
-    This message is not implemented in the coding exercise as it is not necessary if you implement an expiration.
 
 **Other considerations**
 
@@ -334,13 +256,14 @@ There are no _open_ challenges, meaning a player cannot create a game where the 
 
 <HighlightBox type="tip">
 
-If you would like to get started on building your own checkers game, you can go straight to the main exercise in [Run Your Own Cosmos Chain](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
+If you would like to get started on building your own checkers game, you can go straight to the main exercise in Run Your Own Cosmos Chain, either [natively with SDK v0.50](/hands-on-exercise/0-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
 
 More specifically, you can jump to:
 
-* [Create Custom Messages](/hands-on-exercise/1-ignite-cli/4-create-message.md) to see how to simply create the `MsgCreateGame`,
-* [Create and Save a Game Properly](/hands-on-exercise/1-ignite-cli/5-create-handling.md) to see how to handle `MsgCreateGame`,
-* [Add a Way to Make a Move](/hands-on-exercise/1-ignite-cli/6-play-game.md) for the same but with `MsgPlayMove`.
+* [Create one Custom Message](/hands-on-exercise/0-native/4-add-message.md) to see how to simply create and handle a `MsgCreateGame` message natively with SDK v0.50.
+* [Create Custom Messages](/hands-on-exercise/1-ignite-cli/4-create-message.md) to see how to simply create the `MsgCreateGame` with Ignite CLI.
+* [Create and Save a Game Properly](/hands-on-exercise/1-ignite-cli/5-create-handling.md) to see how to handle `MsgCreateGame` created with Ignite CLI.
+* [Add a Way to Make a Move](/hands-on-exercise/1-ignite-cli/6-play-game.md) for the same but with `MsgPlayMove`, still with Ignite CLI.
 
 </HighlightBox>
 

@@ -5,6 +5,7 @@ description: Make your checkers game IBC-enabled
 tags:
   - concepts
   - guided-coding
+  - ignite-cli
   - ibc
   - dev-ops
 ---

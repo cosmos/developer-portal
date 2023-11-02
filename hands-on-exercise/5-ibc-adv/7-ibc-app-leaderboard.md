@@ -4,6 +4,7 @@ order: 8
 description: A global leaderboard for your games
 tags:
   - concepts
+  - ignite-cli
   - ibc
   - dev-ops
 ---

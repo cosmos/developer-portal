@@ -62,7 +62,9 @@ Most of the work for developers involved in building a Cosmos SDK application co
 
 ## Module components
 
-It is best practice to define a module in the `x/moduleName` folder. For example, the module called `Checkers` would go in `x/checkers`. If you look at the Cosmos SDK's base code, it also [defines its modules](https://github.com/cosmos/cosmos-sdk/tree/main/x) in an `x/` folder.
+Starting with **Cosmos SDK v0.50**, it is best practice to keep modules in their own repositories. This increases overall modularization of the code and simplifies the procedure for third-party reuse. For example, the module called `Checkers` would be in the `github.com/alice/checkers` repository, and could be used as such in the whole Go application; or you could use a `go.mod` redirect to keep it local, such as `replace (github.com/alice/checkers => ../checkers-module/)`.
+
+Before v0.50, it used to be best practice to define a module in the `x/moduleName` folder. Using this method is still possible with v050. For example, the module called `Checkers` would go in `x/checkers`. If you look at the Cosmos SDK's base code, it also [defines its modules](https://github.com/cosmos/cosmos-sdk/tree/main/x) in an `x/` folder.
 
 Modules implement several elements:
 
@@ -142,6 +144,12 @@ See the [gRPC-Gateway documentation](https://grpc-ecosystem.github.io/grpc-gatew
 ### Command-line commands
 
 Each module defines commands for a command-line interface (CLI). Commands related to a module are defined in a folder called `client/cli`. The CLI divides commands into two categories: transactions and queries. These are the same as those which you defined in `tx.go` and `query.go` respectively.
+
+<HighlightBox type="note">
+
+Starting with Cosmos SDK v0.50, the `autocli.go` facility lets developers create CLI commands in a succinct descriptive way.
+
+</HighlightBox>
 
 ### Keeper
 
@@ -407,11 +415,12 @@ Note that:
 
 <HighlightBox type="tip">
 
-If you want to go beyond the code samples in the expandable above and instead see in more detail how to define all this, go to [Run Your Own Cosmos Chain](/hands-on-exercise/1-ignite-cli/index.md).
+If you would like to get started on building your own checkers game, you can go straight to the main exercise in Run Your Own Cosmos Chain, either [natively with SDK v0.50](/hands-on-exercise/0-native/index.md) or [with Ignite CLI](/hands-on-exercise/1-ignite-cli/index.md) to start from scratch.
 
 More specifically, you can jump to:
 
-* [Ignite CLI](/hands-on-exercise/1-ignite-cli/1-ignitecli.md) to create a new blockchain with your checkers module.
+* [Build your module from scratch](/hands-on-exercise/0-native/2-build-module.md) to see how you can do just that with Cosmos SDK v0.50.
+* [Ignite CLI](/hands-on-exercise/1-ignite-cli/1-ignitecli.md) to create a new blockchain with your checkers module with the help of Ignite CLI.
 * The advanced [Handle Wager Payments](/hands-on-exercise/2-ignite-cli-adv/6-payment-winning.md) to have your checkers module access and use the bank module.
 * [Add a leaderboard module](/hands-on-exercise/4-run-in-prod/3-add-leaderboard.md) and loosely couple it with another module with the use of the hooks pattern. It also leverages the module's `Params` construct.
 * The IBC-advanced [Extend the Checkers Game With a Leaderboard](/hands-on-exercise/5-ibc-adv/6-ibc-app-checkers.md) to add a second custom IBC module to your checkers blockchain.

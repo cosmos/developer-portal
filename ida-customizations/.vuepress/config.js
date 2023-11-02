@@ -259,12 +259,32 @@ module.exports = {
                   path: "/ida-course/LPs/week-2/",
                 },
                 {
-                  title: "Setup Your Work Environment",
+                  title: "Set Up Your Work Environment",
                   path: "/tutorials/2-setup/",
                 },
                 {
                   title: "Run a Node, API, and CLI",
                   path: "/tutorials/3-run-node/",
+                },
+                {
+                  title: "SDK v0.50 Native Preparation",
+                  path: "/hands-on-exercise/0-native/1-preparation.html",
+                },
+                {
+                  title: "Build Your v0.50 Module",
+                  path: "/hands-on-exercise/0-native/2-build-module.html",
+                },
+                {
+                  title: "Add Your First Object",
+                  path: "/hands-on-exercise/0-native/3-add-game.html",
+                },
+                {
+                  title: "Add Your First Message",
+                  path: "/hands-on-exercise/0-native/4-add-message.html",
+                },
+                {
+                  title: "Add Your First Query",
+                  path: "/hands-on-exercise/0-native/5-add-query.html",
                 },
                 {
                   title: "Ignite CLI",
@@ -728,6 +748,10 @@ module.exports = {
       'cometbft': {
         color: '#00B067',
         label: 'CometBFT'
+      },
+      'ignite-cli': {
+        color: '#BA3FD9',
+        label: 'Ignite-CLI'
       },
       'cosmos-hub': {
         color: '#f7f199',
