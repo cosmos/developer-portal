@@ -83,9 +83,9 @@ customModules:
       #   description: |
       #     You will discover the interchain ecosystem and learn about the main concepts of the Cosmos SDK, from its Tendermint consensus to learning how keys, accounts, and transactions relate to each other. Dive into:
       #   links:
-      #     - title: Blockchain technology and the Interchain
+      #     - title: Blockchain technology and the interchain
       #       path: /academy/1-what-is-cosmos/1-blockchain-and-cosmos.html
-      #     - title: The Interchain Ecosystem
+      #     - title: The interchain ecosystem
       #       path: /academy/1-what-is-cosmos/2-cosmos-ecosystem.html
       #     - title: Interchain use cases
       #       path: /academy/1-what-is-cosmos/3-interchain-use-cases.html
@@ -139,7 +139,7 @@ customModules:
       #       path: /hands-on-exercise/0-native/5-add-query.html
       #     - title: Introduction to Ignite CLI
       #       path: /hands-on-exercise/1-ignite-cli/1-ignitecli.html
-      #     - title: Exercise - Make a Checkers Blockchain
+      #     - title: Exercise - Make a checkers blockchain
       #       path: /hands-on-exercise/1-ignite-cli/2-exercise-intro.html
       #     - title: Store a game
       #       path: /hands-on-exercise/1-ignite-cli/3-stored-game.html
@@ -153,7 +153,7 @@ customModules:
       #       path: /hands-on-exercise/1-ignite-cli/7-events.html
       #     - title: Record the game winners
       #       path: /hands-on-exercise/1-ignite-cli/8-game-winner.html
-      #     - title: Coding Exercise 1
+      #     - title: Exam Coding Exercise 1
       #       path: /academy/exercise-week2.html
       # - image: /lp-images/ida_dev_portal_lp_hero-09.png
       #   title: Week 3 - IBC and CosmJS
@@ -183,10 +183,10 @@ customModules:
       #       path: /tutorials/7-cosmjs/4-with-keplr.html
       #     - title: Create custom CosmJS interfaces
       #       path: /tutorials/7-cosmjs/5-create-custom.html
-      #     - title: Coding Exercise 2
+      #     - title: Exam Coding Exercise 2
       #       path: /academy/exercise-week3.html
       # - image: /lp-images/ida_dev_portal_lp_hero-04-b.png
-      #   title: Week 4 - Ignite CLI Advanced and IBC Advanced
+      #   title: Week 4 - Ignite CLI and IBC Advanced
       #   href: /ida-course/LPs/week-4/
       #   description: |
       #     You will dive deeper into customizing the checkers blockchain to make your game more interesting and unique with Ignite, while also testing and expanding your IBC knowledge to:
@@ -217,7 +217,7 @@ customModules:
       #       path: /hands-on-exercise/5-ibc-adv/1-go-relayer.html
       #     - title: Hermes relayer
       #       path: /hands-on-exercise/5-ibc-adv/2-hermes-relayer.html
-      #     - title: Coding Exercise 3
+      #     - title: Exam Coding Exercise 3
       #       path: /academy/exercise-week4.html
       # - image: /lp-images/ida_dev_portal_lp_hero-03.png
       #   title: Week 5 - CosmJS Advanced
@@ -235,7 +235,7 @@ customModules:
       #       path: /hands-on-exercise/3-cosmjs-adv/4-cosmjs-gui.html
       #     - title: Backend script for game indexing
       #       path: /hands-on-exercise/3-cosmjs-adv/5-server-side.html
-      #     - title: Coding Exercise 4
+      #     - title: Exam Coding Exercise 4
       #       path: /academy/exercise-week5.html
       # - image: /lp-images/moving-objects.svg
       #   title: Week 6 - IBC Deep Dive

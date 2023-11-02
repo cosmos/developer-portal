@@ -9,7 +9,7 @@ tags:
 ---
 
 <div class="tm-overline tm-rf-1 tm-lh-title tm-medium tm-muted">Get started with Cosmos SDK v0.50 and run your Cosmos chain</div>
-<h1 class="mt-4 mb-6">First Steps - Run Your Cosmos Chain</h1>
+<h1 class="mt-4 mb-6">First Steps to Run Your Chain</h1>
 
 Do you want to find out how to run Cosmos chains? Take it step-by-step.
 

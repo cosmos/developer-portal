@@ -1,5 +1,5 @@
 ---
-title: "Interchain use cases"
+title: "Interchain Use Cases"
 order: 4
 description: An introduction to projects in the interchain ecosystem
 tags:
@@ -8,7 +8,7 @@ tags:
   - ibc
 ---
 
-# Interchain use cases
+# Interchain Use Cases
 
 So far in the program you have looked at the features of blockchain in general and of the interchain in particular. Now it's time to focus more closely on examples of what the interchain can allow developers to achieve: creating applications that previous blockchain platforms would have proved too limiting for them to truly flourish.
 
