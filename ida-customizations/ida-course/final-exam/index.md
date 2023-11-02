@@ -7,9 +7,38 @@ tags:
 
 # Final Exam
 
-The Final Exam will be released on **Thursday, January 4th, 2024**.
+Congratulations on getting this far! You are now ready to take the Final Exam, if you have not started it yet.
+
+The Final Exam period officially starts on **January 4th, 2024**. You will have **4 weeks to submit** your exam, by **February 1st (11.59 pm UTC)** at the latest. You can work on your exam until the end of the Final Exam period and can submit your exam whenever you feel ready. Importantly, February 1st is a hard cut-off, and we are not granting extensions.
+
+<HighlightBox type="note">
+
+**You can also work on the Final Exam during the main program**, starting with the Exam Quiz in Week 1. More exercises will be unlocked in later weeks, and they all contribute towards your total score. If you complete them all successfully you will have already passed the Final Exam by the end of the program!
+
+</HighlightBox>
+
+The Final Exam consists of a combination of quizzes and a code project. The elements of the Final Exam are progressively unlocked during the main program. Completing them successfully contributes to your score in the Final Exam.
+
+These are the exercises of the Final Exam, plus their contribution to your final score:
+
+* **Exam Quiz** – 10% of the Final Exam
+
+* **Four coding exercises** – 80% of the Final Exam
+
+* **IBC operation exercise** – 10% of the Final Exam
+
+*You will receive an email and notification via Discord closer to the date.*
+
+## When do I get the results?
+
+You will receive your exam results by **February 16th, 2024**.
 
 <!--
+
+Before exam period: 
+The Final Exam will be released on **Thursday, January 4th, 2024**.
+
+After exam period:
 
 Congratulations on getting this far! You are now ready to take the exam, if you have not started it yet. You can work on your exam until **February 1st** and can submit your exam whenever you feel ready. Importantly, February 1st is a hard cut-off, and we are not granting extensions.
 
