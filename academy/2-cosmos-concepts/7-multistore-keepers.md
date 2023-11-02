@@ -504,7 +504,7 @@ A good first point is to introduce a game deadline. For details, head to one of 
 **How to expire games**
 
 How can you know what games should be removed? Should you load _all_ games and filter for those that have expired? That would be extremely expensive, O(n) of the number of games in fact. This means the more successful your blockchain becomes, the slower it would run.
-
+<br/><br/>
 Better is to use a First-In-First-Out (FIFO) strategy, where fresh games are pushed back to the tail so that the head contains the next games to expire.
 
 To see how this can be implemented in the context of the Cosmos SDK, head to one of the links at the bottom of the page.

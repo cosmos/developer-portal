@@ -104,6 +104,7 @@ A **hierarchical-deterministic wallet** uses a single seed phrase to generate ma
 ### Cryptographic standards
 
 The Cosmos SDK uses [BIP32](https://en.bitcoin.it/wiki/BIP_0032), which allows users to generate a set of accounts from an initial **secret** and a **derivation path** containing some input data, such as a blockchain identifier and account index. Since BIP39, this initial secret is mostly generated with 12 or 24 words, known as the mnemonic, taken from a standardized dictionary. Key pairs can always be mathematically reproduced from the mnemonic and the derivation path, which explains the deterministic nature of wallets.
+<br/><br/>
 
 <HighlightBox type="tip">
 

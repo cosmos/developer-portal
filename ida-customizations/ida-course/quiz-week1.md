@@ -1,25 +1,33 @@
 ---
-title: "Week 1 Quiz"
+title: "Exam Quiz"
 order:
-description: Quiz time
+description: Quiz time!
 ---
 
-# Week 1 Quiz
+# Exam Quiz
 
 You have reached the end of Week 1. Time for a check-up to see how much you have captured!
 
-**Please make sure you enter the same email address used to sign up for this Academy when submitting the quiz.**
+Follow this link [Week 1 Quiz](https://hr.gs/ida-c5-week1-quiz) to attempt a pop quiz covering general questions on the interchain and its main concepts. The quiz contains 37 questions and you have 120 minutes to complete it, which is more time than you will need.
 
-Follow this link: [Week 1 Quiz](https://hr.gs/ida-c4-week1-quiz), to submit a pop quiz covering general questions on the interchain and its main concepts. The quiz contains 37 questions, and you have 120 minutes to complete it. That is a lot more time than we expect you to need.
+**Please make sure you enter the same email address used to sign up for this Academy when submitting the quiz.**
 
 <HighlightBox type="note">
 
-**We recommend you attempt the quiz as soon as you finish the week's material, or ideally before Thursday, November 16th, 11:59 pm UTC.**
-<br/><br/>
-We highly recommend submitting the quiz as an opportunity to practice and demonstrate your engagement with the program.
-<br/><br/>
-You have only **1** attempt to do the quiz. It does not have any impact on your program participation in case you do not pass the quiz.
+The Exam Quiz is worth 10% of your Final Exam score. 
+
+You are free to attempt the quiz now, or you can wait until the Final Exam period officially begins on January 4th, 2024. The absolute deadline for attempting the quiz is February 1st.
 
 </HighlightBox>
+
+<HighlightBox type="warn">
+
+**Be aware: You can only attempt the Exam Quiz once.**
+
+It is recommended to do the quiz in a quiet environment without distractions and ensure that you have time to complete it without being interrupted.
+
+</HighlightBox>
+
+After you complete the Exam Quiz, you will receive a confirmation email including your score and some feedback.
 
 Good Luck!

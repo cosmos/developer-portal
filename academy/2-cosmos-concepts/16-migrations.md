@@ -209,7 +209,7 @@ You need new data structures for v2. With Ignite CLI you have:
 Before thinking about the upgrade, take care of the code as if your v2 was a new project. You need to add code to your v2 to update the leaderboard after a game has been determined. This means a lot of array sorting and information adjustment on the previous code.
 
 Look at the links at the bottom of this page for the related hands-on guided exercise.
-
+<br/><br/>
 **Genesis migration preparation**
 
 With on-the-go updating of the leaderboard taken care of in v2, you must place past players on the leaderboard. You choose the **in-place migration**, whereby your v2 software has access to the v1 storage the first time it launches and _migrates_ it to a v2 storage as fast as it can.
@@ -225,7 +225,7 @@ Without going into too much detail, the following actions are taken:
 * These intermediate pieces are added to the player information totals from storage.
 
 Again, look for links at the bottom of this page for the detailed implementation.
-
+<br/><br/>
 **Past leaderboard**
 
 Eventually, the player information computation is complete and it is possible to create the leaderboard for these past players. This may involve the sorting of a very large array. Perhaps it could be done in tranches:
@@ -259,7 +259,7 @@ func PerformMigration(ctx sdk.Context, k keeper.Keeper, storedGameChunk uint64, 
 ```
 
 For details about the implementation, look for the links at the bottom of this page.
-
+<br/><br/>
 **Proper genesis migration**
 
 With the data migration prepared, it is time to:

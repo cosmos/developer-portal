@@ -369,6 +369,7 @@ Have `alice` start a game with `bob`.
 <HighlightBox type="remember">
 
 Instead of having to copy and paste the addresses each time you need them, you can store these as variables:
+<br/><br/>
 
 <CodeGroup>
 
@@ -506,6 +507,7 @@ txhash: 576C303E3C43B409B0DEA1CBFF18B7F34F1E69492EE8A562751668117E42834B
 ```
 
 If you are curious, the `.events.attributes` are encoded in Base64:
+<br/><br/>
 
 <CodeGroup>
 
@@ -545,9 +547,9 @@ Which can be found again in `.raw_log`.
 <HighlightBox type="reading">
 
 **Troubleshooting - key not found**
-
+<br/><br/>
 On some systems, you may encounter errors stating _keys not found_. First verify that you do indeed have the correct addresses; if this is the case, then the errors may be because one command uses keyring A while another command uses keyring B. Keyrings do not share keys, so this can explain the error message.
-
+<br/><br/>
 In this situation, you may need to specify your preferred keyring explicitly so that it is consistent across commands. For instance:
 
 * When creating keys:

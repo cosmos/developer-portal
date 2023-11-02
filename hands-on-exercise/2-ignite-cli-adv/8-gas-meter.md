@@ -102,9 +102,9 @@ In this example, when handling a move the gas is measured towards the end of the
 <HighlightBox type="note">
 
 In the current arrangement, if a player hits an error (such as a failure to pay the wager, or making an illegal move) then the code will return an error _before_ the gas metering line. This means the player making the error will only pay the gas already metered by the rest of the Cosmos SDK.
-
+<br/><br/>
 If you decide to move the gas metering line closer to the beginning of the function's body, then you will charge the player extra gas for any move that contains errors _despite the fact that the requested move will not be accepted_.
-
+<br/><br/>
 This alternate approach would certainly dis-incentivize players from submitting erroneous moves, but it also risks alienating them through financial punishment for accidental mistakes. Better is to implement a feature that allows players to check a move is valid _before_ they pay the cost of handling. This is explored in the [next section](/hands-on-exercise/2-ignite-cli-adv/9-can-play.md).
 
 </HighlightBox>

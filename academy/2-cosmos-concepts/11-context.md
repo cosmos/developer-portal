@@ -121,7 +121,7 @@ func GetNextDeadline(ctx sdk.Context) time.Time {
 ```
 
 After that, it is a matter of serializing this data so it is stored alongside the other parameters of the game, and of deserializing it when checking whether it has reached the deadline.
-
+<br/><br/>
 **Gas costs**
 
 Another point where the context is explicitly used is when you want to make your players pay with gas for operations you specify. This gas fee comes on top of the configured standard fee for transactions on your chain. Propose some ratios, which would have to be adjusted so they make sense compared to the base transaction costs:

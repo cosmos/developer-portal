@@ -243,8 +243,8 @@ This **design project** is meant to get you thinking and will evolve in stages a
 
 <HighlightBox type="tip">
 
-This is meant as a design exercise. If you want to go from the design phase to the **implementation** phase, head to [Rebuild Your Cosmos Chain With Ignite](/hands-on-exercise/1-ignite-cli/index.md), which is a completely separate exercise.
-
+This is meant as a design exercise. If you want to go from the design phase to the **implementation** phase, head to [Run Your Own Cosmos Chain](/hands-on-exercise/1-ignite-cli/index.md), which is a completely separate exercise.
+<br/><br/>
 You are free to think about design here and in the following concept pages, and then jump to a related section of the exercise.
 
 </HighlightBox>
@@ -354,6 +354,7 @@ Resolve any error if necessary.
 You need to see whether it makes sense to send the transaction back through ABCI. If the transaction succeeded, you keep the new board state in memory ready for the next delivered transaction. You do not save to the storage at this point.
 <br/><br/>
 You can also choose to define which information should be indexed via `events: repeated Event` in the response. The returned values are intended to return information that could be tedious to collect otherwise. This allows fast searches across blocks for values of relevance if indexed.
+<br/><br/>
 
 <HighlightBox type="docs">
 
@@ -392,7 +393,7 @@ Ignoring the issue of validators for now, [this is used](https://github.com/tend
 <br/><br/>
 Assume that you want to tally what happened in the block. You return this aggregate event:
 
-```
+```json
 [
     { key: "name", value: "aggregateAction", index: true },
     { key: "black-captured-count", value: uint32, index: false },
