@@ -41,7 +41,7 @@ This exercise assumes that:
 2. Your Protobuf definition files are in `./proto/`.
 3. You want to transpile them into TypeScript in `./src/codegen/`.
 
-Install `telescope`, in your package or in docker:
+Install `telescope`, in your package or in Docker:
 
 <CodeGroup>
 
@@ -163,7 +163,7 @@ $ mkdir -p ./proto/gogoproto
 $ curl https://raw.githubusercontent.com/cosmos/cosmos-sdk/v0.45.4/third_party/proto/gogoproto/gogo.proto -o ./proto/gogoproto/gogo.proto
 ```
 
-Or you can add latest whole `third_party` folders by running `npx telescope install` under `myLib` folder:
+Or you can add the latest whole `third_party` folders by running `npx telescope install` under `myLib` folder:
 
 <CodeGroup>
 <CodeGroupItem title="Interactive">
@@ -185,7 +185,7 @@ Telescope 1.0.3
  ...
 ```
 
-Say `cosmos`'s selected and entered, there'll be cosmos folder and its dependencies (like gogoproto and google, etc) in `myLib/proto` folder.
+Say `cosmos` is selected and entered, there will be a Cosmos folder and its dependencies (like gogoproto, Google, etc.) in `myLib/proto` folder.
 
 </CodeGroupItem>
 <CodeGroupItem title="NonInteractive">
@@ -194,9 +194,9 @@ Say `cosmos`'s selected and entered, there'll be cosmos folder and its dependenc
 $ npx telescope install @protobufs/cosmos@0.0.10  @protobufs/confio
 ```
 
-You can add wanted proto packages after `telescope install`, then you don't have to select them one by one.
+You can add wanted proto packages after `telescope install`, then you do not have to select them one by one.
 
-Then there'll be the packages and its dependencies (like gogoproto and google, etc) in myLib/proto folder.
+Then there will be the packages and its dependencies (like gogoproto, Google, etc.) in the `myLib/proto` folder.
 
 </CodeGroupItem>
 <CodeGroupItem title="Docker non-interactive">
@@ -209,7 +209,7 @@ $ docker run --rm -it \
     npx telescope install @protobufs/cosmos@0.0.10  @protobufs/confio
 ```
 
-This will create `/myLib/proto` with cosmos and confio proto file folders in docker instance.
+This will create `/myLib/proto` with Cosmos and Confio proto file folders in the Docker instance.
 
 </CodeGroupItem>
 </CodeGroup>
@@ -241,7 +241,7 @@ $ docker run --rm -it \
 
 You should now see some `.ts` files generated in `./src/codegen`. These are the real source files used in your application.
 
-By default, the command takes `./proto` as input folder and `./src/codegen` as output folder. You can config in and out folders and the way Telescope generating code by using options like the examples:
+By default, the command takes `./proto` as input folder and `./src/codegen` as output folder. You can config in and out folders and the way Telescope generates code by using options like these examples:
 
 <CodeGroup>
 <CodeGroupItem title="Local">
@@ -264,9 +264,9 @@ $ docker run --rm -it \
 </CodeGroupItem>
 </CodeGroup>
 
-When running the command, Telescope takes proto folder as input, and generate files in 'gen/src' folder.
+When running the command, Telescope takes a proto folder as input, and generates files in a 'gen/src' folder.
 
-Each time `telescope transpile` has been ran, a config file `.telescope.json` will be created in the folder where it's running:
+Each time `telescope transpile` has run, a config file, `.telescope.json`, will be created in the folder where it is running:
 
 ```json
 //.telescope.json
@@ -291,11 +291,10 @@ Each time `telescope transpile` has been ran, a config file `.telescope.json` wi
 }
 ```
 
-* `protoDirs`: root directory that contains folders with Protobuf files. e.g. If `protoDirs` is set with `proto` and `proto-common`, when importing from `cosmos/base/query/v1beta1/pagination.proto`, Telescope will go checking whether there's `proto/cosmos/base/query/v1beta1/pagination.proto` or `proto-common/cosmos/base/query/v1beta1/pagination.proto`, and then generate a dependency based on the file.
-* `outPath`: it contains Typescript files structured by the folder structure of Protobuf files.
+* `protoDirs`: root directory that contains folders with Protobuf files. For example, if `protoDirs` is set with `proto` and `proto-common`, when importing from `cosmos/base/query/v1beta1/pagination.proto`, Telescope will check whether there is `proto/cosmos/base/query/v1beta1/pagination.proto` or `proto-common/cosmos/base/query/v1beta1/pagination.proto`, and then generate a dependency based on the file.
+* `outPath`: contains TypeScript files structured by the folder structure of Protobuf files.
 
 You can modify the config file according to [Telescope options](https://github.com/cosmology-tech/telescope#options), and then use the file by the option `--config`:
-
 
 <CodeGroup>
 <CodeGroupItem title="Local">
@@ -320,13 +319,12 @@ $ docker run --rm -it \
 
 <HighlightBox type="note">
 
-Note that:
-* `protoDirs` are taken both from `--protoDirs` arguments and the `protoDirs` field in configuration file. It means proto files inside `proto-common` and `proto` will be taken in this case.
-* `outPath` is taken only from the configuration file, `gen/src` in this case. it means that even if the `--outPath` option's provided to the command, the value will be ignored.
+* `protoDirs` are taken both from `--protoDirs` arguments and the `protoDirs` field in the configuration file. It means proto files inside `proto-common` and `proto` will be taken in this case.
+* `outPath` is taken only from the configuration file, `gen/src` in this case. It means that even if the `--outPath` option is provided to the command, the value will be ignored.
 
 </HighlightBox>
 
-After it's been ran successfully, there'll be a message:
+After it has run successfully, there will be a message:
 
 ```txt
 ✨ files transpiled in '/gen/src'
@@ -335,7 +333,7 @@ After it's been ran successfully, there'll be a message:
 
 <HighlightBox type="note">
 
-Note that `outPath` is created automatically during the transpilation. This means that you will get no "missing dir" error, for instance if your `outPath` is incorrect.
+`outPath` is created automatically during the transpilation. This means that you will get no "missing dir" error, for instance if your `outPath` is incorrect.
 
 </HighlightBox>
 
@@ -392,7 +390,7 @@ You can find the same structure in [`query.ts`](https://github.com/confio/cosmjs
 
 ### Proper saving
 
-Commit the extra `.proto` files as well as the compiled ones to your repository so you do not need to recreate them. So add an npm run target, to keep track of how this was done and easily reproduce it in the future when you update a Protobuf file:
+Commit the extra `.proto` files and the compiled ones to your repository so you do not need to recreate them. Add an npm run target to keep track of how this was done and easily reproduce it in the future when you update a Protobuf file:
 
 ```json
 "scripts": {
@@ -446,7 +444,7 @@ export const bankTypes: ReadonlyArray<[string, GeneratedType]> = [
 ];
 ```
 
-Add child types to `EncodeObject` to direct Typescript:
+Add child types to `EncodeObject` to direct TypeScript:
 
 ```typescript [https://github.com/cosmos/cosmjs/blob/v0.28.3/packages/stargate/src/modules/bank/messages.ts#L9-L12]
 export interface MsgSendEncodeObject extends EncodeObject {
@@ -606,7 +604,7 @@ More specifically, you can jump to:
 To summarize, this section has explored:
 
 * How CosmJS's out-of-the-box interfaces understand how messages of standard Cosmos SDK modules are serialized, meaning that your unique modules will require custom CosmJS interfaces of their own.
-* How to create the necessary Protobuf objects and clients in Typescript, the extensions that facilitate the use of these clients, and any further level of abstraction that you deem useful for integration.
+* How to create the necessary Protobuf objects and clients in TypeScript, the extensions that facilitate the use of these clients, and any further level of abstraction that you deem useful for integration.
 * How to integrate CosmJS with Ignite's client and signing client, which are typically the ultimate abstractions that facilitate the querying and sending of transactions.
 
 </HighlightBox>
