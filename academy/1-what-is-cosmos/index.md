@@ -9,7 +9,7 @@ tags:
 ---
 
 <div class="tm-overline tm-rf-1 tm-lh-title tm-medium tm-muted">From the vision to the ecosystem</div>
-<h1 class="mt-4 mb-6">What Is the Interchain?</h1>
+<h1 class="mt-4 mb-6">What is the Interchain?</h1>
 
 How does the interchain network of interoperable blockchains fit into the overall development of blockchain technology?
 
