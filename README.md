@@ -390,7 +390,7 @@ customModules:
           - title: Simulate a migration in production with Docker Compose
             path: /hands-on-exercise/4-run-in-prod/5-migration-prod.html
       - image: /lp-images/ida_dev_portal_lp_hero-03.png
-        title: IBC - Advanced
+        title: IBC advanced
         href: /hands-on-exercise/5-ibc-adv/
         description: |
           Test your IBC knowledge by developing your checkers blockchain further:
