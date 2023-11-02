@@ -32,7 +32,7 @@ tools:
     description: Industry standard protocol for inter-blockchain communication.
     links:
       - name: Learn more
-        url: https://ibcprotocol.org/
+        url: https://ibcprotocol.dev/
       - name: Documentation
         url: https://ibc.cosmos.network/
     image: /ibc-icon.svg
@@ -134,14 +134,14 @@ customModules:
       Discover the interchain ecosystem, Cosmos SDK, and IBC. Feel free to start with the first chapter, or select one or more tags to filter the available content.
     sections:
       - image: /lp-images/ida_dev_portal_lp_hero-05.png
-        title: What is the Interchain?
+        title: What is the interchain?
         href: /academy/1-what-is-cosmos/
         description: |
           Get a fast overview of:
         links:
-          - title: Blockchain technology and the Interchain
+          - title: Blockchain technology and the interchain
             path: /academy/1-what-is-cosmos/1-blockchain-and-cosmos.html
-          - title: The Interchain Ecosystem
+          - title: The interchain ecosystem
             path: /academy/1-what-is-cosmos/2-cosmos-ecosystem.html
           - title: Interchain use cases
             path: /academy/1-what-is-cosmos/3-interchain-use-cases.html
@@ -149,7 +149,7 @@ customModules:
             path: /academy/1-what-is-cosmos/4-atom-staking.html
       #- {} Example of section break
       - image: /lp-images/cosmos_dev_portal_module-03-lp-new.png
-        title: Interchain Concepts
+        title: Interchain concepts
         href: /academy/2-cosmos-concepts/
         description: |
           This chapter includes an introduction to the main concepts underlying the Interchain Stack and Cosmos SDK:
@@ -270,7 +270,7 @@ customModules:
           - title: The gov module
             path: /tutorials/8-understand-sdk-modules/4-gov.html
       - image: /lp-images/ida_dev_portal_lp_hero-07.png
-        title: The Path to Production
+        title: The path to production
         href: /tutorials/9-path-to-prod
         description: |
           Prepare your blockchain to run in production:
@@ -294,7 +294,7 @@ customModules:
       From zero to hero - work with the full Interchain Stack while developing a checkers game blockchain. Feel free to start with the first chapter, or select one or more tags to filter the available content.
     sections:
       - image: /lp-images/cosmos_dev_portal_module-04-lp.png
-        title: SDK v0.50 Native
+        title: SDK v0.50 native
         href: /hands-on-exercise/0-native/
         description: |
           Do the minimum to develop a checkers blockchain natively with Cosmos SDK v0.50:
@@ -310,7 +310,7 @@ customModules:
           - title: Add your first query
             path: /hands-on-exercise/0-native/5-add-query.html
       - image: /lp-images/cosmos_dev_portal_module-05-lp.png
-        title: Ignite CLI - Basics
+        title: Ignite CLI basics
         href: /hands-on-exercise/1-ignite-cli/
         description: |
           Get started with Ignite CLI and begin developing a checkers blockchain:
@@ -332,7 +332,7 @@ customModules:
           - title: Record the winners
             path: /hands-on-exercise/1-ignite-cli/8-game-winner.html
       - image: /lp-images/ida_dev_portal_lp_hero-02.png
-        title: Ignite CLI - Advanced
+        title: Ignite CLI advanced
         href: /hands-on-exercise/2-ignite-cli-adv/
         description: |
           Continue developing your checkers blockchain with Ignite by:
@@ -358,7 +358,7 @@ customModules:
           - title: Play with cross-chain tokens
             path: /hands-on-exercise/2-ignite-cli-adv/10-wager-denom.html
       - image: /lp-images/ida_dev_portal_lp_hero-08.png
-        title: CosmJS - Advanced
+        title: CosmJS advanced
         href: /hands-on-exercise/3-cosmjs-adv/
         description: |
           Apply your knowledge of CosmJS to the checkers blockchain exercise. You will:
@@ -374,7 +374,7 @@ customModules:
           - title: Use CosmJS for game indexing
             path: /hands-on-exercise/3-cosmjs-adv/5-server-side.html
       - image: /lp-images/universe.png
-        title: From Code to MVP to Production
+        title: From code to MVP to production
         href: /hands-on-exercise/4-run-in-prod/
         description: |
           Show your checkers blockchain to investors and progressively the world:
@@ -390,7 +390,7 @@ customModules:
           - title: Simulate a migration in production with Docker Compose
             path: /hands-on-exercise/4-run-in-prod/5-migration-prod.html
       - image: /lp-images/ida_dev_portal_lp_hero-03.png
-        title: IBC - Advanced
+        title: IBC advanced
         href: /hands-on-exercise/5-ibc-adv/
         description: |
           Test your IBC knowledge by developing your checkers blockchain further:

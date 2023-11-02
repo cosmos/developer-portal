@@ -4,7 +4,7 @@ parent:
   description: See your chain in action
   number: 8
 order: 0
-title: Week 5 - See Your Chain in Action
+title: Week 7 - See Your Chain in Action
 tags:
 ---
 

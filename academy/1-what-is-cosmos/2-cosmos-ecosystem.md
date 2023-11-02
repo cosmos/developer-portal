@@ -122,7 +122,7 @@ If you are interested in hearing more from the Cosmos SDK team itself, in the fo
 
 ## The Inter-Blockchain Communication Protocol
 
-The [Inter-Blockchain Communication Protocol (IBC)](https://ibcprotocol.org/) is the basis for **interoperability** in the interchain. It leverages the instant finality of Tendermint to allow for the transfer of value (token transfers) and communication between heterogeneous chains. Blockchains with different applications and architecture specifications become interoperable whether or not they share a validator set.
+The [Inter-Blockchain Communication Protocol (IBC)](https://ibcprotocol.dev/) is the basis for **interoperability** in the interchain. It leverages the instant finality of Tendermint to allow for the transfer of value (token transfers) and communication between heterogeneous chains. Blockchains with different applications and architecture specifications become interoperable whether or not they share a validator set.
 
 Without IBC, the interoperability of heterogeneous chains is difficult to achieve because they may implement the consensus, networking, and application layers in different ways. As soon as a blockchain is compatible with IBC, it becomes interoperable with other blockchains.
 

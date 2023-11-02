@@ -1,15 +1,15 @@
 ---
 parent:
-  title: First Steps
+  title: Rebuild Your Cosmos Chain With Ignite
   description: Get started with Ignite CLI and run your Cosmos chain
   number: 1
 order: 0
-title: Chapter Overview - First Steps to Run Your Chain
+title: Chapter Overview - Rebuild Your Cosmos Chain With Ignite
 tags:
 ---
 
 <div class="tm-overline tm-rf-1 tm-lh-title tm-medium tm-muted">Get started with Ignite CLI and run your Cosmos chain</div>
-<h1 class="mt-4 mb-6">First Steps - Run Your Cosmos Chain</h1>
+<h1 class="mt-4 mb-6">First Steps - Rebuild Your Cosmos Chain With Ignite</h1>
 
 Do you want to find out how to run Cosmos chains? Take it step-by-step.
 
