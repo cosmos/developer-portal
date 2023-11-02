@@ -495,9 +495,9 @@ Faucet balances: [ { denom: 'uatom', amount: '867777337235' } ]
 Instead of using the `decode` functions that come with the `Tx` and `MsgSend` imports, you process the data yourself via alternative means. If you would like to experiment more, parse the `rawLog` manually as opposed to deserializing the transaction as suggested previously.
 <br/><br/>
 Note the conceptual difference between `Tx` and the `rawLog`. The `Tx`, or `MsgSend`, object is an **input to the computation** that takes place when the transaction is included in a block. The `rawLog` is the resulting **output** of said computation and its content depends on what the blockchain code emitted when executing the transaction.
-
+<br/><br/>
 In particular, if the transaction failed you would be able to extract the faucet address from the `Tx` but _not_ from the `rawLog`, because the log would contain the error message.
-
+<br/><br/>
 From the `IndexedTx` you see that there is a [`rawLog`](https://github.com/cosmos/cosmjs/blob/v0.28.2/packages/stargate/src/stargateclient.ts#L64), which happens to be a stringified JSON.
 
 ```typescript [https://github.com/b9lab/cosmjs-sandbox/blob/with-stargate-client/experiment.ts#L28-L29]

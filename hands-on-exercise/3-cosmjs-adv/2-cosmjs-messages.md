@@ -487,7 +487,7 @@ Your accounts are now ready to proceed with the tests proper.
 <HighlightBox type="note">
 
 There are an extra 40 seconds given for this potentially slower process: `this.timeout(40_000)`.
-
+<br/><br/>
 You may want to adjust this time-out value. Here it is set at _10 seconds multiplied by the maximum number of transactions in the function_. Here there are at most 4 transactions when calling the CosmJS faucet. Query calls are typically very fast, and therefore need not enter in the time-out calculation.
 
 </HighlightBox>

@@ -207,6 +207,7 @@ Ignite CLI significantly reduces the amount of work a developer has to do to bui
 Your work is mostly done. You want to create the specific game creation code to replace `// TODO: Handling the message`. For this, you need to:
 
 1. Decide how to create a new and unique game ID: `newIndex`.
+    <br/><br/>
 
     <HighlightBox type="info">
 
@@ -321,7 +322,7 @@ What would happen if a player stops taking turns? To ensure functionality for yo
 * Handling the cancelation in ABCI's `EndBlock` (or rather its equivalent in the Cosmos SDK) without any of the players having to trigger the cancelation. For the guided coding exercise on this part, head straight to [Auto-Expiring Games](/hands-on-exercise/2-ignite-cli-adv/4-game-forfeit.md).
 
 In general terms, you could add `timeout: Timestamp` to your `StoredGame` and update it every time something changes in the game. You can decide on a maximum delay, for example _one day_.
-<br/>
+<br/><br/>
 
 <HighlightBox type="info">
 

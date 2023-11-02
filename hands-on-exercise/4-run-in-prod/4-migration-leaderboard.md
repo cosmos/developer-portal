@@ -1050,8 +1050,6 @@ $ docker run --rm -it \
 
 </CodeGroup>
 
----
-
 You can confirm that you have computed player info:
 
 <CodeGroup>

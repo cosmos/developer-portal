@@ -40,9 +40,9 @@ In effect, this creates a new `client` folder. This `client` folder makes it pos
 <HighlightBox type="note">
 
 As noted previously [when you created your project](/hands-on-exercise/1-ignite-cli/1-ignitecli.md) with Ignite, your project is known as `alice/checkers` (or the alternative name you chose). 
-
+<br/><br/>
 However, [`github.com/cosmos/academy-checkers-ui`](https://github.com/cosmos/academy-checkers-ui) is a repository that already exists and uses [`b9lab/checkers`](https://github.com/cosmos/academy-checkers-ui/blob/generated/src/types/generated/checkers/genesis.ts#L8) in order to maintain compatibility with the [checkers application](https://github.com/cosmos/b9-checkers-academy-draft/tree/cosmjs-elements), of which it is a submodule.
-
+<br/><br/>
 Therefore, if you choose to reuse `github.com/cosmos/academy-checkers-ui`, you must do one of the following:
 
 * Make sure to replace all occurrences of `b9lab/checkers` with `alice/checkers`, or whichever name you picked.
@@ -703,7 +703,7 @@ If you are curious about how this `Dockerfile-standalone` was created, head to t
 <HighlightBox type="warn">
 
 Note that the standalone checkers Docker image uses the project name `b9lab/checkers`, **including for its Protobuf package names**. Make sure that your [`generated` Typescript objects do too](https://github.com/cosmos/academy-checkers-ui/blob/generated/src/types/generated/checkers/genesis.ts#L8).
-
+<br/><br/>
 If that is not the case, you may encounter ambiguous errors such as:
 
 ```txt

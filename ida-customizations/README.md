@@ -115,7 +115,7 @@ customModules:
       #       path: /academy/2-cosmos-concepts/15-bridges.html
       #     - title: Migrations
       #       path: /academy/2-cosmos-concepts/16-migrations.html
-      #     - title: Week 1 Quiz
+      #     - title: Exam Quiz
       #       path: /academy/quiz-week1.html
       # - image: /lp-images/ida_dev_portal_lp_hero-02.png
       #   title: Week 2 - First Steps
@@ -143,7 +143,7 @@ customModules:
       #       path: /hands-on-exercise/1-ignite-cli/7-events.html
       #     - title: Record the game winners
       #       path: /hands-on-exercise/1-ignite-cli/8-game-winner.html
-      #     - title: Week 2 Exercise
+      #     - title: Coding Exercise 1
       #       path: /academy/exercise-week2.html
       # - image: /lp-images/ida_dev_portal_lp_hero-09.png
       #   title: Week 3 - IBC and CosmJS
@@ -173,6 +173,8 @@ customModules:
       #       path: /tutorials/7-cosmjs/4-with-keplr.html
       #     - title: Create custom CosmJS interfaces
       #       path: /tutorials/7-cosmjs/5-create-custom.html
+      #     - title: Coding Exercise 2
+      #       path: /academy/exercise-week3.html
       # - image: /lp-images/ida_dev_portal_lp_hero-04-b.png
       #   title: Week 4 - Ignite CLI Advanced and IBC Advanced
       #   href: /ida-course/LPs/week-4/
@@ -205,6 +207,8 @@ customModules:
       #       path: /hands-on-exercise/5-ibc-adv/1-go-relayer.html
       #     - title: Hermes relayer
       #       path: /hands-on-exercise/5-ibc-adv/2-hermes-relayer.html
+      #     - title: Coding Exercise 3
+      #       path: /academy/exercise-week4.html
       # - image: /lp-images/ida_dev_portal_lp_hero-03.png
       #   title: Week 5 - CosmJS Advanced
       #   href: /ida-course/LPs/week-5/
@@ -221,6 +225,8 @@ customModules:
       #       path: /hands-on-exercise/3-cosmjs-adv/4-cosmjs-gui.html
       #     - title: Backend script for game indexing
       #       path: /hands-on-exercise/3-cosmjs-adv/5-server-side.html
+      #     - title: Coding Exercise 4
+      #       path: /academy/exercise-week5.html
       # - image: /lp-images/moving-objects.svg
       #   title: Week 6 - IBC Deep Dive
       #   href: /ida-course/LPs/week-6/
@@ -237,6 +243,8 @@ customModules:
       #       path: /hands-on-exercise/5-ibc-adv/6-ibc-app-checkers.html
       #     - title: Create a leaderboard chain
       #       path: /hands-on-exercise/5-ibc-adv/79-ibc-app-leaderboard.html
+      #     - title: IBC Operation Exercise
+      #       path: /academy/exercise-week6.html
       # - image: /lp-images/ida_dev_portal_lp_hero-07.png
       #   title: Week 7 - From Code to MVP to Production and Migrations
       #   href: /ida-course/LPs/week-7/

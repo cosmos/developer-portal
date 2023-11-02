@@ -254,7 +254,7 @@ Your choice of module name (`github.com/alice/checkers`, or any other name) dese
 <ExpansionPanel title="Troubleshooting">
 
 For the sake of good support, the versions of all software used are communicated as encountered throughout this course. It is natural that after the writing of the course material some version changes will appear, and it may occur that something breaks. Instead of using different versions of the software from the ones in the course, please look at the following list, which might fix problems you are running into. Otherwise, use Docker as explained on this page.
-<p></p>
+<br/><br/>
 If all else fails, please post the issue you face on Discord.
 
 <PanelListItem number="1">
@@ -551,7 +551,11 @@ $ docker exec -it checkers bash -c "cd vue && npm run dev -- --host"
 
 ---
 
+<HighlightBox type="tip">
+
 Note the `--host` flag, which is forwarded to the underlying `vite` command thanks to the `--` separator. This is necessary if you run the frontend within Docker.
+
+</HighlightBox>
 
 Navigate to [localhost:3000](http://localhost:3000/), or to whichever address was listed when running `dev`. The first load may take a few seconds. On the client-side, from the top right you can connect to the page via [Keplr](chrome://extensions/?id=dmkamcknogkgcdfhhbddcghachkejeap) if you are on the Chrome browser. You should see something like this:
 

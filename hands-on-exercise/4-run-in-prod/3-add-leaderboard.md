@@ -1581,8 +1581,6 @@ $ docker run --rm -it \
 
 </CodeGroup>
 
----
-
 After that, you can query your leaderboard:
 
 <CodeGroup>

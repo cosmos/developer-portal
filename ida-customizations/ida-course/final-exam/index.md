@@ -11,7 +11,7 @@ The Final Exam will be released on **Thursday, January 4th, 2024**.
 
 <!--
 
-Congratulations on getting this far! You are now ready to take the exam. You can work on your exam until **February 1st** and can submit your exam whenever you feel ready. Importantly, February 1st is a hard cut-off, and we are not granting extensions.
+Congratulations on getting this far! You are now ready to take the exam, if you have not started it yet. You can work on your exam until **February 1st** and can submit your exam whenever you feel ready. Importantly, February 1st is a hard cut-off, and we are not granting extensions.
 
 The exam is composed of two parts:
 
