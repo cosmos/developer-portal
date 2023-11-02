@@ -198,9 +198,9 @@ Create a Telescope config `.telescope.json` with following content:
 
 There are three main sections in the config file:
 
-* `protoDirs`: root directory that contains folders with Protobuf files. e.g. If `protoDirs` is set with `proto` and `proto-common`, when importing from `cosmos/base/query/v1beta1/pagination.proto`, Telescope will go checking whether there's `proto/cosmos/base/query/v1beta1/pagination.proto` or `proto-common/cosmos/base/query/v1beta1/pagination.proto`, and then generate a dependency based on the file.
+* `protoDirs`: root directory that contains folders with Protobuf files. e.g. If `protoDirs` is set with `proto` and `proto-common`, when importing from `cosmos/base/query/v1beta1/pagination.proto`, Telescope will go check whether there's `proto/cosmos/base/query/v1beta1/pagination.proto` or `proto-common/cosmos/base/query/v1beta1/pagination.proto`, and then generate a dependency based on the file.
 * `outPath`: it contains Typescript files structured by the folder structure of Protobuf files.
-* `options`: Telescope options for users to decide which part of the code will be generated and the way of how code will be transpiled. For more details please see: [Telescope options](https://github.com/cosmology-tech/telescope#options).
+* `options`: Telescope options for users to decide which part of the code will be generated and the way how code will be transpiled. For more details please see: [Telescope options](https://github.com/cosmology-tech/telescope#options).
 
 </HighlightBox>
 
@@ -231,7 +231,7 @@ $ ls proto/checkers | xargs -I {} docker run --rm \
 
 </CodeGroup>
 
-After it's been ran successfully, there'll be a message:
+After it has been run successfully, there will be a message:
 
 ```txt
 ✨ files transpiled in '/client/src/types/generated'
