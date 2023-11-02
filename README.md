@@ -32,7 +32,7 @@ tools:
     description: Industry standard protocol for inter-blockchain communication.
     links:
       - name: Learn more
-        url: https://ibcprotocol.org/
+        url: https://ibcprotocol.dev/
       - name: Documentation
         url: https://ibc.cosmos.network/
     image: /ibc-icon.svg
