@@ -31,91 +31,24 @@ This section assumes that you have a working Cosmos blockchain with its own modu
 
 ## Compiling the Protobuf objects and clients
 
-You can choose which library you use to compile your Protobuf objects into TypeScript or JavaScript. Reproducing [what Stargate](https://github.com/cosmos/cosmjs/blob/main/packages/stargate/CUSTOM_PROTOBUF_CODECS.md) or [`cosmjs-types`](https://github.com/confio/cosmjs-types/blob/main/scripts/codegen.js) do is a good choice.
+You can choose which library you use to compile your Protobuf objects into TypeScript or JavaScript. Reproducing what [cosmjs-types](https://github.com/confio/cosmjs-types/blob/main/scripts/codegen.js) or [Stargate](https://github.com/cosmos/cosmjs/blob/main/packages/stargate/CUSTOM_PROTOBUF_CODECS.md) do is a good choice.
 
 ### Preparation
 
 This exercise assumes that:
 
-1. Your Protobuf definition files are in `./proto/myChain`.
-2. You want to compile them into TypeScript in `./client/src/types/generated`.
+1. The library you're creating is in 'myLib'.
+2. Your Protobuf definition files are in `./proto/`.
+3. You want to transpile them into TypeScript in `./src/codegen/`.
 
-Install `protoc` on your computer and its Typescript plugin in your project, possibly with the help of a Dockerfile:
-
-<CodeGroup>
-
-<CodeGroupItem title="Local">
-
-```sh
-$ mkdir -p /usr/lib/protoc
-$ cd /usr/lib/protoc
-$ curl -L https://github.com/protocolbuffers/protobuf/releases/download/v21.7/protoc-21.7-linux-x86_64.zip -o protoc.zip
-$ unzip -o protoc.zip
-$ rm protoc.zip
-$ ln -s /usr/lib/protoc/bin/protoc /usr/local/bin/protoc
-$ npm install ts-proto@1.121.6 --save-dev
-```
-
-Adjust to your preferred version, operating system, and CPU platform. For instance, on an Apple M1 you would use `protoc-21.7-osx-aarch_64.zip`.
-
-</CodeGroupItem>
-
-<CodeGroupItem title="Dockerfile">
-
-```Dockerfile
-FROM --platform=linux node:lts-slim as base
-ARG BUILDARCH
-
-ENV PROTOC_VERSION=21.7
-ENV TS_PROTO_VERSION=1.121.6
-
-FROM base AS platform-amd64
-ENV PROTOC_PLATFORM=x86_64
-
-FROM base AS platform-arm64
-ENV PROTOC_PLATFORM=aarch_64
-
-FROM platform-${BUILDARCH}
-
-RUN apt-get update
-RUN apt-get install curl unzip --yes
-
-# Install ProtoC
-RUN mkdir -p /usr/lib/protoc
-WORKDIR /usr/lib/protoc
-RUN curl -L https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-${PROTOC_PLATFORM}.zip -o protoc.zip
-RUN unzip -o protoc.zip
-RUN rm protoc.zip
-RUN ln -s /usr/lib/protoc/bin/protoc /usr/local/bin/protoc
-
-# Install ts-proto
-RUN npm install --global ts-proto@${TS_PROTO_VERSION} --save-exact
-
-WORKDIR /
-
-ENTRYPOINT [ "protoc" ]
-```
-
-Then build the image:
-
-```sh
-$ docker build . -t ts-protoc
-```
-
-</CodeGroupItem>
-
-</CodeGroup>
-
----
-
-You can confirm the version you received. The executable is located in `./node_modules/protoc/protoc/bin/protoc`:
+Install `telescope`, in your package or in Docker:
 
 <CodeGroup>
 
 <CodeGroupItem title="Local">
 
 ```sh
-$ protoc --version
+$ npm install --save-dev --save-exact @cosmology/telescope@1.0.5
 ```
 
 </CodeGroupItem>
@@ -124,7 +57,59 @@ $ protoc --version
 
 ```sh
 $ docker run --rm -it \
-    ts-protoc --version
+    -v $(pwd):/myLib \
+    -w /myLib \
+    ts-telescope \
+    npm install --save-dev --save-exact @cosmology/telescope@1.0.5
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="Docker Image">
+
+```Dockerfile
+FROM --platform=linux node:lts-slim as base
+
+ENV TELESCOPE_VERSION=1.0.5
+
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
+RUN npm install --global @cosmology/telescope@${TELESCOPE_VERSION}
+
+ENTRYPOINT ["telescope"]
+```
+
+Then build the image:
+
+```sh
+$ docker build . -t ts-telescope
+```
+
+You can replace `ts-telescope` with your preferred name.
+
+</CodeGroupItem>
+
+</CodeGroup>
+
+---
+
+You can confirm the version you received by running:
+
+<CodeGroup>
+
+<CodeGroupItem title="Local">
+
+```sh
+$ npx telescope --version
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="Docker">
+
+```sh
+$ docker run --rm -it \
+    ts-telescope --version
 ```
 
 </CodeGroupItem>
@@ -134,16 +119,10 @@ $ docker run --rm -it \
 This returns something like:
 
 ```txt
-libprotoc 3.21.7
+1.0.5
 ```
 
 The compiler tools are ready. Time to use them.
-
-Create the target folder if it does not exist yet:
-
-```sh
-$ mkdir -p client/src/types/generated
-```
 
 ### Getting third party files
 
@@ -184,59 +163,183 @@ $ mkdir -p ./proto/gogoproto
 $ curl https://raw.githubusercontent.com/cosmos/cosmos-sdk/v0.45.4/third_party/proto/gogoproto/gogo.proto -o ./proto/gogoproto/gogo.proto
 ```
 
-### Compilation
-
-You can now compile the Protobuf files. To avoid adding all the `.proto` files manually to the command, use `xargs`:
+Or you can add the latest whole `third_party` folders by running `npx telescope install` under `myLib` folder:
 
 <CodeGroup>
-
-<CodeGroupItem title="Local">
+<CodeGroupItem title="Interactive">
 
 ```sh
-$ ls ./proto/myChain | xargs -I {} protoc \
-  --plugin="./node_modules/ts-proto/protoc-gen-ts_proto" \
-  --ts_proto_out="./client/src/types/generated" \
-  --proto_path="./proto" \
-  --ts_proto_opt="esModuleInterop=true,forceLong=long,useOptionals=messages" \
-  myChain/{}
+$ npx telescope install
 ```
+
+then select packages you want to include in `myLib/proto` folder:
+
+```txt
+Telescope 1.0.3
+? [pkg] which packages do you want to support? (Press <space> to select, <a> to toggle all, <i> to invert selection)
+❯◯ amino
+ ◯ akash
+ ◯ bcna
+ ...
+ ◯ cosmos
+ ...
+```
+
+Say `cosmos` is selected and entered, there will be a Cosmos folder and its dependencies (like gogoproto, Google, etc.) in `myLib/proto` folder.
 
 </CodeGroupItem>
-
-<CodeGroupItem title="Docker">
+<CodeGroupItem title="NonInteractive">
 
 ```sh
-$ ls ./proto/myChain | xargs -I {} \
-    docker run --rm -i \
-    -v $(pwd):/project -w /project \
-    ts-protoc \
-    --plugin="/usr/local/lib/node_modules/ts-proto/protoc-gen-ts_proto" \
-    --ts_proto_out="./client/src/types/generated" \
-    --proto_path="./proto" \
-    --ts_proto_opt="esModuleInterop=true,forceLong=long,useOptionals=messages" \
-    myChain/{}
+$ npx telescope install @protobufs/cosmos@0.0.10  @protobufs/confio
 ```
 
-Where `/usr/local/lib/node_modules` is the result of the query:
+You can add wanted proto packages after `telescope install`, then you do not have to select them one by one.
+
+Then there will be the packages and its dependencies (like gogoproto, Google, etc.) in the `myLib/proto` folder.
+
+</CodeGroupItem>
+<CodeGroupItem title="Docker non-interactive">
 
 ```sh
 $ docker run --rm -it \
-    --entrypoint npm \
-    ts-protoc \
-    root --global
+    -v $(pwd):/myLib \
+    -w /myLib \
+    ts-telescope \
+    npx telescope install @protobufs/cosmos@0.0.10  @protobufs/confio
 ```
 
-This shows where `ts-proto` was installed globally.
+This will create `/myLib/proto` with Cosmos and Confio proto file folders in the Docker instance.
 
 </CodeGroupItem>
-
 </CodeGroup>
+
+### Compilation
+
+You can now compile the Protobuf files using Telescope.
+
+<CodeGroup>
+<CodeGroupItem title="Local">
+
+```sh
+$ npx telescope transpile
+```
+
+</CodeGroupItem>
+<CodeGroupItem title="Docker">
+
+```sh
+$ docker run --rm -it \
+    -v $(pwd):/myLib \
+    -w /myLib \
+    ts-telescope \
+    npx telescope transpile
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
+You should now see some `.ts` files generated in `./src/codegen`. These are the real source files used in your application.
+
+By default, the command takes `./proto` as input folder and `./src/codegen` as output folder. You can config in and out folders and the way Telescope generates code by using options like these examples:
+
+<CodeGroup>
+<CodeGroupItem title="Local">
+
+```sh
+$ npx telescope transpile --protoDirs ./proto --outPath gen/src
+```
+
+</CodeGroupItem>
+<CodeGroupItem title="Docker">
+
+```sh
+$ docker run --rm -it \
+    -v $(pwd):/myLib \
+    -w /myLib \
+    ts-telescope \
+    npx telescope transpile --protoDirs ./proto --outPath gen/src
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
+When running the command, Telescope takes a proto folder as input, and generates files in a 'gen/src' folder.
+
+Each time `telescope transpile` has run, a config file, `.telescope.json`, will be created in the folder where it is running:
+
+```json
+//.telescope.json
+{
+  "protoDirs": [
+    "./proto"
+  ],
+  "outPath": "gen/src",
+  "options": {
+    // telescope options
+    "addTypeUrlToDecoders": true,
+    "addTypeUrlToObjects": true,
+
+    "typingsFormat": {
+        "num64": "bigint",
+        "customTypes": {
+            "useCosmosSDKDec": true
+        }
+    },
+    ...
+  }
+}
+```
+
+* `protoDirs`: root directory that contains folders with Protobuf files. For example, if `protoDirs` is set with `proto` and `proto-common`, when importing from `cosmos/base/query/v1beta1/pagination.proto`, Telescope will check whether there is `proto/cosmos/base/query/v1beta1/pagination.proto` or `proto-common/cosmos/base/query/v1beta1/pagination.proto`, and then generate a dependency based on the file.
+* `outPath`: contains TypeScript files structured by the folder structure of Protobuf files.
+
+You can modify the config file according to [Telescope options](https://github.com/cosmology-tech/telescope#options), and then use the file by the option `--config`:
+
+<CodeGroup>
+<CodeGroupItem title="Local">
+
+```sh
+$ npx telescope transpile --protoDirs ../../proto-common --config .telescope.json
+```
+
+</CodeGroupItem>
+<CodeGroupItem title="Docker">
+
+```sh
+$ docker run --rm -it \
+    -v $(pwd):/myLib \
+    -w /myLib \
+    ts-telescope \
+    npx telescope transpile --protoDirs ../../proto-common --config .telescope.json
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
+<HighlightBox type="note">
+
+* `protoDirs` are taken both from `--protoDirs` arguments and the `protoDirs` field in the configuration file. It means proto files inside `proto-common` and `proto` will be taken in this case.
+* `outPath` is taken only from the configuration file, `gen/src` in this case. It means that even if the `--outPath` option is provided to the command, the value will be ignored.
+
+</HighlightBox>
+
+After it has run successfully, there will be a message:
+
+```txt
+✨ files transpiled in '/gen/src'
+✨ transpilation successful!
+```
+
+<HighlightBox type="note">
+
+`outPath` is created automatically during the transpilation. This means that you will get no "missing dir" error, for instance if your `outPath` is incorrect.
+
+</HighlightBox>
 
 ---
 
-`--proto_path` is only `./proto` so that your imports (such as `import "cosmos/base...`) can be found.
-
-You should now see your files compiled into TypeScript. They have been correctly filed under their respective folders and contain both types and services definitions. It also created the compiled versions of your third party imports.
+You should now see your files transpiled into TypeScript. They have been correctly filed under their respective folders and contain both types and services definitions. It also created the transpiled versions of your third party imports.
 
 ### A note about the result
 
@@ -249,9 +352,9 @@ service Msg {
 }
 ```
 
-If so, you find its service declaration in the compiled `tx.ts` file:
+If so, you find its service declaration in the compiled `tx.ts` file (with Telescope option `rpcClients.inline: true`) or in `tx.rpc.msg.ts` file (with Telescope option `rpcClients.inline: false`):
 
-```typescript [https://github.com/confio/cosmjs-types/blob/v0.4.1/src/cosmos/bank/v1beta1/tx.ts#L243-L248]
+```typescript [https://github.com/confio/cosmjs-types/blob/v0.8.0/src/cosmos/bank/v1beta1/tx.ts#L473]
 export interface Msg {
     Send(request: MsgSend): Promise<MsgSendResponse>;
     //...
@@ -260,7 +363,7 @@ export interface Msg {
 
 It also appears in the default implementation:
 
-```typescript [https://github.com/confio/cosmjs-types/blob/v0.4.1/src/cosmos/bank/v1beta1/tx.ts#L250-L268]
+```typescript [https://github.com/confio/cosmjs-types/blob/v0.8.0/src/cosmos/bank/v1beta1/tx.ts#L495]
 export class MsgClientImpl implements Msg {
     private readonly rpc: Rpc;
     constructor(rpc: Rpc) {
@@ -279,20 +382,21 @@ export class MsgClientImpl implements Msg {
 
 The important points to remember from this are:
 
-1. `rpc: RPC` is an instance of a Protobuf RPC client that is given to you by CosmJS. Although the interface appears to be [declared locally](https://github.com/confio/cosmjs-types/blob/v0.4.1/src/cosmos/bank/v1beta1/tx.ts#L270-L272), this is the same interface found [throughout CosmJS](https://github.com/cosmos/cosmjs/blob/v0.28.3/packages/stargate/src/queryclient/utils.ts#L35-L37). It is given to you [on construction](https://github.com/cosmos/cosmjs/blob/v0.28.3/packages/stargate/src/queryclient/queryclient.ts). At this point you do not need an implementation for it.
+1. `rpc: RPC` is an instance of a Protobuf RPC client that is given to you by CosmJS. Although the interface appears to be [declared locally](https://github.com/confio/cosmjs-types/blob/v0.8.0/src/helpers.ts#L180), this is the same interface found [throughout CosmJS](https://github.com/cosmos/cosmjs/blob/v0.28.3/packages/stargate/src/queryclient/utils.ts#L35-L37). It is given to you [on construction](https://github.com/cosmos/cosmjs/blob/v0.28.3/packages/stargate/src/queryclient/queryclient.ts). At this point you do not need an implementation for it.
 2. You can see `encode` and `decode` in action. Notice the `.finish()` that flushes the Protobuf writer buffer.
 3. The `rpc.request` makes calls that are correctly understood by the Protobuf compiled server on the other side.
 
-You can find the same structure in [`query.ts`](https://github.com/confio/cosmjs-types/blob/v0.4.1/src/cosmos/bank/v1beta1/query.ts).
+You can find the same structure in [`query.ts`](https://github.com/confio/cosmjs-types/blob/v0.8.0/src/cosmos/bank/v1beta1/query.ts#L1583). (or `query.rpc.Query.ts` with telescope option rpcClients.inline: false)
 
 ### Proper saving
 
-Commit the extra `.proto` files as well as the compiled ones to your repository so you do not need to recreate them.
+Commit the extra `.proto` files and the compiled ones to your repository so you do not need to recreate them. Add an npm run target to keep track of how this was done and easily reproduce it in the future when you update a Protobuf file:
 
-Take inspiration from `cosmjs-types` [`codegen.sh`](https://github.com/confio/cosmjs-types/tree/main/scripts):
-
-1. Create a script file named `ts-proto.sh` with the previous command, or create a `Makefile` target.
-2. Add an [npm run target](https://github.com/confio/cosmjs-types/blob/c64759a/package.json#L31) with it, to keep track of how this was done and easily reproduce it in the future when you update a Protobuf file.
+```json
+"scripts": {
+    "codegen": "telescope transpile --config .telescope.json",
+}
+```
 
 ## Add convenience with types
 
@@ -317,17 +421,19 @@ message MsgSend {
 
 In this case, the `MsgSend`'s type URL is [`"/cosmos.bank.v1beta1.MsgSend"`](https://github.com/cosmos/cosmjs/blob/v0.28.3/packages/stargate/src/modules/bank/messages.ts#L6).
 
-Each of your types is associated like this. You can declare each string as a constant value, such as:
+Each of your types is associated like this. You can also find constant strings like those in generated files if `prototypes.addTypeUrlToObjects` is set to true, take [tx.ts](https://github.com/confio/cosmjs-types/blob/v0.8.0/src/cosmos/bank/v1beta1/tx.ts#L82) as an example:
 
 ```typescript
-export const msgSendTypeUrl = "/cosmos.bank.v1beta1.MsgSend";
+export const MsgSend = {
+  // there's no this field in the given link, but there will be if prototypes.addTypeUrlToObjects is set to true.
+  typeUrl: "/cosmos.bank.v1beta1.MsgSend",
+  ...
+}
 ```
-
-Save those along with `generated` in `./client/src/types/modules`.
 
 ### For messages
 
-Messages, sub-types of `Msg`, are assembled into transactions that are then sent to CometBFT. CosmJS types already include types for [transactions](https://github.com/confio/cosmjs-types/blob/v0.4.1/src/cosmos/tx/v1beta1/tx.ts#L12-L26). These are assembled, signed, and sent by the [`SigningStargateClient`](https://github.com/cosmos/cosmjs/blob/v0.28.3/packages/stargate/src/signingstargateclient.ts#L280-L298) of CosmJS.
+Messages, sub-types of `Msg`, are assembled into transactions that are then sent to CometBFT. CosmJS types already include types for [transactions](https://github.com/confio/cosmjs-types/blob/v0.8.0/src/cosmos/tx/v1beta1/tx.ts#L10-L24). These are assembled, signed, and sent by the [`SigningStargateClient`](https://github.com/cosmos/cosmjs/blob/v0.28.3/packages/stargate/src/signingstargateclient.ts#L280-L298) of CosmJS.
 
 The `Msg` kind also needs to be added to a registry. To facilitate that, you should prepare them in a nested array:
 
@@ -338,7 +444,7 @@ export const bankTypes: ReadonlyArray<[string, GeneratedType]> = [
 ];
 ```
 
-Add child types to `EncodeObject` to direct Typescript:
+Add child types to `EncodeObject` to direct TypeScript:
 
 ```typescript [https://github.com/cosmos/cosmjs/blob/v0.28.3/packages/stargate/src/modules/bank/messages.ts#L9-L12]
 export interface MsgSendEncodeObject extends EncodeObject {
@@ -498,7 +604,7 @@ More specifically, you can jump to:
 To summarize, this section has explored:
 
 * How CosmJS's out-of-the-box interfaces understand how messages of standard Cosmos SDK modules are serialized, meaning that your unique modules will require custom CosmJS interfaces of their own.
-* How to create the necessary Protobuf objects and clients in Typescript, the extensions that facilitate the use of these clients, and any further level of abstraction that you deem useful for integration.
+* How to create the necessary Protobuf objects and clients in TypeScript, the extensions that facilitate the use of these clients, and any further level of abstraction that you deem useful for integration.
 * How to integrate CosmJS with Ignite's client and signing client, which are typically the ultimate abstractions that facilitate the querying and sending of transactions.
 
 </HighlightBox>
