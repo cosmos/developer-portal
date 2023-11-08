@@ -17,7 +17,7 @@ These exercises help you prepare a conceptual framework for the information that
 
 <HighlightBox type="info">
 
-Although the guided coding exercises use Cosmos SDK **v0.45.4**, the current release is at _v0.47.2_. In addition, v0.50 is imminent, and will feature the following:
+Although the guided coding exercises use Cosmos SDK **v0.45.4**, the current release is at _v0.47.2_. In addition, v0.50 is just released, and features the following:
 
 * **ABCI++**: a refactor of the ABCI layer to enable more use cases. In particular the SDK’s `EndBlock` disappears as a module function and is replaced by another while keeping the same conceptual capability.
 * **Core API**: the creation of a stable, standard API for building modules that is independent of the SDK and CometBFT versions, allowing for modules to be written which can target multiple implementations of these dependencies.
@@ -29,7 +29,7 @@ Although the guided coding exercises use Cosmos SDK **v0.45.4**, the current rel
 * **Migration of the new store module**: the use of a new node key format necessitates migration of the original IAVL store to the new version.
 * **Integration testing**: becomes more meaningful with only dependencies being instantiated, instead of a whole app.
 
-For a sense of the scale of the Cosmos SDK's ongoing development, you can review **all** the changes that have been implemented to date at [this link](https://github.com/cosmos/cosmos-sdk/releases).
+For a sense of the scale of the Cosmos SDK's ongoing development, you can review **all** the changes that have been implemented to date at [this link](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.50.1).
 
 </HighlightBox>
 
