@@ -200,7 +200,7 @@ func (storedGame StoredGame) Validate() (err error) {
 
 With these additions, you can validate the games in `genesis.go`:
 
-```diff-go [https://github.com/b9lab/checkers-minimal/blob/game-validation/genesis.go#L16-L27]
+```diff-go [https://github.com/b9lab/checkers-minimal/blob/game-validation/genesis.go#L16-L28]
     func (gs *GenesisState) Validate() error {
         if err := gs.Params.Validate(); err != nil {
             return err
@@ -217,6 +217,7 @@ With these additions, you can validate the games in `genesis.go`:
 +          if err := indexedStoredGame.StoredGame.Validate(); err != nil {
 +              return err
 +          }
++          unique[indexedStoredGame.Index] = true
 +      }
 
         return nil
