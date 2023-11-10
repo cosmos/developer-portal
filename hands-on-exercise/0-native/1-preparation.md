@@ -86,6 +86,7 @@ $ MODULE_NAME=alice/checkers ./scripts/rename.sh
 The updated files will come in handy when you want to copy-paste them.
 
 <ExpansionPanel title="Troubleshooting">
+<PanelListItem number="1">
 
 The `rename.sh` files self-removes when the process is complete. If an error happens, you may have to reset hard with Git before retrying:
 
@@ -95,6 +96,18 @@ $ git reset --hard
 
 This assumes that you have no other uncommitted changes that are worth keeping.
 
+</PanelListItem>
+<PanelListItem number="2" :last="true">
+
+If you get something like:
+
+```txt
+ /usr/bin/env: 'bash\r': No such file or directory
+```
+
+Note that the `\r` points to line endings. Try changing the script's line endings from Windows to Unix/Linux style, or vice-versa.
+
+</PanelListItem>
 </ExpansionPanel>
 
 ## Up next
