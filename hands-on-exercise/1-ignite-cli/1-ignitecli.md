@@ -210,7 +210,10 @@ Ignite CLI version:     v0.22.1
 That is the bare minimum required to be able to run the commands that come on this page. If at a later stage you want to create a persistent container named `checkers`, you can do:
 
 ```sh
-$ docker create --name checkers -i -v $(pwd):/checkers -w /checkers -p 1317:1317 -p 3000:3000 -p 4500:4500 -p 5000:5000 -p 26657:26657 checkers_i
+$ docker create --name checkers -i \
+    -v $(pwd):/checkers -w /checkers \
+    -p 1317:1317 -p 3000:3000 -p 4500:4500 -p 5000:5000 -p 26657:26657 \
+    checkers_i
 $ docker start checkers
 ```
 
@@ -219,7 +222,6 @@ $ docker start checkers
 Start by scaffolding a basic chain called `checkers` that you will place under the GitHub path `alice`:
 
 <CodeGroup>
-
 <CodeGroupItem title="Local" active>
 
 ```sh
@@ -227,17 +229,18 @@ $ ignite scaffold chain github.com/alice/checkers
 ```
 
 </CodeGroupItem>
-
 <CodeGroupItem title="Throwaway Docker container">
 
 ```sh
-$ docker run --rm -it -v $(pwd):/checkers -w /checkers checkers_i ignite scaffold chain github.com/alice/checkers
+$ docker run --rm -it \
+    -v $(pwd):/checkers -w /checkers \
+    checkers_i \
+    ignite scaffold chain github.com/alice/checkers
 ```
 
 This only works if you have prepared the `checkers_i` Docker image.
 
 </CodeGroupItem>
-
 </CodeGroup>
 
 `github.com/alice/checkers` is the name of the Golang module by which this project will be known. If you own the `github.com/alice` path, you can even eventually host it there and have other people use your project as a module.
@@ -269,8 +272,39 @@ If you work with a machine using M1 architecture, the Docker image should allow 
 3. Install Golang with `brew install go`.
 
 </PanelListItem>
+<PanelListItem number="2">
 
-<PanelListItem number="2" :last="true">
+If you are on Mac M1 with an aggressive anti-virus, it may prevent you from running Ignite, perhaps even within Docker. To circumvent this, you can recreate your Docker image for it to run within Docker **with the Intel CPU emulation**, like so:
+<br/>
+
+<CodeGroup>
+<CodeGroupItem title="Build">
+
+```sh
+$ docker build --platform=linux/amd64 ...
+```
+
+</CodeGroupItem>
+<CodeGroupItem title="Run">
+
+```sh
+$ docker run --platform=linux/amd64 ...
+```
+
+</CodeGroupItem>
+<CodeGroupItem title="Create">
+
+```sh
+$ docker create --platform=linux/amd64 ...
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
+Because of the emulation, your performance would be affected, but at least the anti-virus would not kill your process.
+
+</PanelListItem>
+<PanelListItem number="3" :last="true">
 
 **Building Errors during `scaffold`**
 
@@ -303,7 +337,6 @@ If you work with Go 1.18, you may need to install the following:
   ```
 
 </PanelListItem>
-
 </ExpansionPanel>
 
 The scaffolding takes some time as it generates the source code for a fully functional, ready-to-use blockchain. Ignite CLI creates a folder named `checkers` and scaffolds the chain inside it.
@@ -337,7 +370,6 @@ Do not remove or replace any lines like these in your code as they provide marke
 Go to the `checkers` folder and run:
 
 <CodeGroup>
-
 <CodeGroupItem title="Local" active>
 
 ```sh
@@ -346,12 +378,15 @@ $ ignite chain serve
 ```
 
 </CodeGroupItem>
-
 <CodeGroupItem title="Throwaway Docker">
 
 ```sh
 $ cd checkers
-$ docker run --rm -it -v $(pwd):/checkers -w /checkers -p 1317:1317 -p 3000:3000 -p 4500:4500 -p 5000:5000 -p 26657:26657 --name checkers checkers_i ignite chain serve
+$ docker run --rm -it \
+    -v $(pwd):/checkers -w /checkers \
+    -p 1317:1317 -p 3000:3000 -p 4500:4500 -p 5000:5000 -p 26657:26657 \
+    --name checkers checkers_i \
+    ignite chain serve
 ```
 
 <HighlightBox type="note">
@@ -361,18 +396,19 @@ Notice how you still name the container `checkers` so that you can access it for
 </HighlightBox>
 
 </CodeGroupItem>
-
 <CodeGroupItem title="Persistent Docker">
 
 ```sh
 $ cd checkers
-$ docker create --name checkers -i -v $(pwd):/checkers -w /checkers -p 1317:1317 -p 3000:3000 -p 4500:4500 -p 5000:5000 -p 26657:26657 checkers_i
+$ docker create --name checkers -i \
+    -v $(pwd):/checkers -w /checkers \
+    -p 1317:1317 -p 3000:3000 -p 4500:4500 -p 5000:5000 -p 26657:26657 \
+    checkers_i
 $ docker start checkers
 $ docker exec -it checkers ignite chain serve
 ```
 
 </CodeGroupItem>
-
 </CodeGroup>
 
 The `ignite chain serve` command downloads (a lot of) dependencies and compiles the source code into a binary called `checkersd`. This command:
@@ -390,17 +426,17 @@ If you use Docker with throwaway containers (`run --rm`) you will notice that it
 1. Move your `Dockerfile-ubuntu` file into your checkers project, next to the `go.mod` file.
 2. Add the following lines to `Dockerfile-ubuntu`:
 
-  ```Dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/ignite-start/Dockerfile-ubuntu#L35-L37]
-  COPY go.mod /checkers/go.mod
-  RUN go mod download
-  RUN rm /checkers/go.mod
-  ```
+    ```Dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/ignite-start/Dockerfile-ubuntu#L35-L37]
+    COPY go.mod /checkers/go.mod
+    RUN go mod download
+    RUN rm /checkers/go.mod
+    ```
 
 3. Recreate the image:
 
-  ```sh
-  $ docker build -f Dockerfile-ubuntu . -t checkers_i
-  ```
+    ```sh
+    $ docker build -f Dockerfile-ubuntu . -t checkers_i
+    ```
 
 </ExpansionPanel>
 
@@ -446,7 +482,6 @@ Ignite CLI can detect any change to the source code. When it does, it immediatel
 You can already interact with your running chain. With the chain running in its shell, open another shell and try:
 
 <CodeGroup>
-
 <CodeGroupItem title="Local" active>
 
 ```sh
@@ -454,7 +489,6 @@ $ checkersd status
 ```
 
 </CodeGroupItem>
-
 <CodeGroupItem title="Docker">
 
 ```sh
@@ -462,7 +496,6 @@ $ docker exec -it checkers checkersd status
 ```
 
 </CodeGroupItem>
-
 </CodeGroup>
 
 This prints:
@@ -474,7 +507,6 @@ This prints:
 In there you can see a hint of liveness: `"latest_block_height":"13"`. You can use this one-liner to better see the information:
 
 <CodeGroup>
-
 <CodeGroupItem title="Local" active>
 
 ```sh
@@ -482,7 +514,6 @@ $ checkersd status 2>&1 | jq
 ```
 
 </CodeGroupItem>
-
 <CodeGroupItem title="Docker">
 
 ```sh
@@ -490,13 +521,11 @@ $ docker exec -it checkers bash -c "checkersd status 2>&1 | jq"
 ```
 
 </CodeGroupItem>
-
 </CodeGroup>
 
 You can learn a lot by going through the possibilities with:
 
 <CodeGroup>
-
 <CodeGroupItem title="Local" active>
 
 ```sh
@@ -506,7 +535,6 @@ $ checkersd query --help
 ```
 
 </CodeGroupItem>
-
 <CodeGroupItem title="Docker">
 
 ```sh
@@ -516,7 +544,6 @@ $ docker exec -it checkers checkersd query --help
 ```
 
 </CodeGroupItem>
-
 </CodeGroup>
 
 And so on.
@@ -538,7 +565,6 @@ $ npm run dev
 If you want to serve on all network addresses, you need to run `npm run dev -- --host`.
 
 </CodeGroupItem>
-
 <CodeGroupItem title="Docker">
 
 ```sh
@@ -547,7 +573,6 @@ $ docker exec -it checkers bash -c "cd vue && npm run dev -- --host"
 ```
 
 </CodeGroupItem>
-
 </CodeGroup>
 
 ---
@@ -607,7 +632,6 @@ Make a Git commit before you create a new `message`. In fact, it is generally re
 After your Git commit, and having stopped running Ignite, create a simple `message` with:
 
 <CodeGroup>
-
 <CodeGroupItem title="Local" active>
 
 ```sh
@@ -615,7 +639,6 @@ $ ignite scaffold message createPost title body
 ```
 
 </CodeGroupItem>
-
 <CodeGroupItem title="Docker">
 
 ```sh
@@ -623,7 +646,6 @@ $ docker run --rm -it -v $(pwd):/checkers -w /checkers checkers_i ignite scaffol
 ```
 
 </CodeGroupItem>
-
 </CodeGroup>
 
 The `ignite scaffold message` command accepts a message name (here `createPost`) as the first argument, and a list of fields for the message (here `title` and `body`), which are `string` fields unless mentioned otherwise.
@@ -631,7 +653,6 @@ The `ignite scaffold message` command accepts a message name (here `createPost`)
 A message is scaffolded in a module with a name that matches the name of the project by default. It is named `checkers` in this case. Alternatively you could have used `--module checkers`. Learn more about your options with:
 
 <CodeGroup>
-
 <CodeGroupItem title="Local" active>
 
 ```sh
@@ -639,15 +660,15 @@ $ ignite scaffold message --help
 ```
 
 </CodeGroupItem>
-
 <CodeGroupItem title="Docker">
 
 ```sh
-$ docker run --rm -it checkers_i ignite scaffold message --help
+$ docker run --rm -it \
+    checkers_i \
+    ignite scaffold message --help
 ```
 
 </CodeGroupItem>
-
 </CodeGroup>
 
 You can see a list of files that were created or modified by the `scaffold message` command in the Terminal output:
@@ -670,7 +691,6 @@ The `modify` was made possible thanks to the lines like `// this line is used by
 So where is everything? You can find the root definition of your new message in:
 
 <CodeGroup>
-
 <CodeGroupItem title="proto/checkers/tx.proto" active>
 
 ```protobuf
@@ -682,13 +702,11 @@ message MsgCreatePost {
 ```
 
 </CodeGroupItem>
-
 </CodeGroup>
 
 Ignite CLI also wired a new command into your chain's CLI in:
 
 <CodeGroup>
-
 <CodeGroupItem title="x/checkers/client/cli/tx_create_post.go" active>
 
 ```go
@@ -703,13 +721,11 @@ func CmdCreatePost() *cobra.Command {
 ```
 
 </CodeGroupItem>
-
 </CodeGroup>
 
 Ignite CLI scaffolded GUI elements relating to your message with a Vue.js frontend framework. You can, for instance, start with this function in:
 
 <CodeGroup>
-
 <CodeGroupItem title="vue/src/store/generated/alice/checkers/alice.checkers.checkers/index.ts" active>
 
 ```typescript
@@ -730,7 +746,6 @@ async MsgCreatePost({ rootGetters }, { value }) {
 ```
 
 </CodeGroupItem>
-
 </CodeGroup>
 
 When you are done with this exercise you can stop Ignite's `chain serve.`
