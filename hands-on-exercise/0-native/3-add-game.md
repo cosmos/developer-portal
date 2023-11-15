@@ -48,7 +48,7 @@ When you save strings, it makes it easier to understand what comes straight out 
 
 As ever, taking inspiration from `minimal-module-example`, this can be described in `proto/../types.proto` with:
 
-```diff-protobuf [https://github.com/b9lab/checkers-minimal/blob/13760f3af095f61d3874042eb4dc9ec2bdbe38ec/proto/alice/checkers/v1/types.proto#L18-L23]
+```diff-protobuf [https://github.com/b9lab/checkers-minimal/blob/stored-game/proto/alice/checkers/v1/types.proto#L18-L23]
     message GenesisState {
       // params defines all the parameters of the module.
       Params params = 1 [ (gogoproto.nullable) = false ];
@@ -86,7 +86,7 @@ To achieve that, you create a composed type that is used in the genesis state.
 
 Update your `GenesisState` in `types.proto`:
 
-```diff-protobuf [https://github.com/b9lab/checkers-minimal/blob/c8b9d68ecb5b8031c99f9a0acd0fdb048623df40/proto/alice/checkers/v1/types.proto#L27-L30]
+```diff-protobuf [https://github.com/b9lab/checkers-minimal/blob/genesis-games/proto/alice/checkers/v1/types.proto#L17-L30]
     message GenesisState {
       // params defines all the parameters of the module.
       Params params = 1 [ (gogoproto.nullable) = false];
@@ -121,7 +121,7 @@ Start with a new `errors.go` file in the root folder of your `checkers-minimal` 
 <CodeGroup>
 <CodeGroupItem title="keys.go">
 
-```diff-go [https://github.com/b9lab/checkers-minimal/blob/93f66271d1c54dd7d8e89fd33d53390863650d49/keys.go#L6]
+```diff-go [https://github.com/b9lab/checkers-minimal/blob/game-validation/keys.go#L6]
     const ModuleName = "checkers"
 +  const MaxIndexLength = 256
 ```
@@ -129,7 +129,7 @@ Start with a new `errors.go` file in the root folder of your `checkers-minimal` 
 </CodeGroupItem>
 <CodeGroupItem title="errors.go">
 
-```go [https://github.com/b9lab/checkers-minimal/blob/93f66271d1c54dd7d8e89fd33d53390863650d49/errors.go]
+```go [https://github.com/b9lab/checkers-minimal/blob/game-validation/errors.go]
 package checkers
 
 import "cosmossdk.io/errors"
@@ -148,7 +148,7 @@ var (
 
 Next, in a new `stored-game.go` file:
 
-```go [https://github.com/b9lab/checkers-minimal/blob/93f66271d1c54dd7d8e89fd33d53390863650d49/stored-game.go]
+```go [https://github.com/b9lab/checkers-minimal/blob/game-validation/stored-game.go]
 package checkers
 
 import (
@@ -200,7 +200,7 @@ func (storedGame StoredGame) Validate() (err error) {
 
 With these additions, you can validate the games in `genesis.go`:
 
-```diff-go [https://github.com/b9lab/checkers-minimal/blob/93f66271d1c54dd7d8e89fd33d53390863650d49/genesis.go#L16-L27]
+```diff-go [https://github.com/b9lab/checkers-minimal/blob/game-validation/genesis.go#L16-L28]
     func (gs *GenesisState) Validate() error {
         if err := gs.Params.Validate(); err != nil {
             return err
@@ -217,6 +217,7 @@ With these additions, you can validate the games in `genesis.go`:
 +          if err := indexedStoredGame.StoredGame.Validate(); err != nil {
 +              return err
 +          }
++          unique[indexedStoredGame.Index] = true
 +      }
 
         return nil
@@ -229,7 +230,7 @@ With the basics of genesis and validation handled, shift focus to the keeper to 
 
 In order to declare the stored games as a map, you first need to define a map key in `keys.go`:
 
-```diff-go [https://github.com/b9lab/checkers-minimal/blob/67bc8d15a7c25a358e499737670d91526de6f894/keys.go#L10]
+```diff-go [https://github.com/b9lab/checkers-minimal/blob/keeper-games/keys.go#L10]
     var (
         ParamsKey      = collections.NewPrefix("Params")
 +      StoredGamesKey = collections.NewPrefix("StoredGames/value/")
@@ -238,7 +239,7 @@ In order to declare the stored games as a map, you first need to define a map ke
 
 Then declare its type in the keeper struct in `keeper/keeper.go`:
 
-```diff-go [https://github.com/b9lab/checkers-minimal/blob/67bc8d15a7c25a358e499737670d91526de6f894/keeper/keeper.go#L25]
+```diff-go [https://github.com/b9lab/checkers-minimal/blob/keeper-games/keeper/keeper.go#L25]
     type Keeper struct {
         ...
         Params      collections.Item[checkers.Params]
@@ -248,7 +249,7 @@ Then declare its type in the keeper struct in `keeper/keeper.go`:
 
 And then initialize the storage access, taking inspiration from `minimal-module-example`:
 
-```diff-go [https://github.com/b9lab/checkers-minimal/blob/67bc8d15a7c25a358e499737670d91526de6f894/keeper/keeper.go#L40-L42]
+```diff-go [https://github.com/b9lab/checkers-minimal/blob/keeper-games/keeper/keeper.go#L40-L42]
     ...
     k := Keeper{
         ...
@@ -272,7 +273,7 @@ The `codec.CollValue` construct is covered [in the documentation](https://docs.c
 
 Do not forget the genesis manipulation to and from storage in `keeper/genesis.go`, again taking inspiration from `minimal-module-example`:
 
-```diff-go [https://github.com/b9lab/checkers-minimal/blob/67bc8d15a7c25a358e499737670d91526de6f894/keeper/genesis.go]
+```diff-go [https://github.com/b9lab/checkers-minimal/blob/keeper-games/keeper/genesis.go]
     func (k *Keeper) InitGenesis(ctx context.Context, data *checkers.GenesisState) error {
         if err := k.Params.Set(ctx, data.Params); err != nil {
             return err
