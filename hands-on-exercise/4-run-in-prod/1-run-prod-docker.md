@@ -158,7 +158,7 @@ Use this command if you did not already have the `checkers_i` image. This comman
 
 Now include the relevant executable inside your **production** image. You need to use a Debian/Ubuntu base image because you compiled on one in the previous step. Create a new `Dockerfile-checkersd-debian` with:
 
-```Dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/run-prod/prod-sim/Dockerfile-checkersd-debian]
+```dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/run-prod/prod-sim/Dockerfile-checkersd-debian]
 FROM --platform=linux debian:11-slim
 ARG BUILDARCH
 
@@ -195,7 +195,7 @@ In this case, you have the choice between:
 
 1. Compiling from within alpine, using a [multi-stage Docker build](https://docs.docker.com/build/building/multi-stage/).
 
-    ```Dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/run-prod/prod-sim/Dockerfile-checkersd-alpine]
+    ```dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/run-prod/prod-sim/Dockerfile-checkersd-alpine]
     FROM --platform=linux golang:1.18.7-alpine AS builder
 
     RUN apk update
@@ -232,7 +232,7 @@ In this case, you have the choice between:
 
     Then run `make build-with-checksum` again and use `alpine` in a new Dockerfile:
 
-    ```Dockerfile
+    ```dockerfile
     FROM --platform=linux alpine
     ARG BUILDARCH
 
@@ -300,7 +300,7 @@ Having collected the requisites, you can create the multi-staged Docker image in
 
 <CodeGroupItem title="With debian">
 
-```Dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/run-prod/prod-sim/Dockerfile-tmkms-debian]
+```dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/run-prod/prod-sim/Dockerfile-tmkms-debian]
 FROM --platform=linux rust:1.64.0 AS builder
 
 RUN apt-get update
@@ -333,7 +333,7 @@ $ docker build -f prod-sim/Dockerfile-tmkms-debian . -t tmkms_i:v0.12.2
 
 <CodeGroupItem title="With alpine">
 
-```Dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/run-prod/prod-sim/Dockerfile-tmkms-alpine]
+```dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/run-prod/prod-sim/Dockerfile-tmkms-alpine]
 FROM --platform=linux rust:1.64.0-alpine AS builder
 
 RUN apk update
@@ -1684,7 +1684,7 @@ You assemble this multi-stage `Dockerfile` step by step, starting with the check
 
 Build the checkers executable as you have learned in this section, but this time from the public repository so as to not depend on local files:
 
-```Dockerfile
+```dockerfile
 FROM --platform=linux golang:1.18.7-alpine AS builder
 
 ENV CHECKERS_VERSION=main
@@ -1848,13 +1848,13 @@ Moving on to the faucet, you continue adding to the same `Dockerfile`.
 
 You start its definition as a separate independent stage:
 
-```Dockerfile
+```dockerfile
 FROM --platform=linux node:18.7-alpine AS cosmos-faucet
 ```
 
 Install the CosmJS faucet package:
 
-```diff
+```diff-dockerfile
     FROM --platform=linux node:18.7-alpine AS cosmos-faucet
 
 +  ENV COSMJS_VERSION=0.28.11
@@ -1868,7 +1868,7 @@ Install the CosmJS faucet package:
 
 Configure the faucet:
 
-```diff
+```diff-dockerfile
     RUN npm install @cosmjs/faucet@${COSMJS_VERSION} --global --production
 
 +  ENV FAUCET_CONCURRENCY=2
@@ -1899,7 +1899,7 @@ Be aware:
 
 Finish the faucet declaration with the port to share and the default command to launch:
 
-```diff
+```diff-dockerfile
     ENV FAUCET_COOLDOWN_TIME=0
 
 +  EXPOSE 4500
@@ -1915,7 +1915,7 @@ You now have a complete setup definition. Time to build the images.
 
 <ExpansionPanel title="Complete Dockerfile">
 
-```Dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/run-prod/Dockerfile-standalone]
+```dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/run-prod/Dockerfile-standalone]
 # Faucet: docker build --target faucet
 FROM --platform=linux node:18.7-alpine AS cosmos-faucet
 

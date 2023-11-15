@@ -151,7 +151,7 @@ If you want to allow for portability and avoid version issues, it is advisable t
 
 First, you need to create a `Dockerfile` that details the same preparation steps. Save this as `Dockerfile-ubuntu`:
 
-```dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/ignite-start/Dockerfile-ubuntu#L1-L33]
+```dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/ignite-start/Dockerfile-ubuntu#L1-L29]
 FROM --platform=linux ubuntu:22.04
 ARG BUILDARCH
 
@@ -168,19 +168,17 @@ ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 RUN mkdir -p $GOPATH/bin
 
-ENV PACKAGES curl gcc jq
+ENV PACKAGES curl gcc
 RUN apt-get update
 RUN apt-get install -y $PACKAGES
 
 # Install Go
 RUN curl -L https://go.dev/dl/go${GO_VERSION}.linux-$BUILDARCH.tar.gz | tar -C $LOCAL -xzf -
 
-# Install Ignite
+# Install ignite
 RUN curl -L https://get.ignite.com/cli@v${IGNITE_VERSION}! | bash
 
-# Install Node
-RUN curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION} | bash -
-RUN apt-get install -y nodejs
+RUN apt-get clean
 
 EXPOSE 1317 3000 4500 5000 26657
 
@@ -426,7 +424,7 @@ If you use Docker with throwaway containers (`run --rm`) you will notice that it
 1. Move your `Dockerfile-ubuntu` file into your checkers project, next to the `go.mod` file.
 2. Add the following lines to `Dockerfile-ubuntu`:
 
-    ```Dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/ignite-start/Dockerfile-ubuntu#L35-L37]
+    ```dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/rules-added/Dockerfile-ubuntu#L37-L39]
     COPY go.mod /checkers/go.mod
     RUN go mod download
     RUN rm /checkers/go.mod
