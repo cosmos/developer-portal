@@ -62,7 +62,7 @@ Go developers access the setters and getters in the generated source code throug
 
 <HighlightBox type="docs">
 
-For more on encoding in the interchain, see the [Cosmos SDK documentation on encoding](https://docs.cosmos.network/main/core/encoding.html).
+For more on encoding in the interchain, see the [Cosmos SDK documentation on encoding](https://docs.cosmos.network/v0.45/core/encoding.html).
 <br/><br/>
 Here you can find the [Protobuf documentation overview](https://docs.cosmos.network/main/core/proto-docs.html).
 
