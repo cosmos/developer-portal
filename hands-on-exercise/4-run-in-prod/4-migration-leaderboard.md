@@ -291,7 +291,7 @@ You now have in place the functions that will handle the store migration. Next y
 
 ### Consensus version and name
 
-The `upgrade` module keeps in its store the [different module versions](https://docs.cosmos.network/main/core/upgrade.html#tracking-module-versions) that are currently running. To signal an upgrade, your module needs to return a different value when queried by the `upgrade` module. As it stands, your leaderboard consensus version is `2` and that will be its first value when added to the application. To make this explicit, and consistent with the pattern used in the checkers module, you can keep this information in a constant like you did for the checkers module:
+The `upgrade` module keeps in its store the [different module versions](https://docs.cosmos.network/v0.45/core/upgrade.html#tracking-module-versions) that are currently running. To signal an upgrade, your module needs to return a different value when queried by the `upgrade` module. As it stands, your leaderboard consensus version is `2` and that will be its first value when added to the application. To make this explicit, and consistent with the pattern used in the checkers module, you can keep this information in a constant like you did for the checkers module:
 
 ```diff-go [https://github.com/cosmos/b9-checkers-academy-draft/blob/leaderboard-migration/x/leaderboard/migrations/cv2/types/keys.go#L7]
     const (
