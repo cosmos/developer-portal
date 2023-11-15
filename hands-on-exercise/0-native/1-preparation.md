@@ -20,7 +20,7 @@ Version 0.50 of the Cosmos SDK was created, in part, with a view to facilitate m
 
 ## Install
 
-Before you can start building, you need to prepare your computer. The simplest way is to rely on [Docker](https://docs.docker.com/engine/install/), as the Cosmos team has prepared a [Docker image for developers](https://github.com/cosmos/cosmos-sdk/pkgs/container/proto-builder/119928846?tag=0.14.0) built via [this Dockerfile](https://github.com/cosmos/cosmos-sdk/blob/main/contrib/devtools/Dockerfile). If you need a refresher on Docker, head [here](/tutorials/5-docker-intro/index.md).
+Before you can start building, you need to prepare your computer. The simplest way is to rely on [Docker](https://docs.docker.com/engine/install/), as the Cosmos team has prepared a [Docker image for developers](https://github.com/cosmos/cosmos-sdk/pkgs/container/proto-builder/119928846?tag=0.14.0) built via [this Dockerfile](https://github.com/cosmos/cosmos-sdk/blob/v0.50.1/contrib/devtools/Dockerfile). If you need a refresher on Docker, head [here](/tutorials/5-docker-intro/index.md).
 
 You will also need to have [`make`](https://www.gnu.org/software/make/) on your computer.
 
@@ -29,8 +29,9 @@ You will also need to have [`make`](https://www.gnu.org/software/make/) on your 
 Since you are building off the minimal app, clone it locally:
 
 ```sh
-$ git clone https://github.com/cosmosregistry/chain-minimal.git
+$ git clone https://github.com/cosmosregistry/chain-minimal.git --branch mini-v050
 $ cd chain-minimal
+$ git checkout -b main
 ```
 
 You can already confirm that it compiles and runs correctly. You need Go version 1.21. To compile it, run:
@@ -73,13 +74,14 @@ This confirms that your minimal chain is working as expected. You can stop it wi
 Since you are going to copy a (small) number of files from the module example, it is convenient to have a local copy somewhere:
 
 ```sh
-$ git clone https://github.com/cosmosregistry/example.git minimal-module-example
+$ git clone https://github.com/cosmosregistry/example.git --branch v0.1.0 minimal-module-example
+$ cd minimal-module-example
+$ git checkout -b main
 ```
 
 Moreover, your checkers module is going to be named `github.com/alice/checkers`, so to make your file copying even easier you can use the provided renaming script:
 
 ```sh
-$ cd minimal-module-example
 $ MODULE_NAME=alice/checkers ./scripts/rename.sh
 ```
 
