@@ -358,7 +358,7 @@ Adjust and add to `types/message_play_move_test.go`. First, change its package f
 
 Then adjust and add to the test cases:
 
-```diff-go [https://github.com/cosmos/b9-checkers-academy-draft/blob/play-move-handler/x/checkers/keeper/msg_server_play_move_test.go#L19-L113]
+```diff-go [https://github.com/cosmos/b9-checkers-academy-draft/blob/play-move-handler/x/checkers/types/message_play_move_test.go#L19-L113]
     {
         name: "invalid address",
 -      msg: MsgPlayMove{
