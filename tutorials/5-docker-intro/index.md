@@ -123,7 +123,7 @@ Suppose you need a Node container with the `curl` command available. For that, y
 
 Create a new file named `Dockerfile` with:
 
-```Dockerfile
+```dockerfile
 FROM node:lts-slim
 
 RUN apt-get update

@@ -99,7 +99,7 @@ The ready-built modules of the Cosmos SDK are easy to import, adapt, and use. De
 
 _Building on modular components, many of which you did not write yourself_ - does this increase the potential for attacks, and faulty or malicious nodes operating undetected? No need to worry.
 
-The Cosmos SDK is built on the [object-capability model](https://docs.cosmos.network/main/core/ocap.html). It not only favors modularity but also encapsulates code implementation. An object-capability model ensures that:
+The Cosmos SDK is built on the [object-capability model](https://docs.cosmos.network/v0.45/core/ocap.html). It not only favors modularity but also encapsulates code implementation. An object-capability model ensures that:
 
 * There is no way for objects in the memory to be discovered just by going through the composed objects of others.
 * The only way to have references to objects or to access services is to have passed the relevant object references.

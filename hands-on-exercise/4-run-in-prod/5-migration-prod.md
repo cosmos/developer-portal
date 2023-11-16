@@ -136,7 +136,7 @@ You can describe the steps in a new Dockerfile `prod-sim/Dockerfile-cosmovisor-a
 
 1. You need to build Cosmovisor from its code:
 
-    ```Dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/migration-prod/prod-sim/Dockerfile-cosmovisor-alpine#L1-L26]
+    ```dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/migration-prod/prod-sim/Dockerfile-cosmovisor-alpine#L1-L26]
     FROM --platform=linux golang:1.18.7-alpine AS builder
 
     ENV COSMOS_VERSION=v0.45.4
@@ -160,7 +160,7 @@ You can describe the steps in a new Dockerfile `prod-sim/Dockerfile-cosmovisor-a
 
 2. Cosmovisor is instructed via [environment variables](https://docs.cosmos.network/v0.45/run-node/cosmovisor.html#command-line-arguments-and-environment-variables). In the eventual containers, the `/root/.checkers` folder comes from a volume mount, so to avoid any conflict it is better not to put the `cosmovisor` folder directly inside it. Instead pick `/root/.checkers-upgrade`:
 
-    ```diff [https://github.com/cosmos/b9-checkers-academy-draft/blob/migration-prod/prod-sim/Dockerfile-cosmovisor-alpine#L21-L24]
+    ```diff-dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/migration-prod/prod-sim/Dockerfile-cosmovisor-alpine#L21-L24]
         ...
         FROM --platform=linux alpine
 
@@ -174,7 +174,7 @@ You can describe the steps in a new Dockerfile `prod-sim/Dockerfile-cosmovisor-a
 
 3. With the folder decided, you can introduce all three checkers executables. They can be conveniently taken from their respective Docker images:
 
-    ```diff [https://github.com/cosmos/b9-checkers-academy-draft/blob/migration-prod/prod-sim/Dockerfile-cosmovisor-alpine#L15-L29]
+    ```diff-dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/migration-prod/prod-sim/Dockerfile-cosmovisor-alpine#L15-L29]
     +  FROM --platform=linux checkersd_i:v1-alpine AS v1
     +  FROM --platform=linux checkersd_i:v1.1-alpine AS v1.1
     +  FROM --platform=linux checkersd_i:v2-alpine AS v2
@@ -196,7 +196,7 @@ You can describe the steps in a new Dockerfile `prod-sim/Dockerfile-cosmovisor-a
 
 4. Now make Cosmovisor start by default:
 
-    ```diff [https://github.com/cosmos/b9-checkers-academy-draft/blob/migration-prod/prod-sim/Dockerfile-cosmovisor-alpine#L31]
+    ```diff-dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/migration-prod/prod-sim/Dockerfile-cosmovisor-alpine#L31]
         COPY --from=v2 /usr/local/bin/checkersd $DAEMON_HOME/cosmovisor/upgrades/v1tov2/bin/checkersd
 
     +  ENTRYPOINT [ "cosmovisor" ]
@@ -204,7 +204,7 @@ You can describe the steps in a new Dockerfile `prod-sim/Dockerfile-cosmovisor-a
 
 When you put all this together, you get:
 
-```Dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/migration-prod/prod-sim/Dockerfile-cosmovisor-alpine]
+```dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/migration-prod/prod-sim/Dockerfile-cosmovisor-alpine]
 FROM --platform=linux golang:1.18.7-alpine AS builder
 
 ENV COSMOS_VERSION=v0.45.4
