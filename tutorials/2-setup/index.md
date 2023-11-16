@@ -38,7 +38,7 @@ You need Go to develop with the Cosmos SDK. If you still need to install Go on y
 
 <HighlightBox type="best-practice">
 
-Picking the latest version of Go should do.
+Pick at least version 1.21. The latest version of Go should do.
 
 </HighlightBox>
 
