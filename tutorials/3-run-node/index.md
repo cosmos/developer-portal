@@ -96,6 +96,26 @@ This should return:
 0.45.4
 ```
 
+<ExpansionPanel title="Troubleshooting">
+
+If instead you get this error message:
+
+```txt
+exec format error
+```
+
+It means the executable was compiled with the wrong CPU architecture. It may happen on Arch Linux. To fix this, you may update the `Makefile` to force the CPU architecture to yours. For instance, if you are on an Intel CPU, that would be `amd64`:
+
+```diff-lang-makefile [https://github.com/cosmos/cosmos-sdk/blob/v0.45.4/Makefile#L114-L115]
+    build-linux:
+-   GOOS=linux GOARCH=$(if $(findstring aarch64,$(shell uname -m)) || $(findstring arm64,$(shell uname -m)),arm64,amd64) LEDGER_ENABLED=false $(MAKE) build
++   GOOS=linux GOARCH=amd64 LEDGER_ENABLED=false $(MAKE) build
+```
+
+Then recreate your Docker image.
+
+</ExpansionPanel>
+
 ## Initialize `simapp`
 
 To help you ring-fence this exercise, you can use a [Git-ignored](https://github.com/cosmos/cosmos-sdk/blob/v0.45.4/.gitignore#L12) subfolder of the repository: `private`.

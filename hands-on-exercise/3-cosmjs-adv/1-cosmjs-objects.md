@@ -90,7 +90,7 @@ Make sure that:
 
 <CodeGroupItem title="Docker">
 
-```diff [https://github.com/cosmos/b9-checkers-academy-draft/blob/cosmjs-elements/Dockerfile-ubuntu#L1-L50]
+```diff-dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/cosmjs-elements/Dockerfile-ubuntu#L1-L50]
 -  FROM --platform=linux ubuntu:22.04
 +  FROM --platform=linux ubuntu:22.04 as base
     ARG BUILDARCH

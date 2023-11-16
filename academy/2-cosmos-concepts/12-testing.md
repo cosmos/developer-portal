@@ -32,12 +32,12 @@ The Cosmos SDK implements its own testing vision for its modules, and it would b
 
 ## Testing pyramid
 
-After some [reflection](https://docs.cosmos.network/main/architecture/adr-059-test-scopes.html), the Cosmos SDK divides tests into four broad categories of somewhat increasing scope:
+After some [reflection](https://docs.cosmos.network/v0.47/build/architecture/adr-059-test-scopes), the Cosmos SDK divides tests into four broad categories of somewhat increasing scope:
 
-* [Unit tests](https://docs.cosmos.network/main/building-modules/testing#unit-tests)
-* [Integration tests](https://docs.cosmos.network/main/building-modules/testing#integration-tests)
-* [Simulation tests](https://docs.cosmos.network/main/building-modules/testing#simulations)
-* [End-to-end tests (E2E)](https://docs.cosmos.network/main/building-modules/testing#end-to-end-tests)
+* [Unit tests](https://docs.cosmos.network/v0.50/build/building-modules/testing#unit-tests)
+* [Integration tests](https://docs.cosmos.network/v0.50/build/building-modules/testing#integration-tests)
+* [Simulation tests](https://docs.cosmos.network/v0.50/build/building-modules/testing#simulations)
+* [End-to-end tests (E2E)](https://docs.cosmos.network/v0.50/build/building-modules/testing#end-to-end-tests)
 
 ### Unit tests
 
@@ -99,7 +99,7 @@ In the context of Go, just like for integration tests, you provide testing suite
 
 **Further reading**
 
-* [Test scopes decision report](https://docs.cosmos.network/main/architecture/adr-059-test-scopes.html)
+* [Test scopes decision report](https://docs.cosmos.network/v0.47/build/architecture/adr-059-test-scopes#context)
 
 </HighlightBox>
 

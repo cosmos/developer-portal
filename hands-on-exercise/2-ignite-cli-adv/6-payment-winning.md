@@ -363,16 +363,20 @@ $ go install github.com/golang/mock/mockgen@v1.6.0
 
 <CodeGroupItem title="Docker">
 
-```Dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/Dockerfile-ubuntu#L8-L33]
-...
-ENV NODE_VERSION=18.x
-ENV MOCKGEN_VERSION=1.6.0
-...
-RUN apt-get install -y nodejs
+```diff-dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/Dockerfile-ubuntu#L8-L33]
+    ...
+    ENV NODE_VERSION=18.x
++  ENV MOCKGEN_VERSION=1.6.0
 
-# Install Mockgen
-RUN go install github.com/golang/mock/mockgen@v${MOCKGEN_VERSION}
-...
+    ENV LOCAL=/usr/local
+    ...
+    RUN apt-get install -y nodejs
+
++  # Install Mockgen
++  RUN go install github.com/golang/mock/mockgen@v${MOCKGEN_VERSION}
+
+    RUN apt-get clean
+    ...
 ```
 
 Rebuild your Docker image.
@@ -414,8 +418,10 @@ $ docker run --rm -it \
 
 If your expected keepers change, you will have to run this command again. It can be a good idea to save the command for future reference. You may use a `Makefile` for that. Ensure you install the `make` tool for your computer. If you use Docker, add it to the packages and rebuild the image:
 
-```Dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/Dockerfile-ubuntu#L18]
-ENV PACKAGES curl gcc jq make
+```diff-dockerfile [https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/Dockerfile-ubuntu#L18]
+-  ENV PACKAGES curl gcc jq
++  ENV PACKAGES curl gcc jq make
+    RUN apt-get update
 ```
 
 Create the `Makefile`:

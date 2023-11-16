@@ -62,7 +62,7 @@ Adjust to your preferred version, operating system, and CPU platform. For instan
 
 <CodeGroupItem title="Dockerfile">
 
-```Dockerfile
+```dockerfile
 FROM --platform=linux node:lts-slim as base
 ARG BUILDARCH
 
