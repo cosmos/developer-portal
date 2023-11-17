@@ -263,11 +263,11 @@ And then initialize the storage access, taking inspiration from `minimal-module-
 
 <HighlightBox type="tip">
 
-What this initialization does is explained [here](https://docs.cosmos.network/v0.50/packages/collections):
+What this initialization does is explained [here](https://docs.cosmos.network/v0.50/build/packages/collections):
 
 > Collections is a library meant to simplify your experience with respect to module state handling.
 
-The `codec.CollValue` construct is covered [in the documentation](https://docs.cosmos.network/v0.50/packages/collections#key-and-value-codecs).
+The `codec.CollValue` construct is covered [in the documentation](https://docs.cosmos.network/v0.50/build/packages/collections#key-and-value-codecs).
 
 </HighlightBox>
 
