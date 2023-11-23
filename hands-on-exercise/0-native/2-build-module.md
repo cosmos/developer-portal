@@ -929,7 +929,13 @@ What remains is to update `app/app.go`, where you place your checkers keeper at 
 
 And that's about it. `depinject` and the rest take care of initialization and runtime.
 
-The _side-effects_ comments refer to the `init()` function of Go packages.
+<HighlightBox type="note">
+
+The _side-effects_ comments refer to the `init()` function of Go packages. If you omit the new empty `import` call, the corresponding `init` function will not be called. Because of that, your `alice.checkers.module.v1.Module` Protobuf objects will not be known, which can lead to an unpleasant **runtime** error such as `unable to resolve "alice.checkers.module.v1.Module"`.
+
+The missing object is only detected at runtime because its value is in `app.yaml`.
+
+</HighlightBox>
 
 ## Run your checkers chain
 
