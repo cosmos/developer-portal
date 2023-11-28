@@ -110,14 +110,14 @@ Helper functions can encode and decode the deadline in the storage.
     ```diff-go [https://github.com/cosmos/b9-checkers-academy-draft/blob/game-deadline/x/checkers/types/errors.go#L22]
         var (
             ...
-    +      ErrInvalidDeadline = sdkerrors.Register(ModuleName, 1108, "deadline cannot be parsed: %s")
+    +      ErrInvalidDeadline = sdkerrors.Register(ModuleName, 1111, "deadline cannot be parsed: %s")
         )
     ```
 
 2. Add your date helpers. A reasonable location to pick is `full_game.go`:
 
     ```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/game-deadline/x/checkers/types/full_game.go#L55-L62]
-    func (storedGame *StoredGame) GetDeadlineAsTime() (deadline time.Time, err error) {
+    func (storedGame StoredGame) GetDeadlineAsTime() (deadline time.Time, err error) {
         deadline, errDeadline := time.Parse(DeadlineLayout, storedGame.Deadline)
         return deadline, sdkerrors.Wrapf(errDeadline, ErrInvalidDeadline.Error(), storedGame.Deadline)
     }
