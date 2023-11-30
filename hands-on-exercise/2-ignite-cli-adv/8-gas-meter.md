@@ -142,7 +142,7 @@ Additionally, making only a single call to `ConsumeGas` slightly saves computati
 
 Now you must add tests that confirm the gas consumption. However, it is not possible to differentiate the gas cost that BaseApp is incurring on your messages from the gas cost your module imposes on top of it. Also, you cannot distinguish via the descriptor [unless it panics](https://github.com/cosmos/cosmos-sdk/blob/v0.45.4/store/types/gas.go#L90-L101). Nevertheless, you can add a lame test like:
 
-```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/gas-meter/x/checkers/keeper/msg_server_create_game_test.go#L119-L131]
+```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/gas-meter/x/checkers/keeper/msg_server_create_game_test.go#L132-L144]
 func TestCreate1GameConsumedGas(t *testing.T) {
     msgSrvr, _, context := setupMsgServerCreateGame(t)
     ctx := sdk.UnwrapSDKContext(context)
@@ -158,7 +158,7 @@ func TestCreate1GameConsumedGas(t *testing.T) {
 }
 ```
 
-Now add another test for [play](https://github.com/cosmos/b9-checkers-academy-draft/blob/gas-meter/x/checkers/keeper/msg_server_play_move_test.go#L176-L192).
+Now add another test for [play](https://github.com/cosmos/b9-checkers-academy-draft/blob/gas-meter/x/checkers/keeper/msg_server_play_move_test.go#L173-L187).
 
 These new tests are lame, because their `5_000` or `25_000` values cannot be predicted but have to be found by trial and error.
 

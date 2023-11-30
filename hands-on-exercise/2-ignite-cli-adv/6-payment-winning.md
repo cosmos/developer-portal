@@ -533,14 +533,17 @@ With the helpers in place, you can add a new function similar to `CheckersKeeper
 
 The `CheckersKeeperWithMocks` function takes the mock in its arguments for more versatility. The `CheckersKeeper` remains for the tests that never call the escrow.
 
-Now adjust the small functions that set up the keeper before each test. You do not need to change them for the _create_ tests, because they never call the bank. You have to do it for _play_ and _forfeit_.
+Now add a small function to those that set up the keeper before each test. It will be used for _play_ and _forfeit_:
 
-For _play_:
-
-```diff-go [https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/x/checkers/keeper/msg_server_play_move_test.go#L17-L32]
--  func setupMsgServerWithOneGameForPlayMove(t testing.TB) (types.MsgServer, keeper.Keeper, context.Context) {
+```diff-go [https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/x/checkers/keeper/msg_server_play_move_test.go#L18-L37]
+    func setupMsgServerWithOneGameForPlayMove(t testing.TB) (types.MsgServer, keeper.Keeper, context.Context) {
 -      k, ctx := keepertest.CheckersKeeper(t)
-+  func setupMsgServerWithOneGameForPlayMove(t testing.TB) (types.MsgServer, keeper.Keeper, context.Context,
++      server, k, context, _, escrow := setupMsgServerWithOneGameForPlayMoveWithMock(t)
++      escrow.ExpectAny(context)
++      return server, k, context
++  }
++
++  func setupMsgServerWithOneGameForPlayMoveWithMock(t testing.TB) (types.MsgServer, keeper.Keeper, context.Context,
 +      *gomock.Controller, *testutil.MockBankEscrowKeeper) {
 +      ctrl := gomock.NewController(t)
 +      bankMock := testutil.NewMockBankEscrowKeeper(ctrl)
@@ -566,52 +569,7 @@ This function creates the mock and returns two new objects:
 
 Both objects will be used from the tests proper.
 
-Do the same for _forfeit_ if their unit tests do not use the above `setupMsgServerWithOneGameForPlayMove`.
-
-### Adjust the unit tests
-
-With these changes, you need to adjust many unit tests for _play_ and _forfeit_. Often you may only want to make the tests pass again without checking any meaningful bank call expectations. There are different situations:
-
-1. The mocked bank is not called. Therefore, you do not add any expectation and still call the controller:
-
-    ```diff-go [https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/x/checkers/keeper/end_block_server_game_test.go#L13-L15]
-        func TestForfeitUnplayed(t *testing.T) {
-    -      _, keeper, context := setupMsgServerWithOneGameForPlayMove(t)
-    +      _, keeper, context, ctrl, _ := setupMsgServerWithOneGameForPlayMove(t)
-            ctx := sdk.UnwrapSDKContext(context)
-    +      defer ctrl.Finish()
-            ...
-        }
-    ```
-
-    When you expect the mocked bank **not** to be called, it is important that you do not put any expectations on it. This means the test will fail if it is called by mistake.
-
-2. The mocked bank is called, but you do not care about how it is called:
-
-    ```diff-go
-    -  msgServer, _, context := setupMsgServerWithOneGameForRejectGame(t)
-    +  msgServer, _, context, ctrl, escrow := setupMsgServerWithOneGameForRejectGame(t)
-    +  defer ctrl.Finish()
-    +  escrow.ExpectAny(context)
-    ```
-
-    Here you do not want to be distracted by escrow concerns.
-
-3. The mocked bank is called, and you want to add call expectations:
-
-    ```diff-go [https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/x/checkers/keeper/end_block_server_game_test.go#L139-L143]
-        func TestForfeitPlayedOnce(t *testing.T) {
-    -      msgServer, keeper, context := setupMsgServerWithOneGameForPlayMove(t)
-    +      msgServer, keeper, context, ctrl, escrow := setupMsgServerWithOneGameForPlayMove(t)
-            ctx := sdk.UnwrapSDKContext(context)
-    +      defer ctrl.Finish()
-    +      pay := escrow.ExpectPay(context, bob, 45).Times(1)
-    +      escrow.ExpectRefund(context, bob, 45).Times(1).After(pay)
-            ...
-        }
-    ```
-
-Go ahead and make the many necessary changes as you see fit.
+Do the same with the [_create_ tests](https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/x/checkers/keeper/msg_server_create_game_test.go#L18-L31) as you also use its function in _move_ tests.
 
 ### Wager handler unit tests
 
@@ -736,19 +694,68 @@ After these adjustments, it is a good idea to add unit tests directly on the wag
 
 ### Add bank escrow unit tests
 
-Now that the wager handling has been convincingly tested, you want to confirm that its functions are called at the right junctures. Add dedicated tests with message servers that confirm how the bank is called. Add them in existing files, for instance:
+Now that the wager handling has been convincingly tested, you want to confirm that its functions are called at the right junctures. Add dedicated tests with message servers that confirm how the bank is called. Add them in existing files. They can duplicate existing tests but explicitly test the (mocked) bank calls, for instance:
 
-```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/x/checkers/keeper/msg_server_play_move_winner_test.go#L57-L65]
-func TestPlayMoveUpToWinnerCalledBank(t *testing.T) {
-    msgServer, _, context, ctrl, escrow := setupMsgServerWithOneGameForPlayMove(t)
-    defer ctrl.Finish()
-    payBob := escrow.ExpectPay(context, bob, 45).Times(1)
-    payCarol := escrow.ExpectPay(context, carol, 45).Times(1).After(payBob)
-    escrow.ExpectRefund(context, bob, 90).Times(1).After(payCarol)
+1. When playing once:
 
-    testutil.PlayAllMoves(t, msgServer, context, "1", testutil.Game1Moves)
-}
-```
+    ```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/x/checkers/keeper/msg_server_play_move_test.go#L159-L171]
+    func TestPlayMoveCalledBank(t *testing.T) {
+        msgServer, _, context, ctrl, escrow := setupMsgServerWithOneGameForPlayMoveWithMock(t)
+        defer ctrl.Finish()
+        escrow.ExpectPay(context, bob, 45).Times(1)
+        msgServer.PlayMove(context, &types.MsgPlayMove{
+            Creator:   bob,
+            GameIndex: "1",
+            FromX:     1,
+            FromY:     2,
+            ToX:       2,
+            ToY:       3,
+        })
+    }
+    ```
+
+    Or [twice](https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/x/checkers/keeper/msg_server_play_move_test.go#L339-L360), or [three times](https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/x/checkers/keeper/msg_server_play_move_test.go#L447-L476).
+
+2. When playing the game to its resolution by a win:
+
+    ```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/x/checkers/keeper/msg_server_play_move_winner_test.go#L55-L63]
+    func TestPlayMoveUpToWinnerCalledBank(t *testing.T) {
+        msgServer, _, context, ctrl, escrow := setupMsgServerWithOneGameForPlayMoveWithMock(t)
+        defer ctrl.Finish()
+        payBob := escrow.ExpectPay(context, bob, 45).Times(1)
+        payCarol := escrow.ExpectPay(context, carol, 45).Times(1).After(payBob)
+        escrow.ExpectRefund(context, bob, 90).Times(1).After(payCarol)
+
+        testutil.PlayAllMoves(t, msgServer, context, "1", bob, carol, testutil.Game1Moves)
+    }
+    ```
+
+3. Or when a game is forfeited after having been played once:
+
+    ```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/x/checkers/keeper/end_block_server_game_test.go#L175-L194]
+    func TestForfeitPlayedOnceCalledBank(t *testing.T) {
+        msgServer, keeper, context, ctrl, escrow := setupMsgServerWithOneGameForPlayMoveWithMock(t)
+        ctx := sdk.UnwrapSDKContext(context)
+        defer ctrl.Finish()
+        pay := escrow.ExpectPay(context, bob, 45).Times(1)
+        escrow.ExpectRefund(context, bob, 45).Times(1).After(pay)
+        msgServer.PlayMove(context, &types.MsgPlayMove{
+            Creator:   bob,
+            GameIndex: "1",
+            FromX:     1,
+            FromY:     2,
+            ToX:       2,
+            ToY:       3,
+        })
+        game1, found := keeper.GetStoredGame(ctx, "1")
+        require.True(t, found)
+        game1.Deadline = types.FormatDeadline(ctx.BlockTime().Add(time.Duration(-1)))
+        keeper.SetStoredGame(ctx, game1)
+        keeper.ForfeitExpiredGames(context)
+    }
+    ```
+
+    Or after having been [played twice](https://github.com/cosmos/b9-checkers-academy-draft/blob/payment-winning/x/checkers/keeper/end_block_server_game_test.go#L448-L477).
 
 After doing all that, confirm that your tests run.
 

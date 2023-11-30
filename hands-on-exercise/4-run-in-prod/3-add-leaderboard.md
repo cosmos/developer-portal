@@ -1301,25 +1301,25 @@ However, there is a small difficulty that would not surface immediately: when yo
 
 Therefore, add a setup function that encapsulates the knowledge to circumvent this difficulty:
 
-```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/leaderboard-handling/x/checkers/keeper/msg_server_play_move_test.go#L35-L42]
+```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/leaderboard-handling/x/checkers/keeper/msg_server_play_move_test.go#L41-L49]
 func setupMsgServerWithOneGameForPlayMoveAndHooks(t testing.TB) (types.MsgServer, keeper.Keeper, context.Context,
-    *gomock.Controller, *testutil.MockBankEscrowKeeper, *testutil.MockCheckersHooks) {
-    msgServer, k, context, ctrl, escrow := setupMsgServerWithOneGameForPlayMove(t)
+    *gomock.Controller, *testutil.MockCheckersHooks) {
+    msgServer, k, context, ctrl, escrow := setupMsgServerWithOneGameForPlayMoveWithMock(t)
+    escrow.ExpectAny(context)
     hookMock := testutil.NewMockCheckersHooks(ctrl)
     k.SetHooks(hookMock)
     msgServer = keeper.NewMsgServerImpl(k)
-    return msgServer, k, context, ctrl, escrow, hookMock
+    return msgServer, k, context, ctrl, hookMock
 }
 ```
 
-You can now add a test that confirms that a game just played does not trigger a call to the hooks:
+Note that it does not care about what happens on the mocked escrow. You can now add a test that confirms that a game just played does not trigger a call to the hooks:
 
-```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/leaderboard-handling/x/checkers/keeper/msg_server_play_move_test.go#L607-L626]
+```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/leaderboard-handling/x/checkers/keeper/msg_server_play_move_test.go#L582-L600]
 func TestPlayerInfoNoHookOnNoWinner(t *testing.T) {
-	msgServer, keeper, context, ctrl, escrow, _ := setupMsgServerWithOneGameForPlayMoveAndHooks(t)
+	msgServer, keeper, context, ctrl, _ := setupMsgServerWithOneGameForPlayMoveAndHooks(t)
     ctx := sdk.UnwrapSDKContext(context)
     defer ctrl.Finish()
-    escrow.ExpectAny(context)
     keeper.SetPlayerInfo(ctx, types.PlayerInfo{
         Index: bob,
     })
@@ -1337,14 +1337,13 @@ func TestPlayerInfoNoHookOnNoWinner(t *testing.T) {
 }
 ```
 
-A more interesting addition is the confirmation that a listener is being called when a game is [forfeited](https://github.com/cosmos/b9-checkers-academy-draft/blob/leaderboard-handling/x/checkers/keeper/end_block_server_game_test.go#L684-L737) or won:
+A more interesting addition is the confirmation that a listener is being called when a game is [forfeited](https://github.com/cosmos/b9-checkers-academy-draft/blob/leaderboard-handling/x/checkers/keeper/end_block_server_game_test.go#L886-L938) or won:
 
-```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/leaderboard-handling/x/checkers/keeper/msg_server_play_move_winner_test.go#L133-L165]
+```go [https://github.com/cosmos/b9-checkers-academy-draft/blob/leaderboard-handling/x/checkers/keeper/msg_server_play_move_winner_test.go#L127-L158]
 func TestCompleteGameCallsHook(t *testing.T) {
-	msgServer, keeper, context, ctrl, escrow, hookMock := setupMsgServerWithOneGameForPlayMoveAndHooks(t)
+	msgServer, keeper, context, ctrl, hookMock := setupMsgServerWithOneGameForPlayMoveAndHooks(t)
 	ctx := sdk.UnwrapSDKContext(context)
     defer ctrl.Finish()
-    escrow.ExpectAny(context)
     bobCall := hookMock.EXPECT().AfterPlayerInfoChanged(ctx, types.PlayerInfo{
         Index:          bob,
         WonCount:       2,
