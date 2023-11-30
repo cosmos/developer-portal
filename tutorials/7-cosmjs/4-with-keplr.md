@@ -62,6 +62,8 @@ Which guides you with:
 ? What is your project named? › cosmjs-keplr
 ```
 
+Be sure to keep the default choices for the other questions. In particular, keep the <kbd>No</kbd> default when asked whether to _use the experimental `app/` directory_.
+
 This created a new `cosmjs-keplr` folder, so open it. There you can find a `/pages` folder, which contains an `index.tsx`. That's your first page.
 
 Run it, in the `cosmjs-keplr` folder:
