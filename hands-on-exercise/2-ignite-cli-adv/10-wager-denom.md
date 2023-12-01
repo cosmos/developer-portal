@@ -190,7 +190,7 @@ The token denomination has been integrated into the relevant data structures. No
 
 ## Unit tests
 
-The point of the tests is to make sure that the token denomination is correctly used. So you ought to add a denomination [when creating a game](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/keeper/msg_server_create_game_test.go#L28) and add it to [all the stored games](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/keeper/msg_server_create_game_test.go#L67) you check and all the [emitted events](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/keeper/msg_server_create_game_test.go#L121) you check. Choose a `"stake"` for all first games and something else for additional games, for instance [`"coin"`](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/keeper/msg_server_create_game_test.go#L185) and [`"gold"`](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/keeper/msg_server_create_game_test.go#L226) respectively.
+The point of the tests is to make sure that the token denomination is correctly used. So you ought to add a denomination [when creating a game](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/keeper/msg_server_create_game_test.go#L41) and add it to [all the stored games](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/keeper/msg_server_create_game_test.go#L80) you check and all the [emitted events](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/keeper/msg_server_create_game_test.go#L134) you check. Choose a `"stake"` for all first games and something else for additional games, for instance [`"coin"`](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/keeper/msg_server_create_game_test.go#L198) and [`"gold"`](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/keeper/msg_server_create_game_test.go#L239) respectively.
 
 Adjust your test helpers too:
 
@@ -228,7 +228,7 @@ Adjust your test helpers too:
 
     Do the same with [`ExpectRefund`](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/testutil/bank_escrow_helpers.go#L37-L46).
 
-With the new helpers in, you can pepper call expectations with [`"coin"`](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/keeper/end_block_server_game_test.go#L239) or `"gold"`.
+With the new helpers in, you can pepper call expectations with [`"coin"`](https://github.com/cosmos/b9-checkers-academy-draft/blob/wager-denomination/x/checkers/keeper/end_block_server_game_test.go#L265) or `"gold"`.
 
 ## Integration tests
 
