@@ -442,3 +442,6 @@ The code and docs for each tutorial are based on a specific version of the softw
 Use the tutorials landing page as your entry point to articles on the [Interchain blog](https://blog.cosmos.network/), videos on [Interchain YouTube](https://www.youtube.com/c/CosmosProject/videos), and ways to get help and support.
 
 This repo manages and publishes the developer platform. **If you would like to contribute**, please take a look at our [CONTRIBUTION GUIDELINES](CONTRIBUTING.md) and [/developer-portal/TECHNICAL-SETUP](TECHNICAL-SETUP.md) documents.
+
+## Deployment
+The main developer portal at [https://tutorials.cosmos.network](https://tutorials.cosmos.network) (and [https://developers.cosmos.network/](https://developers.cosmos.network/)) is deployed with GitHub Pages. The IDA deployment at [https://ida.interchain.io/](https://ida.interchain.io/) and both preview deployments are processes by Netlify.
