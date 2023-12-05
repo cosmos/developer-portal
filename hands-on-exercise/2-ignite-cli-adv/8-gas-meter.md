@@ -164,7 +164,7 @@ These new tests are lame, because their `5_000` or `25_000` values cannot be pre
 
 ## Interact via the CLI
 
-Here, you want to confirm that gas is consumed by different actions. The difficulty is that Alice's and Bob's balances in `stake` tokens change not only because of the gas used but also depending on the gas price. An easy measurement is to use `--dry-run`:
+Here, you want to confirm that gas is consumed by different actions. The difficulty is that Alice's and Bob's balances in `stake` tokens change not only because of the gas used but also depending on the gas price. An easy measurement is to use `--dry-run` (if the `dry-run` command fails, it may just be that it is broken at this version, so jump to the actual transaction):
 
 <CodeGroup>
 
