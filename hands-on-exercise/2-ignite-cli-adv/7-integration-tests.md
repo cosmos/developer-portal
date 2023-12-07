@@ -348,8 +348,8 @@ func (suite *IntegrationTestSuite) setupSuiteWithOneGameForPlayMove() {
     goCtx := sdk.WrapSDKContext(suite.ctx)
     suite.msgServer.CreateGame(goCtx, &types.MsgCreateGame{
         Creator: alice,
-        Red:     bob,
-        Black:   carol,
+        Black:   bob,
+        Red:     carol,
         Wager:   45,
     })
 }
