@@ -251,7 +251,7 @@ Do you have access to an existing chain?
 
 </ExpansionPanel>
 
-The most straightforward way to use IBC is to build a chain with the Cosmos SDK, which already includes the IBC module - as you can see when examining the [ibc-go repository](https://github.com/cosmos/ibc-go). The IBC module supports an out-of-the-box CometBFT light client. Other implementations are possible but may require further development of the necessary components; go to the [IBC website](https://ibcprotocol.org/implementations) to see which implementations are available in production or are being developed.
+The most straightforward way to use IBC is to build a chain with the Cosmos SDK, which already includes the IBC module - as you can see when examining the [ibc-go repository](https://github.com/cosmos/ibc-go). The IBC module supports an out-of-the-box CometBFT light client. Other implementations are possible but may require further development of the necessary components; go to the [IBC website](https://www.ibcprotocol.dev/blog/getting-started-with-ibc-understanding-the-interchain-stack-and-the-main-ibc-implementations) to see which implementations are available in production or are being developed.
 
 <HighlightBox type="info">
 
