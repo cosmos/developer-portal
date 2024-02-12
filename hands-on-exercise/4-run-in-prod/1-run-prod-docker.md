@@ -99,7 +99,7 @@ do-checksum-darwin:
         checkersd-darwin-amd64 checkersd-darwin-arm64 \
         > checkers-checksum-darwin
 
-build-darwin-with-checksum: build-all-darwin do-checksum-darwin
+build-darwin-with-checksum: build-darwin do-checksum-darwin
 
 build-with-checksum: build-linux-with-checksum build-darwin-with-checksum
 ```
