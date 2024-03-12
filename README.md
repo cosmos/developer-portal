@@ -289,6 +289,16 @@ customModules:
             path: /tutorials/9-path-to-prod/6-run.html
           - title: Prepare and do migrations
             path: /tutorials/9-path-to-prod/7-migration.html
+       - image: /lp-images/ida_dev_portal_lp_hero-07.png
+        title: Indexers
+        href: /tutorials/10-indexers
+        description: |
+          Data Indexers
+        links:
+          - title: Indexers Overview
+            path: /tutorials/10-indexers/1-overview.html
+          - title: SubQuery Indexer
+            path: /tutorials/10-indexers/2-subquery.html
   - title: Hands-on Exercise
     description: |
       From zero to hero - work with the full Interchain Stack while developing a checkers game blockchain. Feel free to start with the first chapter, or select one or more tags to filter the available content.

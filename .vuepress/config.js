@@ -141,6 +141,11 @@ module.exports = {
               path: "/tutorials/9-path-to-prod/",
               directory: true,
             },
+            {
+              title: "Indexers",
+              path: "/tutorials/10-indexers/",
+              directory: true,
+            },
           ],
         },
         {
